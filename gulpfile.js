@@ -42,13 +42,15 @@ const cleanPaths = [
 
 // task start
 function inc(){
-  return src(path.html,{ since: lastRun(inc) })
-  .pipe(gulpInc({
-    prefix : '@@',
-    basepath : '@file'
-  }))
-  .pipe(dest(dist + '/'))
-  .pipe(bs.stream());
+  return merge(
+    src(path.html,{ since: lastRun(js) })
+    .pipe(gulpInc({
+      prefix : '@@',
+      basepath : '@file'
+    }))
+    .pipe(dest(dist + '/'))
+    .pipe(bs.stream())
+  )
 }
 function imgMin(){
   return src(path.images,{ since: lastRun(imgMin) })
@@ -67,7 +69,7 @@ var scssOptions = {
 
 function scss(){
   return merge(
-    src(path.scss, { since: lastRun(scss), sourcemaps: true })
+    src([path.scss], {sourcemaps: true })
     .pipe(concat(mergefileName.style))
     .pipe(sass(scssOptions).on('error', sass.logError))
     //.pipe(sourcemaps.write('/maps'))
