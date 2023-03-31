@@ -37,13 +37,13 @@ const browserSyncFileName = "/html/main.html";
 
 // 배포 시 삭제할 폴더
 const cleanPaths = [
-  dist + '/**/temp'
+  dist + '/**/temp' 
 ];
 
 // task start
 function inc(){
   return merge(
-    src(path.html,{ since: lastRun(js) })
+    src(path.html,{ since: lastRun(inc) })
     .pipe(gulpInc({
       prefix : '@@',
       basepath : '@file'
@@ -54,9 +54,9 @@ function inc(){
 }
 function imgMin(){
   return src(path.images,{ since: lastRun(imgMin) })
-  .pipe(newer(dist + "/images"))
+  .pipe(newer(dist + "/"))
   .pipe(imgmin())
-  .pipe(dest(dist + '/images/'))
+  .pipe(dest(dist + '/'))
   .pipe(bs.stream())
 }
 // scss options
@@ -97,13 +97,16 @@ function watchs(){
   watch(path.html, inc);
   watch(path.images, imgMin);
   watch(path.js, js);
-  watch(path.scss, scss);
+  watch(path.scss, scss);  
 }
   
+
 // dist 폴더 정리
 function clean(cd){
-  return del(cleanPaths,cd);
-}
+  return del(cleanPaths,cd).then(paths => {
+    console.log('Deleted files and folders:\n', paths.join('\n'));
+  });
+};
 
 /* 
  * ==============================

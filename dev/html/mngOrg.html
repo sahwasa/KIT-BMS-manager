@@ -1,0 +1,89 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')
+  @@include('../inc/nav.html')
+  <main class="contents" role="main">
+    <header class="cont_tit">
+      <h1>조직관리</h1>
+      <section class="bredcrumb">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>조직관리</li>
+        </ul>
+      </section>
+    </header>
+    <div class="cont_body mngOrg">
+      <section class="orgChart">
+        <header class="section_tit">
+          <h1>조직도</h1>
+          <div class="search_box">
+            <input type="text" title="조직검색" placeholder="조직검색">
+            <button type="button">검색</button>
+          </div>
+        </header>
+        <div class="section_body tree_wrap">
+          <div class="btn_tree_wrap">
+          </div>
+        </div>
+        <div class="section_bot btn_wrap">
+          <button type="button" class="btn_add addOgt">추가</button>
+          <!-- <button class="btn_add doneAddOgt">완료</button> -->
+          <button type="button" class="btn_modify editOgt">수정</button>
+            <!-- <button class="btn_modify doneEditOgt">저장</button> -->
+          <button type="button" class="btn_del delOgt">삭제</button>
+        </div>
+      </section>
+      <section class="orgMember">
+        <header class="section_tit">
+          <h1>조직원</h1>
+          <div class="btn_wrap">
+            <button type="button" class="btn_default">리더선택</button>
+            <button type="button" class="btn_default">조직변경</button>
+          </div>
+        </header>
+        <div class="section_body">
+          <div class="tbl_wrap">
+            <div class="tbl_header">
+              <div class="tbl_caption">
+                <input type="checkbox" class="row_check all_check" title="전체선택" >
+                <h2>SI사업본부</h2>
+                <span class="count">총 30명</span>
+              </div>
+              <div class="search_box">
+                <input type="text" title="조직원 검색" placeholder="조직원 검색">
+                <button type="button">검색</button>
+              </div>
+            </div>
+            <table class="tbl_default tbl_use_select">
+              <caption>조직원</caption>
+              <thead class="blind">
+                <tr>
+                  <th scope="col">글선택</th>
+                  <th scope="col">이름</th>
+                  <th scope="col">이름</th>
+                  <th scope="col">이름</th>
+                  <th scope="col">이름</th>
+                  <th scope="col">이름</th>
+                  <th scope="col">이름</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox" class="row_check" title="글선택"></td>
+                  <td>박상건</td>
+                  <td>본부장</td>
+                  <td>수석</td>
+                  <td>010-1234-5678</td>
+                  <td>kitvaaley@kitvalley.com</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  @@include('../inc/footer.html')
+</div>
+@@include('../inc/script.html')

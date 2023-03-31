@@ -3,15 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=0.5, maximum-scale=5">
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
   <title>KIT 업무관리시스템_관리자</title>
+  <link rel="stylesheet" href="../font/fontello/css/fontello.css">
   <link rel="stylesheet" href="../css/merge.css">
 </head>
 <body>
 
 <div id="wrap" class="wrap">
-  <header class="header">
-  <h1><a href="">KITVALLEY</a> 업무관리시스템</h1>
+  <!-- 바로가기 메뉴 -->
+<div id="accessibility">
+  <a href="#content">본문 바로가기</a>
+  <a href="#lnb">주메뉴 바로가기</a>
+</div>
+<hr />
+<!--// 바로가기 메뉴 -->
+<header class="header">
+  <h1><a href="" class="logo">KITVALLEY</a>업무관리시스템<span class="t_red">관리자</span></h1>
   <section class="gnb">
     <!-- <ul class="gnb_lst">
       <li><a href=""></a></li>
@@ -32,6 +41,7 @@
   </section>
 </header>
   <nav class="nav">
+  <h1>관리자 페이지</h1>
   <ul>
     <li><a href="">조직관리</a></li>
     <li><a href="">사원관리</a></li>
@@ -39,17 +49,26 @@
     <li><a href="">메뉴관리</a></li>
     <li><a href="">결재 양식관리</a></li>
     <li><a href="">환경설정</a></li>
-    <li><a href="">게시판</a></li>
+    <li><a href="">게시판</a>
+      <ul class="sub">
+        <li><a href="#">서브메뉴</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
-  <main class="contents">
-    메인입니다만
-    뭔진몰라도 잘되는거겠찌
-    
-
+  <main class="contents main">
+    <header>
+      <h1>메인</h1>
+    </header>
+    <div class="cont_body">
+      보류
+    </div>
   </main>
-  
+  <footer class="footer">
+  <p class="copy">Copyright ⓒ2023 KITValley Co.,Ltd. All right reserved.</p>
+</footer>
 </div>
+<script src="../plugins/jquery.min.js"></script>
 <script src="../js/ui_cmmn.js"></script>
 </body>
 </html>
