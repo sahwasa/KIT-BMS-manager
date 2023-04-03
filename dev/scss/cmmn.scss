@@ -68,6 +68,11 @@ $ico_font:'fontello';
   &.suspension::before{content:'\eb6f';color:#ff6363;}
 }
 
+//icon
+@mixin fontello{
+  display:inline-block;font-family:"fontello";font-weight: normal;  
+}
+
 //btn
 .btn_wrap{display:flex;gap:4px;}
 .btn_tgl{display:inline-block;position:relative;width:62px;height:28px;background-color:#999;border-radius:28px;vertical-align:middle;padding:0 5px;box-sizing:border-box;font-size:0;border:1px solid;overflow:hidden;outline:none;border-color: #999;text-align:left;line-height:34px;
@@ -125,6 +130,7 @@ $btn_gray:#979797;
   td{border-bottom:1px solid #ebebeb;letter-spacing:-.333px;color:#333;}
 }
 .tbl_use_select td:first-child{width:60px;}
+
 /* paginate */
 .paginate{margin-top:32px;text-align:center;
   span{vertical-align:top;}
