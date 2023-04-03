@@ -43,7 +43,7 @@ const cleanPaths = [
 // task start
 function inc(){
   return merge(
-    src(path.html,{ since: lastRun(inc) })
+    src(path.html)
     .pipe(gulpInc({
       prefix : '@@',
       basepath : '@file'

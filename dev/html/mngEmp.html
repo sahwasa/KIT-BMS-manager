@@ -1,0 +1,87 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')
+  @@include('../inc/nav.html')
+  <main id="contents" class="contents" role="main">
+    <header class="cont_tit">
+      <h1>사원관리</h1>
+      <section class="bredcrumb">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>사원관리</li>
+        </ul>
+      </section>
+    </header>
+    <div class="cont_body mngEmp">
+      <section class="orgMember">
+        <header class="section_tit blind">
+          <h1>사원</h1>          
+        </header>
+        <div class="section_body">
+          <div class="tbl_wrap">
+            <div class="tbl_header">
+              <div class="search_box">
+                <input type="text" title="사원 검색" placeholder="사원 이름 및 ID 검색">
+                <button type="button">검색</button>
+              </div>
+              <div class="btn_wrap">
+                <button type="button" class="btn_default">추가</button>
+                <button type="button" class="btn_default">수정</button>
+                <button type="button" class="btn_default">정지</button>
+                <button type="button" class="btn_default">삭제</button>
+              </div>
+            </div>
+            <table class="tbl_default tbl_use_select tbl_hover">
+              <caption>조직원</caption>
+              <thead>
+                <tr>
+                  <th scope="col"><input type="checkbox" class="row_check all_check" title="전체 글선택"></th>
+                  <th scope="col">사진</th>
+                  <th scope="col">ID</th>
+                  <th scope="col">성명</th>
+                  <th scope="col">사번</th>
+                  <th scope="col">직급</th>
+                  <th scope="col">부서명</th>
+                  <th scope="col">권한그룹</th>
+                  <th scope="col">관리</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox" class="row_check" title="글선택"></td>
+                  <td><span class="profile_photo"><img src="http://placehold.it/45x60" alt=""></span></td>
+                  <td>kitvaaley@kitvalley.com</td>
+                  <td>박상건</td>
+                  <td>본부장</td>
+                  <td>수석</td>
+                  <td>SI사업본부</td>
+                  <td>공통(common), ERP(business), 공통(common), 공통(common), 공통(common), 공통(common)</td>
+                  <td>
+                    <button type="button" class="tbl_del">승인</button>
+                    <button type="button" class="tbl_del">삭제</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="row_check" title="글선택"></td>
+                  <td><span class="profile_photo"></span></td>
+                  <td>kitvaaley@kitvalley.com</td>
+                  <td>박상건</td>
+                  <td>본부장</td>
+                  <td>수석</td>
+                  <td>SI사업본부</td>
+                  <td>공통(common), ERP(business), 공통(common), 공통(common), 공통(common), 공통(common)</td>
+                  <td>
+                    <button type="button" class="tbl_del">승인</button>
+                    <button type="button" class="tbl_del">삭제</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  @@include('../inc/footer.html')
+</div>
+@@include('../inc/script.html')

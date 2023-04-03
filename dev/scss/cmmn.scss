@@ -7,6 +7,7 @@
 :root {-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;text-size-adjust:100%;cursor:default;line-height:1.5;overflow-wrap:break-word;-moz-tab-size:4;tab-size:4}
 html, body {height:100%;}
 img, picture, video, canvas, svg {display: block;max-width:100%;}
+img{display:inline-block;}
 button {background:none;border:0;cursor:pointer;}
 a {text-decoration:none}
 table {border-collapse:collapse;border-spacing:0}
@@ -14,7 +15,7 @@ caption{@include blind;}
 ul,ol,li{box-sizing:border-box;list-style:none;}
 
 /* accessibility */
-#accessibility{position:relative;z-index:999;
+#accessibility{position:absolute;width:100%;z-index:999;
   a{
     display:block;width:1px;height:0;margin-bottom:-1px;overflow:hidden;text-align:center;color:#fff;
     &:focus,&:active{width:100%;height:auto;padding:5px 0;background:#09f;}
@@ -43,6 +44,19 @@ $tit_spacing:.45px;
   &R{float:right !important;}
 }
 
+
+//ipt custom
+input[type="radio"],
+input[type="checkbox"]{-webkit-appearance:none;-moz-appearance:none; -o-appearance: none;appearance:none;outline:none;box-shadow: none;
+width:13px!important;height:13px!important;border:1px solid #606060;
+overflow:hidden;
+  &:checked{-webkit-appearance:none; -moz-appearance:none;-o-appearance:none;appearance:none; box-shadow:none;border:none;
+  background:url(../images/bg_ipt.png) 0 0 no-repeat;}
+}
+input[type="radio"]{border-radius:50%;}
+input[type="checkbox"]{border-radius:2px;}
+input[type="radio"]:checked{background-position-y:-23px;}
+
 // layout
 hr,
 .blind{@include blind}
@@ -60,8 +74,12 @@ hr,
 .scroll{overflow-y:scroll;background-color:#f5f5f5;}
 
 //icon
-@mixin fontello{
-  display:inline-block;font-family:"fontello";font-weight: normal;  
+@mixin shape($w_size,$h_size){
+  display:inline-block;content:"";@include f_blind;overflow:hidden;
+  width:$w_size;height:$h_size;
+}
+@mixin fontello($ic){
+  display:inline-block;font-family:"fontello";font-weight:normal;content:$ic;
 }
 .ico_org{@include fontello;vertical-align:middle;
   &::before{font-size:17px;}
@@ -115,18 +133,22 @@ $btn_gray:#979797;
 
 // table
 .tbl_header{@include flex_between;border-top:2px solid #c0c0c0;
-  .tbl_caption{display:flex;line-height:37px;
+  .tbl_caption{display:flex;align-items:center;line-height:37px;
     .row_check{margin:0 16px 0 24px;}
-    h2{color:$red;font-weight:bold;font-size: 14px;}
+    h2{color:$red;font-weight:bold;font-size:14px;}
   }
-  .count{color:#424242;font-size: 12px;margin-left: 12px;}
-
+  .count{color:#424242;font-size:12px;margin-left:12px;}
 }
 .tbl_default{width:100%;border-top:1px solid #ebebeb;text-align:center;
-  th,td{padding:7px 5px;}
-  td{border-bottom:1px solid #ebebeb;letter-spacing:-.333px;color:#333;}
+  th,td{padding:7px 5px;letter-spacing:-.333px;text-align:center;word-break:keep-all;}
+  th{color:#111;font-weight:bold;}
+  td{border-bottom:1px solid #ebebeb;color:#333;}
 }
-.tbl_use_select td:first-child{width:60px;}
+.tbl_hover tbody tr:hover{background-color:#f9fafc;}
+.tbl_use_select{
+  tbody tr.select_tr{background-color:lighten($red, 45%);}
+  td:first-child{width:60px;}
+} 
 
 /* paginate */
 .paginate{margin-top:32px;text-align:center;
@@ -140,66 +162,66 @@ $btn_gray:#979797;
 }
 
 /* ico_fileName Extention */
-@mixin ico_ext{display:inline-block;width:17px;height:17px;background:url(../images/ico_fileExt.png) -223px -82px no-repeat;margin:-4px 7px 0 0px;vertical-align:middle;font-size:0;overflow:hidden;text-indent:-9999px;}
-.ext_bmp{@include ico_ext;background-position:-3px -2px;}
-.ext_jpg{@include ico_ext;background-position:-23px -2px;}
-.ext_gif{@include ico_ext;background-position:-43px -2px;}
-.ext_png{@include ico_ext;background-position:-63px -2px;}
-.ext_tif{@include ico_ext;background-position:-83px -2px;}
-.ext_pdf{@include ico_ext;background-position:-103px -2px;}
-.ext_ppt{@include ico_ext;background-position:-123px -2px;}
-.ext_ai {@include ico_ext;background-position:-143px -2px;}
-.ext_xls{@include ico_ext;background-position:-163px -2px;}
-.ext_psd{@include ico_ext;background-position:-183px -2px;}
-.ext_doc{@include ico_ext;background-position:-3px -22px;}
-.ext_hwp{@include ico_ext;background-position:-23px -22px;}
-.ext_txt{@include ico_ext;background-position:-43px -22px;}
-.ext_c  {@include ico_ext;background-position:-63px -22px;}
-.ext_cpp{@include ico_ext;background-position:-83px -22px;}
-.ext_jav{@include ico_ext;background-position:-103px -22px;}
-.ext_htm{@include ico_ext;background-position:-123px -22px;}
-.ext_css{@include ico_ext;background-position:-143px -22px;}
-.ext_js {@include ico_ext;background-position:-163px -22px;}
-.ext_log{@include ico_ext;background-position:-183px -22px;}
-.ext_m4a{@include ico_ext;background-position:-203px -22px;}
-.ext_swf{@include ico_ext;background-position:-223px -22px;}
-.ext_au {@include ico_ext;background-position:-3px -42px;}
-.ext_mid{@include ico_ext;background-position:-23px -42px;}
-.ext_mod{@include ico_ext;background-position:-43px -42px;}
-.ext_mp2{@include ico_ext;background-position:-63px -42px;}
-.ext_mp3{@include ico_ext;background-position:-83px -42px;}
-.ext_ogg{@include ico_ext;background-position:-103px -42px;}
-.ext_ra {@include ico_ext;background-position:-123px -42px;}
-.ext_rm {@include ico_ext;background-position:-143px -42px;}
-.ext_snd{@include ico_ext;background-position:-163px -42px;}
-.ext_voc{@include ico_ext;background-position:-183px -42px;}
-.ext_wav{@include ico_ext;background-position:-203px -42px;}
-.ext_wma{@include ico_ext;background-position:-223px -42px;}
-.ext_avi{@include ico_ext;background-position:-3px -62px;}
-.ext_mov{@include ico_ext;background-position:-23px -62px;}
-.ext_mpg{@include ico_ext;background-position:-43px -62px;}
-.ext_mv {@include ico_ext;background-position:-63px -62px;}
-.ext_asf{@include ico_ext;background-position:-83px -62px;}
-.ext_asx{@include ico_ext;background-position:-103px -62px;}
-.ext_qt {@include ico_ext;background-position:-123px -62px;}
-.ext_rv {@include ico_ext;background-position:-143px -62px;}
-.ext_wmx{@include ico_ext;background-position:-163px -62px;}
-.ext_mp4{@include ico_ext;background-position:-183px -62px;}
-.ext_fla{@include ico_ext;background-position:-203px -62px;}
-.ext_flv{@include ico_ext;background-position:-223px -62px;}
-.ext_alz{@include ico_ext;background-position:-3px -82px;}
-.ext_arj{@include ico_ext;background-position:-23px -82px;}
-.ext_bzz{@include ico_ext;background-position:-43px -82px;}
-.ext_egg{@include ico_ext;background-position:-63px -82px;}
-.ext_gz {@include ico_ext;background-position:-83px -82px;}
-.ext_jar{@include ico_ext;background-position:-103px -82px;}
-.ext_rar{@include ico_ext;background-position:-123px -82px;}
-.ext_tar{@include ico_ext;background-position:-143px -82px;}
-.ext_tgz{@include ico_ext;background-position:-163px -82px;}
-.ext_zip{@include ico_ext;background-position:-183px -82px;}
-.ext_7z {@include ico_ext;background-position:-203px -82px;}
-.ext_etc{@include ico_ext;background-position:-223px -82px;}
-.ext_html{@include ico_ext;background-position:-3px -102px;}
-.ext_wmv {@include ico_ext;background-position:-23px -102px;}
-.ext_wvz {@include ico_ext;background-position:-43px -102px;}
-.ext_bzs {@include ico_ext;background-position:-63px -102px;}
+@mixin ico_ext($x,$y) {display:inline-block;width:17px;height:17px;background:url(../images/ico_fileExt.png) #{$x} #{$y} no-repeat;margin:-4px 7px 0 0px;vertical-align:middle;font-size:0;overflow:hidden;text-indent:-9999px;}
+.ext_bmp{@include ico_ext(-3px, -2px);}
+.ext_jpg{@include ico_ext(-23px, -2px);}
+.ext_gif{@include ico_ext(-43px, -2px);}
+.ext_png{@include ico_ext(-63px, -2px);}
+.ext_tif{@include ico_ext(-83px, -2px);}
+.ext_pdf{@include ico_ext(-103px, -2px);}
+.ext_ppt{@include ico_ext(-123px, -2px);}
+.ext_ai {@include ico_ext(-143px, -2px);}
+.ext_xls{@include ico_ext(-163px, -2px);}
+.ext_psd{@include ico_ext(-183px, -2px);}
+.ext_doc{@include ico_ext(-3px, -22px);}
+.ext_hwp{@include ico_ext(-23px, -22px);}
+.ext_txt{@include ico_ext(-43px, -22px);}
+.ext_c  {@include ico_ext(-63px, -22px);}
+.ext_cpp{@include ico_ext(-83px, -22px);}
+.ext_jav{@include ico_ext(-103px, -22px);}
+.ext_htm{@include ico_ext(-123px, -22px);}
+.ext_css{@include ico_ext(-143px, -22px);}
+.ext_js {@include ico_ext(-163px, -22px);}
+.ext_log{@include ico_ext(-183px, -22px);}
+.ext_m4a{@include ico_ext(-203px, -22px);}
+.ext_swf{@include ico_ext(-223px, -22px);}
+.ext_au {@include ico_ext(-3px, -42px);}
+.ext_mid{@include ico_ext(-23px, -42px);}
+.ext_mod{@include ico_ext(-43px, -42px);}
+.ext_mp2{@include ico_ext(-63px, -42px);}
+.ext_mp3{@include ico_ext(-83px, -42px);}
+.ext_ogg{@include ico_ext(-103px, -42px);}
+.ext_ra {@include ico_ext(-123px, -42px);}
+.ext_rm {@include ico_ext(-143px, -42px);}
+.ext_snd{@include ico_ext(-163px, -42px);}
+.ext_voc{@include ico_ext(-183px, -42px);}
+.ext_wav{@include ico_ext(-203px, -42px);}
+.ext_wma{@include ico_ext(-223px, -42px);}
+.ext_avi{@include ico_ext(-3px, -62px);}
+.ext_mov{@include ico_ext(-23px, -62px);}
+.ext_mpg{@include ico_ext(-43px, -62px);}
+.ext_mv {@include ico_ext(-63px, -62px);}
+.ext_asf{@include ico_ext(-83px, -62px);}
+.ext_asx{@include ico_ext(-103px, -62px);}
+.ext_qt {@include ico_ext(-123px, -62px);}
+.ext_rv {@include ico_ext(-143px, -62px);}
+.ext_wmx{@include ico_ext(-163px, -62px);}
+.ext_mp4{@include ico_ext(-183px, -62px);}
+.ext_fla{@include ico_ext(-203px, -62px);}
+.ext_flv{@include ico_ext(-223px, -62px);}
+.ext_alz{@include ico_ext(-3px, -82px);}
+.ext_arj{@include ico_ext(-23px, -82px);}
+.ext_bzz{@include ico_ext(-43px, -82px);}
+.ext_egg{@include ico_ext(-63px, -82px);}
+.ext_gz {@include ico_ext(-83px, -82px);}
+.ext_jar{@include ico_ext(-103px, -82px);}
+.ext_rar{@include ico_ext(-123px, -82px);}
+.ext_tar{@include ico_ext(-143px, -82px);}
+.ext_tgz{@include ico_ext(-163px, -82px);}
+.ext_zip{@include ico_ext(-183px, -82px);}
+.ext_7z {@include ico_ext(-203px, -82px);}
+.ext_etc{@include ico_ext(-223px, -82px);}
+.ext_html{@include ico_ext(-3px,-102px);}
+.ext_wmv {@include ico_ext(-23px, -102px);}
+.ext_wvz {@include ico_ext(-43px, -102px);}
+.ext_bzs {@include ico_ext(-63px, -102px);}
