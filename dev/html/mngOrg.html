@@ -302,6 +302,10 @@
               </ul>
             </li>
           </ul>
+          <div class="etc_ogt">
+            <span>미분류 그룹</span>
+            <span>(90)</span>
+          </div>
         </div>
         <div class="section_bot btn_wrap">
           <button type="button" class="btn_add addOgt">추가</button>
@@ -314,10 +318,15 @@
       <section class="orgMember">
         <header class="section_tit">
           <h1>조직원</h1>
-          <div class="btn_wrap">
-            <button type="button" class="btn_default">리더선택</button>
-            <button type="button" class="btn_default">조직변경</button>
-          </div>
+            <ul class="legend_org">
+              <li><span class="ico_org use">사용중</span></li>
+              <li><span class="ico_org wait">가입대기</span></li>
+              <li><span class="ico_org suspension">정지</span></li>
+            </ul>
+            <div class="btn_wrap">
+              <button type="button" class="btn_default">리더선택</button>
+              <button type="button" class="btn_default">조직변경</button>
+            </div>
         </header>
         <div class="section_body">
           <div class="tbl_wrap">
@@ -352,8 +361,26 @@
                   <td>본부장</td>
                   <td>수석</td>
                   <td>010-1234-5678</td>
-                  <td>kitvaaley@kitvalley.com</td>
-                  <td></td>
+                  <td>kitvalley@kitvalley.com</td>
+                  <td><span class="ico_org use">사용중</span></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="row_check" title="글선택"></td>
+                  <td>반미선</td>
+                  <td>팀장</td>
+                  <td>책임</td>
+                  <td>010-1234-5678</td>
+                  <td>kitvalley@kitvalley.com</td>
+                  <td><span class="ico_org wait">가입대기</span></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="row_check" title="글선택"></td>
+                  <td>임선</td>
+                  <td>팀원</td>
+                  <td>연구원</td>
+                  <td>010-1234-5678</td>
+                  <td>kitvalley@kitvalley.com</td>
+                  <td><span class="ico_org suspension">정지</span></td>
                 </tr>
               </tbody>
             </table>

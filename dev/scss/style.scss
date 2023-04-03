@@ -9,6 +9,40 @@ $columnGap:25px;
   .t_red{margin-left:10px;}
 }
 
+// login
+.login_wrap{display:block;height:100%;background:url('../images/bg_login.png')top 80% center no-repeat;background-size:cover;
+  .login{position:fixed;left:50%;top:50%;width:520px;height:580px;margin:-310px 0 0 55px;padding:55px;background-color:rgba(255,255,255,.85);text-align:left;border-radius:10px;box-shadow:0 0 10px 0 rgba(3, 3, 3, 0.5);
+    h1{font-size:30px;font-weight:600;color:#000;letter-spacing:-2.25px;text-align:left;
+      .logo{display:block;width:114px;height:25px;margin-bottom:5px;background:url(../images/logo.png) 0 0 no-repeat;background-size:contain;font-size:0;}
+    }
+    span{font-family:'notokr';font-weight:300;color:#fff;letter-spacing:3px;font-size:18px;}
+    .login_tit{position:relative;text-align:center;border-radius:20px 20px 0 0;}
+    .login_body{display:inline-block;width:100%;
+      .login_input{position:relative;display:block;margin:60px auto 80px;}
+      .btn_login{display:block;width:100%;line-height:56px;cursor:pointer;border:none;border-radius:28px;background-color:#e42b29;font-size:20px;color:#fff;font-weight:bold;text-align:center;
+        &:hover{background-color:#cf2825;}
+      }
+      span{display:block;width:100%;margin-bottom:30px;border-radius:3px}
+      input{width:100%;line-height:45px;border:none;border-bottom:1px solid #d0d0d0;background-color:transparent;vertical-align:middle;font-size:14px;line-height:45px;color:#555;font-weight:bold;letter-spacing:-0.35px;
+        ::placeholder{font-size:14px;color:#979797;}
+        &:focus,&:active{border-bottom:1px solid #e42b29;outline:none;}
+      }
+      .login_link{display:flex;justify-content:flex-end;margin-top:10px;
+        li{position:relative;margin-right:7px;padding-right:7px;
+          &:last-of-type{
+            ::after{display:none;}
+          }
+          ::after{position:absolute;top:55%;right:0;display:inline-block;width:1px;height:10px;content:'';background-color:#696868;transform:translateY(-50%);}
+          a{font-size:13px;color:#696868;letter-spacing:-0.33px;
+            &:hover{color:#000;}
+          }
+        }
+      }
+    }
+    .copyright{position:absolute;left:50%;bottom:-55px;color:#fff;padding:20px 0;transform:translateX(-50%);white-space:pre;font-size:12px;font-weight:100;}
+  }
+}
+
 //footer
 .footer{display:flex;align-items:center;grid-row:3;grid-column:2;border-top:1px solid #e1e1e1;padding:0 $columnGap;
   .copy{font-size:14px;color:#818181;}
@@ -84,6 +118,10 @@ height:0;overflow:hidden;background-color:$black;
   .section_tit{@include flex_between;margin-bottom:10px;
     h1{font-weight: bold;color:#363636;font-size: 16px;letter-spacing: $tit_spacing;
       &::before{@include fontello("");margin-right:3px;}
+    .legend_org{display:flex;margin-right:5px;
+      span{font-size:12px;color:#000;margin-right:14px;
+        &::before{margin-right:5px;vertical-align:middle;}
+      }
     }
   }
   .section_bot{margin-top:10px;}

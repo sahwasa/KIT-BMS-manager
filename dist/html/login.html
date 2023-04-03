@@ -10,66 +10,32 @@
   <link rel="stylesheet" href="../css/merge.css">
 </head>
 <body>
-
-<div id="wrap" class="wrap">
-  <!-- 바로가기 메뉴 -->
-<div id="accessibility">
-  <a href="#contents">본문 바로가기</a>
-  <a href="#nav">주메뉴 바로가기</a>
-</div>
-<hr />
-<!--// 바로가기 메뉴 -->
-<header class="header">
-  <h1>
-    <a href="">
-      <span class="logo">KITVALLEY</span>
-      업무관리시스템 <b class="t_red">관리자</b>
-    </a>
-  </h1>    
-  <section class="gnb">
-    <!-- <ul class="gnb_lst">
-      <li><a href=""></a></li>
-    </ul> -->
-    <div class="util">
-      <div class="profile">
-        <button type="button" class="account">
-          <img src="../images/ic_user.png" width="32px" height="32px" alt="프로필사진">
-          <b>관리자님</b>
-        </button>
-        <div class="my_layer">
-          <ul class="my_svc">
-            <li><a href="#">내정보</a></li>
-            <li><a href="#">웹메일</a></li>
-            <li><a href="http://192.168.5.10/" target="_blank">웹클라우드</a></li>
-            <li><a href="#">로그아웃</a></li>
-          </ul>
-        </div>
-      </div>
+<div id="wrap" class="login_wrap">
+  <div class="login">
+    <div class="login_tit">
+      <h1><span class="logo">케이아이티밸리</span>업무관리 시스템</h1>
     </div>
-  </section>
-</header>
-  <nav id="nav" class="nav">
-  <h1 class="blind">관리자 페이지</h1>
-  <ul class="lnb">
-    <li><a href="/html/mngOrg.html">조직관리</a></li>
-    <li><a href="/html/mngEmp.html">사원관리</a></li>
-    <li><a href="/html/mngCode.html">공통코드관리</a></li>
-    <li><a href="/html/mngMenu.html">메뉴관리</a></li>
-    <li><a href="/html/mngForm.html">결재 양식관리</a></li>
-    <li><a href="/html/mngSetting.html">환경설정</a></li>
-    <li><a href="/html/mngNotice.html">게시판</a></li>
-  </ul>
-</nav>
-  <main id="contents">
-  로그인 입니다만
-
-  </main>
-  <footer class="footer">
-  <p class="copy">Copyright ⓒ2023 KITValley Co.,Ltd. All right reserved.</p>
-</footer>
+    <div class="login_body">
+      <div class="login_input">
+        <span>
+          <input type="text" id="id" name="user" placeholder="아이디" title="사용자 아이디" value="" />
+        </span>
+        <span>
+          <input type="password" id="pwd" name="password" placeholder="비밀번호" title="비밀번호" value="" />
+        </span>
+      </div>
+      <button type="submit" class="btn_red btn_login">로그인</button>
+      <ul class="login_link">
+        <li><a href="#">회원가입</a></li>
+        <li><a href="#">아이디 찾기</a></li>
+        <li><a href="#">비밀번호 찾기</a></li>
+      </ul>
+    </div>
+    <p class="copyright">Copyright ⓒ2023 KITValley Co.,Ltd. All right reserved.</p>
+  </div>
 </div>
 <script src="../plugins/jquery.min.js"></script>
 <script src="../plugins/jquery-ui.min.js"></script>
 <script src="../js/ui_cmmn.js"></script>
 </body>
-</html>;
+</html>
