@@ -98,7 +98,7 @@ $(function () {
     var addDiv = $('<div>')
     var addUl = $('<ul class="sortable move_sortable ui-sortable">')
     var addInput = $('<input type="text" placeholder="조직명을 입력하세요">')
-    var addpeople = $('<span>(0)</span>')
+    var addpeople = $('<span> (0)</span>')
     addLi.append(addSpan, addDiv, addUl)
     addDiv.append(addInput, addpeople)
     $('.tree').prepend(addLi)
