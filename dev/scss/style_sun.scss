@@ -1,25 +1,5 @@
-$ico_font:'fontello';
-/* 공통영역으로 가야합니다요 */
-.search_box button{width:27px;height:100%;
-  &::before{content:'\e802';color:$btn_red;font-size:15px;font-family:$ico_font;vertical-align:middle;}
-}
-.section_tit{  
-  h1{flex-grow:1;}
-  .legend_org{display:flex;margin-right:5px;
-    span{font-size:12px;color:#000;margin-right:14px;
-      &::before{margin-right:5px;vertical-align:middle;}
-    }
-  }
-}
+// mngOrg > tree
 .tbl_wrap .ico_org{font-size:0;}
-.ico_org{vertical-align:middle;
-  &::before{display:inline-block;font-size:17px;font-family:$ico_font;vertical-align:middle;}
-  &.use::before{content:'\e903';color:#00b5da;} 
-  &.wait::before{content:'\eb74';color:#f0a44f;}
-  &.suspension::before{content:'\eb6f';color:#ff6363;}
-}
-
-/* mngOrg > tree */
 .tree_wrap{
   .etc_ogt{padding:8px 5px;padding-left:15px;border:1px solid #dddddd;border-top:none;font-size:12px;font-weight:bold;color:#000;letter-spacing:-0.12px;}
   &>.sortable{width:290px;height:353px;padding:8px 0;border:1px solid #dddddd;overflow-x:hidden;overflow-y:auto;}

@@ -44,7 +44,6 @@ $tit_spacing:.45px;
 }
 
 // layout
-
 hr,
 .blind{@include blind}
 @mixin f_blind{
@@ -59,6 +58,15 @@ hr,
 }
 @mixin full{display:block;width:100%!important;min-width:auto;}
 .scroll{overflow-y:scroll;background-color:#f5f5f5;}
+
+// ico_fontello
+$ico_font:'fontello';
+.ico_org{vertical-align:middle;
+  &::before{display:inline-block;font-size:17px;font-family:$ico_font;vertical-align:middle;}
+  &.use::before{content:'\e903';color:#00b5da;} 
+  &.wait::before{content:'\eb74';color:#f0a44f;}
+  &.suspension::before{content:'\eb6f';color:#ff6363;}
+}
 
 //btn
 .btn_wrap{display:flex;gap:4px;}
@@ -98,7 +106,9 @@ $btn_gray:#979797;
   $b_color:#c5c5c5;
   @include flex_between;width:160px;height:27px;border:1px solid $b_color;border-radius:2px;overflow:hidden;
   input{width:calc(100% - 27px);height:100%;border:none;padding:0 8px;}
-  button{@include f_blind;border-left:1px solid $b_color;}
+  button{width:27px;height:100%;@include f_blind;border-left:1px solid $b_color;
+    &::before{content:'\e802';color:$btn_red;font-size:15px;font-family:$ico_font;vertical-align:middle;}
+  }
 }
 
 // table
