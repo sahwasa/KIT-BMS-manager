@@ -41,7 +41,7 @@
   }
   .arrow{
     &>div{margin-bottom:10px;}
-    &>span::before{position:relative;content:"\f147";display:inline-block;width:11px;line-height:11px;font-family:$ico_font;font-size:13px;color:$red;text-align:center;}
+    &>span::before{position:relative;@include fontello("\f147");width:11px;line-height:11px;font-size:13px;color:$red;text-align:center;}
   }
   .close{
     &>span:first-child::before{content:'\f196';}

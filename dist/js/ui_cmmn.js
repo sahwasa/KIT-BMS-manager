@@ -33,19 +33,19 @@ $(function () {
 
       $deps1.eq(deps1Locate).addClass('on');
       $deps1.eq(deps1Locate).find($deps2).eq(deps2Locate).addClass('on');
-			$loca1.eq(deps1Locate).addClass('on');
-			$loca2.eq(deps2Locate).addClass('on');
-			$loca1.each(function(index,item){
-				getAttr=$(this).children('a').attr('href');
-				index+=1;
-				indexDeps1=$(this).children('a').attr('href', getAttr + "?index="+ index +',1');
-			});
+			//$loca1.eq(deps1Locate).addClass('on');
+			//$loca2.eq(deps2Locate).addClass('on');
+			// $loca1.each(function(index,item){
+			// 	getAttr=$(this).children('a').attr('href');
+			// 	index+=1;
+			// 	indexDeps1=$(this).children('a').attr('href', getAttr + "?index="+ index +',1');
+			// });
 			var locaDeps1 = deps1Locate + 1;
-			$loca2.each(function(index,item){
-				getAttr=$(this).children('a').attr('href');
-				index+=1;
-				$loca2=$(this).children('a').attr('href', getAttr + "?index="+locaDeps1 +',' + index);
-			});
+			// $loca2.each(function(index,item){
+			// 	getAttr=$(this).children('a').attr('href');
+			// 	index+=1;
+			// 	$loca2=$(this).children('a').attr('href', getAttr + "?index="+locaDeps1 +',' + index);
+			// });
 		}
  
 
@@ -112,6 +112,23 @@ $(function () {
       }
     }
   });
+
+   //tab
+  $(".tab li").first().addClass("on");
+  $(".tab_contents").not(":first").hide();
+  $(".tab li").on("click", function (e) {
+    e.preventDefault();
+    $(this).addClass("on").siblings().removeClass("on");
+    var link = $(this).find("a").attr("href");
+    var link_num = link.substr(link.length - 1);
+    $(".m_tab option")
+      .eq(link_num - 1)
+      .prop("selected", "selected");
+    $(".tab_contents").hide();
+    $(link).show();
+  });
+  
+
 
   // sortable
   function sortable() {

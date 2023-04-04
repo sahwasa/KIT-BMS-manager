@@ -86,9 +86,7 @@ height:0;overflow:hidden;background-color:$black;
 
 //nav
 .nav{grid-row:2/span 3;grid-column:1/1;background:$black;
-  a{color:$white;}
-  li{
-    border-bottom: 1px solid #575656;
+  li{height:45px;border-bottom:1px solid #575656;
     a{@include flex_between;height:100%;color:#909090;padding:0 15px 0  24px;
     }
     &.on a,&:hover a{background:$red;color:$white;}
@@ -116,19 +114,17 @@ height:0;overflow:hidden;background-color:$black;
 }
 .cont_body{
   .section_tit{@include flex_between;margin-bottom:10px;
-    h1{font-weight: bold;color:#363636;font-size: 16px;letter-spacing: $tit_spacing;
-      &::before{@include fontello("");margin-right:3px;}
     h1{flex-grow:1;font-weight: bold;color:#363636;font-size: 16px;letter-spacing: $tit_spacing;
       &::before{display:inline-block;font-family:fontello;margin-right:3px;}
     }
-    .legend_org{display:flex;margin-right:5px;
-      span{font-size:12px;color:#000;margin-right:14px;
-        &::before{margin-right:5px;vertical-align:middle;}
-      }
+  }
+  .legend_org{display:flex;margin-right:5px;
+    span{font-size:12px;color:#000;margin-right:14px;
+      &::before{margin-right:5px;vertical-align:middle;}
     }
   }
-  .section_bot{margin-top:10px;}
 }
+.section_bot{margin-top:10px;}
 
 //main
 .main.contents > header{@include blind;}

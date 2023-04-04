@@ -12,7 +12,7 @@ button {background:none;border:0;cursor:pointer;}
 a {text-decoration:none}
 table {border-collapse:collapse;border-spacing:0}
 caption{@include blind;}
-ul,ol,li{box-sizing:border-box;list-style:none;}
+ul,ol,li{box-sizing:border-box;list-style:none;margin:0;}
 
 /* accessibility */
 #accessibility{position:absolute;width:100%;z-index:999;
@@ -72,15 +72,6 @@ hr,
 @mixin full{display:block;width:100%!important;min-width:auto;}
 .scroll{overflow-y:scroll;background-color:#f5f5f5;}
 
-
-// ico_fontello
-$ico_font:'fontello';
-.ico_org{vertical-align:middle;
-  &::before{display:inline-block;font-size:17px;font-family:$ico_font;vertical-align:middle;}
-  &.use::before{content:'\e903';color:#00b5da;} 
-  &.wait::before{content:'\eb74';color:#f0a44f;}
-  &.suspension::before{content:'\eb6f';color:#ff6363;}
-
 //icon
 @mixin shape($w_size,$h_size){
   display:inline-block;content:"";@include f_blind;overflow:hidden;
@@ -88,6 +79,14 @@ $ico_font:'fontello';
 }
 @mixin fontello($ic){
   display:inline-block;font-family:"fontello";font-weight:normal;content:$ic;
+}
+
+// ico_fontello
+.ico_org{vertical-align:middle;
+  &::before{font-size:17px;vertical-align:middle;}
+  &.use::before{@include fontello('\e903');color:#00b5da;} 
+  &.wait::before{@include fontello('\eb74');color:#f0a44f;}
+  &.suspension::before{@include fontello('\eb6f');color:#ff6363;}
 }
 
 //btn
@@ -107,7 +106,7 @@ $ico_font:'fontello';
 }
 
 @mixin btn{
-  line-height:26px;border:1px solid #aaa;border-radius:2px;padding:0 12px;
+  line-height:26px;border:1px solid #aaa;border-radius:2px;padding:0 10px;
   &:hover{color:#fff;}
 }
 $btn_red:#f05050;
@@ -123,29 +122,34 @@ $btn_gray:#979797;
 .btn_del{@include btn;color:$btn_gray;border-color:$btn_gray;
   &:hover{background-color:$btn_gray;}
 }
-
 // search
 .search_box{
   $b_color:#c5c5c5;
   @include flex_between;width:160px;height:27px;border:1px solid $b_color;border-radius:2px;overflow:hidden;
   input{width:calc(100% - 27px);height:100%;border:none;padding:0 8px;}
   button{width:27px;height:100%;@include f_blind;border-left:1px solid $b_color;
-    &::before{content:'\e802';color:$btn_red;font-size:15px;font-family:$ico_font;vertical-align:middle;}
+    &::before{@include fontello('\e802');color:$btn_red;font-size:15px;vertical-align:middle;}
   }
+  &.long{width:276px;}
 }
 
 // table
-.tbl_header{@include flex_between;border-top:2px solid #c0c0c0;
+$th_border_color:#c0c0c0;
+$td_border_color:#ebebeb;
+.tbl_header{@include flex_between;border-top:2px solid $th_border_color;
   .tbl_caption{display:flex;align-items:center;line-height:37px;
     .row_check{margin:0 16px 0 24px;}
     h2{color:$red;font-weight:bold;font-size:14px;}
   }
   .count{color:#424242;font-size:12px;margin-left:12px;}
 }
-.tbl_default{width:100%;border-top:1px solid #ebebeb;text-align:center;
+.tbl_default{width:100%;text-align:center;border-top:2px solid $th_border_color;
+  &.no_thead{border-top:1px solid $th_border_color;
+    thead{@include blind;}
+  }
   th,td{padding:7px 5px;letter-spacing:-.333px;text-align:center;word-break:keep-all;}
-  th{color:#111;font-weight:bold;}
-  td{border-bottom:1px solid #ebebeb;color:#333;}
+  th{border-bottom:1px solid $th_border_color;color:#111;font-weight:bold;}
+  td{border-bottom:1px solid $td_border_color;color:#333;}
 }
 .tbl_use_select td:first-child{width:60px;}
 .tbl_hover tbody tr:hover{background-color:#f9fafc;}
@@ -153,6 +157,18 @@ $btn_gray:#979797;
   tbody tr.select_tr{background-color:lighten($red, 45%);}
   td:first-child{width:60px;}
 }
+
+// tab
+.tab{
+  $border-color:#eaedf1;
+  display:flex;gap:6px;border-bottom:1px solid $border-color;
+  li{min-width:110px;}
+  a{position:relative;top:1px;z-index:1;display:inline-block;width:100%;border:1px solid $border-color;border-radius:5px 5px 0 0;text-align:center;color:#666;padding:6px 0;letter-spacing:-.33px;background-color:#f9fafc;
+  }
+  .on a{color:$red;background-color:$white;font-weight:bold;border-color:#bec7d2;border-bottom-color:transparent;}
+}
+.tab_contents{margin-top:20px;}
+
 /* paginate */
 .paginate{margin-top:32px;text-align:center;
   span{vertical-align:top;}
