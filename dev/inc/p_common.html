@@ -1,0 +1,25 @@
+
+<dialog id="myDialog" aria-labelledby="wyn_title" aria-describedby="wyn_desc">
+  <!--대화상자를 만듭니다. 대화상자에 스크린리더가 접근하면, 대화상자 타이틀과 메시지를 안내하도록 aria-labelledby와 describedby를 활용해 줍니다.-->
+  <form method="dialog"> <!--form의 새로운 method, dialog값은 대화상자 내에서 form이 전송되었을 때에 대한 동작을 얘기합니다.-->
+    <div class="header">
+      <strong id="wyn_title" class="tit">부서삭제</strong>
+      <button id="btnClose" aria-label="close" value="cancel">X</button>
+    </div> <!--제목 표시줄과 닫기 버튼입니다.-->
+    <div class="body">
+      <p id="wyn_desc">SI사업본부 조직 및 하부조직을 삭제하시겠습니까?</p> <!--대화상자 내부에 표시될 질문 내용입니다.-->
+      <div>
+        <label for="typeName">
+          My name is
+          <input type="text" name="typeName" id="typeName" autofocus>.
+          <!-- 이름을 입력할 텍스트 입력란을 넣어줍니다. 대화상자가 나타나면 바로 입력할 수 있도록, autofocus를 걸어줍니다. -->
+        </label>
+      </div>
+    </div>
+    <div class="bottom">
+      <button id="negative" name="negative" type="submit">취소</button>
+      <!-- 부정버튼과 긍정버튼을 만듭니다. value값은 해당 버튼이 눌려 대화상자가 닫혔을 때 반환되는 값입니다.-->
+      <button class="btn_del" name="postive" type="submit" id="postive">확인</button>
+    </div>
+  </form>
+</dialog>

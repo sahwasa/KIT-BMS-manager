@@ -372,6 +372,7 @@
           <button type="button" class="btn_modify editOgt">수정</button>
           <button type="button" class="btn_modify doneEditOgt">저장</button>
           <button type="button" class="btn_del delOgt">삭제</button>
+          <button id="btnOpen" aria-haspopup="dialog">팝업 테스트 중</button>
         </div>
       </section>
       <section class="orgMember">
@@ -452,6 +453,22 @@
   <p class="copy">Copyright ⓒ2023 KITValley Co.,Ltd. All right reserved.</p>
 </footer>
 </div>
+<dialog id="myDialog" aria-labelledby="wyn_title" aria-describedby="wyn_desc">
+  <form method="dialog">
+    <div class="p_header">
+      <strong id="wyn_title" class="p_tit">부서삭제</strong>
+      <button id="btnClose" class="ico_org cancel" aria-label="close">닫기</button>
+    </div>
+    <div class="p_body">
+      <img src="../images/ic_warning.png" alt="경고 이미지">
+      <div id="wyn_desc"><p>SI사업본부</p> 조직 및 하부조직을 삭제하시겠습니까?</div>
+    </div>
+    <div class="btn_wrap">
+      <button id="negative" class="btn_cancel">취소</button>
+      <button class="btn_del" type="button" id="postive">확인</button>
+    </div>
+  </form>
+</dialog>
 <script src="../plugins/jquery.min.js"></script>
 <script src="../plugins/jquery-ui.min.js"></script>
 <script src="../js/ui_cmmn.js"></script>

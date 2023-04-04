@@ -96,6 +96,7 @@ $btn_gray:#979797;
 .btn_add{@include btn;color:$btn_red;border-color:$btn_red;
   &:hover{background-color:$btn_red;}
 }
+.btn_cancel,
 .btn_modify,
 .btn_del{@include btn;color:$btn_gray;border-color:$btn_gray;
   &:hover{background-color:$btn_gray;}
