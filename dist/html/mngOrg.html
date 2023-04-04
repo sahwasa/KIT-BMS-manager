@@ -14,8 +14,8 @@
 <div id="wrap" class="wrap">
   <!-- 바로가기 메뉴 -->
 <div id="accessibility">
-  <a href="#content">본문 바로가기</a>
-  <a href="#lnb">주메뉴 바로가기</a>
+  <a href="#contents">본문 바로가기</a>
+  <a href="#nav">주메뉴 바로가기</a>
 </div>
 <hr />
 <!--// 바로가기 메뉴 -->
@@ -23,7 +23,7 @@
   <h1>
     <a href="">
       <span class="logo">KITVALLEY</span>
-      업무관리시스템 <span class="t_red">관리자</span>
+      업무관리시스템 <b class="t_red">관리자</b>
     </a>
   </h1>    
   <section class="gnb">
@@ -31,37 +31,36 @@
       <li><a href=""></a></li>
     </ul> -->
     <div class="util">
-      <span class="profile">
-        <a href="">관리자님</a>
-      </span>
-      <div class="my_layer">
-        <ul class="my_svc">
-          <li><a href="#">내정보</a></li>
-          <li><a href="#">웹메일</a></li>
-          <li><a href="http://192.168.5.10/" target="_blank">웹클라우드</a></li>
-          <li><a href="#">로그아웃</a></li>
-        </ul>
+      <div class="profile">
+        <button type="button" class="account">
+          <img src="../images/ic_user.png" width="32px" height="32px" alt="프로필사진">
+          <b>관리자님</b>
+        </button>
+        <div class="my_layer">
+          <ul class="my_svc">
+            <li><a href="#">내정보</a></li>
+            <li><a href="#">웹메일</a></li>
+            <li><a href="http://192.168.5.10/" target="_blank">웹클라우드</a></li>
+            <li><a href="#">로그아웃</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 </header>
-  <nav class="nav">
-  <h1>관리자 페이지</h1>
-  <ul>
-    <li><a href="">조직관리</a></li>
-    <li><a href="">사원관리</a></li>
-    <li><a href="">공통코드관리</a></li>
-    <li><a href="">메뉴관리</a></li>
-    <li><a href="">결재 양식관리</a></li>
-    <li><a href="">환경설정</a></li>
-    <li><a href="">게시판</a>
-      <ul class="sub">
-        <li><a href="#">서브메뉴</a></li>
-      </ul>
-    </li>
+  <nav id="nav" class="nav">
+  <h1 class="blind">관리자 페이지</h1>
+  <ul class="lnb">
+    <li><a href="/html/mngOrg.html">조직관리</a></li>
+    <li><a href="/html/mngEmp.html">사원관리</a></li>
+    <li><a href="/html/mngCode.html">공통코드관리</a></li>
+    <li><a href="/html/mngMenu.html">메뉴관리</a></li>
+    <li><a href="/html/mngForm.html">결재 양식관리</a></li>
+    <li><a href="/html/mngSetting.html">환경설정</a></li>
+    <li><a href="/html/mngNotice.html">게시판</a></li>
   </ul>
 </nav>
-  <main class="contents" role="main">
+  <main id="contents" class="contents" role="main">
     <header class="cont_tit">
       <h1>조직관리</h1>
       <section class="bredcrumb">
@@ -401,9 +400,9 @@
                 <button type="button">검색</button>
               </div>
             </div>
-            <table class="tbl_default tbl_use_select">
+            <table class="tbl_default tbl_use_select no_thead">
               <caption>조직원</caption>
-              <thead class="blind">
+              <thead>
                 <tr>
                   <th scope="col">글선택</th>
                   <th scope="col">이름</th>
