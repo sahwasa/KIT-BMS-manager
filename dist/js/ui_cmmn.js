@@ -1,4 +1,85 @@
 $(function () {
+  // nav
+	var $deps1=$('.lnb>li'),
+    	$deps2=$('.sub li'),
+			//$locate=$('.locate_list>li'),
+			//$loca1=$('.loca1 > li'),
+			//$loca2=$('.loca2 > li'),
+    	preLocate,deps1Locate,deps2Locate,
+    	indexDeps1,getDeps,indexDeps2,
+    	locate=window.location.href;
+
+	menuInit();
+	function menuInit(){
+		$deps1.each(function(index, item){
+			var getAttr=$(this).children('a').attr('href');
+			index+=1;
+			indexDeps1=$(this).children('a').attr('href', getAttr + "?index="+ index +',1');
+			indexDeps2=$(this).find($deps2);
+
+			getDeps=$(this).children('a').attr('href');
+			indexDeps2.each(function(index2, item){
+	      getAttr=$(this).children('a').attr('href');
+	      index2+=1;
+	      indexDeps2=$(this).children('a').attr('href', getAttr + "?index="+index+',' + index2);
+			});
+	  });
+  };
+  
+		if(locate.indexOf("index=")>-1){
+			preLocate=locate.split("index=")[1].split(',');
+			deps1Locate=preLocate[0]-1;
+			deps2Locate=preLocate[1]-1;
+
+      $deps1.eq(deps1Locate).addClass('on');
+      $deps1.eq(deps1Locate).find($deps2).eq(deps2Locate).addClass('on');
+			$loca1.eq(deps1Locate).addClass('on');
+			$loca2.eq(deps2Locate).addClass('on');
+			$loca1.each(function(index,item){
+				getAttr=$(this).children('a').attr('href');
+				index+=1;
+				indexDeps1=$(this).children('a').attr('href', getAttr + "?index="+ index +',1');
+			});
+			var locaDeps1 = deps1Locate + 1;
+			$loca2.each(function(index,item){
+				getAttr=$(this).children('a').attr('href');
+				index+=1;
+				$loca2=$(this).children('a').attr('href', getAttr + "?index="+locaDeps1 +',' + index);
+			});
+		}
+ 
+
+  function menu1Open(onItem){
+    onItem = onItem.parent('li');
+		if(!(onItem.hasClass('on'))){
+			if(onItem.children('ul').length === 0){
+				$deps1.removeClass('on');
+				onItem.addClass('on');
+			}
+		}
+  }
+  function menu2Open(onSubItem){
+		$deps1.removeClass('on');
+		$deps2.removeClass('on');
+		onSubItem.addClass('on').parents('li').addClass('on');
+  }
+
+  $deps1.children('a').on('click',function(){menu1Open($(this))});
+  $deps2.on('click',function(){menu2Open($(this))});
+
+	// $locate.on('click', function(e){
+	// 	e.stopPropagation();
+	// 	$(this).toggleClass('on');
+	// 	$(this).children('.sub_loca').slideToggle();
+	// });
+
+  //gnb
+  $('.profile').on({
+    'click' : function(){$(this).addClass('on');},
+    'focusin' : function(){$(this).addClass('on');},
+    'focusout' : function(){$(this).removeClass('on');},
+  })
+
   // toggle button
   $(".btn_tgl").on("click", function (e) {
     e.preventDefault();
@@ -10,14 +91,15 @@ $(function () {
       $(this).attr("datavalue", "on");
     }
   });
-  //표 줄선택
+
+  // table_row checked
   $('.row_check').on({
     click : function(e){e.stopPropagation()},
     change : function(){
       var cur = $(this).prop('checked'),
           checkName = 'select_tr';
       if($(this).hasClass('all_check')){
-        var childCheck = $(this).parents('table').children('tbody').find('.row_check');
+        var childCheck = $(this).parents('.tbl_wrap').find('tbody').find('.row_check');
         childCheck.each(function(){
           var elRow = $(this).parents('tr');
           $(this).prop('checked', cur);
