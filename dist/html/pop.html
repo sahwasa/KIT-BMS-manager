@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=0.5, maximum-scale=5">
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  <title>KIT 업무관리시스템_관리자</title>
+  <link rel="stylesheet" href="../font/fontello/css/fontello.css">
+  <link rel="stylesheet" href="../css/merge.css">
+</head>
+<body>
+
+<div id="wrap" class="wrap">
+  <!-- 바로가기 메뉴 -->
+<div id="accessibility">
+  <a href="#content">본문 바로가기</a>
+  <a href="#lnb">주메뉴 바로가기</a>
+</div>
+<hr />
+<!--// 바로가기 메뉴 -->
+<header class="header">
+  <h1>
+    <a href="">
+      <span class="logo">KITVALLEY</span>
+      업무관리시스템 <span class="t_red">관리자</span>
+    </a>
+  </h1>    
+  <section class="gnb">
+    <!-- <ul class="gnb_lst">
+      <li><a href=""></a></li>
+    </ul> -->
+    <div class="util">
+      <span class="profile">
+        <a href="">관리자님</a>
+      </span>
+      <div class="my_layer">
+        <ul class="my_svc">
+          <li><a href="#">내정보</a></li>
+          <li><a href="#">웹메일</a></li>
+          <li><a href="http://192.168.5.10/" target="_blank">웹클라우드</a></li>
+          <li><a href="#">로그아웃</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</header>
+  <nav class="nav">
+  <h1>관리자 페이지</h1>
+  <ul>
+    <li><a href="">조직관리</a></li>
+    <li><a href="">사원관리</a></li>
+    <li><a href="">공통코드관리</a></li>
+    <li><a href="">메뉴관리</a></li>
+    <li><a href="">결재 양식관리</a></li>
+    <li><a href="">환경설정</a></li>
+    <li><a href="">게시판</a>
+      <ul class="sub">
+        <li><a href="#">서브메뉴</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  <main class="contents main">
+    <header>
+      <h1>팝업 모음</h1>
+    </header>
+    <div class="cont_body">
+      <ul>
+        <li><button id="btnOpen" aria-haspopup="dialog">부서삭제</button>
+          <li><button id="btnOpen" aria-haspopup="dialog">그룹코드 입력</button>
+        </li>
+      </ul>
+    </div>
+  </main>
+  <dialog class="mngDel" aria-labelledby="wyn_title" aria-describedby="wyn_desc">
+  <form method="dialog">
+    <div class="p_header">
+      <strong class="p_tit">부서삭제</strong>
+      <button class="btnClose ico_org cancel" aria-label="close">닫기</button>
+    </div>
+    <div class="p_body">
+      <div class="warning_wrap"><img src="../images/ic_warning.png" alt="경고 이미지"></div>
+      <div><span class="del_org">SI사업본부</span> 조직 및 하부조직을 삭제하시겠습니까?</div>
+      <div class="btn_wrap">
+        <button class="postive btn_del" type="button">확인</button>
+        <button class="negative btn_cancel">취소</button>
+      </div>
+    </div>
+  </form>
+</dialog>
+  <footer class="footer">
+  <p class="copy">Copyright ⓒ2023 KITValley Co.,Ltd. All right reserved.</p>
+</footer>
+</div>
+<script src="../plugins/jquery.min.js"></script>
+<script src="../plugins/jquery-ui.min.js"></script>
+<script src="../js/ui_cmmn.js"></script>
+</body>
+</html>

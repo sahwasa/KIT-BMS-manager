@@ -453,19 +453,19 @@
   <p class="copy">Copyright ⓒ2023 KITValley Co.,Ltd. All right reserved.</p>
 </footer>
 </div>
-<dialog id="myDialog" aria-labelledby="wyn_title" aria-describedby="wyn_desc">
+<dialog class="mngDel" aria-labelledby="wyn_title" aria-describedby="wyn_desc">
   <form method="dialog">
     <div class="p_header">
-      <strong id="wyn_title" class="p_tit">부서삭제</strong>
-      <button id="btnClose" class="ico_org cancel" aria-label="close">닫기</button>
+      <strong class="p_tit">부서삭제</strong>
+      <button class="btnClose ico_org cancel" aria-label="close">닫기</button>
     </div>
     <div class="p_body">
-      <img src="../images/ic_warning.png" alt="경고 이미지">
-      <div id="wyn_desc"><p>SI사업본부</p> 조직 및 하부조직을 삭제하시겠습니까?</div>
-    </div>
-    <div class="btn_wrap">
-      <button id="negative" class="btn_cancel">취소</button>
-      <button class="btn_del" type="button" id="postive">확인</button>
+      <div class="warning_wrap"><img src="../images/ic_warning.png" alt="경고 이미지"></div>
+      <div><span class="del_org">SI사업본부</span> 조직 및 하부조직을 삭제하시겠습니까?</div>
+      <div class="btn_wrap">
+        <button class="postive btn_del" type="button">확인</button>
+        <button class="negative btn_cancel">취소</button>
+      </div>
     </div>
   </form>
 </dialog>
