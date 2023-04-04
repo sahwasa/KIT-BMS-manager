@@ -43,7 +43,7 @@ const cleanPaths = [
 // task start
 function inc(){
   return merge(
-    src(path.html,{ since: lastRun(inc) })
+    src(path.html)
     .pipe(gulpInc({
       prefix : '@@',
       basepath : '@file'
@@ -118,7 +118,7 @@ function clean(cd){
 */
 
 module.exports = {
-  default:series(clean, inc, parallel(js,scss,imgMin), parallel(watchs, setBs)),
+  default:series(clean, parallel(inc,js,scss,imgMin), parallel(watchs, setBs)),
   watch:parallel(watchs, setBs),
   build:series(clean, parallel(inc,js,scss,imgMin)),
   clean : clean,
