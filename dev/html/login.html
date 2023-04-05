@@ -2,27 +2,28 @@
 <div id="wrap" class="login_wrap">
   <div class="login">
     <div class="login_tit">
-      <h1><span class="logo">케이아이티밸리</span>업무관리 시스템</h1>
+      <h1><span class="logo">케이아이티밸리</span>업무관리 시스템 (관리자)</h1>
     </div>
     <div class="login_body">
       <div class="login_input">
         <span>
-          <input type="text" id="id" name="user" placeholder="아이디" title="사용자 아이디" value="" />
+          <input type="text" name="user" placeholder="아이디" title="사용자 아이디" value="" />
         </span>
         <span>
-          <input type="password" id="pwd" name="password" placeholder="비밀번호" title="비밀번호" value="" />
+          <input type="password" name="password" placeholder="비밀번호" title="비밀번호" value="" />
+        </span>
+        <span>
+          <input type="number" name="certification" placeholder="인증번호" title="인증번호" value="" />
         </span>
       </div>
-      <button type="submit" class="btn_red btn_login">로그인</button>
-      <ul class="login_link">
-        <li><a href="#">회원가입</a></li>
-        <li><a href="#">아이디 찾기</a></li>
-        <li><a href="#">비밀번호 찾기</a></li>
-      </ul>
+      <div class="btn_manlogin_wrap">
+        <button type="button" class="btn_login">인증번호 요청</button>
+        <button type="submit" class="btn_login">로그인</button>
+      </div>
     </div>
     <p class="copyright">Copyright ⓒ2023 KITValley Co.,Ltd. All right reserved.</p>
   </div>
- 
+
   @@include('../inc/footer.html')
 </div>
 @@include('../inc/script.html')
