@@ -1,0 +1,167 @@
+<dialog class="mngEmp2">
+  <form method="dialog">
+    <div class="p_header">
+      <strong class="p_tit">사원정보 관리</strong>
+      <button class="btnClose ico_org cancel" aria-label="close">닫기</button>
+    </div>
+    <div class="p_body">
+      <div class="p_body_tit">
+        <h1>사원정보 수정하기</h1>
+        <p class="required validity">표시는 필수 입력 항목입니다.</p>
+      </div>
+      <table class="tbl_row">
+        <caption>결재 양식관리</caption>
+        <colgroup>
+          <col style="width:128px">
+          <col style="width:190px">
+          <col style="width:128px">
+          <col style="width:190px">
+        </colgroup>
+        <tbody>
+          <tr>
+            <th><label for="emp_id" class="required">아이디(ID)</label></th>
+            <td colspan="3">dandy@kitvalley.com</td>
+          </tr>
+          <tr>
+            <th><label for="emp_num">사번</label></th>
+            <td colspan="3">
+              <span class="file_input">
+                <input type="text" id="emp_num" value="0088">
+                <button type="button" class="btn_ogt">중복확인</button>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="emp_password">암호</label></th>
+            <td><input type="password" id="emp_password" value="12345678"></td>
+            <th><label for="emp_password_check">암호확인</label></th>
+            <td><input type="password" id="emp_password_check" value="12345678"></td>
+          </tr>
+          <tr>
+            <th><label for="emp_name_kr" class="required">한글이름</label></th>
+            <td><input type="text" id="emp_name_kr" value="멋쟁이"></td>
+            <th><label for="emp_name_en">영문이름</label></th>
+            <td><input type="text" id="emp_name_en" value="meosjaeng-e"></td>
+          </tr>
+          <tr>
+            <th><label for="emp_rank" class="required">직위</label></th>
+            <td>
+              <select name="rank" id="emp_rank">
+                <option value="선택">선택</option>
+                <option value="연구원" selected>연구원</option>
+                <option value="선임">선임</option>
+                <option value="책임">책임</option>
+                <option value="수석보">수석보</option>
+                <option value="수석">수석</option>
+              </select>
+            </td>
+            <th><label for="emp_department" class="required">부서명</label></th>
+            <td>
+              <select name="department" id="emp_department">
+                <option value="선택">선택</option>
+                <option value="SI사업본부" selected>SI사업본부</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="emp_group" class="required">권한그룹</label></th>
+            <td colspan="3">
+              <ul>
+                <li>
+                  <input type="checkbox" id="work" checked>
+                  <label for="work">업무관리(work)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="groupware" checked>
+                  <label for="groupware">그룹웨어(groupware)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="human">
+                  <label for="human">ERP(human)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="manage">
+                  <label for="manage">프로젝트(manage)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="manage2">
+                  <label for="manage2">관리자(manage)</label>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="emp_ssn" class="required">주민등록번호</label></th>
+            <td colspan="3">123456-7891011</td>
+          </tr>
+          <tr>
+            <th><label for="emp_entering" class="required">입사일자</label></th>
+            <td>2021-03-08</td>
+            <th><label for="nri_num">국가연구자번호</label></th>
+            <td><input type="number" value="12345678" id="nri_num"></td>
+          </tr>
+          <tr>
+            <th><label for="emp_num">전화번호</label></th>
+            <td><input type="number" value="0212345678" id="emp_num"></td>
+            <th><label for="emp_phone" class="required">휴대전화</label></th>
+            <td><input type="number" value="01012345678" id="emp_phone"></td>
+          </tr>
+          <tr>
+            <th><label for="address">우편번호</label></th>
+            <td colspan="3">
+              <span class="file_input">
+                <input type="text" id="address">
+                <button type="button" class="btn_ogt">우편번호</button>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="address2">주소</label></th>
+            <td colspan="3">
+              <input type="text" value="서울 금천구 가산동" id="address2">
+            </td>
+          </tr>
+          <tr>
+            <th><label for="emp_photo">사진</label></th>
+            <td colspan="3">
+              <div class="file_input">
+                <input type="text" title="파일명" disabled="" placeholder=".gif, .jpg, .png 확장자 이미지만 첨부가능합니다.">
+                <input type="file" id="emp_photo_edit" class="upFile" accept=".gif, .jpg, .png">
+                <label for="emp_photo_edit" class="btn_ogt">파일선택</label>
+                <p class="t_skyblue">(등록된 사진이 없습니다)</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="emp_sign">결재용 사인</label></th>
+            <td colspan="3">
+              <div class="file_input">
+                <div style="flex:auto;">
+                  <div class="file_input">
+                    <input type="text" title="파일명" disabled="" placeholder=".gif, .jpg, .png 확장자 이미지만 첨부가능합니다.">
+                    <input type="file" id="emp_sign_edit" class="upFile" accept=".gif, .jpg, .png">
+                    <label for="emp_sign_edit" class="btn_ogt">파일선택</label>
+                  </div>
+                  <span>
+                    <input type="checkbox" id="emp_sign_view">
+                    <label for="emp_sign_view">sign_hdong.png</label>
+                    <span class="validity required">삭제시에만 체크해주세요</span>
+                  </span>
+                </div>
+                <img src="http://placehold.it/95x41" alt="결재용 사인 이미지">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th>최종 갱신일자</th>
+            <td colspan="3">2023-04-08 15:00:00</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="btn_wrap">
+        <button class="btn_default" type="button">저장</button>
+        <button class="btn_cancel">취소</button>
+      </div>
+    </div>
+  </form>
+</dialog>

@@ -2,19 +2,58 @@
 <div id="wrap" class="wrap">
   @@include('../inc/header.html')
   @@include('../inc/nav.html')
-  <main class="contents main">
+  <main id="content" class="contents main">
     <header>
       <h1>팝업 모음</h1>
     </header>
     <div class="cont_body">
+      <span style="display:inline-block;background-image: linear-gradient(90deg, red, orange, yellow, green, blue, navy, purple);
+      -webkit-background-clip:text;color:transparent;margin-bottom:20px;font-size:20px;font-weight:bold;">esc 누르시면 팝업이 닫힙니다요</span>
       <ul>
-        <li><button id="btnOpen" aria-haspopup="dialog">부서삭제</button>
-          <li><button id="btnOpen" aria-haspopup="dialog">그룹코드 입력</button>
+        <li><button class="btn_default btnMngDel">조직관리 > 부서삭제</button>
+        <li><button class="btn_default btnMngSearch">조직관리 > 부서검색</button>
+        <li><button class="btn_default btnMngEmp">사원관리 > 사원정보 관리</button>
+        <li><button class="btn_default btnMngEmp2">사원관리 > 사원정보 수정</button>
+        <li><button class="btn_default btnMngCode">공통코드관리 > 그룹코드 입력</button>
+        <li><button class="btn_default btnMngCode2">공통코드관리 > 권한그룹 상세코드 입력</button>
+        <li><button class="btn_default btnMngForm">결재양식관리(작업중)</button>
         </li>
       </ul>
     </div>
   </main>
-  @@include('../inc/p_mngOrg.html')
   @@include('../inc/footer.html')
 </div>
+@@include('../inc/pop/p_mngOrg.html') <!-- 부서삭제 -->
+@@include('../inc/pop/p_mngOrg2.html') <!-- 부서삭제 -->
+@@include('../inc/pop/p_mngEmp.html') <!-- 사원정보관리 -->
+@@include('../inc/pop/p_mngEmp2.html') <!-- 사원정보수정 -->
+@@include('../inc/pop/p_mngCode.html') <!-- 그룹코드 입력 -->
+@@include('../inc/pop/p_mngCode2.html') <!-- 권한그룹 상세코드 입력 -->
+@@include('../inc/pop/p_mngForm(잠시 보류).html') <!-- 결재 양식관리(작업중) -->
+<script>
+  document.querySelector('.btnMngDel').addEventListener('click', function () {
+    document.querySelector('.mngDel').showModal();
+  }) // 부서삭제
+  document.querySelector('.btnMngSearch').addEventListener('click', function () {
+    document.querySelector('.mngSearch').showModal();
+  }) // 부서검색
+  document.querySelector('.btnMngEmp').addEventListener('click', function () {
+    document.querySelector('.mngEmp').showModal();
+  }) // 부서삭제
+  document.querySelector('.btnMngEmp2').addEventListener('click', function () {
+    document.querySelector('.mngEmp2').showModal();
+  }) // 부서검색
+  document.querySelector('.btnMngCode').addEventListener('click', function () {
+    document.querySelector('.mngCode').showModal();
+  }) // 그룹코드 입력
+  document.querySelector('.btnMngCode2').addEventListener('click', function () {
+    document.querySelector('.mngCode2').showModal();
+  }) // 권한그룹 상세코드 입력
+  document.querySelector('.btnMngForm').addEventListener('click', function () {
+    document.querySelector('.mngForm').showModal();
+  }) // 결재 양식관리
+  document.querySelector('.btnClose').addEventListener('click', function () {
+    document.querySelector('dialog').close();
+  })
+</script>
 @@include('../inc/script.html')

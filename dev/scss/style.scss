@@ -104,12 +104,13 @@ height:0;overflow:hidden;background-color:$black;
 }
 .bredcrumb{
   ul{@include flex_between;}
-  li{letter-spacing:.65px;color:#888;
-    &:first-child a{@include f_blind;
-      &::before{@include fontello("");}
+  li{letter-spacing:.65px;color:#888;font-weight:normal;
+    &:first-child{
+      &::before{@include fontello('\e81f');color:#888;margin:0;}
+      a{@include f_blind;}
     }
-    &::before{content:"";}
-    a{color:#000;}
+    &:last-child{font-weight:bold;color:#000;}
+    &::before{@include fontello('\f105');margin:0 5px;color:#888;font-weight:normal;}
   }
 }
 .cont_body{
