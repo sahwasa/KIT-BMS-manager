@@ -11,7 +11,7 @@ $columnGap:25px;
 
 // login
 .login_wrap{display:block;height:100%;background:url('../images/bg_login.png')top 80% center no-repeat;background-size:cover;
-  .login{position:fixed;left:50%;top:50%;width:520px;height:580px;margin:-310px 0 0 55px;padding:55px;background-color:rgba(255,255,255,.85);text-align:left;border-radius:10px;box-shadow:0 0 10px 0 rgba(3, 3, 3, 0.5);
+  .login{position:absolute;left:50%;top:50%;width:520px;height:580px;margin:-310px 0 0 55px;padding:55px;background-color:rgba(255,255,255,.85);text-align:left;border-radius:10px;box-shadow:0 0 10px 0 rgba(3, 3, 3, 0.5);
     h1{font-size:30px;font-weight:600;color:#000;letter-spacing:-2.25px;text-align:left;
       .logo{display:block;width:114px;height:25px;margin-bottom:5px;background:url(../images/logo.png) 0 0 no-repeat;background-size:contain;font-size:0;}
     }
