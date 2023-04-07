@@ -263,7 +263,7 @@ $(function () {
     }
   })
   $('.doneAddOgt, .doneEditOgt').on('click', $.editOgtName)
-
+  
   // add file
   $('.upFile').on('change', function () {
     $(this).prev().val(this.value.replace(/c:\\fakepath\\/i, ''))

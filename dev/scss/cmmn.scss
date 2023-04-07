@@ -76,7 +76,7 @@ input[type="color"],
 input[type="number"],
 input[type="password"]{@include ipt_common;min-height:28px;}
 input[type="radio"],
-input[type="checkbox"]{-webkit-appearance:none;-moz-appearance:none; -o-appearance: none;appearance:none;outline:none;box-shadow: none;
+input[type="checkbox"]{-webkit-appearance:none;-moz-appearance:none; -o-appearance: none;appearance:none;outline:none;box-shadow:none;vertical-align:middle;
 width:13px!important;height:13px!important;border:1px solid #606060;
 overflow:hidden;
   &:checked{-webkit-appearance:none; -moz-appearance:none;-o-appearance:none;appearance:none; box-shadow:none;border:none;
@@ -91,6 +91,7 @@ input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;margin: 0;}
 input[type="number"]{-moz-appearance:textfield;}
 textarea{min-height:200px;max-height:300px;resize:none;}
+
 
 // layout
 hr,
@@ -160,7 +161,7 @@ $btn_gray:#979797;
 .btn_del{@include btn;color:$btn_gray;border-color:$btn_gray;
   &:hover{background-color:$btn_gray;}
 }
-.btn_ogt{@include btn;color:#111;border-color:#aaa;background-color:#ebebeb;
+.btn_ogt{@include btn;color:#111;border-color:#aaa;background-color:#ebebeb;cursor:pointer;
   &:hover{background-color:$btn_gray;}
 }
 

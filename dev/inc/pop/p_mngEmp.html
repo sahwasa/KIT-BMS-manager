@@ -122,7 +122,7 @@
             <th><label for="address">우편번호</label></th>
             <td colspan="3">
               <span class="file_input">
-                <input type="text" style="width:40%;" id="address">
+                <input type="text" id="address">
                 <button type="button" class="btn_ogt">우편번호</button>
               </span>
             </td>
@@ -134,11 +134,11 @@
           <tr>
             <th><label for="emp_photo">사진</label></th>
             <td colspan="3">
-              <div class="file_input">
-                <input type="text" title="파일명" disabled="" placeholder=".gif, .jpg, .png 확장자 이미지만 첨부가능합니다.">
-                <input type="file" id="emp_photo" class="upFile" accept=".gif, .jpg, .png">
-                <label for="emp_photo" class="btn_ogt">파일선택</label>
-              </div>
+              <span class="file_input">
+                
+                <input type="file" class="multi" maxlength="1" id="file_test" accept=".gif, .jpg, .png">
+                <label type="button" for="file_test" class="btn_ogt">테스트</label>
+              </span>
             </td>
           </tr>
           <tr>

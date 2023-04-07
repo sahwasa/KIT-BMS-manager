@@ -1,0 +1,6 @@
+#file_test{flex:auto;}
+#file_test+label{align-self: flex-start;}
+.MultiFile-remove{position:relative;display:inline-block;width:12px;height:12px;font-size:0;margin-left:5px;
+  &+span{float:left;}
+  &::before{@include fontello('\eba6');position:absolute;top:-4px;font-size:14px;color:$red;} 
+}
