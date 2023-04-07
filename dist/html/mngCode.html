@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=0.5, maximum-scale=5">
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  <title>KIT 업무관리시스템_관리자</title>
+  <link rel="stylesheet" href="../font/fontello/css/fontello.css">
+  <link rel="stylesheet" href="../css/merge.css">
+</head>
+<body>
+
+<div id="wrap" class="wrap">
+  <!-- 바로가기 메뉴 -->
+<div id="accessibility">
+  <a href="#contents">본문 바로가기</a>
+  <a href="#nav">주메뉴 바로가기</a>
+</div>
+<hr />
+<!--// 바로가기 메뉴 -->
+<header class="header">
+  <h1>
+    <a href="">
+      <span class="logo">KITVALLEY</span>
+      업무관리시스템 <b class="t_red">관리자</b>
+    </a>
+  </h1>    
+  <section class="gnb">
+    <!-- <ul class="gnb_lst">
+      <li><a href=""></a></li>
+    </ul> -->
+    <div class="util">
+      <div class="profile">
+        <button type="button" class="account">
+          <img src="../images/ic_user.png" width="32px" height="32px" alt="프로필사진">
+          <b>관리자님</b>
+        </button>
+        <div class="my_layer">
+          <ul class="my_svc">
+            <li><a href="#">내정보</a></li>
+            <li><a href="#">웹메일</a></li>
+            <li><a href="http://192.168.5.10/" target="_blank">웹클라우드</a></li>
+            <li><a href="#">로그아웃</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+  <nav id="nav" class="nav">
+  <h1 class="blind">관리자 페이지</h1>
+  <ul class="lnb">
+    <li><a href="/html/mngOrg.html">조직관리</a></li>
+    <li><a href="/html/mngEmp.html">사원관리</a></li>
+    <li><a href="/html/mngCode.html">공통코드관리</a></li>
+    <li><a href="/html/mngMenu.html">메뉴관리</a></li>
+    <li><a href="/html/mngForm.html">결재 양식관리</a></li>
+    <li><a href="/html/mngSetting.html">환경설정</a></li>
+    <li><a href="/html/mngNotice.html">게시판</a></li>
+    <li><a href="/html/pop.html">팝업(퍼블리싱 확인용)</a></li>
+  </ul>
+</nav>
+  <main id="contents" class="contents" role="main">
+    <header class="cont_tit">
+      <h1>공통코드관리</h1>
+      <section class="bredcrumb">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>공통코드관리</li>
+        </ul>
+      </section>
+    </header>
+    <div class="cont_body mngCode">
+      <section>
+        <header class="section_tit">
+          <h1>그룹코드</h1>
+          <div class="btn_wrap">
+            <button type="button" class="btn_add">추가</button>
+            <button type="button" class="btn_modify">수정</button>
+            <button type="button" class="btn_modify">삭제</button>
+          </div>
+        </header>
+        <div class="section_body">
+          <div class="tbl_wrap">
+            <table class="tbl_default">
+              <caption>그룹코드 테이블</caption>
+              <colgroup>
+                <col style="width:60px;">
+                <col style="width:100px;">
+                <col style="width:200px;">
+                <col style="width:200px;">
+                <col style="width:100px;">
+                <col style="width:17px;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">선택</th>
+                  <th scope="col">그룹코드</th>
+                  <th scope="col">코드명</th>
+                  <th scope="col">설명</th>
+                  <th scope="col">사용여부</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+            </table>
+            <div class="tbl_scroll" style="height:640px;">
+              <table class="tbl_default tbl_use_select no_thead">
+                <colgroup>
+                <col style="width:60px;">
+                <col style="width:100px;">
+                <col style="width:200px;">
+                <col style="width:200px;">
+                <col style="width:100px;">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl" datavalue="on"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl" datavalue="on"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl" datavalue="on"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl" datavalue="on"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl" datavalue="on"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="groupCodeArrow">
+        <img src="../images/ic_arrow.png" alt="화살표 이미지">
+      </section>
+      <section>
+        <header class="section_tit">
+          <h1>권한그룹 상세코드</h1>
+          <div class="btn_wrap">
+            <button type="button" class="btn_add">추가</button>
+            <button type="button" class="btn_modify">수정</button>
+            <button type="button" class="btn_modify">삭제</button>
+          </div>
+        </header>
+        <div class="section_body">
+          <div class="tbl_wrap">
+            <table class="tbl_default">
+              <caption>상세코드 테이블</caption>
+              <colgroup>
+                <col style="width:60px;">
+                <col style="width:100px;">
+                <col style="width:150px;">
+                <col style="width:200px;">
+                <col style="width:100px;">
+                <col style="width:100px;">
+                <col style="width:17px;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">선택</th>
+                  <th scope="col">그룹코드</th>
+                  <th scope="col">코드명</th>
+                  <th scope="col">설명</th>
+                  <th scope="col">순서</th>
+                  <th scope="col">사용여부</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+            </table>
+            <div class="tbl_scroll" style="height:640px;">
+              <table class="tbl_default tbl_use_select no_thead">
+                <colgroup>
+                <col style="width:60px;">
+                <col style="width:100px;">
+                <col style="width:150px;">
+                <col style="width:200px;">
+                <col style="width:100px;">
+                <col style="width:100px;">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl" datavalue="on"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl" datavalue="on"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl" datavalue="on"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl" datavalue="on"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl" datavalue="on"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">
+                      <input type="checkbox" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl"></span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+  <p class="copy">Copyright ⓒ2023 KITValley Co.,Ltd. All right reserved.</p>
+</footer>
+</div>
+<script src="../plugins/jquery.min.js"></script>
+<script src="../plugins/jquery-ui.min.js"></script>
+<script src="../js/ui_cmmn.js"></script>
+</body>
+</html>
