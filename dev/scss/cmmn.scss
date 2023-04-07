@@ -64,13 +64,17 @@ $tit_spacing:.45px;
 }
 
 //ipt custom
+@mixin ipt_common{
+  width:100%;padding:3px;border:1px solid #c5c5c5;border-radius:2px;vertical-align:middle;background:#fff;
+}
 select,
+textarea,
 input[type="text"],
 input[type="date"],
 input[type="file"],
 input[type="color"],
 input[type="number"],
-input[type="password"]{width:100%;min-height:28px;padding:3px;border:1px solid #c5c5c5;border-radius:2px;vertical-align:middle;background:#fff;}
+input[type="password"]{@include ipt_common;min-height:28px;}
 input[type="radio"],
 input[type="checkbox"]{-webkit-appearance:none;-moz-appearance:none; -o-appearance: none;appearance:none;outline:none;box-shadow: none;
 width:13px!important;height:13px!important;border:1px solid #606060;
@@ -86,6 +90,7 @@ input[type="date"]::-webkit-calendar-picker-indicator{width:21px;height:22px;bac
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;margin: 0;}
 input[type="number"]{-moz-appearance:textfield;}
+textarea{min-height:200px;max-height:300px;resize:none;}
 
 // layout
 hr,
@@ -119,6 +124,7 @@ hr,
   &.wait::before{@include fontello('\eb74');color:#f0a44f;}
   &.suspension::before{@include fontello('\eb6f');color:#ff6363;}
 }
+.tbl_wrap .ico_org{font-size:0;}
 
 //btn
 .btn_wrap{display:flex;gap:4px;}
@@ -145,6 +151,7 @@ $btn_gray:#979797;
 .btn_default{@include btn;
   &:hover{background-color:$btn_gray;}
 }
+.btn_save,
 .btn_add{@include btn;color:$btn_red;border-color:$btn_red;
   &:hover{background-color:$btn_red;}
 }
@@ -171,6 +178,7 @@ $btn_gray:#979797;
 // table
 $th_border_color:#c0c0c0;
 $td_border_color:#ebebeb;
+td{white-space:nowrap;text-overflow:ellipsis;}
 .tbl_header{@include flex_between;border-top:2px solid $th_border_color;
   .tbl_caption{display:flex;align-items:center;line-height:37px;
     .row_check{margin:0 16px 0 24px;}
@@ -212,8 +220,15 @@ $td_border_color:#ebebeb;
   tr:last-child td{border-bottom-color:$td_border_color;}
   & + .gis_wrap{margin-top:6px;}
 }
-
-td{white-space:nowrap;text-overflow:ellipsis;}
+.tbl_scroll{overflow-y:scroll;background-color:#fafafa;border-bottom:1px solid #ebebeb;
+  table{
+    &.no_thead{border-top:none;}
+    &.tbl_default{background-color:#ffffff;}
+  }
+  &::-webkit-scrollbar{width:17px;background: transparent;}
+  &::-webkit-scrollbar-thumb{background-color:#e5e6e8;border-radius:10px;background-clip:padding-box;border:4px solid transparent;}
+  &::-webkit-scrollbar-track {background:#fff;}
+}
 
 // tab
 .tab{
@@ -230,7 +245,7 @@ td{white-space:nowrap;text-overflow:ellipsis;}
 .paginate{margin-top:32px;text-align:center;
   span{vertical-align:top;}
   a, .on{display:inline-block;position:relative;_width /**/:14px;min-width:30px;padding:5px 5px 5px 4px;color:#333;font-size:15px;line-height:normal;box-sizing:border-box;font-weight:normal;margin:0 2px 0 1px;font-family:"Malgun Gothic","맑은고딕","AppleSDGothic","Nanum Barun Gothic","NanumGothic","AppleGothic","Dotum","Arial",sans-serif;}
-  a:hover, .on{border-radius: 2px;color:#fff;background-color:#32beb4;}
+  a:hover, .on{border-radius: 2px;color:#fff;background-color:$red;}
   .pre,
   .next,
   .first,
@@ -241,6 +256,63 @@ td{white-space:nowrap;text-overflow:ellipsis;}
 [required]::before,
 .required::before{content:"* ";color:$red;font-size:13px;font-weight:600;}
 .validity{font-size:12px;color:#7a7a7a;letter-spacing:-0.3px;line-height:17px;}
+
+/* tree(부서 검색 등 공통 영역이 존재하여 따로 분리) */
+.tree_wrap{
+  .etc_ogt{padding:8px 5px;padding-left:15px;border:1px solid #dddddd;border-top:none;font-size:12px;font-weight:bold;color:#000;letter-spacing:-0.12px;}
+  &>.sortable{width:290px;height:353px;padding:8px 0;border:1px solid #dddddd;overflow-x:hidden;overflow-y:auto;}
+  .sortable{
+    &::-webkit-scrollbar{width:17px;}
+    &::-webkit-scrollbar-thumb{background-color:#e5e6e8;border-radius:10px;background-clip:padding-box;border:5px solid transparent;}
+  }
+  ul{margin:0;}
+  .tree{
+    input{display:inline-block;width:calc(100% - 50px);border:1px solid #d3d3d3;line-height:27px;font-size:12px;
+      &:disabled{border:none;background-color:transparent;color:#000;}
+    }
+    &>li::before,
+    &>li::after{display:none;}
+    &>li{
+      &>div{font-weight:bold;}
+      &::before,
+      &::after {border:0;}
+      &.parent_li>span {cursor:pointer}
+    }
+    li{position:relative;list-style-type:none;margin:0;position:relative;padding-left:8px;
+      &::before, &::after {content:'';position:absolute;left:8px;top:10px;right:auto;}
+      &::before{border-left:1px dotted #dddddd;height:calc(100% - 1px);top:-10px;width:1px}
+      &::after {border-top:1px dotted #dddddd;width:10px;height:20px;}
+      &:last-child::before{height:20px}
+      &>span{font-size:0;position:absolute;z-index:1;top:5px;left:15px;}
+    }
+    .arrow>div{margin-left:15px;}
+    div{display:inline-block;width:100%;height:20px;line-height:20px;margin-left:7px;margin-bottom:0;padding-left:5px;border:none;background-color:transparent;cursor:pointer;font-size:14px;
+      &>span{font-size:12px;letter-spacing:-0.12px;
+        :last-child{margin-left:-3px;}
+        ::before{margin-bottom:10px;}
+      }
+    }
+    .sortable{min-height:10px;padding-left:0;
+      &>li{min-height:15px;box-sizing:border-box;cursor:pointer;padding-left:10px;}
+    }
+    .sortable_style{border:1px dashed rgb(156, 160, 165) !important;width:inherited;}
+  }
+  .arrow{
+    &>div{margin-bottom:10px;}
+    &>span::before{position:relative;@include fontello("\f147");width:11px;line-height:11px;font-size:13px;color:$red;text-align:center;}
+  }
+  .close{
+    &>span:first-child::before{content:'\f196';}
+    &>ul{display:none;}
+  }
+  div:hover,
+  div.hover{background-color:#f9fafc; }
+  div:hover span,
+  div.hover span{color:$red;font-weight:bold;}
+}
+.tree_wrap + .btn_wrap{
+  .doneAddOgt,.doneEditOgt{display:none;}
+}
 
 /* ico_fileName Extention */
 @mixin ico_ext($x,$y) {display:inline-block;width:17px;height:17px;background:url(../images/ico_fileExt.png) #{$x} #{$y} no-repeat;margin:-4px 7px 0 0px;vertical-align:middle;font-size:0;overflow:hidden;text-indent:-9999px;}

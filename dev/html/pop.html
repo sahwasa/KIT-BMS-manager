@@ -8,7 +8,8 @@
     </header>
     <div class="cont_body">
       <span style="display:inline-block;background-image: linear-gradient(90deg, red, orange, yellow, green, blue, navy, purple);
-      -webkit-background-clip:text;color:transparent;margin-bottom:20px;font-size:20px;font-weight:bold;">esc 누르시면 팝업이 닫힙니다요</span>
+      -webkit-background-clip:text;color:transparent;margin-bottom:20px;font-size:20px;font-weight:bold;">esc 누르시면 팝업이
+        닫힙니다요</span>
       <ul>
         <li><button class="btn_default btnMngDel">조직관리 > 부서삭제</button>
         <li><button class="btn_default btnMngSearch">조직관리 > 부서검색</button>
@@ -16,9 +17,29 @@
         <li><button class="btn_default btnMngEmp2">사원관리 > 사원정보 수정</button>
         <li><button class="btn_default btnMngCode">공통코드관리 > 그룹코드 입력</button>
         <li><button class="btn_default btnMngCode2">공통코드관리 > 권한그룹 상세코드 입력</button>
+        <li><button class="btn_default btnMngMenu">메뉴관리 > 수정 및 추가</button>
         <li><button class="btn_default btnMngForm">결재양식관리(작업중)</button>
         </li>
       </ul>
+    </div>
+    
+    <div class="paginate">
+      <a href="#" class="first" title="처음">〈〈</a>
+      <a href="#" class="pre" title="이전">〈</a>
+      <span>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#" class="on">6</a>
+        <a href="#">7</a>
+        <a href="#">8</a>
+        <a href="#">9</a>
+        <a href="#">10</a>
+      </span>
+      <a href="#" class="next" title="다음">〉</a>
+      <a href="#" class="last" title="마지막">〉〉</a>
     </div>
   </main>
   @@include('../inc/footer.html')
@@ -29,28 +50,32 @@
 @@include('../inc/pop/p_mngEmp2.html') <!--// 사원정보수정 -->
 @@include('../inc/pop/p_mngCode.html') <!--// 그룹코드 입력 -->
 @@include('../inc/pop/p_mngCode2.html') <!--// 권한그룹 상세코드 입력 -->
+@@include('../inc/pop/p_mngMenu.html') <!--// 메뉴 수정 및 추가 -->
 @@include('../inc/pop/p_mngForm(잠시 보류).html') <!-- 결재 양식관리(작업중) -->
 <script>
   document.querySelector('.btnMngDel').addEventListener('click', function () {
-    document.querySelector('.mngDel').showModal();
+    document.querySelector('.p_mngDel').showModal();
   }) // 부서삭제
   document.querySelector('.btnMngSearch').addEventListener('click', function () {
-    document.querySelector('.mngSearch').showModal();
+    document.querySelector('.p_mngSearch').showModal();
   }) // 부서검색
   document.querySelector('.btnMngEmp').addEventListener('click', function () {
-    document.querySelector('.mngEmp').showModal();
+    document.querySelector('.p_mngEmp').showModal();
   }) // 부서삭제
   document.querySelector('.btnMngEmp2').addEventListener('click', function () {
-    document.querySelector('.mngEmp2').showModal();
+    document.querySelector('.p_mngEmp2').showModal();
   }) // 부서검색
   document.querySelector('.btnMngCode').addEventListener('click', function () {
-    document.querySelector('.mngCode').showModal();
+    document.querySelector('.p_mngCode').showModal();
   }) // 그룹코드 입력
   document.querySelector('.btnMngCode2').addEventListener('click', function () {
-    document.querySelector('.mngCode2').showModal();
+    document.querySelector('.p_mngCode2').showModal();
   }) // 권한그룹 상세코드 입력
+  document.querySelector('.btnMngMenu').addEventListener('click', function () {
+    document.querySelector('.p_mngMenu').showModal();
+  }) // 메뉴관리 추가 및 수정
   document.querySelector('.btnMngForm').addEventListener('click', function () {
-    document.querySelector('.mngForm').showModal();
+    document.querySelector('.p_mngForm').showModal();
   }) // 결재 양식관리
   document.querySelector('.btnClose').addEventListener('click', function () {
     document.querySelector('dialog').close();

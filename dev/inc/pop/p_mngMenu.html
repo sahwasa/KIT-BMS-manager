@@ -1,0 +1,74 @@
+<dialog class="p_mngMenu">
+  <form method="dialog">
+    <div class="p_header">
+      <strong class="p_tit">메뉴 수정 및 추가</strong>
+      <button class="btnClose ico_org cancel" aria-label="close">닫기</button>
+    </div>
+    <div class="p_body">
+      <table class="tbl_list">
+        <caption>그룹 코드 입력</caption>
+        <colgroup>
+          <col style="width:110px">
+          <col style="width:241px">
+        </colgroup>
+        <tbody>
+          <tr>
+            <th><label for="menu_name">메뉴명</label></th>
+            <td>
+              <input type="text" id="menu_name" value="품의/지출관리">
+            </td>
+          </tr>
+          <tr>
+            <th><label for="menu_path">메뉴경로</label></th>
+            <td>
+              <input type="text" id="menu_path" value="/work/000.do">
+            </td>
+          </tr>
+          <tr>
+            <th><label for="menu_level">레벨</label></th>
+            <td>
+              <input type="text" id="menu_level" value="2">
+            </td>
+          </tr>
+          <tr>
+            <th><label for="menu_group">관리 권한 그룹</label></th>
+            <td>
+              <ul>
+                <li>
+                  <input type="checkbox" id="work" checked>
+                  <label for="work">업무관리(work)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="groupware">
+                  <label for="groupware">그룹웨어(groupware)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="human">
+                  <label for="human">ERP(human)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="manage">
+                  <label for="manage">프로젝트(manage)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="manage2">
+                  <label for="manage2">관리자(manage)</label>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="usage">사용여부</label></th>
+            <td>
+              <span class="btn_tgl" datavalue="on"></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="btn_wrap">
+        <button class="postive btn_add" type="button">추가</button>
+        <button class="negative btn_cancel">닫기</button>
+      </div>
+    </div>
+  </form>
+</dialog>

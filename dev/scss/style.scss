@@ -158,6 +158,7 @@ height:0;overflow:hidden;background-color:$black;
     h1{flex-grow:1;font-weight: bold;color:#363636;font-size: 16px;letter-spacing: $tit_spacing;
       &::before{display:inline-block;font-family:fontello;margin-right:3px;}
     }
+    &.tit_none{justify-content:flex-end;}
   }
   .legend_org{display:flex;margin-right:5px;
     span{font-size:12px;color:#000;margin-right:14px;
@@ -171,13 +172,17 @@ height:0;overflow:hidden;background-color:$black;
 .main.contents > header{@include blind;}
 
 // mngOrg
-.mngOrg{
-  display:grid;grid-template-columns:290px 1fr;grid-column-gap:$columnGap;
-  // .orgChart{}
-  // .orgMember{}
-}
+.mngOrg{display:grid;grid-template-columns:290px 1fr;grid-column-gap:$columnGap;}
 //mngEmp
 .profile_photo{position:relative;display:inline-block;width:45px;height:60px;overflow:hidden;border-radius:5px;background-color:#ebebeb;
   img{position:relative;}
   &::before{position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);@include fontello("\ea3e");color:#b4b4b4;font-size:28px;}
+}
+// mngCode
+.mngCode{
+  display:grid;grid-template-columns:1fr 50px 1.2fr;grid-column-gap:25px;
+  .section_tit{
+    h1::before{@include fontello('\ec32');color:$black;margin-right:5px;}
+  }
+  .groupCodeArrow{align-self:center;justify-self:center;}
 }

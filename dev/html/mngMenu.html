@@ -1,0 +1,112 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')
+  @@include('../inc/nav.html')
+  <main id="contents" class="contents" role="main">
+    <header class="cont_tit">
+      <h1>메뉴관리</h1>
+      <section class="bredcrumb">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>메뉴관리</li>
+        </ul>
+      </section>
+    </header>
+    <div class="cont_body mngMenu">
+      <section>
+        <header class="section_tit tit_none">
+          <div class="btn_wrap">
+            <button type="button" class="btn_add">추가</button>
+            <button type="button" class="btn_modify">수정</button>
+            <button type="button" class="btn_modify">삭제</button>
+          </div>
+        </header>
+        <div class="tbl_wrap">
+          <table class="tbl_default tbl_use_select tbl_hover">
+            <caption>메뉴 관리 테이블</caption>
+            <thead>
+              <tr>
+                <th scope="col">선택</th>
+                <th scope="col">메뉴명</th>
+                <th scope="col">메뉴경로</th>
+                <th scope="col">레벨</th>
+                <th scope="col">관리 권한그룹</th>
+                <th scope="col">사용여부</th>
+                <th scope="col">관리</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" class="row_check" title="글선택"></td>
+                <td>임직원 업무관리</td>
+                <td></td>
+                <td>1</td>
+                <td></td>
+                <td>Y</td>
+                <td>
+                  <button type="button" class="tbl_del">삭제</button>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="row_check" title="글선택"></td>
+                <td>품의/지출관리</td>
+                <td>/work/000.do</td>
+                <td>2</td>
+                <td>업무관리(work)</td>
+                <td>Y</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="row_check" title="글선택"></td>
+                <td>그룹웨어</td>
+                <td></td>
+                <td>1</td>
+                <td></td>
+                <td>Y</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="row_check" title="글선택"></td>
+                <td>통합검색/알림</td>
+                <td>/gw/mon.do</td>
+                <td>2</td>
+                <td>그룹웨어(groupware)</td>
+                <td>Y</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="row_check" title="글선택"></td>
+                <td>전자결재</td>
+                <td></td>
+                <td>2</td>
+                <td>그룹웨어(groupware)</td>
+                <td>Y</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="row_check" title="글선택"></td>
+                <td>결재 진행</td>
+                <td></td>
+                <td>3</td>
+                <td>그룹웨어(groupware)</td>
+                <td>Y</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="row_check" title="글선택"></td>
+                <td>인사관리</td>
+                <td></td>
+                <td></td>
+                <td>ERP(human)</td>
+                <td>Y</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+  @@include('../inc/footer.html')
+</div>
+@@include('../inc/script.html')

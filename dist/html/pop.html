@@ -58,6 +58,7 @@
     <li><a href="/html/mngForm.html">결재 양식관리</a></li>
     <li><a href="/html/mngSetting.html">환경설정</a></li>
     <li><a href="/html/mngNotice.html">게시판</a></li>
+    <li><a href="/html/pop.html">팝업(퍼블리싱 확인용)</a></li>
   </ul>
 </nav>
   <main id="content" class="contents main">
@@ -66,7 +67,8 @@
     </header>
     <div class="cont_body">
       <span style="display:inline-block;background-image: linear-gradient(90deg, red, orange, yellow, green, blue, navy, purple);
-      -webkit-background-clip:text;color:transparent;margin-bottom:20px;font-size:20px;font-weight:bold;">esc 누르시면 팝업이 닫힙니다요</span>
+      -webkit-background-clip:text;color:transparent;margin-bottom:20px;font-size:20px;font-weight:bold;">esc 누르시면 팝업이
+        닫힙니다요</span>
       <ul>
         <li><button class="btn_default btnMngDel">조직관리 > 부서삭제</button>
         <li><button class="btn_default btnMngSearch">조직관리 > 부서검색</button>
@@ -74,16 +76,36 @@
         <li><button class="btn_default btnMngEmp2">사원관리 > 사원정보 수정</button>
         <li><button class="btn_default btnMngCode">공통코드관리 > 그룹코드 입력</button>
         <li><button class="btn_default btnMngCode2">공통코드관리 > 권한그룹 상세코드 입력</button>
+        <li><button class="btn_default btnMngMenu">메뉴관리 > 수정 및 추가</button>
         <li><button class="btn_default btnMngForm">결재양식관리(작업중)</button>
         </li>
       </ul>
+    </div>
+    
+    <div class="paginate">
+      <a href="#" class="first" title="처음">〈〈</a>
+      <a href="#" class="pre" title="이전">〈</a>
+      <span>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#" class="on">6</a>
+        <a href="#">7</a>
+        <a href="#">8</a>
+        <a href="#">9</a>
+        <a href="#">10</a>
+      </span>
+      <a href="#" class="next" title="다음">〉</a>
+      <a href="#" class="last" title="마지막">〉〉</a>
     </div>
   </main>
   <footer class="footer">
   <p class="copy">Copyright ⓒ2023 KITValley Co.,Ltd. All right reserved.</p>
 </footer>
 </div>
-<dialog class="mngDel">
+<dialog class="p_mngDel">
   <form method="dialog">
     <div class="p_header">
       <strong class="p_tit">부서삭제</strong>
@@ -93,13 +115,13 @@
       <div class="warning_wrap"><img src="../images/ic_warning.png" alt="경고 이미지"></div>
       <div><span class="del_org">SI사업본부</span> 조직 및 하부조직을 삭제하시겠습니까?</div>
       <div class="btn_wrap">
-        <button class="postive btn_del" type="button">확인</button>
-        <button class="negative btn_cancel">취소</button>
+        <button class="btn_save" type="button">확인</button>
+        <button class="btn_cancel">취소</button>
       </div>
     </div>
   </form>
 </dialog> <!--// 부서삭제 -->
-<dialog class="mngSearch">
+<dialog class="p_mngSearch">
   <form method="dialog">
     <div class="p_header">
       <strong class="p_tit">부서검색</strong>
@@ -393,13 +415,13 @@
         </ul>
       </div>
       <div class="btn_wrap">
-        <button class="btn_default" type="button">저장</button>
+        <button class="btn_save" type="button">저장</button>
         <button class="btn_cancel">취소</button>
       </div>
     </div>
   </form>
 </dialog> <!--// 부서검색 -->
-<dialog class="mngEmp">
+<dialog class="p_mngEmp">
   <form method="dialog">
     <div class="p_header">
       <strong class="p_tit">사원정보 관리</strong>
@@ -555,13 +577,13 @@
         </tbody>
       </table>
       <div class="btn_wrap">
-        <button class="btn_default" type="button">저장</button>
+        <button class="btn_save" type="button">저장</button>
         <button class="btn_cancel">취소</button>
       </div>
     </div>
   </form>
 </dialog> <!-- //사원정보관리 -->
-<dialog class="mngEmp2">
+<dialog class="p_mngEmp2">
   <form method="dialog">
     <div class="p_header">
       <strong class="p_tit">사원정보 관리</strong>
@@ -722,13 +744,13 @@
         </tbody>
       </table>
       <div class="btn_wrap">
-        <button class="btn_default" type="button">저장</button>
+        <button class="btn_save" type="button">저장</button>
         <button class="btn_cancel">취소</button>
       </div>
     </div>
   </form>
 </dialog> <!--// 사원정보수정 -->
-<dialog class="mngCode">
+<dialog class="p_mngCode">
   <form method="dialog">
     <div class="p_header">
       <strong class="p_tit">그룹코드 입력</strong>
@@ -775,7 +797,7 @@
     </div>
   </form>
 </dialog> <!--// 그룹코드 입력 -->
-<dialog class="mngCode2">
+<dialog class="p_mngCode2">
   <form method="dialog">
     <div class="p_header">
       <strong class="p_tit">권한그룹 상세코드 입력</strong>
@@ -828,7 +850,81 @@
     </div>
   </form>
 </dialog> <!--// 권한그룹 상세코드 입력 -->
-<dialog class="mngForm">
+<dialog class="p_mngMenu">
+  <form method="dialog">
+    <div class="p_header">
+      <strong class="p_tit">메뉴 수정 및 추가</strong>
+      <button class="btnClose ico_org cancel" aria-label="close">닫기</button>
+    </div>
+    <div class="p_body">
+      <table class="tbl_list">
+        <caption>그룹 코드 입력</caption>
+        <colgroup>
+          <col style="width:110px">
+          <col style="width:241px">
+        </colgroup>
+        <tbody>
+          <tr>
+            <th><label for="menu_name">메뉴명</label></th>
+            <td>
+              <input type="text" id="menu_name" value="품의/지출관리">
+            </td>
+          </tr>
+          <tr>
+            <th><label for="menu_path">메뉴경로</label></th>
+            <td>
+              <input type="text" id="menu_path" value="/work/000.do">
+            </td>
+          </tr>
+          <tr>
+            <th><label for="menu_level">레벨</label></th>
+            <td>
+              <input type="text" id="menu_level" value="2">
+            </td>
+          </tr>
+          <tr>
+            <th><label for="menu_group">관리 권한 그룹</label></th>
+            <td>
+              <ul>
+                <li>
+                  <input type="checkbox" id="work" checked>
+                  <label for="work">업무관리(work)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="groupware">
+                  <label for="groupware">그룹웨어(groupware)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="human">
+                  <label for="human">ERP(human)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="manage">
+                  <label for="manage">프로젝트(manage)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="manage2">
+                  <label for="manage2">관리자(manage)</label>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="usage">사용여부</label></th>
+            <td>
+              <span class="btn_tgl" datavalue="on"></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="btn_wrap">
+        <button class="postive btn_add" type="button">추가</button>
+        <button class="negative btn_cancel">닫기</button>
+      </div>
+    </div>
+  </form>
+</dialog> <!--// 메뉴 수정 및 추가 -->
+<dialog class="p_mngForm">
   <form method="dialog">
     <div class="p_header">
       <strong class="p_tit">결재 양식관리(작업중)</strong>
@@ -934,25 +1030,28 @@
 </dialog> <!-- 결재 양식관리(작업중) -->
 <script>
   document.querySelector('.btnMngDel').addEventListener('click', function () {
-    document.querySelector('.mngDel').showModal();
+    document.querySelector('.p_mngDel').showModal();
   }) // 부서삭제
   document.querySelector('.btnMngSearch').addEventListener('click', function () {
-    document.querySelector('.mngSearch').showModal();
+    document.querySelector('.p_mngSearch').showModal();
   }) // 부서검색
   document.querySelector('.btnMngEmp').addEventListener('click', function () {
-    document.querySelector('.mngEmp').showModal();
+    document.querySelector('.p_mngEmp').showModal();
   }) // 부서삭제
   document.querySelector('.btnMngEmp2').addEventListener('click', function () {
-    document.querySelector('.mngEmp2').showModal();
+    document.querySelector('.p_mngEmp2').showModal();
   }) // 부서검색
   document.querySelector('.btnMngCode').addEventListener('click', function () {
-    document.querySelector('.mngCode').showModal();
+    document.querySelector('.p_mngCode').showModal();
   }) // 그룹코드 입력
   document.querySelector('.btnMngCode2').addEventListener('click', function () {
-    document.querySelector('.mngCode2').showModal();
+    document.querySelector('.p_mngCode2').showModal();
   }) // 권한그룹 상세코드 입력
+  document.querySelector('.btnMngMenu').addEventListener('click', function () {
+    document.querySelector('.p_mngMenu').showModal();
+  }) // 메뉴관리 추가 및 수정
   document.querySelector('.btnMngForm').addEventListener('click', function () {
-    document.querySelector('.mngForm').showModal();
+    document.querySelector('.p_mngForm').showModal();
   }) // 결재 양식관리
   document.querySelector('.btnClose').addEventListener('click', function () {
     document.querySelector('dialog').close();

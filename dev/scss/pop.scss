@@ -1,7 +1,7 @@
 :modal {position:absolute;min-width:355px;margin:auto;padding:0;border:none;box-shadow: 1.4px 1.4px 29px 0 rgba(0, 0, 0, 0.08);font-size:13px;
-  ::backdrop{background-color: #363636;}
+  ::backdrop{background-color:$black;}
   form>*{box-sizing: border-box;padding:0.5em;}
-  .p_header {display:flex;padding:7px 18px 8px;background-color:#363636;color:#fff;font-size:16px;letter-spacing:-0.4px;
+  .p_header {display:flex;padding:7px 18px 8px;background-color:$black;color:#fff;font-size:16px;letter-spacing:-0.4px;
     .p_tit {flex:1;}
     .cancel{position:relative;align-self:center;width:15px;height:18px;font-size:0;
       &::before,&::after{position:absolute;top:0;display:inline-block;content:'';width:2px;height:18px;background-color:#fff;}
@@ -26,16 +26,23 @@
     .btn_wrap {justify-content: end;padding:20px 0 0;}
   }
 
-  // 부서삭제(p_mngOrg.html)
+  // p_mngOrg
   .warning_wrap{float:left;margin-right:15px;
     img{display:block;width:40px;height:34px;}
     & + div{font-weight:bold;}
   }
   .del_org{display:block;color:#ff5959;}
-
-  // 부서검색(p_mngOrg2.html)
-  &.mngSearch{
+  // p_mngOrg2
+  &.p_mngSearch{
     .tree_wrap>.sortable{height:200px;margin-top:10px;}
+  }
+  // p_mngMenu
+  &.p_mngMenu{
+    ul{padding:5px;border: 1px solid #c5c5c5;
+      li{
+        label{vertical-align: text-top;}
+      }
+    }
   }
 }
 
