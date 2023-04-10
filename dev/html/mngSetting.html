@@ -1,0 +1,149 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')
+  @@include('../inc/nav.html')
+  <main id="contents" class="contents" role="main">
+    <header class="cont_tit">
+      <h1>환경설정</h1>
+      <section class="bredcrumb">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>환경설정</li>
+        </ul>
+      </section>
+    </header>
+    <div class="cont_body mngSetting">
+      <section class="orgSetting">
+        <header class="section_tit tit_icon">
+          <h1>알림 설정 관리</h1>
+          <div class="btn_wrap">
+            <button type="button" class="btn_save">저장</button>
+            <button type="button" class="btn_cancel">취소</button>
+          </div>
+        </header>
+        <div class="section_body">
+          <div class="tbl_wrap">
+            <table class="tbl_row">
+              <caption>알림 설정 관리 테이블</caption>
+              <colgroup>
+                <col style="width:128px">
+                <col style="width:auto">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th><label for="template_type" class="required">알림 사용여부</label></th>
+                  <td>
+                    <ul>
+                      <li>
+                        <input type="radio" id="use" name="alarm">
+                        <label for="use">사용함</label>
+                      </li>
+                      <li>
+                        <input type="radio" id="notused" name="alarm">
+                        <label for="notused">사용 안 함</label>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <th><label for="template_type">알림 선택</label></th>
+                  <td>
+                    <ul style="display:block;">
+                      <li>
+                        <input type="checkbox" id="new" checked="">
+                        <label for="new">새쪽지 알림</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="arrive">
+                        <label for="arrive">결재문서 도착 알림</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="process">
+                        <label for="process">결재문서 처리 알림</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="return">
+                        <label for="return">결재문서 반송 알림</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="complete">
+                        <label for="complete">결재문서 완료 알림</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="reminder">
+                        <label for="reminder">일정 알림(10분 전)</label>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section class="orgSetting">
+        <header class="section_tit tit_icon">
+          <h1>전자결재 설정 관리</h1>
+        </header>
+        <div class="section_body">
+          <div class="tbl_wrap">
+            <table class="tbl_row">
+              <caption>전자결재 설정 관리 테이블</caption>
+              <colgroup>
+                <col style="width:128px">
+                <col style="width:auto">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th><label for="template_type" class="required">결재 유형</label></th>
+                  <td>
+                    <ul>
+                      <li>
+                        <input type="checkbox" id="approval" checked="">
+                        <label for="approval">결재</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="agreement">
+                        <label for="agreement">합의</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="antecedent">
+                        <label for="antecedent">전결</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="conclusion">
+                        <label for="conclusion">후결</label>
+                      </li>
+                    </ul>
+                    <p class="t_skyblue">※ 전자결재 서비스에서 사용할 결재 유형을 선택합니다.<br>
+                    &nbsp;&nbsp;&nbsp;- 후결 : 후결자는 승인만 가능합니다.<br>
+                    &nbsp;&nbsp;&nbsp;- 전결 : 전결 시점에 결재문서는 완료됩니다.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <th><label for="template_type">결재인증 방식</label></th>
+                  <td>
+                    <ul>
+                      <li>
+                        <input type="radio" id="certification" name="certification_type">
+                        <label for="certification">결재 시 비밀번호 인증</label>
+                      </li>
+                      <li>
+                        <input type="radio" id="uncertified" name="certification_type">
+                        <label for="uncertified">인증 미사용</label>
+                      </li>
+                    </ul>
+                    <p class="t_skyblue">※ 전자 진행 시 인증방식을 설정합니다.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  @@include('../inc/footer.html')
+</div>
+@@include('../inc/pop/p_mngOrg.html')
+@@include('../inc/script.html')

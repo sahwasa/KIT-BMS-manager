@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=0.5, maximum-scale=5">
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  <title>KIT 업무관리시스템_관리자</title>
+  <link rel="stylesheet" href="../font/fontello/css/fontello.css">
+  <link rel="stylesheet" href="../css/merge.css">
+</head>
+<body>
+
+<div id="wrap" class="wrap">
+  <!-- 바로가기 메뉴 -->
+<div id="accessibility">
+  <a href="#contents">본문 바로가기</a>
+  <a href="#nav">주메뉴 바로가기</a>
+</div>
+<hr />
+<!--// 바로가기 메뉴 -->
+<header class="header">
+  <h1>
+    <a href="">
+      <span class="logo">KITVALLEY</span>
+      업무관리시스템 <b class="t_red">관리자</b>
+    </a>
+  </h1>    
+  <section class="gnb">
+    <!-- <ul class="gnb_lst">
+      <li><a href=""></a></li>
+    </ul> -->
+    <div class="util">
+      <div class="profile">
+        <button type="button" class="account">
+          <img src="../images/ic_user.png" width="32px" height="32px" alt="프로필사진">
+          <b>관리자님</b>
+        </button>
+        <div class="my_layer">
+          <ul class="my_svc">
+            <li><a href="#">내정보</a></li>
+            <li><a href="#">웹메일</a></li>
+            <li><a href="http://192.168.5.10/" target="_blank">웹클라우드</a></li>
+            <li><a href="#">로그아웃</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+  <nav id="nav" class="nav">
+  <h1 class="blind">관리자 페이지</h1>
+  <ul class="lnb">
+    <li><a href="/html/mngOrg.html">조직관리</a></li>
+    <li><a href="/html/mngEmp.html">사원관리</a></li>
+    <li><a href="/html/mngCode.html">공통코드관리</a></li>
+    <li><a href="/html/mngMenu.html">메뉴관리</a></li>
+    <li><a href="/html/mngForm.html">결재 양식관리</a></li>
+    <li><a href="/html/mngSetting.html">환경설정</a></li>
+    <li><a href="/html/mngNotice.html">게시판</a></li>
+    <li><a href="/html/pop.html">팝업(퍼블리싱 확인용)</a></li>
+  </ul>
+</nav>
+  <main id="contents" class="contents" role="main">
+    <header class="cont_tit">
+      <h1>환경설정</h1>
+      <section class="bredcrumb">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>환경설정</li>
+        </ul>
+      </section>
+    </header>
+    <div class="cont_body mngSetting">
+      <section class="orgSetting">
+        <header class="section_tit tit_icon">
+          <h1>알림 설정 관리</h1>
+          <div class="btn_wrap">
+            <button type="button" class="btn_save">저장</button>
+            <button type="button" class="btn_cancel">취소</button>
+          </div>
+        </header>
+        <div class="section_body">
+          <div class="tbl_wrap">
+            <table class="tbl_row">
+              <caption>알림 설정 관리 테이블</caption>
+              <colgroup>
+                <col style="width:128px">
+                <col style="width:auto">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th><label for="template_type" class="required">알림 사용여부</label></th>
+                  <td>
+                    <ul>
+                      <li>
+                        <input type="radio" id="use" name="alarm">
+                        <label for="use">사용함</label>
+                      </li>
+                      <li>
+                        <input type="radio" id="notused" name="alarm">
+                        <label for="notused">사용 안 함</label>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <th><label for="template_type">알림 선택</label></th>
+                  <td>
+                    <ul style="display:block;">
+                      <li>
+                        <input type="checkbox" id="new" checked="">
+                        <label for="new">새쪽지 알림</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="arrive">
+                        <label for="arrive">결재문서 도착 알림</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="process">
+                        <label for="process">결재문서 처리 알림</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="return">
+                        <label for="return">결재문서 반송 알림</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="complete">
+                        <label for="complete">결재문서 완료 알림</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="reminder">
+                        <label for="reminder">일정 알림(10분 전)</label>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section class="orgSetting">
+        <header class="section_tit tit_icon">
+          <h1>전자결재 설정 관리</h1>
+        </header>
+        <div class="section_body">
+          <div class="tbl_wrap">
+            <table class="tbl_row">
+              <caption>전자결재 설정 관리 테이블</caption>
+              <colgroup>
+                <col style="width:128px">
+                <col style="width:auto">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th><label for="template_type" class="required">결재 유형</label></th>
+                  <td>
+                    <ul>
+                      <li>
+                        <input type="checkbox" id="approval" checked="">
+                        <label for="approval">결재</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="agreement">
+                        <label for="agreement">합의</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="antecedent">
+                        <label for="antecedent">전결</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="conclusion">
+                        <label for="conclusion">후결</label>
+                      </li>
+                    </ul>
+                    <p class="t_skyblue">※ 전자결재 서비스에서 사용할 결재 유형을 선택합니다.<br>
+                    &nbsp;&nbsp;&nbsp;- 후결 : 후결자는 승인만 가능합니다.<br>
+                    &nbsp;&nbsp;&nbsp;- 전결 : 전결 시점에 결재문서는 완료됩니다.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <th><label for="template_type">결재인증 방식</label></th>
+                  <td>
+                    <ul>
+                      <li>
+                        <input type="radio" id="certification" name="certification_type">
+                        <label for="certification">결재 시 비밀번호 인증</label>
+                      </li>
+                      <li>
+                        <input type="radio" id="uncertified" name="certification_type">
+                        <label for="uncertified">인증 미사용</label>
+                      </li>
+                    </ul>
+                    <p class="t_skyblue">※ 전자 진행 시 인증방식을 설정합니다.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+  <p class="copy">Copyright ⓒ2023 KITValley Co.,Ltd. All right reserved.</p>
+</footer>
+</div>
+<dialog class="p_mngDel">
+  <form method="dialog">
+    <div class="p_header">
+      <strong class="p_tit">부서삭제</strong>
+      <button class="btnClose ico_org cancel" aria-label="close">닫기</button>
+    </div>
+    <div class="p_body">
+      <div class="warning_wrap"><img src="../images/ic_warning.png" alt="경고 이미지"></div>
+      <div><span class="del_org">SI사업본부</span> 조직 및 하부조직을 삭제하시겠습니까?</div>
+      <div class="btn_wrap">
+        <button class="btn_save" type="button">확인</button>
+        <button class="btn_cancel">취소</button>
+      </div>
+    </div>
+  </form>
+</dialog>
+<script src="../plugins/jquery.min.js"></script>
+<script src="../plugins/jquery-ui.min.js"></script>
+<script src="../plugins/jquery.MultiFile.js"></script>
+<script src="../js/ui_cmmn.js"></script>
+</body>
+</html>
