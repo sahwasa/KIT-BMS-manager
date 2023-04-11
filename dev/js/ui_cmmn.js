@@ -138,6 +138,16 @@ $(function () {
     },
   })
 
+  //layer_tool
+  $('.layer_tool').on({
+    click : function(){
+      $(this).addClass('on');
+    },
+    focusin : function(){$(this).addClass('on')},
+    focusout : function(){$(this).removeClass('on')}
+  })
+ 
+
   //tab
   $('.tab li').first().addClass('on')
   $('.tab_contents').not(':first').hide()

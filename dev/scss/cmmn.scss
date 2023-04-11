@@ -131,6 +131,7 @@ hr,
 @mixin fontello($ic){
   display:inline-block;font-family:"fontello";font-weight:normal;content:$ic;
 }
+@mixin ico_only{font-size:0;vertical-align:middle;}
 
 // ico_fontello
 .ico_org{vertical-align:middle;
@@ -210,7 +211,7 @@ td{white-space:nowrap;text-overflow:ellipsis;}
   td{border-bottom:1px solid $td_border_color;color:#333;}
 }
 .tbl_use_select td:first-child{width:60px;}
-.tbl_hover tbody tr:hover{background-color:#f9fafc;}
+.tbl_hover tbody tr:hover{background-color:#f9fafc;cursor:pointer;}
 .tbl_use_select{
   tbody tr.select_tr{background-color:lighten($red, 45%);}
   td:first-child{width:60px;}
@@ -243,6 +244,27 @@ td{white-space:nowrap;text-overflow:ellipsis;}
   &::-webkit-scrollbar{width:17px;background: transparent;}
   &::-webkit-scrollbar-thumb{background-color:#e5e6e8;border-radius:10px;background-clip:padding-box;border:4px solid transparent;}
   &::-webkit-scrollbar-track {background:#fff;}
+}
+.layer_tool{position:relative;
+  .btn_ellipsis{@include ico_only;
+    &::before{@include fontello('\f142');font-size:14px;padding:0 10px;}
+  }
+  .btn_layer{position:absolute;top:100%;left:50%;transform: translateX(-50%);display:inline-flex;flex-direction:column;height:0;z-index:1;overflow:hidden;box-sizing:border-box;
+    button{margin:3px 0;padding:2px 10px;}
+    button:hover{background-color:#e5e6e8;}
+  }
+  &.on .btn_layer{height:auto;border:1px solid #666;background-color:$white;}
+}
+.sorting{position:relative;
+  span{@include ico_only;
+    &::before{position:absolute;left:0;top:50%;font-size:12px;transform:translateY(-50%);color:$btn_gray;}
+  }
+   .ico_asc::before{@include fontello('\e86b');margin-top:-3px;}
+   .ico_desc::before{@include fontello('\e86a');left:2px;margin-top:3px;}
+}
+.sort{cursor:pointer;
+  &.basis_asc .ico_asc::before,
+  &.basis_desc .ico_desc::before{color:$red}
 }
 
 // tab
