@@ -98,16 +98,18 @@ $(function () {
   })
 
   // toggle button
-  $('.btn_tgl').on('click', function (e) {
-    e.preventDefault()
-    var cur = $(this).attr('datavalue')
-    if ($(this).attr('disabled') == 'disabled') return false
-    if (cur == 'on') {
-      $(this).attr('datavalue', 'off')
-    } else {
-      $(this).attr('datavalue', 'on')
-    }
-  })
+  function toggleInit(){
+    $('.btn_tgl').on('click', function (e) {
+      e.preventDefault()
+      var cur = $(this).attr('datavalue')
+      if ($(this).attr('disabled') == 'disabled') return false
+      if (cur == 'on') {
+        $(this).attr('datavalue', 'off')
+      } else {
+        $(this).attr('datavalue', 'on')
+      }
+    })
+  }
 
   // table_row checked
   $('.row_check').on({
@@ -269,4 +271,18 @@ $(function () {
     $(this).prev().val(this.value.replace(/c:\\fakepath\\/i, ''))
     console.log($(this))
   })
+
+  
+  ClassicEditor.create( document.querySelector( '.editor' ), {
+    licenseKey: '',
+  } )
+  .then( editor => {
+    window.editor = editor;
+  } )
+  .catch( error => {
+    console.error( 'Oops, something went wrong!' );
+    console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+    console.warn( 'Build id: 98hiyc2bu8g5-w8talac5b2wn' );
+    console.error( error );
+  } );
 })

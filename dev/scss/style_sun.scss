@@ -4,3 +4,14 @@
   &+span{float:left;}
   &::before{@include fontello('\eba6');position:absolute;top:-4px;font-size:14px;color:$red;} 
 }
+
+.form_wrap{display:grid;padding:15px;border-bottom:2px solid #c0c0c0;
+  table{border:none;}
+  .tit_form{display:grid;grid-template-columns:1fr 250px;height:60px;
+    h2{font-size:16px;color:#000;font-weight:bold;text-align:center;align-self:center;}
+    table{
+      th{height:24px;padding:0;font-weight:normal;font-size:12px;}
+      td{height:35px;}
+    }
+  }
+}
