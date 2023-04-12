@@ -18,7 +18,7 @@
         <li><button class="btn_default btnMngCode">공통코드관리 > 그룹코드 입력</button>
         <li><button class="btn_default btnMngCode2">공통코드관리 > 권한그룹 상세코드 입력</button>
         <li><button class="btn_default btnMngMenu">메뉴관리 > 수정 및 추가</button>
-        <li><button class="btn_default btnMngForm">결재양식관리(작업중)</button>
+        <li><button class="btn_default btnMngForm">출장신청서(작업중)</button>
         </li>
       </ul>
     </div>    
@@ -33,7 +33,7 @@
 @@include('../inc/pop/p_mngCode.html') <!--// 그룹코드 입력 -->
 @@include('../inc/pop/p_mngCode2.html') <!--// 권한그룹 상세코드 입력 -->
 @@include('../inc/pop/p_mngMenu.html') <!--// 메뉴 수정 및 추가 -->
-@@include('../inc/pop/p_mngForm(잠시 보류).html') <!-- 결재 양식관리(작업중) -->
+@@include('../inc/pop/p_mngForm2.html') <!-- 출장신청서 -->
 <script>
   document.querySelector('.btnMngDel').addEventListener('click', function () {
     document.querySelector('.p_mngDel').showModal();
@@ -58,11 +58,10 @@
   }) // 메뉴관리 추가 및 수정
   document.querySelector('.btnMngForm').addEventListener('click', function () {
     document.querySelector('.p_mngForm').showModal();
-  }) // 결재 양식관리
+  }) // 출장신청서
   document.querySelector('.btnClose').addEventListener('click', function () {
     document.querySelector('dialog').close();
   })
 </script>
-
 
 @@include('../inc/script.html')

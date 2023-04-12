@@ -19,11 +19,11 @@
         </colgroup>
         <tbody>
           <tr>
-            <th><label for="emp_id" class="required">아이디(ID)</label></th>
-            <td colspan="3">dandy@kitvalley.com</td>
+            <th scope="row" class="required">아이디(ID)</th>
+            <td colspan="3">dandy</td>
           </tr>
           <tr>
-            <th><label for="emp_num">사번</label></th>
+            <th scope="row"><label for="emp_num">사번</label></th>
             <td colspan="3">
               <span class="file_input">
                 <input type="text" id="emp_num" value="0088">
@@ -32,19 +32,19 @@
             </td>
           </tr>
           <tr>
-            <th><label for="emp_password">암호</label></th>
+            <th scope="row" ><label for="emp_password">암호</label></th>
             <td><input type="password" id="emp_password" value="12345678"></td>
-            <th><label for="emp_password_check">암호확인</label></th>
+            <th scope="row" ><label for="emp_password_check">암호확인</label></th>
             <td><input type="password" id="emp_password_check" value="12345678"></td>
           </tr>
           <tr>
-            <th><label for="emp_name_kr" class="required">한글이름</label></th>
+            <th scope="row" ><label for="emp_name_kr" class="required">한글이름</label></th>
             <td><input type="text" id="emp_name_kr" value="멋쟁이"></td>
-            <th><label for="emp_name_en">영문이름</label></th>
+            <th scope="row" ><label for="emp_name_en">영문이름</label></th>
             <td><input type="text" id="emp_name_en" value="meosjaeng-e"></td>
           </tr>
           <tr>
-            <th><label for="emp_rank" class="required">직위</label></th>
+            <th scope="row" ><label for="emp_rank" class="required">직위</label></th>
             <td>
               <select name="rank" id="emp_rank">
                 <option value="선택">선택</option>
@@ -55,7 +55,7 @@
                 <option value="수석">수석</option>
               </select>
             </td>
-            <th><label for="emp_department" class="required">부서명</label></th>
+            <th scope="row" ><label for="emp_department" class="required">부서명</label></th>
             <td>
               <select name="department" id="emp_department">
                 <option value="선택">선택</option>
@@ -64,50 +64,94 @@
             </td>
           </tr>
           <tr>
-            <th><label for="emp_group" class="required">권한그룹</label></th>
+            <th scope="row"><label for="emp_group">권한그룹</label></th>
             <td colspan="3">
               <ul>
                 <li>
-                  <input type="checkbox" id="work" checked>
-                  <label for="work">업무관리(work)</label>
+                  <input type="checkbox" id="emp_group" checked>
+                  <label for="emp_group">업무관리</label>
                 </li>
                 <li>
                   <input type="checkbox" id="groupware" checked>
-                  <label for="groupware">그룹웨어(groupware)</label>
+                  <label for="groupware">그룹웨어</label>
                 </li>
                 <li>
                   <input type="checkbox" id="human">
-                  <label for="human">ERP(human)</label>
+                  <label for="human">ERP</label>
                 </li>
                 <li>
                   <input type="checkbox" id="manage">
-                  <label for="manage">프로젝트(manage)</label>
+                  <label for="manage">프로젝트</label>
                 </li>
                 <li>
                   <input type="checkbox" id="manage2">
-                  <label for="manage2">관리자(manage)</label>
+                  <label for="manage2">관리자</label>
                 </li>
               </ul>
             </td>
           </tr>
           <tr>
-            <th><label for="emp_ssn" class="required">주민등록번호</label></th>
+            <th scope="row"><label for="emp_rate" class="required">업무등급</label></th>
+            <td colspan="3">
+              <ul>
+                <li>
+                  <input type="checkbox" id="emp_rate" checked>
+                  <label for="emp_rate">일반사원</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="head">
+                  <label for="head">부서장</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="administrator">
+                  <label for="administrator">관리자</label>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" class="required">고용형태</th>
+            <td>정규직</td>
+            <th scope="row" class="required">근무지</th>
+            <td>본사(서울)</td>
+          </tr>
+          <tr>
+            <th scope="row" class="required">근무형태</th>
+            <td colspan="3">일근</td>
+          </tr>
+          <tr>
+            <th scope="row" class="required">주민등록번호</th>
             <td colspan="3">123456-7891011</td>
           </tr>
           <tr>
-            <th><label for="emp_entering" class="required">입사일자</label></th>
+            <th scope="row" class="required">입사일자</th>
             <td>2021-03-08</td>
-            <th><label for="nri_num">국가연구자번호</label></th>
-            <td><input type="number" value="12345678" id="nri_num"></td>
-          </tr>
-          <tr>
-            <th><label for="emp_num">전화번호</label></th>
-            <td><input type="number" value="0212345678" id="emp_num"></td>
             <th><label for="emp_phone" class="required">휴대전화</label></th>
-            <td><input type="number" value="01012345678" id="emp_phone"></td>
+            <td><input type="tel" value="01012345678" id="emp_phone"></td>
           </tr>
           <tr>
-            <th><label for="address">우편번호</label></th>
+            <th scope="row"><label for="emp_call">비상연락망</label></th>
+            <td colspan="3">
+            <span class="file_input">
+                <span>전화번호 : 0212345678</span>
+                <span>관계 : 부</span>
+            </span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><label for="emp_email" class="required">이메일 주소</label></th>
+            <td colspan="3">
+              <span class="file_input">
+                <input type="email" id="emp_email" value="dandy@kitvalley.com">
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><label for="nri_num">국가연구자번호</label></th>
+            <td colspan="3"><input type="number" value="12345678" id="nri_num"></td>
+          </tr>
+          <tr>
+            <th scope="row"><label for="address">우편번호</label></th>
             <td colspan="3">
               <span class="file_input">
                 <input type="text" id="address">
@@ -116,45 +160,61 @@
             </td>
           </tr>
           <tr>
-            <th><label for="address2">주소</label></th>
+            <th scope="row"><label for="address2">주소</label></th>
             <td colspan="3">
               <input type="text" value="서울 금천구 가산동" id="address2">
             </td>
           </tr>
           <tr>
-            <th><label for="emp_photo">사진</label></th>
+            <th scope="row"><label for="emp_photo_edit">사진</label></th>
             <td colspan="3">
-              <div class="file_input">
-                <input type="text" title="파일명" disabled="" placeholder=".gif, .jpg, .png 확장자 이미지만 첨부가능합니다.">
-                <input type="file" id="emp_photo_edit" class="upFile" accept=".gif, .jpg, .png">
-                <label for="emp_photo_edit" class="btn_ogt">파일선택</label>
-                <p class="t_skyblue">(등록된 사진이 없습니다)</p>
-              </div>
+              <span class="file_input">
+                <input type="file" id="emp_photo_edit" class="multi" maxlength="1" accept=".gif, .jpg, .png">
+              </span>
             </td>
           </tr>
           <tr>
-            <th><label for="emp_sign">결재용 사인</label></th>
-            <td colspan="3">
+            <th scope="row"><label for="emp_sign_edit">결재용 사인</label></th>
+            <td colspan="2">
               <div class="file_input">
                 <div style="flex:auto;">
-                  <div class="file_input">
-                    <input type="text" title="파일명" disabled="" placeholder=".gif, .jpg, .png 확장자 이미지만 첨부가능합니다.">
-                    <input type="file" id="emp_sign_edit" class="upFile" accept=".gif, .jpg, .png">
-                    <label for="emp_sign_edit" class="btn_ogt">파일선택</label>
-                  </div>
-                  <span>
-                    <input type="checkbox" id="emp_sign_view">
-                    <label for="emp_sign_view">sign_hdong.png</label>
-                    <span class="validity required">삭제시에만 체크해주세요</span>
+                  <span class="file_input">
+                    <input type="file" id="emp_sign_edit" class="multi" maxlength="1" accept=".gif, .jpg, .png">
                   </span>
                 </div>
-                <img src="http://placehold.it/95x41" alt="결재용 사인 이미지">
               </div>
+            </td>
+            <td>
+              <img src="http://placehold.it/95x50" alt="결재용 사인 이미지">
             </td>
           </tr>
           <tr>
-            <th>최종 갱신일자</th>
-            <td colspan="3">2023-04-08 15:00:00</td>
+            <th scope="row">신청일자</th>
+            <td colspan="3">멋쟁이 (2023-04-08 15:00:00)</td>
+          </tr>
+          <tr>
+            <th scope="row">등록상태</th>
+            <td>승인</td>
+            <th scope="row">중지상태</th>
+            <td>휴직</td>
+          </tr>
+          <tr>
+            <th scope="row">처리일자</th>
+            <td colspan="3">귀요미 (2023-04-08 15:00:00)</td>
+          </tr>
+          <tr>
+            <th scope="row">최종 갱신일자</th>
+            <td colspan="3">귀요미 (2023-04-08 15:00:00)</td>
+          </tr>
+          <tr>
+            <th scope="row">비밀번호 오류</th>
+            <td colspan="3">오류횟수 : <span></span>회</td>
+          </tr>
+          <tr>
+            <th scope="row"><label for="emp_note">비고</label></th>
+            <td colspan="3">
+              <textarea id="emp_note" style="min-height:50px;max-height:50px;" placeholder="퇴사일/휴직일 및 사유 등은 비고에 기록"></textarea>
+            </td>
           </tr>
         </tbody>
       </table>

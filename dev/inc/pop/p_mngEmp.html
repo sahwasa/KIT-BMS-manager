@@ -19,7 +19,7 @@
         </colgroup>
         <tbody>
           <tr>
-            <th><label for="emp_id" class="required">아이디(ID)</label></th>
+            <th scope="row" scope="row"><label for="emp_id" class="required">아이디(ID)</label></th>
             <td colspan="3">
               <span class="file_input">
                 <input type="text" id="emp_id">
@@ -29,7 +29,7 @@
             </td>
           </tr>
           <tr>
-            <th><label for="emp_num">사번</label></th>
+            <th scope="row"><label for="emp_num">사번</label></th>
             <td colspan="3">
               <span class="file_input">
                 <input type="text" id="emp_num">
@@ -38,19 +38,19 @@
             </td>
           </tr>
           <tr>
-            <th><label for="emp_password" class="required">암호</label></th>
+            <th scope="row"><label for="emp_password" class="required">암호</label></th>
             <td><input type="text" id="emp_password"></td>
-            <th><label for="emp_password_check" class="required">암호확인</label></th>
+            <th scope="row"><label for="emp_password_check" class="required">암호확인</label></th>
             <td><input type="text" id="emp_password_check"></td>
           </tr>
           <tr>
-            <th><label for="emp_name_kr" class="required">한글이름</label></th>
+            <th scope="row"><label for="emp_name_kr" class="required">한글이름</label></th>
             <td><input type="text" id="emp_name_kr"></td>
-            <th><label for="emp_name_en">영문이름</label></th>
+            <th scope="row"><label for="emp_name_en">영문이름</label></th>
             <td><input type="text" id="emp_name_en"></td>
           </tr>
           <tr>
-            <th><label for="emp_rank" class="required">직위</label></th>
+            <th scope="row"><label for="emp_rank" class="required">직위</label></th>
             <td>
               <select name="rank" id="emp_rank">
                 <option value="선택">선택</option>
@@ -61,7 +61,7 @@
                 <option value="수석">수석</option>
               </select>
             </td>
-            <th><label for="emp_department" class="required">부서명</label></th>
+            <th scope="row"><label for="emp_department" class="required">부서명</label></th>
             <td>
               <select name="department" id="emp_department">
                 <option value="선택">선택</option>
@@ -69,34 +69,94 @@
             </td>
           </tr>
           <tr>
-            <th><label for="emp_group" class="required">권한그룹</label></th>
+            <th scope="row"><label for="emp_group" class="required">권한그룹</label></th>
             <td colspan="3">
               <ul>
                 <li>
-                  <input type="checkbox" id="work">
-                  <label for="work">업무관리(work)</label>
+                  <input type="checkbox" id="emp_group">
+                  <label for="emp_group">업무관리</label>
                 </li>
                 <li>
                   <input type="checkbox" id="groupware">
-                  <label for="groupware">그룹웨어(groupware)</label>
+                  <label for="groupware">그룹웨어</label>
                 </li>
                 <li>
                   <input type="checkbox" id="human">
-                  <label for="human">ERP(human)</label>
+                  <label for="human">ERP</label>
                 </li>
                 <li>
                   <input type="checkbox" id="manage">
-                  <label for="manage">프로젝트(manage)</label>
+                  <label for="manage">프로젝트</label>
                 </li>
                 <li>
                   <input type="checkbox" id="manage2">
-                  <label for="manage2">관리자(manage)</label>
+                  <label for="manage2">관리자</label>
                 </li>
               </ul>
             </td>
           </tr>
           <tr>
-            <th><label for="emp_ssn" class="required">주민등록번호</label></th>
+            <th scope="row"><label for="emp_rate" class="required">업무등급</label></th>
+            <td colspan="3">
+              <ul>
+                <li>
+                  <input type="checkbox" id="emp_rate">
+                  <label for="emp_rate">일반사원</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="head">
+                  <label for="head">부서장</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="administrator">
+                  <label for="administrator">관리자</label>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><label for="emp_employmenttype" class="required">고용형태</label></th>
+            <td>
+              <select name="employment" id="emp_employmenttype">
+                <option value="선택">선택</option>
+                <option value="정규직">정규직</option>
+                <option value="계약직">계약직</option>
+                <option value="일용직">일용직</option>
+                <option value="프리랜서">프리랜서</option>
+                <option value="기타">기타</option>
+              </select>
+            </td>
+            <th scope="row"><label for="emp_workplace" class="required">근무지</label></th>
+            <td>
+              <select name="workplace" id="emp_workplace">
+                <option value="선택">선택</option>
+                <option value="본사(서울)">본사(서울)</option>
+                <option value="연구소(별가람)">연구소(별가람)</option>
+                <option value="행안부(세종)">행안부(세종)</option>
+                <option value="기상청(김천)">기상청(김천)</option>
+                <option value="태풍센터(제주)">태풍센터(제주)</option>
+                <option value="우주전파(제주)">우주전파(제주)</option>
+                <option value="기타">기타</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><label for="emp_worktype" class="required">근무형태</label></th>
+            <td>
+              <select name="workplace" id="emp_worktype">
+                <option value="선택">선택</option>
+                <option value="본사(서울)">본사(서울)</option>
+                <option value="연구소(별가람)">연구소(별가람)</option>
+                <option value="행안부(세종)">행안부(세종)</option>
+                <option value="기상청(김천)">기상청(김천)</option>
+                <option value="태풍센터(제주)">태풍센터(제주)</option>
+                <option value="우주전파(제주)">우주전파(제주)</option>
+                <option value="기타">기타</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><label for="emp_ssn" class="required">주민등록번호</label></th>
             <td colspan="3">
               <span class="file_input">
                 <input type="number" id="emp_ssn">
@@ -105,21 +165,36 @@
             </td>
           </tr>
           <tr>
-            <th><label for="emp_entering" class="required">입사일자</label></th>
+            <th scope="row"><label for="emp_entering" class="required">입사일자</label></th>
             <td>
               <input type="date" id="emp_entering">
             </td>
-            <th><label for="nri_num">국가연구자번호</label></th>
-            <td><input type="number" id="nri_num"></td>
+            <th scope="row"><label for="emp_phone" class="required">휴대전화</label></th>
+            <td><input type="tel" id="emp_phone"></td>
           </tr>
           <tr>
-            <th><label for="emp_num">전화번호</label></th>
-            <td><input type="number" id="emp_num"></td>
-            <th><label for="use" class="emp_phone">휴대전화</label></th>
-            <td><input type="number" id="emp_phone"></td>
+            <th scope="row"><label for="emp_call">비상연락망</label></th>
+            <td>
+              <span>전화번호 : </span>
+              <input type="tel" id="emp_call">
+              <span>관계 : </span>
+              <input type="text" title="비상연락망 입력">
+            </td>
           </tr>
           <tr>
-            <th><label for="address">우편번호</label></th>
+            <th scope="row"><label for="emp_email" class="required">이메일 주소</label></th>
+            <td colspan="3">
+              <span class="file_input">
+                <input type="email" id="emp_email">
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><label for="nri_num">국가연구자번호</label></th>
+            <td colspan="3"><input type="number" id="nri_num"></td>
+          </tr>
+          <tr>
+            <th scope="row"><label for="address">우편번호</label></th>
             <td colspan="3">
               <span class="file_input">
                 <input type="text" id="address">
@@ -128,27 +203,23 @@
             </td>
           </tr>
           <tr>
-            <th><label for="address2">주소</label></th>
+            <th scope="row"><label for="address2">주소</label></th>
             <td colspan="3"><input type="text" id="address2"></td>
           </tr>
           <tr>
-            <th><label for="emp_photo">사진</label></th>
+            <th scope="row"><label for="emp_photo">사진</label></th>
             <td colspan="3">
               <span class="file_input">
-                
-                <input type="file" class="multi" maxlength="1" id="file_test" accept=".gif, .jpg, .png">
-                <label for="file_test" class="btn_ogt">테스트</label>
+                <input type="file" id="emp_photo" class="multi" maxlength="1" accept=".gif, .jpg, .png">
               </span>
             </td>
           </tr>
           <tr>
-            <th><label for="emp_sign">결재용 사인</label></th>
+            <th scope="row"><label for="emp_sign">결재용 사인</label></th>
             <td colspan="3">
-              <div class="file_input">
-                <input type="text" title="파일명" disabled="" placeholder=".gif, .jpg, .png 확장자 이미지만 첨부가능합니다.">
-                <input type="file" id="emp_sign" class="upFile" accept=".gif, .jpg, .png">
-                <label for="emp_sign" class="btn_ogt">파일선택</label>
-              </div>
+              <span class="file_input">
+                <input type="file" id="emp_sign" class="multi" maxlength="1" accept=".gif, .jpg, .png">
+              </span>
             </td>
           </tr>
         </tbody>
