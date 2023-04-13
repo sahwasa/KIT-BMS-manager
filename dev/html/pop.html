@@ -1,5 +1,5 @@
 @@include('../inc/top.html')
-<div id="wrap" class="wrap" >
+<div id="wrap" class="wrap">
   @@include('../inc/header.html')
   @@include('../inc/nav.html')
   <main id="content" class="contents main">
@@ -21,7 +21,12 @@
         <li><button class="btn_default btnMngForm">출장신청서(작업중)</button>
         </li>
       </ul>
-    </div>    
+      <span style="display:inline-block;background-image: linear-gradient(90deg, red, orange, yellow, green, blue, navy, purple);
+        -webkit-background-clip:text;color:transparent;font-size:20px;font-weight:bold;margin:30px 0 10px;">저는 공통입니다요</span>
+      <div class="editor_wrap">
+        <textarea class="editor"></textarea>
+      </div>
+    </div>
     @@include('../inc/paginate.html')
   </main>
   @@include('../inc/footer.html')
@@ -65,3 +70,12 @@
 </script>
 
 @@include('../inc/script.html')
+<script type="module">
+  import editor from '../plugins/ckeditor5/editor.js'
+  $(document).ready(function () {
+    editor(".editor").then(editor => {
+      // some code..
+      // then 이후에 받은 editor를 다른 변수로 받아주시는 편이 좋습니다!
+    })
+  })
+</script>

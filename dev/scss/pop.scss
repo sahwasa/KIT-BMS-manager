@@ -18,7 +18,7 @@
     table{width:100%;
       &.tbl_list{
         th{text-align:left;color:#111;font-weight:bold;
-          ::before{display:inline-block;content:'';width:6px;height:6px;margin-right:7px;border-radius:6px;background-color:#c4c4c4;}
+          &::before{display:inline-block;content:'';width:6px;height:6px;margin-right:7px;border-radius:6px;background-color:#c4c4c4;}
         }
         td{padding:4px;}
       }

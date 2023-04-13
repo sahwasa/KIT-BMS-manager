@@ -97,20 +97,6 @@ $(function () {
     },
   })
 
-  // toggle button
-  function toggleInit(){
-    $('.btn_tgl').on('click', function (e) {
-      e.preventDefault()
-      var cur = $(this).attr('datavalue')
-      if ($(this).attr('disabled') == 'disabled') return false
-      if (cur == 'on') {
-        $(this).attr('datavalue', 'off')
-      } else {
-        $(this).attr('datavalue', 'on')
-      }
-    })
-  }
-
   // table_row checked
   $('.row_check').on({
     click: function (e) {
@@ -137,16 +123,6 @@ $(function () {
       }
     },
   })
-
-  //layer_tool
-  $('.layer_tool').on({
-    click : function(){
-      $(this).addClass('on');
-    },
-    focusin : function(){$(this).addClass('on')},
-    focusout : function(){$(this).removeClass('on')}
-  })
- 
 
   //tab
   $('.tab li').first().addClass('on')
@@ -226,12 +202,11 @@ $(function () {
     $(this).hide()
     $('.doneAddOgt').show()
     var addLi = $('<li class="ui-sortable-handle">')
-    var addSpan = $('<span>그룹 접기/열기</span>')
     var addDiv = $('<div>')
     var addUl = $('<ul class="sortable move_sortable ui-sortable">')
     var addInput = $('<input type="text" placeholder="조직명을 입력하세요">')
     var addpeople = $('<span> (0)</span>')
-    addLi.append(addSpan, addDiv, addUl)
+    addLi.append(addDiv, addUl)
     addDiv.append(addInput, addpeople)
     $('.tree').prepend(addLi)
     sortable()
@@ -241,7 +216,6 @@ $(function () {
       .find('input')
       .keydown(function (key) {
         if (key.keyCode == 13) {
-          $.editOgtName()
           $(addLi).find('input').focusout()
         }
       })
@@ -275,18 +249,24 @@ $(function () {
     }
   })
   $('.doneAddOgt, .doneEditOgt').on('click', $.editOgtName)
-  
-  // web editor
-  ClassicEditor.create( document.querySelector( '.editor' ), {
-    licenseKey: '',
-  } )
-  .then( editor => {
-    window.editor = editor;
-  } )
-  .catch( error => {
-    console.error( 'Oops, something went wrong!' );
-    console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
-    console.warn( 'Build id: 98hiyc2bu8g5-w8talac5b2wn' );
-    console.error( error );
-  } );
+
+  // add file
+  $('.upFile').on('change', function () {
+    $(this).prev().val(this.value.replace(/c:\\fakepath\\/i, ''))
+    console.log($(this))
+  })
 })
+
+  // toggle button
+function toggleInit() {
+  $('.btn_tgl').off('click').on('click', function (e) { // 기존에 등록된 이벤트 리스너 제거
+    e.preventDefault();
+    var cur = $(this).attr('datavalue');
+    if ($(this).attr('disabled') == 'disabled') return false;
+    if (cur == 'on') {
+      $(this).attr('datavalue', 'off');
+    } else {
+      $(this).attr('datavalue', 'on');
+    }
+  });
+}

@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<div id="wrap" class="wrap" >
+<div id="wrap" class="wrap">
   <!-- 바로가기 메뉴 -->
 <div id="accessibility">
   <a href="#contents">본문 바로가기</a>
@@ -80,7 +80,12 @@
         <li><button class="btn_default btnMngForm">출장신청서(작업중)</button>
         </li>
       </ul>
-    </div>    
+      <span style="display:inline-block;background-image: linear-gradient(90deg, red, orange, yellow, green, blue, navy, purple);
+        -webkit-background-clip:text;color:transparent;font-size:20px;font-weight:bold;margin:30px 0 10px;">저는 공통입니다요</span>
+      <div class="editor_wrap">
+        <textarea class="editor"></textarea>
+      </div>
+    </div>
     <div class="paginate">
   <a href="#" class="first" title="처음">〈〈</a>
   <a href="#" class="pre" title="이전">〈</a>
@@ -895,27 +900,27 @@
         </colgroup>
         <tbody>
           <tr>
-            <th><label for="group_code">그룹코드</label></th>
+            <th scope="row"><label for="group_code">그룹코드</label></th>
             <td>
               <input type="text" id="group_code">
             </td>
           </tr>
           <tr>
-            <th><label for="code_name">코드명</label></th>
+            <th scope="row"><label for="code_name">코드명</label></th>
             <td>
               <input type="text" id="code_name">
             </td>
           </tr>
           <tr>
-            <th><label for="code_explanation">설명</label></th>
+            <th scope="row"><label for="code_explanation">설명</label></th>
             <td>
               <input type="text" id="code_explanation">
             </td>
           </tr>
           <tr>
-            <th>사용여부</th>
+            <th scope="row">사용여부</th>
             <td>
-              <span class="btn_tgl"></span>
+              <span class="btn_tgl" id="code_explanation"></span>
             </td>
           </tr>
         </tbody>
@@ -942,31 +947,31 @@
         </colgroup>
         <tbody>
           <tr>
-            <th><label for="code">코드</label></th>
+            <th scope="row"><label for="code">코드</label></th>
             <td>
               <input type="text" id="code">
             </td>
           </tr>
           <tr>
-            <th><label for="code_name">코드명</label></th>
+            <th scope="row"><label for="code_name">코드명</label></th>
             <td>
               <input type="text" id="code_name">
             </td>
           </tr>
           <tr>
-            <th><label for="code_explanation">설명</label></th>
+            <th scope="row"><label for="code_explanation">설명</label></th>
             <td>
               <input type="text" id="code_explanation">
             </td>
           </tr>
           <tr>
-            <th><label for="code_order">순서</label></th>
+            <th scope="row"><label for="code_order">순서</label></th>
             <td>
               <input type="text" id="code_order">
             </td>
           </tr>
           <tr>
-            <th>사용여부</th>
+            <th scope="row">사용여부</th>
             <td>
               <span class="btn_tgl"></span>
             </td>
@@ -995,25 +1000,25 @@
         </colgroup>
         <tbody>
           <tr>
-            <th><label for="menu_name">메뉴명</label></th>
+            <th scope="row"><label for="menu_name">메뉴명</label></th>
             <td>
               <input type="text" id="menu_name" value="품의/지출관리">
             </td>
           </tr>
           <tr>
-            <th><label for="menu_path">메뉴경로</label></th>
+            <th scope="row"><label for="menu_path">메뉴경로</label></th>
             <td>
               <input type="text" id="menu_path" value="/work/000.do">
             </td>
           </tr>
           <tr>
-            <th><label for="menu_level">레벨</label></th>
+            <th scope="row"><label for="menu_level">레벨</label></th>
             <td>
               <input type="text" id="menu_level" value="2">
             </td>
           </tr>
           <tr>
-            <th><label for="menu_group">관리 권한 그룹</label></th>
+            <th scope="row"><label for="menu_group">관리 권한 그룹</label></th>
             <td>
               <ul>
                 <li>
@@ -1040,7 +1045,7 @@
             </td>
           </tr>
           <tr>
-            <th>사용여부</th>
+            <th scope="row">사용여부</th>
             <td>
               <span class="btn_tgl" datavalue="on"></span>
             </td>
@@ -1455,11 +1460,7 @@
           </tbody>
         </table>
         <div class="editor_wrap">
-          <div class="editor">
-            <p>
-              동해~~물과 백두산이 마르고 닳도록<br>하~~~~느님이 보우하사 <strong>우리나라 만세</strong>
-            </p>
-          </div>
+          <textarea class="editor"></textarea>
         </div>
         <div class="sign_wrap">
           <p>상기와 같이 출장 업무를 보고합니다.<br>
@@ -1509,6 +1510,16 @@
 <script src="../plugins/jquery-ui.min.js"></script>
 <script src="../plugins/jquery.MultiFile.js"></script>
 <script src="../plugins/ckeditor5/ckeditor.js"></script>
+<script src="../plugins/ckeditor5/editor.js" type="module"></script>
 <script src="../js/ui_cmmn.js"></script>
 </body>
 </html>
+<script type="module">
+  import editor from '../plugins/ckeditor5/editor.js'
+  $(document).ready(function () {
+    editor(".editor").then(editor => {
+      // some code..
+      // then 이후에 받은 editor를 다른 변수로 받아주시는 편이 좋습니다!
+    })
+  })
+</script>
