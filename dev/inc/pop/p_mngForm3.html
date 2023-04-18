@@ -1,13 +1,12 @@
-<dialog class="p_mngForm2">
+<dialog class="p_mngForm3">
   <form method="dialog">
     <div class="p_header">
-      <strong class="p_tit">출장신청서</strong>
+      <strong class="p_tit">출장복명서</strong>
       <button class="btnClose ico_org cancel" aria-label="close">닫기</button>
     </div>
     <div class="p_body">
       <div class="p_body_tit">
         <h1>결재 양식 수정</h1>
-        <p class="required validity">표시는 필수 입력 항목입니다.</p>
       </div>
       <table class="tbl_row">
         <caption>결재 양식 테이블</caption>
@@ -21,7 +20,7 @@
           <tr>
             <th scope="row" class="required">템플릿 유형</th>
             <td colspan="3">
-              <span>TMPL-001</span>
+              <span>TMPL-002</span>
             </td>
           </tr>
           <tr>
@@ -42,7 +41,7 @@
             <td>
               <ul>
                 <li>
-                  <input type="radio" id="use" name="use">
+                  <input type="radio" id="use" name="use" checked>
                   <label for="use">사용</label>
                 </li>
                 <li>
@@ -57,7 +56,7 @@
               <label for="form_name" class="required">양식명</label>
             </th>
             <td colspan="3">
-              <input type="text" id="form_name">
+              <input type="text" id="form_name" value="출장복명서">
             </td>
           </tr>
           <tr>
@@ -76,7 +75,7 @@
             <td>
               <ul>
                 <li>
-                  <input type="radio" id="form_approver" name="form_approver">
+                  <input type="radio" id="form_approver" name="form_approver" checked>
                   <label for="form_approver">조직도</label>
                 </li>
                 <li>
@@ -99,7 +98,7 @@
                   <label for="form_importance">높음</label>
                 </li>
                 <li>
-                  <input type="radio" id="middle" name="form_importance">
+                  <input type="radio" id="middle" name="form_importance" checked>
                   <label for="middle">보통</label>
                 </li>
                 <li>
@@ -113,7 +112,7 @@
       </table>
       <div class="form_wrap">
         <div class="tit_form">
-          <h2>출장신청서</h2>
+          <h2>출장복명서</h2>
           <table class="tbl_row">
             <caption>결재 상황 테이블</caption>
             <colgroup>
@@ -124,21 +123,26 @@
             </colgroup>
             <tbody>
               <tr>
-                <th scope="col" rowspan="2">결<br>재</th>
-                <th scope="col">기안</th>
-                <th scope="col">결재</th>
-                <th scope="col">승인</th>
+                <th scope="col" rowspan="3">결<br>재</th>
+                <th scope="col">기안 (멋쟁이)</th>
+                <th scope="col">결재 (귀요미)</th>
+                <th scope="col">승인 (귀요미)</th>
               </tr>
               <tr>
                 <td></td>
                 <td></td>
                 <td></td>
               </tr>
+              <tr>
+                <td>2023-04-17 12:00:00</td>
+                <td>2023-04-17 12:00:00</td>
+                <td>2023-04-17 12:00:00</td>
+              </tr>
             </tbody>
           </table>
         </div>
         <table class="tbl_row">
-          <caption>출장신청서 양식 테이블</caption>
+          <caption>출장복명서 양식 테이블</caption>
           <colgroup>
             <col style="width:128px">
             <col style="width:auto">
@@ -177,7 +181,7 @@
               <td>
                 <ul>
                   <li>
-                    <input type="radio" id="form_businesstrip" name="form_businesstrip">
+                    <input type="radio" id="form_businesstrip" name="form_businesstrip" checked>
                     <label for="form_businesstrip">국내출장</label>
                   </li>
                   <li>
@@ -200,8 +204,8 @@
                 <label for="form_businesstrip_period" class="required">출장기간</label>
               </th>
               <td>
-                <input type="date" id="form_businesstrip_period">&nbsp;-&nbsp;
-                <input type="date" title="출장기간">
+                <input type="date" id="form_businesstrip_period" value="2023-04-14">&nbsp;-&nbsp;
+                <input type="date" title="출장기간" value="2023-04-17">
                 <input type="text" title="총 출장기간" class="w_day alignC">
                 <span>일간</span>
               </td>
@@ -234,7 +238,7 @@
                   <colgroup>
                     <col style="width:auto;">
                     <col style="width:auto;">
-                    <col style="width:auto;">
+                    <col style="width:auto;text-align:center;">
                     <col style="width:auto;">
                     <col style="width:auto;">
                     <col style="width:100px;">
@@ -274,46 +278,14 @@
                       <td><input type="text" title="교통수단 입력"></td>
                     </tr>
                     <tr>
-                      <td><input type="checkbox" class="row_check" title="글선택"></td>
-                      <td><input type="date" title="일자 선택"></td>
-                      <td>
-                        <select name="day_select" title="요일 선택">
-                          <option value="선택">선택</option>
-                          <option value="월">월</option>
-                          <option value="화">화</option>
-                          <option value="수">수</option>
-                          <option value="목">목</option>
-                          <option value="금">금</option>
-                          <option value="토">토</option>
-                          <option value="일">일</option>
-                        </select>
-                      </td>
-                      <td><input type="time" title="시작시간 입력"></td>
-                      <td><input type="time" title="종료시간 입력"></td>
-                      <td><input type="text" title="출장장소 입력"></td>
-                      <td><textarea class="line1" title="업무내용 입력"></textarea></td>
-                      <td><input type="text" title="교통수단 입력"></td>
-                    </tr>
-                    <tr>
-                      <td><input type="checkbox" class="row_check" title="글선택"></td>
-                      <td><input type="date" title="일자 선택"></td>
-                      <td>
-                        <select name="day_select" title="요일 선택">
-                          <option value="선택">선택</option>
-                          <option value="월">월</option>
-                          <option value="화">화</option>
-                          <option value="수">수</option>
-                          <option value="목">목</option>
-                          <option value="금">금</option>
-                          <option value="토">토</option>
-                          <option value="일">일</option>
-                        </select>
-                      </td>
-                      <td><input type="time" title="시작시간 입력"></td>
-                      <td><input type="time" title="종료시간 입력"></td>
-                      <td><input type="text" title="출장장소 입력"></td>
-                      <td><textarea class="line1" title="업무내용 입력"></textarea></td>
-                      <td><input type="text" title="교통수단 입력"></td>
+                      <td><input type="checkbox" class="row_check" title="글선택" checked></td>
+                      <td>2023-04-14</td>
+                      <td>월</td>
+                      <td>09:00</td>
+                      <td>18:00</td>
+                      <td>ㅇㅇㅇ 기관</td>
+                      <td></td>
+                      <td>자차</td>
                     </tr>
                   </tbody>
                 </table>
@@ -326,7 +298,7 @@
               <td>
                 <div class="p_body_tit">
                   <p class="validity">※ 총 소요예산 :
-                    <input type="number" id="form_expense" style="width:100px;"> 원
+                    <input type="text" id="form_expense" style="width:100px;" value="100,000"> 원
                   </p>
                 </div>
                 <table class="tbl_default tbl_hover">

@@ -19,7 +19,7 @@
         </colgroup>
         <tbody>
           <tr>
-            <th scope="row" scope="row"><label for="emp_id" class="required">아이디(ID)</label></th>
+            <th scope="row"><label for="emp_id" class="required">아이디(ID)</label></th>
             <td colspan="3">
               <span class="file_input">
                 <input type="text" id="emp_id">
@@ -142,7 +142,7 @@
           </tr>
           <tr>
             <th scope="row"><label for="emp_worktype" class="required">근무형태</label></th>
-            <td>
+            <td colspan="3">
               <select name="workplace" id="emp_worktype">
                 <option value="선택">선택</option>
                 <option value="본사(서울)">본사(서울)</option>
@@ -174,11 +174,13 @@
           </tr>
           <tr>
             <th scope="row"><label for="emp_call">비상연락망</label></th>
-            <td>
-              <span>전화번호 : </span>
+            <td colspan="3">
+              <span class="file_input">
+                <span>전화번호 : </span>
               <input type="tel" id="emp_call">
               <span>관계 : </span>
               <input type="text" title="비상연락망 입력">
+              </span>
             </td>
           </tr>
           <tr>

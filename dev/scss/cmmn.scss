@@ -109,7 +109,7 @@ input[type="date"]{position:relative;}
 input[type='time']::-webkit-calendar-picker-indicator,
 input[type="date"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-calendar-picker-indicator{position:relative;z-index:2;right:0;width:13px;height:14px;background: transparent;}
-textarea{min-height:200px;max-height:300px;resize:none;}
+textarea{min-height:100px;max-height:300px;resize:none;}
 
 // layout
 hr,
@@ -147,7 +147,7 @@ hr,
 .tbl_wrap .ico_org{font-size:0;}
 input[type="time"],
 input[type="date"]{
-  &::after{position:absolute;z-index:1;right:5px;color:$red;}
+  &::after{position:absolute;z-index:1;top:3px;right:5px;color:$red;}
 }
 input[type="date"]::after{@include fontello('\f133');font-size:15px;}
 input[type="time"]::after{@include fontello('\eb02');font-size:18px;}

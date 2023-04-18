@@ -1,4 +1,4 @@
-<dialog class="p_mngForm2">
+<dialog class="p_mngForm">
   <form method="dialog">
     <div class="p_header">
       <strong class="p_tit">출장신청서</strong>
@@ -30,10 +30,8 @@
             </th>
             <td>
               <select name="category" id="category">
-                <option value="카테고리 선택">카테고리 선택</option>
-                <option value="근태관리" selected>근태관리</option>
-                <option value="기안문서">기안문서</option>
-                <option value="대외문서">대외문서</option>
+                <option value="선택">선택</option>
+                <option value="근태관리">근태관리</option>
               </select>
             </td>
             <th scope="row">
@@ -202,7 +200,7 @@
               <td>
                 <input type="date" id="form_businesstrip_period">&nbsp;-&nbsp;
                 <input type="date" title="출장기간">
-                <input type="text" title="총 출장기간" class="w_day alignC">
+                <input type="text" title="총 출장기간" style="width:30px;">
                 <span>일간</span>
               </td>
             </tr>
@@ -243,7 +241,9 @@
                   </colgroup>
                   <tbody>
                     <tr>
-                      <th scope="col">선택</th>
+                      <th scope="col">
+                        <input type="checkbox" class="row_check all_check" title="전체 글선택">
+                      </th>
                       <th scope="col">일자</th>
                       <th scope="col">요일</th>
                       <th scope="col">시작시간</th>
@@ -270,7 +270,7 @@
                       <td><input type="time" title="시작시간 입력"></td>
                       <td><input type="time" title="종료시간 입력"></td>
                       <td><input type="text" title="출장장소 입력"></td>
-                      <td><textarea class="line1" title="업무내용 입력"></textarea></td>
+                      <td><input type="text" title="업무내용 입력"></td>
                       <td><input type="text" title="교통수단 입력"></td>
                     </tr>
                     <tr>
@@ -291,7 +291,7 @@
                       <td><input type="time" title="시작시간 입력"></td>
                       <td><input type="time" title="종료시간 입력"></td>
                       <td><input type="text" title="출장장소 입력"></td>
-                      <td><textarea class="line1" title="업무내용 입력"></textarea></td>
+                      <td><input type="text" title="업무내용 입력"></td>
                       <td><input type="text" title="교통수단 입력"></td>
                     </tr>
                     <tr>
@@ -312,7 +312,7 @@
                       <td><input type="time" title="시작시간 입력"></td>
                       <td><input type="time" title="종료시간 입력"></td>
                       <td><input type="text" title="출장장소 입력"></td>
-                      <td><textarea class="line1" title="업무내용 입력"></textarea></td>
+                      <td><input type="text" title="업무내용 입력"></td>
                       <td><input type="text" title="교통수단 입력"></td>
                     </tr>
                   </tbody>

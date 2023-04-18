@@ -18,11 +18,21 @@
         <li><button class="btn_default btnMngCode">공통코드관리 > 그룹코드 입력</button>
         <li><button class="btn_default btnMngCode2">공통코드관리 > 권한그룹 상세코드 입력</button>
         <li><button class="btn_default btnMngMenu">메뉴관리 > 수정 및 추가</button>
-        <li><button class="btn_default btnMngForm">출장신청서(작업중)</button>
+        <li><button class="btn_default btnMngForm2">출장신청서</button>
+        <li><button class="btn_default btnMngForm3">출장복명서</button>
+        <li><button class="btn_default btnMngForm4">지출결의서</button>
+        <li><button class="btn_default btnMngForm5">휴일근무신청서</button>
+        <li><button class="btn_default btnMngForm6">휴가신청서</button>
+        <li><button class="btn_default btnMngForm7">휴가변경신청서</button>
+        <li><button class="btn_default btnMngForm8">기안서</button>
+        <li><button class="btn_default btnMngForm9">공문서 발급신청서(작업중)</button>
+        <li><button class="btn_default btnMngForm10">퇴직신청서</button>
         </li>
       </ul>
       <span style="display:inline-block;background-image: linear-gradient(90deg, red, orange, yellow, green, blue, navy, purple);
-        -webkit-background-clip:text;color:transparent;font-size:20px;font-weight:bold;margin:30px 0 10px;">저는 공통입니다요</span>
+        -webkit-background-clip:text;color:transparent;font-size:20px;font-weight:bold;margin:30px 0 10px;">
+        저는 에디터입니다요
+      </span>
       <div class="editor_wrap">
         <textarea class="editor"></textarea>
       </div>
@@ -38,8 +48,20 @@
 @@include('../inc/pop/p_mngCode.html') <!--// 그룹코드 입력 -->
 @@include('../inc/pop/p_mngCode2.html') <!--// 권한그룹 상세코드 입력 -->
 @@include('../inc/pop/p_mngMenu.html') <!--// 메뉴 수정 및 추가 -->
-@@include('../inc/pop/p_mngForm2.html') <!-- 출장신청서 -->
+@@include('../inc/pop/p_mngForm2.html') <!--// 출장신청서 -->
+@@include('../inc/pop/p_mngForm3.html') <!--// 출장복명서 -->
+@@include('../inc/pop/p_mngForm4.html') <!--// 지출결의서 -->
+@@include('../inc/pop/p_mngForm5.html') <!--// 휴일근무신청서 -->
+@@include('../inc/pop/p_mngForm6.html') <!--// 휴가신청서 -->
+@@include('../inc/pop/p_mngForm7.html') <!--// 휴가변경신청서 -->
+@@include('../inc/pop/p_mngForm8.html') <!--// 기안서 -->
+@@include('../inc/pop/p_mngForm9.html') <!--// 공문서 발급 신청서 -->
+@@include('../inc/pop/p_mngForm10.html') <!--// 퇴직신청서 -->
+@@include('../inc/script.html')
+
 <script>
+  toggleInit(); // toggle common
+
   document.querySelector('.btnMngDel').addEventListener('click', function () {
     document.querySelector('.p_mngDel').showModal();
   }) // 부서삭제
@@ -61,15 +83,38 @@
   document.querySelector('.btnMngMenu').addEventListener('click', function () {
     document.querySelector('.p_mngMenu').showModal();
   }) // 메뉴관리 추가 및 수정
-  document.querySelector('.btnMngForm').addEventListener('click', function () {
-    document.querySelector('.p_mngForm').showModal();
+  document.querySelector('.btnMngForm2').addEventListener('click', function () {
+    document.querySelector('.p_mngForm2').showModal();
   }) // 출장신청서
+  document.querySelector('.btnMngForm3').addEventListener('click', function () {
+    document.querySelector('.p_mngForm3').showModal();
+  }) // 출장복명서
+  document.querySelector('.btnMngForm4').addEventListener('click', function () {
+    document.querySelector('.p_mngForm4').showModal();
+  }) // 지출결의서
+  document.querySelector('.btnMngForm5').addEventListener('click', function () {
+    document.querySelector('.p_mngForm5').showModal();
+  }) // 휴일근무신청서
+  document.querySelector('.btnMngForm6').addEventListener('click', function () {
+    document.querySelector('.p_mngForm6').showModal();
+  }) // 휴가신청서
+  document.querySelector('.btnMngForm7').addEventListener('click', function () {
+    document.querySelector('.p_mngForm7').showModal();
+  }) // 휴가변경신청서
+  document.querySelector('.btnMngForm8').addEventListener('click', function () {
+    document.querySelector('.p_mngForm8').showModal();
+  }) // 기안서
+  document.querySelector('.btnMngForm9').addEventListener('click', function () {
+    document.querySelector('.p_mngForm9').showModal();
+  }) // 공문서 발급 신청서
+  document.querySelector('.btnMngForm10').addEventListener('click', function () {
+    document.querySelector('.p_mngForm10').showModal();
+  }) // 퇴직신청서
   document.querySelector('.btnClose').addEventListener('click', function () {
     document.querySelector('dialog').close();
   })
 </script>
 
-@@include('../inc/script.html')
 <script type="module">
   import editor from '../plugins/ckeditor5/editor.js'
   $(document).ready(function () {

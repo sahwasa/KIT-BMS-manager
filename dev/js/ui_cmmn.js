@@ -124,6 +124,15 @@ $(function () {
     },
   })
 
+  //layer_tool
+  $('.layer_tool').on({
+    click : function(){
+      $(this).addClass('on');
+    },
+    focusin : function(){$(this).addClass('on')},
+    focusout : function(){$(this).removeClass('on')}
+  })
+  
   //tab
   $('.tab li').first().addClass('on')
   $('.tab_contents').not(':first').hide()
@@ -258,15 +267,15 @@ $(function () {
 })
 
   // toggle button
-function toggleInit() {
-  $('.btn_tgl').off('click').on('click', function (e) { // 기존에 등록된 이벤트 리스너 제거
-    e.preventDefault();
-    var cur = $(this).attr('datavalue');
-    if ($(this).attr('disabled') == 'disabled') return false;
-    if (cur == 'on') {
-      $(this).attr('datavalue', 'off');
-    } else {
-      $(this).attr('datavalue', 'on');
-    }
-  });
-}
+  function toggleInit() {
+    $('.btn_tgl').off('click').on('click', function (e) { // 기존에 등록된 이벤트 리스너 제거
+      e.preventDefault();
+      var cur = $(this).attr('datavalue');
+      if ($(this).attr('disabled') == 'disabled') return false;
+      if (cur == 'on') {
+        $(this).attr('datavalue', 'off');
+      } else {
+        $(this).attr('datavalue', 'on');
+      }
+    });
+  }
