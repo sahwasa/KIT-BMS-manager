@@ -273,9 +273,16 @@ $(function () {
       var cur =  e.target.dataset;
       if ($(this).attr('disabled') == 'disabled') return false;
       if (cur.value == 'on') {
-        $(this).attr('data-value', 'off').html(cur.on);
+        $(this).attr({
+            'data-value':'off',
+            'title':cur.off,
+          }).html(cur.off);
       } else {
-        $(this).attr('data-value', 'on').html(cur.off);
+        $(this).attr({
+          'data-value':'on',
+          'title':cur.on
+        }).html(cur.on);
       }
     });
   }
+toggleInit();
