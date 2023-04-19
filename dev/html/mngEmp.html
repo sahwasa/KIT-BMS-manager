@@ -4,32 +4,32 @@
   @@include('../inc/nav.html')
   <main id="contents" class="contents" role="main">
     <header class="cont_tit">
-      <h1>사원관리</h1>
+      <h1>임직원관리</h1>
       <section class="bredcrumb">
         <ul>
           <li><a href="#">Home</a></li>
-          <li>사원관리</li>
+          <li>임직원관리</li>
         </ul>
       </section>
     </header>
     <div class="cont_body mngEmp">
       <section class="orgMember">
         <header class="section_tit blind">
-          <h1>사원</h1>          
+          <h1>임직원</h1>          
         </header>
         <div class="section_body">
           <div class="tab_wrap">
             <ul class="tab">
-              <li><a href="#tab01">전체사원(70)</a></li>
+              <li><a href="#tab01">전체 임직원(70)</a></li>
               <li><a href="#tab02">가입대기(10)</a></li>
               <li><a href="#tab03">이용중지(5)</a></li>
             </ul>
           </div>
           <section id="tab01" class="tab_contents">
             <header class="section_tit">
-              <h1 class="blind">전체사원</h1>
+              <h1 class="blind">전체임직원</h1>
               <div class="search_box long">
-                <input type="text" title="사원 검색" placeholder="사원 이름 및 ID 검색">
+                <input type="text" title="임직원 검색" placeholder="임직원 이름 및 ID 검색">
                 <button type="button">검색</button>
               </div>
             </header>
@@ -61,7 +61,7 @@
                         <span class="ico_desc" title="내림차순">내림차순</span>
                       </span>
                     </th>
-                    <th scope="col" class="sort">직급
+                    <th scope="col" class="sort">직위
                       <span class="sorting">
                         <span class="ico_asc" title="오름차순">오름차순</span>
                         <span class="ico_desc" title="내림차순">내림차순</span>
@@ -102,7 +102,7 @@
                     <td>0001</td>
                     <td>수석</td>
                     <td>SI사업본부</td>
-                    <td>공통, ERP, 공통, 공통, 공통, 공통</td>
+                    <td>업무관리,그룹웨어,프로젝트,ERP</td>
                     <td>관리자</td>
                     <td>2022-04-07</td>
                     <td>홍00(2023-03-04)</td>
@@ -122,7 +122,27 @@
                     <td>0001</td>
                     <td>수석</td>
                     <td>SI사업본부</td>
-                    <td>공통, ERP, 공통, 공통, 공통, 공통</td>
+                    <td>업무관리,그룹웨어,프로젝트,ERP</td>
+                    <td>팀장</td>
+                    <td>2022-04-07</td>
+                    <td>홍00(2023-03-04)</td>
+                    <td>
+                      <div class="layer_tool">
+                        <button class="btn_ellipsis" title="더보기">더보기</button>
+                        <div class="btn_layer">
+                          <button type="button">승인</button>
+                          <button type="button">수정</button>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>kitvaaley</td>
+                    <td>박상건</td>
+                    <td>0001</td>
+                    <td>수석</td>
+                    <td>SI사업본부</td>
+                    <td>업무관리,그룹웨어,프로젝트,ERP</td>
                     <td>부서장</td>
                     <td>2022-04-07</td>
                     <td>홍00(2023-03-04)</td>
@@ -142,7 +162,7 @@
                     <td>0001</td>
                     <td>수석</td>
                     <td>SI사업본부</td>
-                    <td>공통, ERP, 공통, 공통, 공통, 공통</td>
+                    <td>업무관리,그룹웨어,프로젝트,ERP</td>
                     <td>일반</td>
                     <td>2022-04-07</td>
                     <td>홍00(2023-03-04)</td>
@@ -165,7 +185,7 @@
             <header class="section_tit">
               <h1 class="blind">가입대기</h1>
               <div class="search_box long">
-                <input type="text" title="사원 검색" placeholder="사원 이름 및 ID 검색">
+                <input type="text" title="임직원 검색" placeholder="임직원 이름 및 ID 검색">
                 <button type="button">검색</button>
               </div>
               <div class="btn_wrap">
@@ -181,11 +201,12 @@
                     <th scope="col">ID</th>
                     <th scope="col">성명</th>
                     <th scope="col">사번</th>
-                    <th scope="col">직급</th>
+                    <th scope="col">직위</th>
                     <th scope="col">부서명</th>
                     <th scope="col">권한그룹</th>
                     <th scope="col">업무등급</th>
-                    <th scope="col">요청일자</th>
+                    <th scope="col">신청일자</th>
+                    <th scope="col">최종갱신일자</th>
                     <th scope="col">관리</th>
                   </tr>
                 </thead>
@@ -196,9 +217,10 @@
                     <td>본부장</td>
                     <td>수석</td>
                     <td>SI사업본부</td>
-                    <td>공통, ERP, 공통, 공통, 공통, 공통</td>
+                    <td>업무관리,그룹웨어,프로젝트,ERP</td>
                     <td>관리자</td>
                     <td>2022-04-07</td>
+                    <td>홍00(2023-03-04)</td>
                     <td>
                       <div class="layer_tool">
                         <button class="btn_ellipsis" title="더보기">더보기</button>
@@ -216,7 +238,7 @@
             <header class="section_tit">
               <h1 class="blind">이용중지</h1>
               <div class="search_box long">
-                <input type="text" title="사원 검색" placeholder="사원 이름 및 ID 검색">
+                <input type="text" title="임직원 검색" placeholder="임직원 이름 및 ID 검색">
                 <button type="button">검색</button>
               </div>
               <div class="btn_wrap">
@@ -232,13 +254,13 @@
                     <th scope="col">ID</th>
                     <th scope="col">성명</th>
                     <th scope="col">사번</th>
-                    <th scope="col">직급</th>
+                    <th scope="col">직위</th>
                     <th scope="col">부서명</th>
                     <th scope="col">권한그룹</th>
                     <th scope="col">업무등급</th>
-                    <th scope="col">중지일자</th>
                     <th scope="col">상태</th>
-                    <th scope="col">비고</th>
+                    <th scope="col">처리일자</th>
+                    <th scope="col">최종갱신일자</th>
                     <th scope="col">관리</th>
                   </tr>
                 </thead>
@@ -249,11 +271,11 @@
                     <td>본부장</td>
                     <td>수석</td>
                     <td>SI사업본부</td>
-                    <td>공통, ERP, 공통, 공통, 공통, 공통</td>
+                    <td>업무관리,그룹웨어,프로젝트,ERP</td>
                     <td>일반</td>
+                    <td title="2022-04-10 개인사유로 퇴사함">퇴사</td>
                     <td>2022-04-07</td>
-                    <td>퇴사</td>
-                    <td>2022-04-10 개인사유로 퇴사함</td>
+                    <td>홍00(2023-03-04)</td>
                     <td>
                       <div class="layer_tool">
                         <button class="btn_ellipsis" title="더보기">더보기</button>
