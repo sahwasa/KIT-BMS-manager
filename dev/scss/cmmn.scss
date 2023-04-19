@@ -156,15 +156,15 @@ input[type="time"]::after{@include fontello('\eb02');font-size:18px;}
 
 //btn
 .btn_wrap{display:flex;gap:4px;}
-.btn_tgl{display:inline-block;position:relative;width:31px;height:17px;background-color:#999;border-radius:28px;vertical-align:middle;padding:0 5px;box-sizing:border-box;font-size:0;border:1px solid;overflow:hidden;outline:none;border-color: #999;text-align:left;line-height:34px;
+.btn_tgl{display:inline-block;position:relative;width:31px;height:17px;background-color:#999;border-radius:28px;vertical-align:middle;padding:0 5px;box-sizing:border-box;font-size:0;border:1px solid;overflow:hidden;outline:none;border-color: #999;text-align:left;line-height:34px;cursor:pointer;
   &[disabled]{cursor:default;}
-  &::before{position:absolute;top:2px;right:16px;display:inline-block;content:"";width:11px;height:11px;background-color:#fff;border-radius:50%;transition:0.5s;}
+  &::before{position:absolute;top:2px;right:16px;display:inline-block;content:"";width:11px;height:11px;background-color:#fff;border-radius:50%;transition:.1s;}
   &::after{position:relative;;top:-4px;left:0;font-size:12px;color:#fff;}
-  &[datavalue="on"]{background-color:#e42b29;border-color:#e42b29;
+  &[data-value="on"]{background-color:#e42b29;border-color:#e42b29;
     &::before{right:2px;}
     &::after{padding-right:6px;float:right;}
   }
-  &[datavalue="off"]{background-color:#999;border-color:transparent;
+  &[data-value="off"]{background-color:#999;border-color:transparent;
     &::before{right:16px;}
     &::after{left:0;}
   }

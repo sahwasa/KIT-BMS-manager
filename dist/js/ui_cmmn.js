@@ -268,14 +268,14 @@ $(function () {
 
   // toggle button
   function toggleInit() {
-    $('.btn_tgl').off('click').on('click', function (e) { // 기존에 등록된 이벤트 리스너 제거
+    $('.evt_tgl').off('click').on('click', function (e) { // 기존에 등록된 이벤트 리스너 제거
       e.preventDefault();
-      var cur = $(this).attr('datavalue');
+      var cur =  e.target.dataset;
       if ($(this).attr('disabled') == 'disabled') return false;
-      if (cur == 'on') {
-        $(this).attr('datavalue', 'off');
+      if (cur.value == 'on') {
+        $(this).attr('data-value', 'off').html(cur.on);
       } else {
-        $(this).attr('datavalue', 'on');
+        $(this).attr('data-value', 'on').html(cur.off);
       }
     });
   }
