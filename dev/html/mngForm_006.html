@@ -1,0 +1,252 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')
+  @@include('../inc/nav.html')
+  <main id="contents" class="contents" role="main">
+    <header class="cont_tit">
+      <h1>결재 양식수정</h1>
+      <section class="bredcrumb">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">결재 양식관리</a></li>
+          <li>결재 양식수정</li>
+        </ul>
+      </section>
+    </header>
+    <div class="cont_body mngFormDetail">
+      <section>
+        <p class="form_validity required validity">표시는 필수 입력 항목입니다.</p>
+        <div class="form_wrap">
+          <div class="tit_form">
+            <h2>휴가 변경 신청서</h2>
+            <table class="tbl_row">
+              <caption>결재 상황 테이블</caption>
+              <colgroup>
+                <col style="width:70px;">
+                <col style="width:150px;">
+                <col style="width:150px;">
+                <col style="width:150px;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="col" rowspan="2">결<br>재</th>
+                  <th scope="col">기안</th>
+                  <th scope="col">결재</th>
+                  <th scope="col">승인</th>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <table class="tbl_row">
+            <caption>휴가 변경 신청서 양식 테이블</caption>
+            <colgroup>
+              <col style="width:150px">
+              <col style="width:auto">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <label for="form_num" class="required">문서번호</label>
+                </th>
+                <td>
+                  <input type="text" id="form_num" value="KIT-">
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <label for="form_leave" class="required">휴가구분</label>
+                </th>
+                <td>
+                  <ul>
+                    <li>
+                      <input type="radio" id="form_leave" name="form_leave" checked>
+                      <label for="form_leave">연차</label>
+                    </li>
+                    <li>
+                      <input type="radio" id="sick" name="form_leave">
+                      <label for="sick">병가</label>
+                    </li>
+                    <li>
+                      <input type="radio" id="public" name="form_leave">
+                      <label for="public">공가</label>
+                    </li>
+                    <li>
+                      <input type="radio" id="condolences" name="form_leave">
+                      <label for="condolences">경조사</label>
+                    </li>
+                    <li>
+                      <input type="radio" id="substitute" name="form_leave">
+                      <label for="substitute">대체휴무</label>
+                    </li>
+                    <li>
+                      <input type="radio" id="other" name="form_leave">
+                      <label for="other">기타</label>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <label for="form_leave_period" class="required">휴가기간</label>
+                </th>
+                <td>
+                  <input type="date" id="form_leave_period" value="2023-04-14">&nbsp;-&nbsp;
+                  <input type="date" title="출장기간" value="2023-04-17">
+                  <input type="text" title="총 출장기간" class="w_day alignC" value="3">
+                  <span>일간</span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <label for="form_leave_reason" class="required">신청 사유</label>
+                </th>
+                <td>
+                  <textarea id="form_leave_reason" title="신청 사유 입력"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <label for="form_leave_change" class="required">변경 내역</label>
+                </th>
+                <td>
+                  <textarea id="form_leave_change" title="변경 내역 입력"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <label for="form_leave_other">기타</label>
+                </th>
+                <td>
+                  <textarea id="form_leave_other" title="기타란 입력"></textarea>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="sign_wrap">
+            <p>상기와 같이 휴가 변경 신청서를 제출합니다.<br>
+              <span>2023년 4월 17일</span>
+            </p>
+            <p>신청인 : <span>멋쟁이</span> (인)</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <table class="tbl_row">
+          <caption>결재 양식 테이블</caption>
+          <colgroup>
+            <col style="width:180px">
+            <col style="width:auto">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th scope="row" class="required">템플릿 유형</th>
+              <td>
+                <span>TMPL-006</span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <label for="category" class="required">카테고리</label>
+              </th>
+              <td>
+                <select name="category" id="category">
+                  <option value="카테고리 선택">카테고리 선택</option>
+                  <option value="근태관리" selected>근태관리</option>
+                  <option value="기안문서">기안문서</option>
+                  <option value="대외문서">대외문서</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <label for="use" class="required">사용여부</label>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <input type="radio" id="use" name="use" checked>
+                    <label for="use">사용</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="notused" name="use">
+                    <label for="notused">사용안함</label>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <label for="form_name" class="required">양식명</label>
+              </th>
+              <td>
+                <input type="text" id="form_name" value="휴가 변경 신청서">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="form_referrer">참조자</label></th>
+              <td>
+                <span class="file_input">
+                  <input type="text" id="form_referrer">
+                  <button type="button" class="btn_ogt">조직도</button>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <label for="form_approver" class="required">결재자 지정</label>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <input type="radio" id="form_approver" name="form_approver" checked>
+                    <label for="form_approver">조직도</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="department" name="form_approver">
+                    <label for="department">부서내</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="designation" name="form_approver">
+                    <label for="designation">임의지정</label>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <label for="form_importance" class="required">중요도</label>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <input type="radio" id="form_importance" name="form_importance">
+                    <label for="form_importance">높음</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="middle" name="form_importance" checked>
+                    <label for="middle">보통</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="row" name="form_importance">
+                    <label for="row">낮음</label>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="btn_wrap">
+          <button class="postive btn_save" type="button">저장</button>
+          <button class="negative btn_cancel">닫기</button>
+        </div>
+      </section>
+    </div>
+  </main>
+  @@include('../inc/footer.html')
+</div>
+@@include('../inc/script.html')

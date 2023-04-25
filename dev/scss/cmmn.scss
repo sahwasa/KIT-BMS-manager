@@ -51,6 +51,11 @@ strong{font-weight:bold;} // 웹에디터 용
     @content;
   }
 }
+@mixin except_pc{
+  @media (max-width: 1400px){ 
+    @content;
+  }
+}
 
 // color
 $white:#fff;
@@ -109,7 +114,7 @@ input[type="date"]{position:relative;}
 input[type='time']::-webkit-calendar-picker-indicator,
 input[type="date"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-calendar-picker-indicator{position:relative;z-index:2;right:0;width:13px;height:14px;background: transparent;}
-textarea{min-height:100px;max-height:300px;resize:none;}
+textarea{min-height:200px;max-height:300px;resize:none;}
 
 // layout
 hr,
@@ -147,15 +152,13 @@ hr,
 .tbl_wrap .ico_org{font-size:0;}
 input[type="time"],
 input[type="date"]{
-  &::after{position:absolute;z-index:1;top:3px;right:5px;color:$red;}
+  &::after{position:absolute;z-index:1;top:0;right:5px;color:$red;}
 }
-input[type="date"]::after{@include fontello('\f133');font-size:15px;}
+input[type="date"]::after{@include fontello('\f133');top:1px;font-size:15px;}
 input[type="time"]::after{@include fontello('\eb02');font-size:18px;}
 
-
-
 //btn
-.btn_wrap{display:flex;gap:4px;}
+.btn_wrap{display:flex;gap:4px;justify-content:flex-end;}
 .btn_tgl{display:inline-block;position:relative;width:31px;height:17px;background-color:#999;border-radius:28px;vertical-align:middle;padding:0 5px;box-sizing:border-box;font-size:0;border:1px solid;overflow:hidden;outline:none;border-color: #999;text-align:left;line-height:34px;cursor:pointer;
   &[disabled]{cursor:default;}
   &::before{position:absolute;top:2px;right:16px;display:inline-block;content:"";width:11px;height:11px;background-color:#fff;border-radius:50%;transition:.1s;}
@@ -285,6 +288,27 @@ td{white-space:nowrap;text-overflow:ellipsis;}
   &.basis_asc .ico_asc::before,
   &.basis_desc .ico_desc::before{color:$red}
 }
+table{width:100%; // form내 너비 수정
+  textarea.line1{height:28px;min-height:28px;}
+  &.tbl_list{
+    th{text-align:left;color:#111;font-weight:bold;
+      &::before{display:inline-block;content:'';width:6px;height:6px;margin-right:7px;border-radius:6px;background-color:#c4c4c4;}
+    }
+    td{padding:4px;}
+  }
+  input, select{
+    &.w_day{width:30px;
+      &+span{vertical-align:middle;}
+    }
+    &.w_week{width:55px;
+      &+span{vertical-align:middle;}
+    }
+    &.w_money{width:200px;text-align:right;
+      &+span{vertical-align:middle;}
+    }
+    &.w_auto{width:auto;}
+  }
+}
 
 // tab
 .tab{
@@ -368,6 +392,19 @@ td{white-space:nowrap;text-overflow:ellipsis;}
 }
 .tree_wrap + .btn_wrap{
   .doneAddOgt,.doneEditOgt{display:none;}
+}
+
+/* multi file */
+.MultiFile-wrap{
+  .multi{position:relative;width:72px;height:28px;float:right;overflow:visible;border-color:#aaa;
+    &::before{position:absolute;content:'파일선택';top:-1px;left:-1px;line-height: 28px;padding:0 10px;background-color: #ebebeb;cursor: pointer;}
+  }
+  .MultiFile-list{float:left;width:calc(100% - 76px);min-height:28px;margin-right:4px;padding:0 6px;border: 1px solid #c5c5c5;border-radius: 2px;
+    .MultiFile-remove{position:relative;display:inline-block;width:12px;height:12px;font-size:0;margin-left:5px;
+      &+span{float:left;}
+      &::before{@include fontello('\e928');position:absolute;top:-4px;font-size:13px;color:$red;} 
+    }}
+  .MultiFile-label{line-height:25px;}
 }
 
 /* ico_fileName Extention */

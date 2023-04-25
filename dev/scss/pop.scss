@@ -1,10 +1,4 @@
 :modal {position:absolute;min-width:355px;margin:auto;padding:0;border:none;box-shadow: 1.4px 1.4px 29px 0 rgba(0, 0, 0, 0.08);font-size:13px;
-  input, select{
-    &.w_day{width:30px;
-      &+span{vertical-align:middle;}
-    }
-    &.w_auto{width:auto;}
-  }
   ::backdrop{background-color:$black;}
   form>*{box-sizing: border-box;padding:0.5em;}
   .p_header {display:flex;padding:7px 18px 8px;background-color:$black;color:#fff;font-size:16px;letter-spacing:-0.4px;
@@ -19,15 +13,6 @@
     .p_body_tit{@include flex_between;margin-bottom:5px;
       h1{font-size:14px;color:#000;font-weight:bold;
         &::before{position:relative;top:-3px;display:inline-block;content:'';width:6px;height:6px;margin-right:7px;border-radius:6px;background-color:#c4c4c4;}
-      }
-    }
-    table{width:100%;
-      textarea.line1{height:28px;min-height:28px;}
-      &.tbl_list{
-        th{text-align:left;color:#111;font-weight:bold;
-          &::before{display:inline-block;content:'';width:6px;height:6px;margin-right:7px;border-radius:6px;background-color:#c4c4c4;}
-        }
-        td{padding:4px;}
       }
     }
     .btn_wrap {justify-content: end;padding:20px 0 0;}

@@ -1,0 +1,405 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')
+  @@include('../inc/nav.html')
+  <main id="contents" class="contents" role="main">
+    <header class="cont_tit">
+      <h1>결재 양식수정</h1>
+      <section class="bredcrumb">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">결재 양식관리</a></li>
+          <li>결재 양식수정</li>
+        </ul>
+      </section>
+    </header>
+    <div class="cont_body mngFormDetail">
+      <section>
+        <p class="form_validity required validity">표시는 필수 입력 항목입니다.</p>
+        <div class="form_wrap">
+          <div class="tit_form">
+            <h2>출장복명서</h2>
+            <table class="tbl_row">
+              <caption>결재 상황 테이블</caption>
+              <colgroup>
+                <col style="width:70px;">
+                <col style="width:150px;">
+                <col style="width:150px;">
+                <col style="width:150px;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="col" rowspan="3">결<br>재</th>
+                  <th scope="col">멋쟁이</th>
+                  <th scope="col">귀요미</th>
+                  <th scope="col">귀요미</th>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>2023-04-17 12:00:00</td>
+                  <td>2023-04-17 12:00:00</td>
+                  <td>2023-04-17 12:00:00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <table class="tbl_row">
+            <caption>출장복명서 양식 테이블</caption>
+            <colgroup>
+              <col style="width:150px">
+              <col style="width:auto">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <label for="form_num" class="required">문서번호</label>
+                </th>
+                <td>
+                  <input type="text" id="form_num" value="KIT-">
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <label for="form_project" class="required">프로젝트</label>
+                </th>
+                <td>
+                  <span class="file_input">
+                    <select id="form_project" name="form_project">
+                      <option value="사업자 분류">사업자 분류</option>
+                    </select>
+                    <select title="기관선택">
+                      <option value="기관 선택">기관 선택</option>
+                    </select>
+                    <select title="프로젝트 선택">
+                      <option value="프로젝트 선택">프로젝트 선택</option>
+                    </select>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <label for="form_businesstrip" class="required">출장구분</label>
+                </th>
+                <td>
+                  <ul>
+                    <li>
+                      <input type="radio" id="form_businesstrip" name="form_businesstrip" checked>
+                      <label for="form_businesstrip">국내출장</label>
+                    </li>
+                    <li>
+                      <input type="radio" id="overseas" name="form_businesstrip">
+                      <label for="overseas">해외출장</label>
+                    </li>
+                    <li>
+                      <input type="radio" id="dispatch" name="form_businesstrip">
+                      <label for="dispatch">파견근무</label>
+                    </li>
+                    <li>
+                      <input type="radio" id="outside" name="form_businesstrip">
+                      <label for="outside">외근</label>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <label for="form_businesstrip_period" class="required">출장기간</label>
+                </th>
+                <td>
+                  <input type="date" id="form_businesstrip_period" value="2023-04-14">&nbsp;-&nbsp;
+                  <input type="date" title="출장기간" value="2023-04-17">
+                  <input type="text" title="총 출장기간" class="w_day alignC">
+                  <span>일간</span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <label for="form_businesstrip_people" class="required">출장인원</label>
+                </th>
+                <td>
+                  <span class="file_input">
+                    <input type="text" id="form_businesstrip_people">
+                    <button type="button" class="btn_ogt">조직도</button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="required">일별 업무계획</th>
+                <td>
+                  <div class="tbl_workinfo">
+                    <p class="validity">※ 출장시간 :
+                      <span class="t_skyblue">00시간 00분</span>
+                    </p>
+                    <div>
+                      <button type="button" class="btn_form">일정추가</button>
+                      <button type="button" class="btn_form">삭제</button>
+                    </div>
+                  </div>
+                  <table class="tbl_default tbl_use_select tbl_hover">
+                    <caption>일별 업무계획 테이블</caption>
+                    <colgroup>
+                      <col style="width:auto;">
+                      <col style="width:120px;">
+                      <col style="width:auto;">
+                      <col style="width:120px;">
+                      <col style="width:120px;">
+                      <col style="width:auto;">
+                      <col style="width:auto;">
+                      <col style="width:auto;">
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="col">선택</th>
+                        <th scope="col">일자</th>
+                        <th scope="col">요일</th>
+                        <th scope="col">시작시간</th>
+                        <th scope="col">종료시간</th>
+                        <th scope="col">출장장소</th>
+                        <th scope="col">업무내용</th>
+                        <th scope="col">교통수단</th>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox" class="row_check" title="글선택"></td>
+                        <td><input type="date" title="일자 선택"></td>
+                        <td>
+                          <select name="day_select" class="w_week" title="요일 선택">
+                            <option value="선택">선택</option>
+                            <option value="월">월</option>
+                            <option value="화">화</option>
+                            <option value="수">수</option>
+                            <option value="목">목</option>
+                            <option value="금">금</option>
+                            <option value="토">토</option>
+                            <option value="일">일</option>
+                          </select>
+                        </td>
+                        <td><input type="time" title="시작시간 입력"></td>
+                        <td><input type="time" title="종료시간 입력"></td>
+                        <td><input type="text" title="출장장소 입력"></td>
+                        <td><textarea class="line1" title="업무내용 입력"></textarea></td>
+                        <td><input type="text" title="교통수단 입력"></td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox" class="row_check" title="글선택" checked></td>
+                        <td>2023-04-14</td>
+                        <td>월</td>
+                        <td>09:00</td>
+                        <td>18:00</td>
+                        <td>ㅇㅇㅇ 기관</td>
+                        <td></td>
+                        <td>자차</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <label for="form_expense" class="required">출장여비</label>
+                </th>
+                <td>
+                  <div class="tbl_workinfo">
+                    <p class="validity">※ 총 소요예산 :
+                      <input type="number" id="form_expense" class="alignR w_money"> 원
+                    </p>
+                  </div>
+                  <table class="tbl_default tbl_hover">
+                    <caption>출장여비 테이블</caption>
+                    <colgroup>
+                      <col style="width:150px;">
+                      <col style="width:auto;">
+                      <col style="width:200px;">
+                      <col style="width:200px;">
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="col">종류</th>
+                        <th scope="col">내역</th>
+                        <th scope="col">법인 금액</th>
+                        <th scope="col">개인 금액</th>
+                      </tr>
+                      <tr>
+                        <th scope="row">주유</th>
+                        <td><input type="text" title="주유 내역 입력"></td>
+                        <td><input type="text" title="주유 법인금액 입력" class="w_money"></td>
+                        <td><input type="text" title="주유 개인금액 입력" class="w_money"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">톨비</th>
+                        <td><input type="text" title="톨비 내역 입력"></td>
+                        <td><input type="text" title="톨비 법인금액 입력" class="w_money"></td>
+                        <td><input type="text" title="톨비 개인금액 입력" class="w_money"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">철도</th>
+                        <td><input type="text" title="철도 내역 입력"></td>
+                        <td><input type="text" title="철도 법인금액 입력" class="w_money"></td>
+                        <td><input type="text" title="철도 개인금액 입력" class="w_money"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">항공</th>
+                        <td><input type="text" title="항공 내역 입력"></td>
+                        <td><input type="text" title="항공 법인금액 입력" class="w_money"></td>
+                        <td><input type="text" title="항공 개인금액 입력" class="w_money"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">택시</th>
+                        <td><input type="text" title="택시 내역 입력"></td>
+                        <td><input type="text" title="택시 법인금액 입력" class="w_money"></td>
+                        <td><input type="text" title="택시 개인금액 입력" class="w_money"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">버스</th>
+                        <td><input type="text" title="버스 내역 입력"></td>
+                        <td><input type="text" title="버스 법인금액 입력" class="w_money"></td>
+                        <td><input type="text" title="버스 개인금액 입력" class="w_money"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">숙박</th>
+                        <td><input type="text" title="숙박 내역 입력"></td>
+                        <td><input type="text" title="숙박 법인금액 입력" class="w_money"></td>
+                        <td><input type="text" title="숙박 개인금액 입력" class="w_money"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">일비&sol;기타</th>
+                        <td><input type="text" title="일비 및 기타 내역 입력"></td>
+                        <td><input type="text" title="일비 및 기타 법인금액 입력" class="w_money"></td>
+                        <td><input type="text" title="일비 및 기타 개인금액 입력" class="w_money"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="editor_wrap">
+            <textarea class="editor"></textarea>
+          </div>
+          <div class="sign_wrap">
+            <p>상기와 같이 출장 업무를 보고합니다.<br>
+              <span>2023년 3월 20일</span>
+            </p>
+            <p>신청인 : <span>멋쟁이</span> (인)</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <table class="tbl_row">
+          <caption>결재 양식 테이블</caption>
+          <colgroup>
+            <col style="width:180px">
+            <col style="width:auto">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th scope="row" class="required">템플릿 유형</th>
+              <td>
+                <span>TMPL-002</span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <label for="category" class="required">카테고리</label>
+              </th>
+              <td>
+                <select name="category" id="category">
+                  <option value="카테고리 선택">카테고리 선택</option>
+                  <option value="근태관리" selected>근태관리</option>
+                  <option value="기안문서">기안문서</option>
+                  <option value="대외문서">대외문서</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <label for="use" class="required">사용여부</label>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <input type="radio" id="use" name="use" checked>
+                    <label for="use">사용</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="notused" name="use">
+                    <label for="notused">사용안함</label>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <label for="form_name" class="required">양식명</label>
+              </th>
+              <td>
+                <input type="text" id="form_name" value="출장복명서">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="form_referrer">참조자</label></th>
+              <td>
+                <span class="file_input">
+                  <input type="text" id="form_referrer">
+                  <button type="button" class="btn_ogt">조직도</button>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <label for="form_approver" class="required">결재자 지정</label>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <input type="radio" id="form_approver" name="form_approver" checked>
+                    <label for="form_approver">조직도</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="department" name="form_approver">
+                    <label for="department">부서내</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="designation" name="form_approver">
+                    <label for="designation">임의지정</label>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              
+              <th scope="row">
+                <label for="form_importance" class="required">중요도</label>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <input type="radio" id="form_importance" name="form_importance">
+                    <label for="form_importance">높음</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="middle" name="form_importance" checked>
+                    <label for="middle">보통</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="row" name="form_importance">
+                    <label for="row">낮음</label>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="btn_wrap">
+          <button class="postive btn_save" type="button">저장</button>
+          <button class="negative btn_cancel">닫기</button>
+        </div>
+      </section>
+    </div>
+  </main>
+  @@include('../inc/footer.html')
+</div>
+@@include('../inc/script.html')

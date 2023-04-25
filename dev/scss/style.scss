@@ -191,3 +191,47 @@ height:0;overflow:hidden;background-color:$black;
   .orgSetting{margin-bottom:20px;}
   .tbl_row{width:100%;}
 }
+
+//mngForm
+.file_input{display:flex;
+  &>input{flex:auto;}
+  &>*{width:auto;flex:1;margin-right:4px;align-self:center;vertical-align:middle;
+    &:last-child{margin-right:0;}
+  }
+}
+.mngFormDetail{@include flex_between;flex-wrap:wrap;justify-content:center;align-items:start;
+  .form_validity{margin-bottom:5px;}
+  .tbl_workinfo{@include flex_between;margin:3px 0 5px;}
+  &>*{padding:0 5px;}
+  &>*:first-child{flex:1 1 65%;
+    &>.form_wrap{border:1px solid silver;border-width:2px 0 2px;}
+  }
+  &>*:last-child{flex:1 1 35%;min-width:350px;margin-top:23px;}
+  .form_wrap{display:grid;padding:15px;border-bottom:2px solid #c0c0c0;
+    input[type='date']{width:auto;}
+    table{border:none;
+      &.tbl_use_select{
+        tr{
+          &>*{text-align:center;}
+          &>td:first-child{text-align:center;}
+        }
+      }
+    }
+    .tit_form{display:grid;grid-template-columns:1fr auto;min-height:90px;margin-bottom:15px;
+      h2{font-size:17px;color:#000;font-weight:bold;text-align:center;align-self:center;white-space:pre;margin-right:20px;}
+      table{
+        th{padding:0;font-weight:normal;font-size:13px;text-align:center;}
+        td{height:35px;text-align:center;}
+      }
+    }
+    &+.btn_wrap{margin:10px 0;justify-content:flex-end;}
+  }
+  .editor_wrap{width:100%;margin-top:-1px;padding:13px 10px;border:1px solid #ebebeb;}
+  .sign_wrap{padding:35px 0 15px;font-size:13px;color:#111;font-weight:bold;line-height:30px;
+    p{
+      &:first-child{text-align:center;}
+      &:last-child{text-align:right;}
+    }
+  }
+  .btn_wrap{margin-top:10px;}
+}
