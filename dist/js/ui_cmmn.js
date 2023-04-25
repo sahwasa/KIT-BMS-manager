@@ -286,3 +286,6 @@ $(function () {
     });
   }
 toggleInit();
+
+// editor
+CKEDITOR.replace('editor');

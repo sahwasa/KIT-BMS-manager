@@ -79,6 +79,8 @@
         <li><button class="btn_default btnMngMenu">메뉴관리 > 수정 및 추가</button>
         </li>
       </ul>
+
+      <textarea id = "editor4" name ="editor4">안녕하세요 저는 ckeditor예요!</textarea>
     </div>
     <div class="paginate">
   <a href="#" class="first" title="처음">〈〈</a>
@@ -1058,6 +1060,8 @@
 <script src="../plugins/jquery.min.js"></script>
 <script src="../plugins/jquery-ui.min.js"></script>
 <script src="../plugins/jquery.MultiFile.js"></script>
+<script src="../plugins/ckeditor/ckeditor.js"></script>
+<script src="../plugins/ckeditor/lang/ko.js"></script>
 <script src="../js/ui_cmmn.js"></script>
 </body>
 </html>
@@ -1090,3 +1094,5 @@
     document.querySelector('dialog').close();
   })
 </script>
+
+<script>CKEDITOR.replace('editor4');</script>
