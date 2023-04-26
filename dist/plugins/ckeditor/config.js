@@ -11,19 +11,16 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
 		{ name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
 		{ name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
-		{ name: 'forms', groups: [ 'forms' ] },
-		'/',
-		{ name: 'links', groups: [ 'links' ] },
 		{ name: 'insert', groups: [ 'insert' ] },
-		{ name: 'document', groups: [ 'document', 'doctools', 'mode' ] },
+		{ name: 'forms', groups: [ 'forms' ] },
+		{ name: 'links', groups: [ 'links' ] },
 		{ name: 'tools', groups: [ 'tools' ] },
 		{ name: 'others', groups: [ 'others' ] },
-		{ name: 'about', groups: [ 'about' ] }
+		{ name: 'about', groups: [ 'about' ] },
+		{ name: 'document', groups: [ 'mode', 'document', 'doctools' ] }
 	];
-
-	config.removeButtons = 'Maximize,ShowBlocks,Styles,Format,About,Smiley,SpecialChar,Iframe,PageBreak,Anchor,Unlink,BidiRtl,BidiLtr,Language,CreateDiv,Blockquote,Outdent,Indent,RemoveFormat,CopyFormatting,Superscript,Subscript,TextField,Textarea,Select,Button,ImageButton,HiddenField,Scayt,SelectAll,Find,Replace,Templates,Preview,PasteFromWord,PasteText',
-	config.filebrowserImageBrowseUrl= false,
-	config.filebrowserUploadUrl      = '/upload.do?type=Files',
-	config.filebrowserImageUploadUrl = '/upload.do?type=Images',
-	config.filebrowserUploadMethod='form'; //파일 오류났을때 alert띄워줌
+	config.height = 300;
+	config.resize_enabled = false;
+	config.removeButtons = 'NewPage,Preview,Print,Templates,Cut,Copy,Paste,PasteText,PasteFromWord,Undo,Redo,Find,Replace,SelectAll,Scayt,CopyFormatting,RemoveFormat,Outdent,Indent,CreateDiv,Blockquote,BidiLtr,BidiRtl,Language,Anchor,Unlink,Smiley,SpecialChar,PageBreak,Iframe,Maximize,ShowBlocks,About,Styles,Format,Superscript,Subscript,Strike,HiddenField,ImageButton,Button,EasyImageUpload,HorizontalRule,Form';
+	config.font_names = '맑은 고딕/Malgun;굴림/Gulim;돋움/Dotum;바탕/Batang;궁서/Gungsuh;Arial/arial;';
 };

@@ -37,3 +37,25 @@
     }
   }
 }
+
+
+// ckeditor pop (임시)
+.cke_dialog{
+  .cke_dialog_title{padding:8px 19px 9px 12px;background:$black;font-size:16px;color:#fff;}
+  a{
+    &.cke_dialog_close_button{width:15px;height:18px;right:18px;
+      &::before,&::after{position:absolute;top:0;display:inline-block;content:'';width:2px;height:18px;background-color:#fff;}
+      &::before{transform:rotate(45deg);}
+      &::after{transform:rotate(135deg);}
+    }
+    &.cke_dialog_tab{font-size:13px;background:#f9fafc;
+      &.cke_dialog_tab_selected{color:$red;background:#fff;}
+    }
+    &.cke_dialog_ui_button_ok{border-color:#f05050;background:#fff;color:#f05050;
+      &:hover{background-color:#f05050;border-color:#f05050;color:#fff;}
+    }
+  }
+  .cke_dialog_body label{font-weight:bold;}
+  .cke_dialog_contents{border-color:#eaedf1;}
+  .cke_dialog_ui_labeled_required{float:left;color:$red;margin-top:2px;}
+}
