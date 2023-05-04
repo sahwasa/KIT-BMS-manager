@@ -5,7 +5,7 @@ $columnGap:25px;
 
 //header
 .header{@include flex_between;font-size:20px;font-weight:bold;letter-spacing:-.5px;
-  .logo{display:inline-block;@include f_blind;width:114px;height:25px;background:url(../images/logo.png) 0 0 no-repeat;vertical-align:text-bottom;margin-right: 19px;}
+  .logo{display:inline-block;@include f_blind;width:114px;height:25px;background:url(../images/logo.png) 0 0 no-repeat;vertical-align:text-bottom;margin-right:19px;}
   .t_red{margin-left:10px;}
 }
 
@@ -140,7 +140,7 @@ height:0;overflow:hidden;background-color:$black;
 
 //contents
 .contents{grid-row:2;grid-column:2;padding:10px $columnGap;}
-.cont_tit{@include flex_between;font-weight:bold;height:59px;border-bottom: 1px solid #e1e1e1;letter-spacing:$tit_spacing;margin-bottom:19px;
+.cont_tit{@include flex_between;font-weight:bold;height:59px;border-bottom:1px solid #e1e1e1;letter-spacing:$tit_spacing;margin-bottom:19px;
   h1{font-size:18px;}
 }
 .bredcrumb{
@@ -156,7 +156,7 @@ height:0;overflow:hidden;background-color:$black;
 }
 .cont_body{
   .section_tit{@include flex_between;margin-bottom:10px;
-    h1{flex-grow:1;font-weight: bold;color:#363636;font-size: 16px;letter-spacing: $tit_spacing;
+    h1{flex-grow:1;font-weight:bold;color:#363636;font-size:16px;letter-spacing:$tit_spacing;
       &::before{display:inline-block;font-family:fontello;margin-right:3px;}
     }
     &.tit_icon{
@@ -180,7 +180,43 @@ height:0;overflow:hidden;background-color:$black;
 //mngEmp
 .profile_photo{position:relative;display:inline-block;width:45px;height:60px;overflow:hidden;border-radius:5px;background-color:#ebebeb;
   img{position:relative;}
-  &::before{position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);@include fontello("\ea3e");color:#b4b4b4;font-size:28px;}
+  &::before{position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);@include fontello("\ea3e");color:#b4b4b4;font-size:28px;}
+}
+@include tablet_only{
+  .login_wrap{
+    .login{top:50%;left:50%;margin:0;padding:50px 30px;transform:translate(-50%,-50%);
+      .login_body{height:470px;}
+      .copyright{bottom:15px}
+    }
+  }
+}
+.profile_wrap{display:grid;gap:20px;grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
+  &>div{
+    &.emp_group_wrap li{width:100%;}
+    &>ul{display:flex;flex-wrap:wrap;flex:1;
+      &>li{display:flex;width:50%;
+      }
+    }
+  }
+  .profile_address{&>*{margin-bottom:3px;}}
+  .profile_password_reset{@include flex_between;justify-content:flex-start;align-items:center;
+    &>button{margin-left:10px;border-radius:5px;font-weight:normal;line-height:21px;}
+  }
+  .profile_pic_wrap{@include flex_between;border-radius:5px;overflow:hidden;
+    input[type="file"]{position:absolute;width:0;height:0;padding:0;overflow:hidden;border:0;}
+    &>table{flex:1;}
+    &>div{position:relative;
+      &:hover{
+        .btn_del_photo{display:block;}
+        }
+      &>.btn_del_photo{display:none;position:absolute;top:0;right:0;border-radius:0 5px 0 0;background-color:$red;color:#fff;font-size:0;
+        &::before{@include fontello('\eb2e');width:20px;font-size:12px;line-height:20px;text-align:center;cursor:pointer;}
+      }
+    }
+    .emp_img{width:100px;height:130px;margin:0 10px;}
+    .emp_sign{width:220px;height:40px;}
+    img{cursor:pointer;}
+  }
 }
 // mngCode
 .mngCode{
@@ -204,10 +240,10 @@ height:0;overflow:hidden;background-color:$black;
   .form_validity{margin-bottom:5px;}
   .tbl_workinfo{@include flex_between;margin:3px 0 5px;}
   &>*{padding:0 5px;}
-  &>*:first-child{flex:1 1 65%;
+  &>*:first-child{flex:1 1 60%;
     &>.form_wrap{border:1px solid silver;border-width:2px 0 2px;}
   }
-  &>*:last-child{flex:1 1 35%;min-width:350px;margin-top:23px;}
+  &>*:last-child{flex:1 1 25%;min-width:371px;margin-top:23px;}
   .form_wrap{display:grid;padding:15px;border-bottom:2px solid #c0c0c0;
     input[type='date']{width:auto;}
     table{border:none;
@@ -235,4 +271,9 @@ height:0;overflow:hidden;background-color:$black;
     }
   }
   .btn_wrap{margin-top:10px;}
+}
+
+@include mobile_lowpc{
+  // mngForm_001.html
+  .mngFormDetail>*:last-child{order:-1;}
 }

@@ -1,0 +1,34 @@
+// 정기회의 때 사라질 수도 있는 아이들...ㅎ(디자인 모험!)
+.select_custom{position:relative;z-index:9999;min-width:150px;cursor:pointer;background:url(../images/btn_select.png) right 10px center no-repeat,rgba(255,255,255,.9);border:1px solid #cccccc;border-radius:2px;
+  &.active{
+    &>.label{    background:url(../images/btn_select.png) right 10px center no-repeat,#f8f8f8;}
+    .optionList{max-height:500px;top:calc(100% + 1px);}
+  }
+  .label{align-items:center;display:block;width:100%;height:26px;border:0 none;outline:0 none;padding-left:2px;cursor:pointer;text-align:left;}
+  &>ul{position:absolute;top:100%;left:0;width:100%;max-height:0;padding:0;border:1px solid #ccc;border-width:0 1px 1px 1px;background:#fff;color:#000;list-style-type:none;overflow:hidden;
+    &>li{position:relative;border-bottom:1px dashed #cccccc85;padding:5px 0;transition:.1s;
+      &:hover{background:#f5f5f5;}
+      &:last-child {border-bottom:0 none;}
+    }
+  }
+  .ico_select{position:relative;padding-left:13px;margin-right:15px;font-size:0;
+    &::before{position:absolute;top:calc(50% - 20px);font-size:20px;}
+    &.high::before{@include fontello('\e88d');color:$red;}
+    &.common::before{@include fontello('\eaa3');margin-top:7px;margin-left:2px;transform:rotate(90deg);font-size:12px;color:rgb(255, 174, 0);}
+    &.row::before{@include fontello('\e88a');margin-top:2px;color:rgb(17, 0, 255);}
+  }
+  
+}
+
+.btn_slideclose{display:flex;flex-wrap:wrap;justify-content:flex-start;
+  &>div{display:inline-block;position:relative;overflow:hidden;margin-top:5px;margin-right:4px;border-radius:3px;background:#ececec;cursor:pointer;transition:.2s;text-align:center;
+    &:hover{background-color:#dbdbdb;
+      div{right:0;}
+      p{padding-left:5px;padding-right:15px;}
+    }
+    div{position:absolute;top:0;right:-13px;width:13px;height:100%;background:#8e8e8e;color:#fff;line-height:23px;font-size:0;transition:.3s;
+      &::after{@include fontello('\eb2e');font-size:12px;}
+    }
+    p{padding:2px 10px;color:#717889;transition:.3s;}
+  }
+}

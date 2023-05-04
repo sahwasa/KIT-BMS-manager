@@ -2,7 +2,7 @@
   ::backdrop{background-color:$black;}
   form>*{box-sizing: border-box;padding:0.5em;}
   .p_header {display:flex;padding:7px 18px 8px;background-color:$black;color:#fff;font-size:16px;letter-spacing:-0.4px;
-    .p_tit {flex:1;}
+    strong {flex:1;}
     .cancel{position:relative;align-self:center;width:15px;height:18px;font-size:0;
       &::before,&::after{position:absolute;top:0;display:inline-block;content:'';width:2px;height:18px;background-color:#fff;}
       &::before{transform:rotate(45deg);}
@@ -14,10 +14,54 @@
       h1{font-size:14px;color:#000;font-weight:bold;
         &::before{position:relative;top:-3px;display:inline-block;content:'';width:6px;height:6px;margin-right:7px;border-radius:6px;background-color:#c4c4c4;}
       }
+      ul{@include flex_between;justify-content:flex-start;
+        li{margin-right:10px;
+          &:last-child{margin-right:0;}
+        }
+        *{align-self:center;vertical-align:middle;}
+      }
     }
     .btn_wrap {justify-content: end;padding:20px 0 0;}
+    // tree common
+    .org_wrap{display:flex;gap:10px;
+      .btn_tree_wrap{align-self:center;
+        .btn_tree{display:block;margin-bottom:4px;}
+      }
+    }
+    .tree_wrap{
+      &>.sortable{min-width:290px;width:100%;height:250px;}
+      &>.search_box{width:100%;}
+      .tree_result{
+        li{display:flex;justify-content:space-between;letter-spacing:-0.98px;}
+      }
+      .tree_result,
+      .tree_selected{padding:7px 0;border:1px solid #ddd;overflow-y:auto;background-color:#fff;
+        li{display:flex;align-items:center;position:relative;z-index:1;padding:0 10px;margin-bottom:5px;
+          &:last-child{margin-bottom:0;}
+          label{vertical-align:middle;
+            &::before{position:absolute;z-index:-1;top:0;left:0;display:none;content:'';width:100%;height:100%;background-color:#f9fafc;}
+          }
+          &:hover{
+            label::before{display: inline-block;}
+          }
+          input[type=checkbox]{margin-right:3px;
+            &:checked{
+              &+label::before{display: inline-block;}
+            }
+            &+label{display:inline-block;
+              &>span{
+                &:first-child{font-size:12px;color:#000;
+                  b{font-weight:bold;}
+                }
+                &:last-child{font-size:11px;color:#717889;}
+              }
+            }
+          }
+        }
+      }
+      .tree_result{width:325px;height:345px;padding:10px 0;}
+    }
   }
-
   // p_mngOrg
   .warning_wrap{float:left;margin-right:15px;
     img{display:block;width:40px;height:34px;}
@@ -26,7 +70,12 @@
   .del_org{display:block;color:#ff5959;}
   // p_mngOrg2
   &.p_mngSearch{
-    .tree_wrap>.sortable{height:200px;margin-top:10px;}
+    .tree_wrap>.sortable{margin-top:10px;}
+  }
+  &.p_mngTree{
+    .tree_wrap>.sortable,
+    .tree_selected{margin-bottom:6px;}
+    .tree_selected{max-height:90px;}
   }
   // p_mngMenu
   &.p_mngMenu{
@@ -36,26 +85,4 @@
       }
     }
   }
-}
-
-
-// ckeditor pop (임시)
-.cke_dialog{
-  .cke_dialog_title{padding:8px 19px 9px 12px;background:$black;font-size:16px;color:#fff;}
-  a{
-    &.cke_dialog_close_button{width:15px;height:18px;right:18px;
-      &::before,&::after{position:absolute;top:0;display:inline-block;content:'';width:2px;height:18px;background-color:#fff;}
-      &::before{transform:rotate(45deg);}
-      &::after{transform:rotate(135deg);}
-    }
-    &.cke_dialog_tab{font-size:13px;background:#f9fafc;
-      &.cke_dialog_tab_selected{color:$red;background:#fff;}
-    }
-    &.cke_dialog_ui_button_ok{border-color:#f05050;background:#fff;color:#f05050;
-      &:hover{background-color:#f05050;border-color:#f05050;color:#fff;}
-    }
-  }
-  .cke_dialog_body label{font-weight:bold;}
-  .cke_dialog_contents{border-color:#eaedf1;}
-  .cke_dialog_ui_labeled_required{float:left;color:$red;margin-top:2px;}
 }

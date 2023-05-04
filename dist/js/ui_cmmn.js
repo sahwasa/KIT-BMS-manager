@@ -126,13 +126,17 @@ $(function () {
 
   //layer_tool
   $('.layer_tool').on({
-    click : function(){
-      $(this).addClass('on');
+    click: function () {
+      $(this).addClass('on')
     },
-    focusin : function(){$(this).addClass('on')},
-    focusout : function(){$(this).removeClass('on')}
+    focusin: function () {
+      $(this).addClass('on')
+    },
+    focusout: function () {
+      $(this).removeClass('on')
+    },
   })
-  
+
   //tab
   $('.tab li').first().addClass('on')
   $('.tab_contents').not(':first').hide()
@@ -261,30 +265,56 @@ $(function () {
 
   // add file
   $('.upFile').on('change', function () {
-    $(this).prev().val(this.value.replace(/c:\\fakepath\\/i, ''))
+    $(this)
+      .prev()
+      .val(this.value.replace(/c:\\fakepath\\/i, ''))
     console.log($(this))
   })
 })
 
-  // toggle button
-  function toggleInit() {
-    $('.evt_tgl').off('click').on('click', function (e) { // 기존에 등록된 이벤트 리스너 제거
-      e.preventDefault();
-      var cur =  e.target.dataset;
-      if ($(this).attr('disabled') == 'disabled') return false;
+// toggle button
+function toggleInit() {
+  $('.evt_tgl')
+    .off('click')
+    .on('click', function (e) {
+      // 기존에 등록된 이벤트 리스너 제거
+      e.preventDefault()
+      var cur = e.target.dataset
+      if ($(this).attr('disabled') == 'disabled') return false
       if (cur.value == 'on') {
-        $(this).attr({
-            'data-value':'off',
-            'title':cur.off,
-          }).html(cur.off);
+        $(this)
+          .attr({
+            'data-value': 'off',
+            title: cur.off,
+          })
+          .html(cur.off)
       } else {
-        $(this).attr({
-          'data-value':'on',
-          'title':cur.on
-        }).html(cur.on);
+        $(this)
+          .attr({
+            'data-value': 'on',
+            title: cur.on,
+          })
+          .html(cur.on)
       }
-    });
-  }
-toggleInit();
+    })
+}
+toggleInit()
 
-CKEDITOR.replace('editor');
+// editor
+ClassicEditor.create(document.querySelector('#editor'), {
+  licenseKey: '',
+  fontFamily: {
+    options: ['나눔고딕','맑은고딕','굴림','돋움','바탕','궁서',],
+  },
+  fontSize: {
+    options: [9, 11, 13, 'default', 17, 19, 21],
+  },
+})
+  .then(editor => {
+    window.editor = editor
+  })
+  .catch(error => {
+    console.error('Oops, something went wrong!')
+    console.warn('Build id: qwsqnzvk7hw9-unxl3nmu7n15')
+    console.error(error)
+  })

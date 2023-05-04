@@ -7,20 +7,52 @@
       <h1>팝업 모음</h1>
     </header>
     <div class="cont_body">
-      <span style="display:inline-block;background-image: linear-gradient(90deg, red, orange, yellow, green, blue, navy, purple);
+      <span style="display:inline-block;background-image: linear-gradient(90deg,red,orange,yellow,green,blue,navy,purple);
       -webkit-background-clip:text;color:transparent;margin-bottom:20px;font-size:20px;font-weight:bold;">esc 누르시면 팝업이
         닫힙니다요</span>
       <ul>
         <li><button class="btn_default btnMngDel">조직관리 > 부서삭제</button>
         <li><button class="btn_default btnMngSearch">조직관리 > 부서검색</button>
-        <li><button class="btn_default btnMngEmp">사원관리 > 사원정보 관리</button>
-        <li><button class="btn_default btnMngEmp2">사원관리 > 사원정보 수정</button>
+          <li><button class="btn_default btnMngTree">조직도</button>
         <li><button class="btn_default btnMngCode">공통코드관리 > 그룹코드 입력</button>
         <li><button class="btn_default btnMngCode2">공통코드관리 > 권한그룹 상세코드 입력</button>
         <li><button class="btn_default btnMngMenu">메뉴관리 > 수정 및 추가</button>
         </li>
       </ul>
-      <textarea id ="editor" name ="editor4">안녕하세요 저는 에디터예요!</textarea>
+      <div id="editor">
+        <ul class="todo-list">
+          <li>
+              <label class="todo-list__label">
+              <input type="checkbox" disabled="disabled">
+              <span class="todo-list__label__description">안녕하세요</span></label>
+          </li>
+          <li>
+              <label class="todo-list__label">
+              <input type="checkbox" disabled="disabled">
+              <span class="todo-list__label__description"><span style="font-family:맑은고딕;">안녕하세요</span></span></label>
+          </li>
+          <li>
+              <label class="todo-list__label">
+              <input type="checkbox" disabled="disabled">
+              <span class="todo-list__label__description"><span style="font-family:굴림;">안녕하세요</span></span></label>
+          </li>
+          <li>
+              <label class="todo-list__label">
+              <input type="checkbox" disabled="disabled">
+              <span class="todo-list__label__description"><span style="font-family:돋움;">안녕하세요</span></span></label>
+          </li>
+          <li>
+              <label class="todo-list__label">
+              <input type="checkbox" disabled="disabled">
+              <span class="todo-list__label__description"><span style="font-family:바탕;">안녕하세요</span></span></label>
+          </li>
+          <li>
+              <label class="todo-list__label">
+              <input type="checkbox" disabled="disabled">
+              <span class="todo-list__label__description"><span style="font-family:궁서;">안녕하세요</span></span></label>
+          </li>
+      </ul>
+      </div>
     </div>
     @@include('../inc/paginate.html')
   </main>
@@ -28,28 +60,23 @@
 </div>
 @@include('../inc/pop/p_mngOrg.html') <!--// 부서삭제 -->
 @@include('../inc/pop/p_mngOrg2.html') <!--// 부서검색 -->
-@@include('../inc/pop/p_mngEmp.html') <!-- //사원정보관리 -->
-@@include('../inc/pop/p_mngEmp2.html') <!--// 사원정보수정 -->
+@@include('../inc/pop/p_mngTree.html') <!--// 조직도 -->
 @@include('../inc/pop/p_mngCode.html') <!--// 그룹코드 입력 -->
 @@include('../inc/pop/p_mngCode2.html') <!--// 권한그룹 상세코드 입력 -->
 @@include('../inc/pop/p_mngMenu.html') <!--// 메뉴 수정 및 추가 -->
 @@include('../inc/script.html')
 
 <script>
-  toggleInit(); // toggle common
-
+  toggleInit();// toggle common
   document.querySelector('.btnMngDel').addEventListener('click', function () {
     document.querySelector('.p_mngDel').showModal();
   }) // 부서삭제
   document.querySelector('.btnMngSearch').addEventListener('click', function () {
     document.querySelector('.p_mngSearch').showModal();
   }) // 부서검색
-  document.querySelector('.btnMngEmp').addEventListener('click', function () {
-    document.querySelector('.p_mngEmp').showModal();
-  }) // 부서삭제
-  document.querySelector('.btnMngEmp2').addEventListener('click', function () {
-    document.querySelector('.p_mngEmp2').showModal();
-  }) // 부서검색
+  document.querySelector('.btnMngTree').addEventListener('click', function () {
+    document.querySelector('.p_mngTree').showModal();
+  }) // 조직도
   document.querySelector('.btnMngCode').addEventListener('click', function () {
     document.querySelector('.p_mngCode').showModal();
   }) // 그룹코드 입력

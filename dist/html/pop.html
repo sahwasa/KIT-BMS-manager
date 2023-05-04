@@ -52,7 +52,7 @@
   <h1 class="blind">관리자 페이지</h1>
   <ul class="lnb">
     <li><a href="/html/mngOrg.html">조직관리</a></li>
-    <li><a href="/html/mngEmp.html">사원관리</a></li>
+    <li><a href="/html/mngEmp.html">임직원관리</a></li>
     <li><a href="/html/mngCode.html">공통코드관리</a></li>
     <li><a href="/html/mngMenu.html">메뉴관리</a></li>
     <li><a href="/html/mngForm.html">결재 양식관리</a></li>
@@ -66,20 +66,52 @@
       <h1>팝업 모음</h1>
     </header>
     <div class="cont_body">
-      <span style="display:inline-block;background-image: linear-gradient(90deg, red, orange, yellow, green, blue, navy, purple);
+      <span style="display:inline-block;background-image: linear-gradient(90deg,red,orange,yellow,green,blue,navy,purple);
       -webkit-background-clip:text;color:transparent;margin-bottom:20px;font-size:20px;font-weight:bold;">esc 누르시면 팝업이
         닫힙니다요</span>
       <ul>
         <li><button class="btn_default btnMngDel">조직관리 > 부서삭제</button>
         <li><button class="btn_default btnMngSearch">조직관리 > 부서검색</button>
-        <li><button class="btn_default btnMngEmp">사원관리 > 사원정보 관리</button>
-        <li><button class="btn_default btnMngEmp2">사원관리 > 사원정보 수정</button>
+          <li><button class="btn_default btnMngTree">조직도</button>
         <li><button class="btn_default btnMngCode">공통코드관리 > 그룹코드 입력</button>
         <li><button class="btn_default btnMngCode2">공통코드관리 > 권한그룹 상세코드 입력</button>
         <li><button class="btn_default btnMngMenu">메뉴관리 > 수정 및 추가</button>
         </li>
       </ul>
-      <textarea id ="editor" name ="editor4">안녕하세요 저는 에디터예요!</textarea>
+      <div id="editor">
+        <ul class="todo-list">
+          <li>
+              <label class="todo-list__label">
+              <input type="checkbox" disabled="disabled">
+              <span class="todo-list__label__description">안녕하세요</span></label>
+          </li>
+          <li>
+              <label class="todo-list__label">
+              <input type="checkbox" disabled="disabled">
+              <span class="todo-list__label__description"><span style="font-family:맑은고딕;">안녕하세요</span></span></label>
+          </li>
+          <li>
+              <label class="todo-list__label">
+              <input type="checkbox" disabled="disabled">
+              <span class="todo-list__label__description"><span style="font-family:굴림;">안녕하세요</span></span></label>
+          </li>
+          <li>
+              <label class="todo-list__label">
+              <input type="checkbox" disabled="disabled">
+              <span class="todo-list__label__description"><span style="font-family:돋움;">안녕하세요</span></span></label>
+          </li>
+          <li>
+              <label class="todo-list__label">
+              <input type="checkbox" disabled="disabled">
+              <span class="todo-list__label__description"><span style="font-family:바탕;">안녕하세요</span></span></label>
+          </li>
+          <li>
+              <label class="todo-list__label">
+              <input type="checkbox" disabled="disabled">
+              <span class="todo-list__label__description"><span style="font-family:궁서;">안녕하세요</span></span></label>
+          </li>
+      </ul>
+      </div>
     </div>
     <div class="paginate">
   <a href="#" class="first" title="처음">〈〈</a>
@@ -107,7 +139,7 @@
 <dialog class="p_mngDel">
   <form method="dialog">
     <div class="p_header">
-      <strong class="p_tit">부서삭제</strong>
+      <strong>부서삭제</strong>
       <button class="btnClose ico_org cancel" aria-label="close">닫기</button>
     </div>
     <div class="p_body">
@@ -123,7 +155,7 @@
 <dialog class="p_mngSearch">
   <form method="dialog">
     <div class="p_header">
-      <strong class="p_tit">부서검색</strong>
+      <strong>부서검색</strong>
       <button class="btnClose ico_org cancel" aria-label="close">닫기</button>
     </div>
     <div class="p_body">
@@ -420,472 +452,405 @@
     </div>
   </form>
 </dialog> <!--// 부서검색 -->
-<dialog class="p_mngEmp">
+<dialog class="p_mngTree">
   <form method="dialog">
     <div class="p_header">
-      <strong class="p_tit">사원정보 관리</strong>
+      <strong>조직도(결재자 지정 등 다양하게 사용)</strong>
       <button class="btnClose ico_org cancel" aria-label="close">닫기</button>
     </div>
     <div class="p_body">
-      <div class="p_body_tit">
-        <h1>사원 추가하기</h1>
-        <p class="required validity">표시는 필수 입력 항목입니다.</p>
-      </div>
-      <table class="tbl_row">
-        <caption>결재 양식관리</caption>
-        <colgroup>
-          <col style="width:128px">
-          <col style="width:190px">
-          <col style="width:128px">
-          <col style="width:190px">
-        </colgroup>
-        <tbody>
-          <tr>
-            <th scope="row"><label for="emp_id" class="required">아이디(ID)</label></th>
-            <td colspan="3">
-              <span class="file_input">
-                <input type="text" id="emp_id">
-                <button type="button" class="btn_ogt">중복확인</button>
-                <span class="t_skyblue">(이메일 형식으로 작성)</span>
-              </span>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="emp_num">사번</label></th>
-            <td colspan="3">
-              <span class="file_input">
-                <input type="text" id="emp_num">
-                <button type="button" class="btn_ogt">중복확인</button>
-              </span>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="emp_password" class="required">암호</label></th>
-            <td><input type="text" id="emp_password"></td>
-            <th scope="row"><label for="emp_password_check" class="required">암호확인</label></th>
-            <td><input type="text" id="emp_password_check"></td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="emp_name_kr" class="required">한글이름</label></th>
-            <td><input type="text" id="emp_name_kr"></td>
-            <th scope="row"><label for="emp_name_en">영문이름</label></th>
-            <td><input type="text" id="emp_name_en"></td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="emp_rank" class="required">직위</label></th>
-            <td>
-              <select name="rank" id="emp_rank">
-                <option value="선택">선택</option>
-                <option value="연구원">연구원</option>
-                <option value="선임">선임</option>
-                <option value="책임">책임</option>
-                <option value="수석보">수석보</option>
-                <option value="수석">수석</option>
-              </select>
-            </td>
-            <th scope="row"><label for="emp_department" class="required">부서명</label></th>
-            <td>
-              <select name="department" id="emp_department">
-                <option value="선택">선택</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="emp_group" class="required">권한그룹</label></th>
-            <td colspan="3">
-              <ul>
-                <li>
-                  <input type="checkbox" id="emp_group">
-                  <label for="emp_group">업무관리</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="groupware">
-                  <label for="groupware">그룹웨어</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="human">
-                  <label for="human">ERP</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="manage">
-                  <label for="manage">프로젝트</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="manage2">
-                  <label for="manage2">관리자</label>
-                </li>
-              </ul>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="emp_rate" class="required">업무등급</label></th>
-            <td colspan="3">
-              <ul>
-                <li>
-                  <input type="checkbox" id="emp_rate">
-                  <label for="emp_rate">일반사원</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="head">
-                  <label for="head">부서장</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="administrator">
-                  <label for="administrator">관리자</label>
-                </li>
-              </ul>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="emp_employmenttype" class="required">고용형태</label></th>
-            <td>
-              <select name="employment" id="emp_employmenttype">
-                <option value="선택">선택</option>
-                <option value="정규직">정규직</option>
-                <option value="계약직">계약직</option>
-                <option value="일용직">일용직</option>
-                <option value="프리랜서">프리랜서</option>
-                <option value="기타">기타</option>
-              </select>
-            </td>
-            <th scope="row"><label for="emp_workplace" class="required">근무지</label></th>
-            <td>
-              <select name="workplace" id="emp_workplace">
-                <option value="선택">선택</option>
-                <option value="본사(서울)">본사(서울)</option>
-                <option value="연구소(별가람)">연구소(별가람)</option>
-                <option value="행안부(세종)">행안부(세종)</option>
-                <option value="기상청(김천)">기상청(김천)</option>
-                <option value="태풍센터(제주)">태풍센터(제주)</option>
-                <option value="우주전파(제주)">우주전파(제주)</option>
-                <option value="기타">기타</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="emp_worktype" class="required">근무형태</label></th>
-            <td colspan="3">
-              <select name="workplace" id="emp_worktype">
-                <option value="선택">선택</option>
-                <option value="본사(서울)">본사(서울)</option>
-                <option value="연구소(별가람)">연구소(별가람)</option>
-                <option value="행안부(세종)">행안부(세종)</option>
-                <option value="기상청(김천)">기상청(김천)</option>
-                <option value="태풍센터(제주)">태풍센터(제주)</option>
-                <option value="우주전파(제주)">우주전파(제주)</option>
-                <option value="기타">기타</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="emp_ssn" class="required">주민등록번호</label></th>
-            <td colspan="3">
-              <span class="file_input">
-                <input type="number" id="emp_ssn">
-                <span class="t_skyblue">(숫자만 입력하세요)</span>
-              </span>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="emp_entering" class="required">입사일자</label></th>
-            <td>
-              <input type="date" id="emp_entering">
-            </td>
-            <th scope="row"><label for="emp_phone" class="required">휴대전화</label></th>
-            <td><input type="tel" id="emp_phone"></td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="emp_call">비상연락망</label></th>
-            <td colspan="3">
-              <span class="file_input">
-                <span>전화번호 : </span>
-              <input type="tel" id="emp_call">
-              <span>관계 : </span>
-              <input type="text" title="비상연락망 입력">
-              </span>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="emp_email" class="required">이메일 주소</label></th>
-            <td colspan="3">
-              <span class="file_input">
-                <input type="email" id="emp_email">
-              </span>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="nri_num">국가연구자번호</label></th>
-            <td colspan="3"><input type="number" id="nri_num"></td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="address">우편번호</label></th>
-            <td colspan="3">
-              <span class="file_input">
-                <input type="text" id="address">
-                <button type="button" class="btn_ogt">우편번호</button>
-              </span>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="address2">주소</label></th>
-            <td colspan="3"><input type="text" id="address2"></td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="emp_photo">사진</label></th>
-            <td colspan="3">
-              <span class="file_input">
-                <input type="file" id="emp_photo" class="multi" maxlength="1" accept=".gif, .jpg, .png">
-              </span>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="emp_sign">결재용 사인</label></th>
-            <td colspan="3">
-              <span class="file_input">
-                <input type="file" id="emp_sign" class="multi" maxlength="1" accept=".gif, .jpg, .png">
-              </span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="btn_wrap">
-        <button class="btn_save" type="button">저장</button>
-        <button class="btn_cancel">취소</button>
-      </div>
-    </div>
-  </form>
-</dialog> <!-- //사원정보관리 -->
-<dialog class="p_mngEmp2">
-  <form method="dialog">
-    <div class="p_header">
-      <strong class="p_tit">사원정보 관리</strong>
-      <button class="btnClose ico_org cancel" aria-label="close">닫기</button>
-    </div>
-    <div class="p_body">
-      <div class="p_body_tit">
-        <h1>사원정보 수정하기</h1>
-        <p class="required validity">표시는 필수 입력 항목입니다.</p>
-      </div>
-      <table class="tbl_row">
-        <caption>결재 양식관리</caption>
-        <colgroup>
-          <col style="width:128px">
-          <col style="width:190px">
-          <col style="width:128px">
-          <col style="width:190px">
-        </colgroup>
-        <tbody>
-          <tr>
-            <th scope="row" class="required">아이디(ID)</th>
-            <td colspan="3">dandy</td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="emp_num">사번</label></th>
-            <td colspan="3">
-              <span class="file_input">
-                <input type="text" id="emp_num" value="0088">
-                <button type="button" class="btn_ogt">중복확인</button>
-              </span>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row" ><label for="emp_password">암호</label></th>
-            <td><input type="password" id="emp_password" value="12345678"></td>
-            <th scope="row" ><label for="emp_password_check">암호확인</label></th>
-            <td><input type="password" id="emp_password_check" value="12345678"></td>
-          </tr>
-          <tr>
-            <th scope="row" ><label for="emp_name_kr" class="required">한글이름</label></th>
-            <td><input type="text" id="emp_name_kr" value="멋쟁이"></td>
-            <th scope="row" ><label for="emp_name_en">영문이름</label></th>
-            <td><input type="text" id="emp_name_en" value="meosjaeng-e"></td>
-          </tr>
-          <tr>
-            <th scope="row" ><label for="emp_rank" class="required">직위</label></th>
-            <td>
-              <select name="rank" id="emp_rank">
-                <option value="선택">선택</option>
-                <option value="연구원" selected>연구원</option>
-                <option value="선임">선임</option>
-                <option value="책임">책임</option>
-                <option value="수석보">수석보</option>
-                <option value="수석">수석</option>
-              </select>
-            </td>
-            <th scope="row" ><label for="emp_department" class="required">부서명</label></th>
-            <td>
-              <select name="department" id="emp_department">
-                <option value="선택">선택</option>
-                <option value="SI사업본부" selected>SI사업본부</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="emp_group">권한그룹</label></th>
-            <td colspan="3">
-              <ul>
-                <li>
-                  <input type="checkbox" id="emp_group" checked>
-                  <label for="emp_group">업무관리</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="groupware" checked>
-                  <label for="groupware">그룹웨어</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="human">
-                  <label for="human">ERP</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="manage">
-                  <label for="manage">프로젝트</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="manage2">
-                  <label for="manage2">관리자</label>
-                </li>
-              </ul>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="emp_rate" class="required">업무등급</label></th>
-            <td colspan="3">
-              <ul>
-                <li>
-                  <input type="checkbox" id="emp_rate" checked>
-                  <label for="emp_rate">일반사원</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="head">
-                  <label for="head">부서장</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="administrator">
-                  <label for="administrator">관리자</label>
-                </li>
-              </ul>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row" class="required">고용형태</th>
-            <td>정규직</td>
-            <th scope="row" class="required">근무지</th>
-            <td>본사(서울)</td>
-          </tr>
-          <tr>
-            <th scope="row" class="required">근무형태</th>
-            <td colspan="3">일근</td>
-          </tr>
-          <tr>
-            <th scope="row" class="required">주민등록번호</th>
-            <td colspan="3">123456-7891011</td>
-          </tr>
-          <tr>
-            <th scope="row" class="required">입사일자</th>
-            <td>2021-03-08</td>
-            <th><label for="emp_phone" class="required">휴대전화</label></th>
-            <td><input type="tel" value="01012345678" id="emp_phone"></td>
-          </tr>
-          <tr>
-            <th scope="row">비상연락망</th>
-            <td colspan="3">
-            <span class="file_input">
-                <span>전화번호 : 010-2345-6789</span>
-                <span>관계 : 부</span>
-            </span>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="emp_email" class="required">이메일 주소</label></th>
-            <td colspan="3">
-              <span class="file_input">
-                <input type="email" id="emp_email" value="dandy@kitvalley.com">
-              </span>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="nri_num">국가연구자번호</label></th>
-            <td colspan="3"><input type="number" value="12345678" id="nri_num"></td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="address">우편번호</label></th>
-            <td colspan="3">
-              <span class="file_input">
-                <input type="text" id="address">
-                <button type="button" class="btn_ogt">우편번호</button>
-              </span>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="address2">주소</label></th>
-            <td colspan="3">
-              <input type="text" value="서울 금천구 가산동" id="address2">
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="emp_photo_edit">사진</label></th>
-            <td colspan="3">
-              <span class="file_input">
-                <input type="file" id="emp_photo_edit" class="multi" maxlength="1" accept=".gif, .jpg, .png">
-              </span>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="emp_sign_edit">결재용 사인</label></th>
-            <td colspan="2">
-              <div class="file_input">
-                <div style="flex:auto;">
-                  <span class="file_input">
-                    <input type="file" id="emp_sign_edit" class="multi" maxlength="1" accept=".gif, .jpg, .png">
-                  </span>
-                </div>
+      <div class="section_body org_wrap">
+        <div class="tree_wrap">
+          <div class="p_body_tit">
+            <h1>조직도</h1>
+          </div>
+          <ul class="sortable move_sortable tree ui-sortable">
+            <li class="ui-sortable-handle arrow">
+              <span>그룹 접기/열기</span>
+              <div>
+                <span>케이아이티밸리</span>
+                <span>(90)</span>
               </div>
-            </td>
-            <td>
-              <img src="http://placehold.it/95x50" alt="결재용 사인 이미지">
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">신청일자</th>
-            <td colspan="3">멋쟁이 (2023-04-08 15:00:00)</td>
-          </tr>
-          <tr>
-            <th scope="row">등록상태</th>
-            <td>승인</td>
-            <th scope="row">중지상태</th>
-            <td>휴직</td>
-          </tr>
-          <tr>
-            <th scope="row">처리일자</th>
-            <td colspan="3">귀요미 (2023-04-08 15:00:00)</td>
-          </tr>
-          <tr>
-            <th scope="row">최종 갱신일자</th>
-            <td colspan="3">귀요미 (2023-04-08 15:00:00)</td>
-          </tr>
-          <tr>
-            <th scope="row">비밀번호 오류</th>
-            <td colspan="3">오류횟수 : <span></span>회</td>
-          </tr>
-          <tr>
-            <th scope="row"><label for="emp_note">비고</label></th>
-            <td colspan="3">
-              <textarea id="emp_note" style="min-height:50px;max-height:50px;" placeholder="퇴사일/휴직일 및 사유 등은 비고에 기록"></textarea>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+              <ul class="sortable move_sortable ui-sortable">
+                <li class="ui-sortable-handle arrow">
+                  <span>그룹 접기/열기</span>
+                  <div>
+                    <span>연구기획본부</span>
+                    <span>(50)</span>
+                  </div>
+                  <ul class="sortable move_sortable ui-sortable">
+                    <li class="ui-sortable-handle">
+                      <span>그룹 접기/열기</span>
+                      <div class="hover">
+                        <span>연구기획1팀</span>
+                        <span>(20)</span>
+                      </div>
+                      <ul class="sortable move_sortable ui-sortable"></ul>
+                    </li>
+                    <li class="ui-sortable-handle">
+                      <span>그룹 접기/열기</span>
+                      <div>
+                        <span>연구기획2팀</span>
+                        <span>(20)</span>
+                      </div>
+                      <ul class="sortable move_sortable ui-sortable"></ul>
+                    </li>
+                    <li class="ui-sortable-handle">
+                      <span>그룹 접기/열기</span>
+                      <div>
+                        <span>연구기획3팀</span>
+                        <span>(20)</span>
+                      </div>
+                      <ul class="sortable move_sortable ui-sortable"></ul>
+                    </li>
+                    <li class="ui-sortable-handle">
+                      <span>그룹 접기/열기</span>
+                      <div>
+                        <span>연구기획4팀</span>
+                        <span>(20)</span>
+                      </div>
+                      <ul class="sortable move_sortable ui-sortable"></ul>
+                    </li>
+                    <li class="ui-sortable-handle">
+                      <span>그룹 접기/열기</span>
+                      <div>
+                        <span>연구개발팀</span>
+                        <span>(20)</span>
+                      </div>
+                      <ul class="sortable move_sortable ui-sortable"></ul>
+                    </li>
+                    <li class="ui-sortable-handle">
+                      <span>그룹 접기/열기</span>
+                      <div>
+                        <span>연구행정팀</span>
+                        <span>(20)</span>
+                      </div>
+                      <ul class="sortable move_sortable ui-sortable"></ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="ui-sortable-handle arrow">
+                  <span>그룹 접기/열기</span>
+                  <div>
+                    <span>SI사업본부</span>
+                    <span>(40)</span>
+                  </div>
+                  <ul class="sortable move_sortable ui-sortable">
+                    <li class="ui-sortable-handle">
+                      <span>그룹 접기/열기</span>
+                      <div>
+                        <span>SI사업1팀</span>
+                        <span>(20)</span>
+                      </div>
+                      <ul class="sortable move_sortable ui-sortable"></ul>
+                    </li>
+                    <li class="ui-sortable-handle">
+                      <span>그룹 접기/열기</span>
+                      <div>
+                        <span>SI사업2팀</span>
+                        <span>(20)</span>
+                      </div>
+                      <ul class="sortable move_sortable ui-sortable"></ul>
+                    </li>
+                    <li class="ui-sortable-handle">
+                      <span>그룹 접기/열기</span>
+                      <div>
+                        <span>SI사업2팀</span>
+                        <span>(20)</span>
+                      </div>
+                      <ul class="sortable move_sortable ui-sortable"></ul>
+                    </li>
+                    <li class="ui-sortable-handle">
+                      <span>그룹 접기/열기</span>
+                      <div>
+                        <span>SI사업3팀</span>
+                        <span>(20)</span>
+                      </div>
+                      <ul class="sortable move_sortable ui-sortable"></ul>
+                    </li>
+                    <li class="ui-sortable-handle">
+                      <span>그룹 접기/열기</span>
+                      <div>
+                        <span>전략사업팀</span>
+                        <span>(20)</span>
+                      </div>
+                      <ul class="sortable move_sortable ui-sortable"></ul>
+                    </li>
+                    <li class="ui-sortable-handle">
+                      <span>그룹 접기/열기</span>
+                      <div>
+                        <span>컨텐츠팀</span>
+                        <span>(20)</span>
+                      </div>
+                      <ul class="sortable move_sortable ui-sortable"></ul>
+                    </li>
+                    <li class="ui-sortable-handle">
+                      <span>그룹 접기/열기</span>
+                      <div>
+                        <span>지진방재MA팀</span>
+                        <span>(20)</span>
+                      </div>
+                      <ul class="sortable move_sortable ui-sortable"></ul>
+                    </li>
+                    <li class="ui-sortable-handle">
+                      <span>그룹 접기/열기</span>
+                      <div>
+                        <span>레이다MA팀</span>
+                        <span>(20)</span>
+                      </div>
+                      <ul class="sortable move_sortable ui-sortable"></ul>
+                    </li>
+                    <li class="ui-sortable-handle">
+                      <span>그룹 접기/열기</span>
+                      <div>
+                        <span>해양기상MA팀</span>
+                        <span>(20)</span>
+                      </div>
+                      <ul class="sortable move_sortable ui-sortable"></ul>
+                    </li>
+                    <li class="ui-sortable-handle">
+                      <span>그룹 접기/열기</span>
+                      <div>
+                        <span>재난예경보MA팀</span>
+                        <span>(20)</span>
+                      </div>
+                      <ul class="sortable move_sortable ui-sortable"></ul>
+                    </li>
+                    <li class="ui-sortable-handle">
+                      <span>그룹 접기/열기</span>
+                      <div>
+                        <span>우주전파MA팀</span>
+                        <span>(20)</span>
+                      </div>
+                      <ul class="sortable move_sortable ui-sortable"></ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="ui-sortable-handle arrow">
+                  <span>그룹 접기/열기</span>
+                  <div>
+                    <span>지진사업본부</span>
+                    <span>(50)</span>
+                  </div>
+                  <ul class="sortable move_sortable ui-sortable">
+                    <li class="ui-sortable-handle">
+                      <span>그룹 접기/열기</span>
+                      <div>
+                        <span>지진사업1팀</span>
+                        <span>(20)</span>
+                      </div>
+                      <ul class="sortable move_sortable ui-sortable"></ul>
+                    </li>
+                    <li class="ui-sortable-handle">
+                      <span>그룹 접기/열기</span>
+                      <div>
+                        <span>지진사업2팀</span>
+                        <span>(20)</span>
+                      </div>
+                      <ul class="sortable move_sortable ui-sortable"></ul>
+                    </li>
+                    <li class="ui-sortable-handle">
+                      <span>그룹 접기/열기</span>
+                      <div>
+                        <span>지진사업3팀</span>
+                        <span>(20)</span>
+                      </div>
+                      <ul class="sortable move_sortable ui-sortable"></ul>
+                    </li>
+                    <li class="ui-sortable-handle">
+                      <span>그룹 접기/열기</span>
+                      <div>
+                        <span>지진분석팀</span>
+                        <span>(20)</span>
+                      </div>
+                      <ul class="sortable move_sortable ui-sortable"></ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="ui-sortable-handle arrow">
+                  <span>그룹 접기/열기</span>
+                  <div>
+                    <span>경영관리실</span>
+                    <span>(50)</span>
+                  </div>
+                  <ul class="sortable move_sortable ui-sortable">
+                    <li class="ui-sortable-handle">
+                      <span>그룹 접기/열기</span>
+                      <div>
+                        <span>재무회계팀</span>
+                        <span>(20)</span>
+                      </div>
+                      <ul class="sortable move_sortable ui-sortable"></ul>
+                    </li>
+                    <li class="ui-sortable-handle">
+                      <span>그룹 접기/열기</span>
+                      <div>
+                        <span>인사총무팀</span>
+                        <span>(20)</span>
+                      </div>
+                      <ul class="sortable move_sortable ui-sortable"></ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="ui-sortable-handle">
+                  <span>그룹 접기/열기</span>
+                  <div>
+                    <span>PM실</span>
+                    <span>(50)</span>
+                  </div>
+                  <ul class="sortable move_sortable ui-sortable"></ul>
+                </li>
+                <li class="ui-sortable-handle">
+                  <span>그룹 접기/열기</span>
+                  <div>
+                    <span>기후기술사업부</span>
+                    <span>(50)</span>
+                  </div>
+                  <ul class="sortable move_sortable ui-sortable"></ul>
+                </li>
+              </ul>
+            </li>
+            <li class="ui-sortable-handle">
+              <span>그룹 접기/열기</span>
+              <div>
+                <span>코마</span>
+                <span>(60)</span>
+              </div>
+              <ul class="sortable move_sortable ui-sortable"></ul>
+            </li>
+            <li class="ui-sortable-handle arrow">
+              <span>그룹 접기/열기</span>
+              <div>
+                <span>미래사업기획실</span>
+                <span>(60)</span>
+              </div>
+              <ul class="sortable move_sortable ui-sortable">
+                <li class="ui-sortable-handle">
+                  <span>그룹 접기/열기</span>
+                  <div>
+                    <span>AI연구소</span>
+                    <span>(20)</span>
+                  </div>
+                  <ul class="sortable move_sortable ui-sortable"></ul>
+                </li>
+                <li class="ui-sortable-handle">
+                  <span>그룹 접기/열기</span>
+                  <div>
+                    <span>사업기획팀</span>
+                    <span>(20)</span>
+                  </div>
+                  <ul class="sortable move_sortable ui-sortable"></ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="tree_selected tbl_scroll">
+            <li>
+              <input type="checkbox" id="employee1" checked>
+              <label for="employee1">
+                <span><b>나나핑</b> 연구원</span>
+                <span>(SI사업1팀)</span>
+              </label>
+            </li>
+            <li>
+              <input type="checkbox" id="employee2">
+              <label for="employee2">
+                <span><b>믿어핑</b> 선임</span>
+                <span>(SI사업1팀)</span>
+              </label>
+            </li>
+            <li>
+              <input type="checkbox" id="employee3">
+              <label for="employee3">
+                <span><b>조아핑</b> 책임</span>
+                <span>(SI사업1팀)</span>
+              </label>
+            </li>
+            <li>
+              <input type="checkbox" id="employee4">
+              <label for="employee4">
+                <span><b>방글핑</b> 수석</span>
+                <span>(SI사업1팀)</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="btn_tree_wrap">
+          <button class="btn_tree" type="button">추가</button>
+          <button class="btn_tree" type="button">삭제</button>
+        </div>
+        <div class="tree_wrap">
+          <div class="p_body_tit">
+            <h1>적용대상 <span class="t_red">2</span>명</h1>
+            <ul>
+              <li>
+                <input type="radio" id="approval" name="method" checked>
+                <label for="approval">결재</label>
+              </li>
+              <li>
+                <input type="radio" id="after" name="method">
+                <label for="after">후결</label>
+              </li>
+              <li>
+                <input type="radio" id="before" name="method">
+                <label for="before">전결</label>
+              </li>
+            </ul>
+          </div>
+          <ul class="tree_result tbl_scroll">
+            <li>
+              <div>
+                <input type="checkbox" id="select_employee1">
+                <label for="select_employee1">
+                  <span>1. <b>조아핑</b> 연구원</span>
+                  <span>(SI사업1팀)</span>
+                </label>
+              </div>
+              <div>
+                <button class="btn_approval" type="button">결재</button>
+                <button class="btn_form" type="button">합의</button>
+              </div>
+            </li>
+            <li>
+              <div>
+                <input type="checkbox" id="select_employee2" checked>
+                <label for="select_employee2">
+                  <span>2. <b>방글핑</b> 연구원</span>
+                  <span>(SI사업1팀)</span>
+                </label>
+              </div>
+              <div>
+                <button class="btn_approval" type="button">결재</button>
+                <button class="btn_form" type="button">합의</button>
+              </div>
+            </li>
+            <li>
+              <div>
+                <input type="checkbox" id="select_employee3" checked>
+                <label for="select_employee3">
+                  <span>3. <b>방글핑</b> 연구원</span>
+                  <span>(SI사업1팀)</span>
+                </label>
+              </div>
+              <div>
+                <button class="btn_approval" type="button">결재</button>
+                <button class="btn_form" type="button">합의</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
       <div class="btn_wrap">
         <button class="btn_save" type="button">저장</button>
-        <button class="btn_cancel">취소</button>
+        <button class="btn_cancel" type="button">취소</button>
       </div>
     </div>
   </form>
-</dialog> <!--// 사원정보수정 -->
+</dialog> <!--// 조직도 -->
 <dialog class="p_mngCode">
   <form method="dialog">
     <div class="p_header">
-      <strong class="p_tit">그룹코드 입력</strong>
+      <strong>그룹코드 입력</strong>
       <button class="btnClose ico_org cancel" aria-label="close">닫기</button>
     </div>
     <div class="p_body">
@@ -932,7 +897,7 @@
 <dialog class="p_mngCode2">
   <form method="dialog">
     <div class="p_header">
-      <strong class="p_tit">권한그룹 상세코드 입력</strong>
+      <strong>권한그룹 상세코드 입력</strong>
       <button class="btnClose ico_org cancel" aria-label="close">닫기</button>
     </div>
     <div class="p_body">
@@ -985,7 +950,7 @@
 <dialog class="p_mngMenu">
   <form method="dialog">
     <div class="p_header">
-      <strong class="p_tit">메뉴 수정 및 추가</strong>
+      <strong>메뉴 수정 및 추가</strong>
       <button class="btnClose ico_org cancel" aria-label="close">닫기</button>
     </div>
     <div class="p_body">
@@ -1059,27 +1024,22 @@
 <script src="../plugins/jquery.min.js"></script>
 <script src="../plugins/jquery-ui.min.js"></script>
 <script src="../plugins/jquery.MultiFile.js"></script>
-<script src="../plugins/ckeditor/ckeditor.js"></script>
-<script src="../plugins/ckeditor/lang/ko.js"></script>
+<script src="../plugins/ckeditor/build/ckeditor.js"></script>
 <script src="../js/ui_cmmn.js"></script>
 </body>
 </html>
 
 <script>
-  toggleInit(); // toggle common
-
+  toggleInit();// toggle common
   document.querySelector('.btnMngDel').addEventListener('click', function () {
     document.querySelector('.p_mngDel').showModal();
   }) // 부서삭제
   document.querySelector('.btnMngSearch').addEventListener('click', function () {
     document.querySelector('.p_mngSearch').showModal();
   }) // 부서검색
-  document.querySelector('.btnMngEmp').addEventListener('click', function () {
-    document.querySelector('.p_mngEmp').showModal();
-  }) // 부서삭제
-  document.querySelector('.btnMngEmp2').addEventListener('click', function () {
-    document.querySelector('.p_mngEmp2').showModal();
-  }) // 부서검색
+  document.querySelector('.btnMngTree').addEventListener('click', function () {
+    document.querySelector('.p_mngTree').showModal();
+  }) // 조직도
   document.querySelector('.btnMngCode').addEventListener('click', function () {
     document.querySelector('.p_mngCode').showModal();
   }) // 그룹코드 입력
