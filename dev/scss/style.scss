@@ -191,12 +191,12 @@ height:0;overflow:hidden;background-color:$black;
   }
 }
 .profile_wrap{display:grid;gap:20px;grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
-  &>div{
-    &.emp_group_wrap li{width:100%;}
-    &>ul{display:flex;flex-wrap:wrap;flex:1;
-      &>li{display:flex;width:50%;
-      }
-    }
+  &>.profile_pic_wrap{padding:13px 15px 13px 0;border:1px solid #ddd;border-radius:5px;
+    dl{flex: 1;padding:0;border:none;}
+  }
+  dl{
+    &>dd{width:calc(50% - 130px);}
+    &.emp_group_wrap>dd{width:calc(100% - 130px);}
   }
   .profile_address{&>*{margin-bottom:3px;}}
   .profile_password_reset{@include flex_between;justify-content:flex-start;align-items:center;
@@ -240,10 +240,10 @@ height:0;overflow:hidden;background-color:$black;
   .form_validity{margin-bottom:5px;}
   .tbl_workinfo{@include flex_between;margin:3px 0 5px;}
   &>*{padding:0 5px;}
-  &>*:first-child{flex:1 1 60%;
+  &>*:first-child{flex:1 1 60%;min-width:815px;
     &>.form_wrap{border:1px solid silver;border-width:2px 0 2px;}
   }
-  &>*:last-child{flex:1 1 25%;min-width:371px;margin-top:23px;}
+  &>*:last-child{flex:1 1 25%;min-width:319px;margin-top:23px;}
   .form_wrap{display:grid;padding:15px;border-bottom:2px solid #c0c0c0;
     input[type='date']{width:auto;}
     table{border:none;

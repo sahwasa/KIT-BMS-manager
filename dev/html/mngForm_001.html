@@ -316,145 +316,95 @@
       </section>
       <section>
         <div class="infolist_wrap">
-          <div>
-            <ul>
-              <li>
-                <div class="required">템플릿 유형</div>
-                <div><span>TMPL-001</span></div>
-              </li>
-              <li>
-                <div><label for="category" class="required">카테고리</label></div>
+          <dl>
+            <dt class="required">템플릿 유형</dt>
+            <dd><span>TMPL-001</span></dd>
+            <dt><label for="category" class="required">카테고리</label></dt>
+            <dd>
+              <select name="category" id="category">
+                <option value="카테고리 선택">카테고리 선택</option>
+                <option value="근태관리" selected>근태관리</option>
+                <option value="기안문서">기안문서</option>
+                <option value="대외문서">대외문서</option>
+              </select>
+            </dd>
+            <dt><label for="use" class="required">사용여부</label></dt>
+            <dd>
+              <div class="btn_switch">
+                <input type="radio" id="use" name="use" checked>
+                <label for="use">사용</label>
+                <input type="radio" id="notused" name="use">
+                <label for="notused">사용안함</label>
+              </div>
+            </dd>
+            <dt><label for="form_name" class="required">양식명</label></dt>
+            <dd><input type="text" id="form_name"></dd>
+            <dt><label for="form_referrer">참조자</label></dt>
+            <dd>
+              <span class="file_input">
+                <input type="text" id="form_referrer">
+                <button type="button" class="btn_ogt btnMngTree">조직도</button>
+              </span>
+              <div class="btn_slideclose">
                 <div>
-                  <select name="category" id="category">
-                    <option value="카테고리 선택">카테고리 선택</option>
-                    <option value="근태관리" selected>근태관리</option>
-                    <option value="기안문서">기안문서</option>
-                    <option value="대외문서">대외문서</option>
-                  </select>
+                  <p>박상건</p>
+                  <div>삭제</div>
                 </div>
-              </li>
-              <li>
-                <div><label for="use" class="required">사용여부</label></div>
                 <div>
-                  <div class="btn_switch">
-                    <input type="radio" id="use" name="use" checked>
-                    <label for="use">사용</label>
-                    <input type="radio" id="notused" name="use">
-                    <label for="notused">사용안함</label>
-                  </div>
+                  <p>유한아름</p>
+                  <div>삭제</div>
                 </div>
-              </li>
-              <li>
-                <div><label for="form_name" class="required">양식명</label></div>
-                <div><input type="text" id="form_name"></div>
-              </li>
-              <li>
-                <div><label for="form_referrer">참조자</label></div>
                 <div>
-                  <span class="file_input">
-                    <input type="text" id="form_referrer">
-                    <button type="button" class="btn_ogt btnMngTree">조직도</button>
-                  </span>
-                  <div class="btn_slideclose">
-                    <div>
-                      <p>박상건</p>
-                      <div>삭제</div>
-                    </div>
-                    <div>
-                      <p>유한아름</p>
-                      <div>삭제</div>
-                    </div>
-                    <div>
-                      <p>임선</p>
-                      <div>삭제</div>
-                    </div>
-                    <div>
-                      <p>박상건</p>
-                      <div>삭제</div>
-                    </div>
-                    <div>
-                      <p>박상건</p>
-                      <div>삭제</div>
-                    </div>
-                    <div>
-                      <p>박상건</p>
-                      <div>삭제</div>
-                    </div>
-                    <div>
-                      <p>박상건</p>
-                      <div>삭제</div>
-                    </div>
-                    <div>
-                      <p>박상건</p>
-                      <div>삭제</div>
-                    </div>
-                    <div>
-                      <p>박상건</p>
-                      <div>삭제</div>
-                    </div>
-                  </div>
+                  <p>임선</p>
+                  <div>삭제</div>
                 </div>
-              </li>
-              <li>
-                <div><label for="form_approver" class="required">결재자 지정</label></div>
                 <div>
-                  <select name="form_approver" id="form_approver">
-                    <option value="선택">선택</option>
-                    <option value="조직도">조직도</option>
-                    <option value="부서내">부서내</option>
-                    <option value="임의지정">임의지정</option>
-                  </select>
+                  <p>박상건</p>
+                  <div>삭제</div>
                 </div>
-              </li>
-              <li>
-                <div><label for="form_importance" class="required">중요도</label></div>
                 <div>
-                  <div class="select_custom">
-                    <button class="label">중요도 선택</button>
-                    <ul class="optionList">
-                      <li class="optionItem"><span class="ico_select high">high icon</span>높음</li>
-                      <li class="optionItem"><span class="ico_select common">common icon</span>보통</li>
-                      <li class="optionItem"><span class="ico_select row">row icon</span>낮음</li>
-                    </ul>
-                  </div>
-                  <script>
-                    const label = document.querySelector('.label');
-                    const options = document.querySelectorAll('.optionItem');
-                    const handleSelect = function (item) {
-                      label.innerHTML = item.innerHTML;
-                      label.parentNode.classList.remove('active');
-                    }
-                    options.forEach(function (option) {
-                      option.addEventListener('click', function () {
-                        handleSelect(option);
-                        console.log(item.innerHTML);
-                      })
-                    })
-                    label.addEventListener('click', function () {
-                      if (label.parentNode.classList.contains('active')) {
-                        label.parentNode.classList.remove('active');
-                      } else {
-                        label.parentNode.classList.add('active');
-                      }
-                    });
-                  </script>
+                  <p>박상건</p>
+                  <div>삭제</div>
                 </div>
-              </li>
-              <li>
-                <div><label for="form_importance" class="required">중요도2</label></div>
                 <div>
-                  <div class="btn_switch">
-                    <input type="radio" id="high" name="importance">
-                    <label for="high">높음</label>
-                    <input type="radio" id="common" name="importance" checked>
-                    <label for="common" class="disabled">보통</label>
-                    <input type="radio" id="row" name="importance">
-                    <label for="row">낮음</label>
-                  </div>
+                  <p>박상건</p>
+                  <div>삭제</div>
                 </div>
-              </li>
-            </ul>
-          </div>
+                <div>
+                  <p>박상건</p>
+                  <div>삭제</div>
+                </div>
+                <div>
+                  <p>박상건</p>
+                  <div>삭제</div>
+                </div>
+                <div>
+                  <p>박상건</p>
+                  <div>삭제</div>
+                </div>
+              </div>
+            </dd>
+            <dt><label for="form_approver" class="required">결재자 지정</label></dt>
+            <dd>
+              <select name="form_approver" id="form_approver">
+                <option value="선택">선택</option>
+                <option value="조직도">조직도</option>
+                <option value="부서내">부서내</option>
+                <option value="임의지정">임의지정</option>
+              </select>
+            </dd>
+            <dt><label for="form_importance" class="required">중요도</label></dt>
+            <dd>
+              <div class="btn_switch">
+                <input type="radio" id="high" name="importance">
+                <label for="high">높음</label>
+                <input type="radio" id="common" name="importance" checked>
+                <label for="common" class="disabled">보통</label>
+                <input type="radio" id="row" name="importance">
+                <label for="row">낮음</label>
+              </div>
+            </dd>
+          </dl>
         </div>
         <div class="btn_wrap">
           <button class="postive btn_save" type="button">저장</button>
@@ -464,10 +414,9 @@
     </div>
   </main>
   @@include('../inc/footer.html')
+  @@include('../inc/pop/p_mngTree.html') <!--// 조직도 -->
 </div>
 @@include('../inc/script.html')
-
-@@include('../inc/pop/p_mngTree.html') <!--// 조직도 -->
 <script>
   document.querySelector('.btnMngTree').addEventListener('click', function () {
     document.querySelector('.p_mngTree').showModal();

@@ -296,111 +296,97 @@
         </div>
       </section>
       <section>
-        <table class="tbl_row">
-          <caption>결재 양식 테이블</caption>
-          <colgroup>
-            <col style="width:180px">
-            <col style="width:auto">
-          </colgroup>
-          <tbody>
-            <tr>
-              <th scope="row" class="required">템플릿 유형</th>
-              <td>
-                <span>TMPL-002</span>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">
-                <label for="category" class="required">카테고리</label>
-              </th>
-              <td>
-                <select name="category" id="category">
-                  <option value="카테고리 선택">카테고리 선택</option>
-                  <option value="근태관리" selected>근태관리</option>
-                  <option value="기안문서">기안문서</option>
-                  <option value="대외문서">대외문서</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">
-                <label for="use" class="required">사용여부</label>
-              </th>
-              <td>
-                <ul>
-                  <li>
-                    <input type="radio" id="use" name="use" checked>
-                    <label for="use">사용</label>
-                  </li>
-                  <li>
-                    <input type="radio" id="notused" name="use">
-                    <label for="notused">사용안함</label>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">
-                <label for="form_name" class="required">양식명</label>
-              </th>
-              <td>
-                <input type="text" id="form_name" value="출장복명서">
-              </td>
-            </tr>
-            <tr>
-              <th scope="row"><label for="form_referrer">참조자</label></th>
-              <td>
-                <span class="file_input">
-                  <input type="text" id="form_referrer">
-                  <button type="button" class="btn_ogt">조직도</button>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">
-                <label for="form_approver" class="required">결재자 지정</label>
-              </th>
-              <td>
-                <ul>
-                  <li>
-                    <input type="radio" id="form_approver" name="form_approver" checked>
-                    <label for="form_approver">조직도</label>
-                  </li>
-                  <li>
-                    <input type="radio" id="department" name="form_approver">
-                    <label for="department">부서내</label>
-                  </li>
-                  <li>
-                    <input type="radio" id="designation" name="form_approver">
-                    <label for="designation">임의지정</label>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              
-              <th scope="row">
-                <label for="form_importance" class="required">중요도</label>
-              </th>
-              <td>
-                <ul>
-                  <li>
-                    <input type="radio" id="form_importance" name="form_importance">
-                    <label for="form_importance">높음</label>
-                  </li>
-                  <li>
-                    <input type="radio" id="middle" name="form_importance" checked>
-                    <label for="middle">보통</label>
-                  </li>
-                  <li>
-                    <input type="radio" id="row" name="form_importance">
-                    <label for="row">낮음</label>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="infolist_wrap">
+          <dl>
+            <dt class="required">템플릿 유형</dt>
+            <dd><span>TMPL-002</span></dd>
+            <dt><label for="category" class="required">카테고리</label></dt>
+            <dd>
+              <select name="category" id="category">
+                <option value="카테고리 선택">카테고리 선택</option>
+                <option value="근태관리" selected>근태관리</option>
+                <option value="기안문서">기안문서</option>
+                <option value="대외문서">대외문서</option>
+              </select>
+            </dd>
+            <dt><label for="use" class="required">사용여부</label></dt>
+            <dd>
+              <div class="btn_switch">
+                <input type="radio" id="use" name="use" checked>
+                <label for="use">사용</label>
+                <input type="radio" id="notused" name="use">
+                <label for="notused">사용안함</label>
+              </div>
+            </dd>
+            <dt><label for="form_name" class="required">양식명</label></dt>
+            <dd><input type="text" id="form_name"></dd>
+            <dt><label for="form_referrer">참조자</label></dt>
+            <dd>
+              <span class="file_input">
+                <input type="text" id="form_referrer">
+                <button type="button" class="btn_ogt btnMngTree">조직도</button>
+              </span>
+              <div class="btn_slideclose">
+                <div>
+                  <p>박상건</p>
+                  <div>삭제</div>
+                </div>
+                <div>
+                  <p>유한아름</p>
+                  <div>삭제</div>
+                </div>
+                <div>
+                  <p>임선</p>
+                  <div>삭제</div>
+                </div>
+                <div>
+                  <p>박상건</p>
+                  <div>삭제</div>
+                </div>
+                <div>
+                  <p>박상건</p>
+                  <div>삭제</div>
+                </div>
+                <div>
+                  <p>박상건</p>
+                  <div>삭제</div>
+                </div>
+                <div>
+                  <p>박상건</p>
+                  <div>삭제</div>
+                </div>
+                <div>
+                  <p>박상건</p>
+                  <div>삭제</div>
+                </div>
+                <div>
+                  <p>박상건</p>
+                  <div>삭제</div>
+                </div>
+              </div>
+            </dd>
+            <dt><label for="form_approver" class="required">결재자 지정</label></dt>
+            <dd>
+              <select name="form_approver" id="form_approver">
+                <option value="선택">선택</option>
+                <option value="조직도">조직도</option>
+                <option value="부서내">부서내</option>
+                <option value="임의지정">임의지정</option>
+              </select>
+            </dd>
+            <dt><label for="form_importance" class="required">중요도</label></dt>
+            <dd>
+              <div class="btn_switch">
+                <input type="radio" id="high" name="importance">
+                <label for="high">높음</label>
+                <input type="radio" id="common" name="importance" checked>
+                <label for="common" class="disabled">보통</label>
+                <input type="radio" id="row" name="importance">
+                <label for="row">낮음</label>
+              </div>
+            </dd>
+          </dl>
+        </div>
         <div class="btn_wrap">
           <button class="postive btn_save" type="button">저장</button>
           <button class="negative btn_cancel">닫기</button>

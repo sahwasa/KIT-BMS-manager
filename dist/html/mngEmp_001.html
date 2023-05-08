@@ -95,239 +95,174 @@
                 </label>
                 <span class="btn_del_photo">닫기</span>
               </div>
-              <ul>
-                <li>
-                  <div>아이디(ID)</div>
-                  <div>dandy</div>
-                </li>
-                <li>
-                  <div><label for="emp_password" class="required">암호</label></div>
-                  <div><input type="password" id="emp_password" value="12345678"></div>
-                </li>
-                <li>
-                  <div><label for="emp_num">사번</label></div>
-                  <div>
-                    <span class="file_input">
-                      <input type="text" id="emp_num" value="0088">
-                      <button type="button" class="btn_ogt">중복확인</button>
-                    </span>
-                    <p class="required_info">중복된 사번입니다.</p>
-                  </div>
-                </li>
-                <li>
-                  <div><label for="emp_password_check" class="required">암호확인</label></div>
-                  <div><input type="password" id="emp_password_check" value="12345678">
-                    <p class="required_info">암호가 일치하지 않습니다.</p>
-                  </div>
-                </li>
-                <li>
-                  <div><label for="emp_name_kr" class="required">한글이름</label></div>
-                  <div><input type="text" id="emp_name_kr" value="멋쟁이"></div>
-                </li>
-                <li>
-                  <div><label for="emp_name_en">영문이름</label></div>
-                  <div><input type="text" id="emp_name_en" value="meosjaeng-e"></div>
-                </li>
-              </ul>
+              <dl>
+                <dt>아이디(ID)</dt>
+                <dd>dandy</dd>
+                <dt><label for="emp_password" class="required">암호</label></dt>
+                <dd><input type="password" id="emp_password" value="12345678"></dd>
+                <dt><label for="emp_num">사번</label></dt>
+                <dd>
+                  <span class="file_input">
+                    <input type="text" id="emp_num" value="0088">
+                    <button type="button" class="btn_ogt">중복확인</button>
+                  </span>
+                  <p class="required_info">중복된 사번입니다.</p>
+                </dd>
+                <dt><label for="emp_password_check" class="required">암호확인</label></dt>
+                <dd><input type="password" id="emp_password_check" value="12345678">
+                  <p class="required_info">암호가 일치하지 않습니다.</p>
+                </dd>
+                <dt><label for="emp_name_kr" class="required">한글이름</label></dt>
+                <dd><input type="text" id="emp_name_kr" value="멋쟁이"></dd>
+                <dt><label for="emp_name_en">영문이름</label></dt>
+                <dd><input type="text" id="emp_name_en" value="meosjaeng-e"></dd>
+              </dl>
             </div>
-            <div class="emp_group_wrap">
-              <ul>
-                <li>
-                  <div><label for="emp_group" class="required">권한그룹</label></div>
-                  <div class="btn_switch">
-                    <input type="checkbox" id="emp_group" checked>
-                    <label for="emp_group">업무관리</label>
-                    <input type="checkbox" id="groupware" checked>
-                    <label for="groupware">그룹웨어</label>
-                    <input type="checkbox" id="human" checked>
-                    <label for="human">ERP</label>
-                    <input type="checkbox" id="manage">
-                    <label for="manage">프로젝트</label>
-                    <input type="checkbox" id="manage2">
-                    <label for="manage2">관리자</label>
+            <dl class="emp_group_wrap">
+              <dt><label for="emp_group" class="required">권한그룹</label></dt>
+              <dd class="btn_switch">
+                <input type="checkbox" id="emp_group" checked>
+                <label for="emp_group">업무관리</label>
+                <input type="checkbox" id="groupware" checked>
+                <label for="groupware">그룹웨어</label>
+                <input type="checkbox" id="human" checked>
+                <label for="human">ERP</label>
+                <input type="checkbox" id="manage">
+                <label for="manage">프로젝트</label>
+                <input type="checkbox" id="manage2">
+                <label for="manage2">관리자</label>
+              </dd>
+              <dt><label for="emp_rate" class="required">업무등급</label></dt>
+              <dd class="btn_switch">
+                <input type="checkbox" id="emp_rate">
+                <label for="emp_rate">일반사원</label>
+                <input type="checkbox" id="head" checked>
+                <label for="head">부서장</label>
+                <input type="checkbox" id="administrator">
+                <label for="administrator">관리자</label>
+              </dd>
+            </dl>
+            <dl>
+              <dt><label for="emp_employmenttype" class="required">고용형태</label></dt>
+              <dd><select id="emp_employmenttype">
+                  <option value="선택">선택</option>
+                  <option value="정규직" selected>정규직</option>
+                  <option value="계약직">계약직</option>
+                  <option value="일용직">일용직</option>
+                  <option value="프리랜서">프리랜서</option>
+                  <option value="기타">기타</option>
+                </select>
+              </dd>
+              <dt><label for="emp_workplace" class="required">근무지</label></dt>
+              <dd>
+                <select name="workplace" id="emp_workplace">
+                  <option value="선택">선택</option>
+                  <option value="본사(서울)" selected>본사(서울)</option>
+                  <option value="연구소(별가람)">연구소(별가람)</option>
+                  <option value="행안부(세종)">행안부(세종)</option>
+                  <option value="기상청(김천)">기상청(김천)</option>
+                  <option value="태풍센터(제주)">태풍센터(제주)</option>
+                  <option value="우주전파(제주)">우주전파(제주)</option>
+                  <option value="기타">기타</option>
+                </select>
+              </dd>
+              <dt><label for="emp_worktype" class="required">근무형태</label></dt>
+              <dd>
+                <select name="workplace" id="emp_worktype">
+                  <option value="선택">선택</option>
+                  <option value="일근" selected>일근</option>
+                  <option value="재택">재택</option>
+                  <option value="교대근무">교대근무</option>
+                  <option value="파견">파견</option>
+                  <option value="기타">기타</option>
+                </select>
+              </dd>
+              <dt><label for="emp_date" class="required">입사일자</label></dt>
+              <dd><input type="date" id="emp_date" value="2021-03-08"></dd>
+              <dt><label for="emp_rank" class="required">직위</label></dt>
+              <dd>
+                <select name="rank" id="emp_rank">
+                  <option value="선택">선택</option>
+                  <option value="연구원">연구원</option>
+                  <option value="선임">선임</option>
+                  <option value="책임">책임</option>
+                  <option value="수석보">수석보</option>
+                  <option value="수석">수석</option>
+                </select>
+              </dd>
+              <dt><label for="emp_department" class="required">부서</label></dt>
+              <dd><select name="department" id="emp_department">
+                  <option value="선택">선택</option>
+                </select>
+              </dd>
+              <dt><label for="emp_ssn" class="required">주민등록번호</label></dt>
+              <dd><input type="number" id="emp_ssn"></dd>
+              <dt><label for="nri_num">국가연구자번호</label></dt>
+              <dd><input type="number" id="nri_num"></dd>
+              <dt><label for="emp_sign">전자결재 서명</label></dt>
+              <dd>
+                <div class="profile_pic_wrap">
+                  <div class="emp_sign">
+                    <input type="file" id="emp_sign" accept=".gif, .jpg, .png">
+                    <label for="emp_sign">
+                      <img src="../images/img_sign.png" alt="전자결재 서명 임시 이미지">
+                    </label>
+                    <span class="btn_del_photo">닫기</span>
                   </div>
-                </li>
-                <li>
-                  <div><label for="emp_rate" class="required">업무등급</label></div>
-                  <div class="btn_switch">
-                    <input type="checkbox" id="emp_rate">
-                    <label for="emp_rate">일반사원</label>
-                    <input type="checkbox" id="head" checked>
-                    <label for="head">부서장</label>
-                    <input type="checkbox" id="administrator">
-                    <label for="administrator">관리자</label>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <ul>
-                <li>
-                  <div><label for="emp_employmenttype" class="required">고용형태</label></div>
-                  <div><select id="emp_employmenttype">
-                      <option value="선택">선택</option>
-                      <option value="정규직" selected>정규직</option>
-                      <option value="계약직">계약직</option>
-                      <option value="일용직">일용직</option>
-                      <option value="프리랜서">프리랜서</option>
-                      <option value="기타">기타</option>
-                    </select>
-                  </div>
-                </li>
-                <li>
-                  <div><label for="emp_workplace" class="required">근무지</label></div>
-                  <div>
-                    <select name="workplace" id="emp_workplace">
-                      <option value="선택">선택</option>
-                      <option value="본사(서울)" selected>본사(서울)</option>
-                      <option value="연구소(별가람)">연구소(별가람)</option>
-                      <option value="행안부(세종)">행안부(세종)</option>
-                      <option value="기상청(김천)">기상청(김천)</option>
-                      <option value="태풍센터(제주)">태풍센터(제주)</option>
-                      <option value="우주전파(제주)">우주전파(제주)</option>
-                      <option value="기타">기타</option>
-                    </select>
-                  </div>
-                </li>
-                <li>
-                  <div><label for="emp_worktype" class="required">근무형태</label></div>
-                  <div>
-                    <select name="workplace" id="emp_worktype">
-                      <option value="선택">선택</option>
-                      <option value="일근" selected>일근</option>
-                      <option value="재택">재택</option>
-                      <option value="교대근무">교대근무</option>
-                      <option value="파견">파견</option>
-                      <option value="기타">기타</option>
-                    </select>
-                  </div>
-                </li>
-                <li>
-                  <div><label for="emp_date" class="required">입사일자</label></div>
-                  <div><input type="date" id="emp_date" value="2021-03-08"></div>
-                </li>
-                <li>
-                  <div><label for="emp_rank" class="required">직위</label></div>
-                  <div>
-                    <select name="rank" id="emp_rank">
-                      <option value="선택">선택</option>
-                      <option value="연구원">연구원</option>
-                      <option value="선임">선임</option>
-                      <option value="책임">책임</option>
-                      <option value="수석보">수석보</option>
-                      <option value="수석">수석</option>
-                    </select>
-                  </div>
-                </li>
-                <li>
-                  <div><label for="emp_department" class="required">부서</label></div>
-                  <div><select name="department" id="emp_department">
-                      <option value="선택">선택</option>
-                    </select>
-                  </div>
-                </li>
-                <li>
-                  <div><label for="emp_ssn" class="required">주민등록번호</label></div>
-                  <div><input type="number" id="emp_ssn"></div>
-                </li>
-                <li>
-                  <div><label for="nri_num">국가연구자번호</label></div>
-                  <div><input type="number" id="nri_num"></div>
-                </li>
-                <li>
-                  <div><label for="emp_sign">전자결재 서명</label></div>
-                  <div>
-                    <div class="profile_pic_wrap">
-                      <div class="emp_sign">
-                        <input type="file" id="emp_sign" accept=".gif, .jpg, .png">
-                        <label for="emp_sign">
-                          <img src="../images/img_sign.png" alt="전자결재 서명 임시 이미지">
-                        </label>
-                        <span class="btn_del_photo">닫기</span>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <ul>
-                <li>
-                  <div><label for="emp_phone" class="required">연락처</label></div>
-                  <div><input type="tel" value="01012345678" id="emp_phone"></div>
-                </li>
-                <li>
-                  <div><label for="emp_email" class="required">이메일</label></div>
-                  <div><input type="email" id="emp_email" value="dandy@kitvalley.com"></div>
-                </li>
-                <li>
-                  <div><label for="emp_call">비상연락망</label></div>
-                  <div><input type="tel" id="emp_call"></div>
-                </li>
-                <li>
-                  <div><label for="emp_call2">관계</label></div>
-                  <div><input type="text" id="emp_call2" title="비상연락망 관계 입력"></div>
-                </li>
-                <li>
-                  <div><label for="address">주소</label></div>
-                  <div class="profile_address">
-                    <span class="file_input">
-                      <input type="text" id="address" title="우편번호" disabled>
-                      <button type="button" class="btn_ogt">우편번호</button>
-                    </span>
-                    <input type="text" name="address2" title="주소">
-                    <input type="text" name="address3" title="상세주소">
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div>
-              
-              <ul>
-                <li>
-                  <div>신청일시</div>
-                  <div>홍길동(20232-01-09 10:00:00)</div>
-                </li>
-                <li>
-                  <div>처리일시</div>
-                  <div>홍길동(20232-01-09 10:00:00)</div>
-                </li>
-                <li>
-                  <div>최종 갱실일시</div>
-                  <div>홍길동(20232-01-09 10:00:00)</div>
-                </li>
-                <li>
-                  <div><label for="emp_entering">등록상태</label></div>
-                  <div>
-                    <span class="file_input">
-                      <select name="emp_entering" id="emp_entering">
-                        <option value="승인/중지/대기">승인/중지/대기</option>
-                        <option value="승인">승인</option>
-                        <option value="중지">중지</option>
-                        <option value="대기">대기</option>
-                      </select>
-                      <select name="emp_entering">
-                        <option value="중지사유">중지사유</option>
-                        <option value="기타">기타</option>
-                      </select>
-                    </span>
-                  </div>
-                </li>
-                <li>
-                  <div><label for="emp_entering">비밀번호 오류</label></div>
-                  <div>
-                    <span class="profile_password_reset">
-                      <span>10회</span>
-                      <button type="button" class="btn_ogt">초기화</button>
-                    </span>
-                  </div>
-                </li>
-                <li>
-                  <div><label for="emp_note">비고</label></div>
-                  <div><textarea id="emp_note" style="min-height:50px;"></textarea></div>
-                </li>
-              </ul>
-            </div>
+                </div>
+              </dd>
+            </dl>
+            <dl>
+              <dt><label for="emp_phone" class="required">연락처</label></dt>
+              <dd><input type="tel" value="01012345678" id="emp_phone"></dd>
+              <dt><label for="emp_email" class="required">이메일</label></dt>
+              <dd><input type="email" id="emp_email" value="dandy@kitvalley.com"></dd>
+              <dt><label for="emp_call">비상연락망</label></dt>
+              <dd><input type="tel" id="emp_call"></dd>
+              <dt><label for="emp_call2">관계</label></dt>
+              <dd><input type="text" id="emp_call2" title="비상연락망 관계 입력"></dd>
+              <dt><label for="address">주소</label></dt>
+              <dd class="profile_address">
+                <span class="file_input">
+                  <input type="text" id="address" title="우편번호" disabled>
+                  <button type="button" class="btn_ogt">우편번호</button>
+                </span>
+                <input type="text" name="address2" title="주소">
+                <input type="text" name="address3" title="상세주소">
+              </dd>
+            </dl>
+            <dl>
+              <dt>신청일시</dt>
+              <dd>홍길동(20232-01-09 10:00:00)</dd>
+              <dt>처리일시</dt>
+              <dd>홍길동(20232-01-09 10:00:00)</dd>
+              <dt>최종 갱실일시</dt>
+              <dd>홍길동(20232-01-09 10:00:00)</dd>
+              <dt><label for="emp_entering">등록상태</label></dt>
+              <dd>
+                <span class="file_input">
+                  <select name="emp_entering" id="emp_entering">
+                    <option value="승인/중지/대기">승인/중지/대기</option>
+                    <option value="승인">승인</option>
+                    <option value="중지">중지</option>
+                    <option value="대기">대기</option>
+                  </select>
+                  <select name="emp_entering">
+                    <option value="중지사유">중지사유</option>
+                    <option value="기타">기타</option>
+                  </select>
+                </span>
+              </dd>
+              <dt><label for="emp_entering">비밀번호 오류</label></dt>
+              <dd>
+                <span class="profile_password_reset">
+                  <span>10회</span>
+                  <button type="button" class="btn_ogt">초기화</button>
+                </span>
+              </dd>
+              <dt><label for="emp_note">비고</label></dt>
+              <dd><textarea id="emp_note" style="min-height:50px;"></textarea></dd>
+            </dl>
           </div>
         </div>
       </section>
