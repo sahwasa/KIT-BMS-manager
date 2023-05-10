@@ -73,13 +73,13 @@
                 <input type="checkbox" id="manage2">
                 <label for="manage2">관리자</label>
               </dd>
-              <dt><label for="emp_rate" class="required">업무등급</label></dt>
+              <dt class="required">업무등급</dt>
               <dd class="btn_switch">
-                <input type="checkbox" id="emp_rate">
-                <label for="emp_rate">일반사원</label>
-                <input type="checkbox" id="head" checked>
+                <input type="radio" id="employee" name="emp_rate">
+                <label for="employee">일반사원</label>
+                <input type="radio" id="head" name="emp_rate" checked>
                 <label for="head">부서장</label>
-                <input type="checkbox" id="administrator">
+                <input type="radio" id="administrator" name="emp_rate">
                 <label for="administrator">관리자</label>
               </dd>
             </dl>

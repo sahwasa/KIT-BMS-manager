@@ -157,9 +157,12 @@ input[type="date"]{
 }
 input[type="date"]::after{@include fontello('\f133');top:1px;font-size:15px;}
 input[type="time"]::after{@include fontello('\eb02');font-size:18px;}
-.ico_leader{display:inline-block;font-size:0;margin-left:5px;color:#fff;
-  &.txt{padding-right:6px;border-radius:15px;background-color:$red;font-size:11px;line-height:19px;}
-  &::before{@include fontello('\e806');width:18px;line-height:18px;border-radius:15px;background-color:$red;font-size:9px;}
+.ico_leader{display:inline-block;min-width:19px;border-radius:10px;font-size:0;margin-left:5px;color:#fff;background-color:$red;vertical-align:middle;
+  &.txt{padding-right:6px;font-size:11px;
+    &::before{padding:0 2px 0 5px;}
+  }
+  &::before{@include fontello('\e806');height:19px;line-height:19px;font-size:10px;margin-left:-1px;}
+
 }
 
 //btn
@@ -449,7 +452,8 @@ table{width:100%; // form내 너비 수정
 /* ckeditor (height and checkbox design)*/
 .ck-editor{
   .ck-source-editing-area,
-  .ck-editor__editable_inline {min-height:200px;height:200px;}
+  .ck-editor__editable_inline {min-height:100px;height:auto;max-height:300px;}
+  .ck-source-editing-area textarea{overflow:auto;}
   .ck-content .todo-list{
     li{margin-bottom:0 !important;margin-left:25px;}
     .todo-list__label>input::before{background:transparent;border-color:#606060;}

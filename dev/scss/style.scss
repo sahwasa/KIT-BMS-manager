@@ -190,9 +190,9 @@ height:0;overflow:hidden;background-color:$black;
     }
   }
 }
-.profile_wrap{display:grid;gap:20px;grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
+.profile_wrap{display:grid;gap:20px;grid-template-columns:repeat(auto-fit, minmax(700px, 1fr));
   &>.profile_pic_wrap{padding:13px 15px 13px 0;border:1px solid #ddd;border-radius:5px;
-    dl{flex: 1;padding:0;border:none;}
+    dl{flex:1;padding:0;border:none;}
   }
   dl{
     &>dd{width:calc(50% - 130px);}
@@ -202,10 +202,11 @@ height:0;overflow:hidden;background-color:$black;
   .profile_password_reset{@include flex_between;justify-content:flex-start;align-items:center;
     &>button{margin-left:10px;border-radius:5px;font-weight:normal;line-height:21px;}
   }
-  .profile_pic_wrap{@include flex_between;border-radius:5px;overflow:hidden;
+  .profile_pic_wrap{@include flex_between;
     input[type="file"]{position:absolute;width:0;height:0;padding:0;overflow:hidden;border:0;}
     &>table{flex:1;}
-    &>div{position:relative;
+    &>div{position:relative;overflow: hidden;margin:0 10px;border-radius:5px;border: 1px solid #bdbdbd;
+      &>label{display:flex;overflow:hidden;align-items:center;justify-content:center;overflow:hidden;background-color:#ebebeb;}
       &:hover{
         .btn_del_photo{display:block;}
         }
@@ -213,8 +214,12 @@ height:0;overflow:hidden;background-color:$black;
         &::before{@include fontello('\eb2e');width:20px;font-size:12px;line-height:20px;text-align:center;cursor:pointer;}
       }
     }
-    .emp_img{width:100px;height:130px;margin:0 10px;}
-    .emp_sign{width:220px;height:40px;}
+    .emp_img{
+      &>label{width:100px;height:128px;}
+    }
+    .emp_sign{margin:0;
+      &>label{width:220px;height:60px;}
+    }
     img{cursor:pointer;}
   }
 }
@@ -238,7 +243,9 @@ height:0;overflow:hidden;background-color:$black;
 }
 .mngFormDetail{@include flex_between;flex-wrap:wrap;justify-content:center;align-items:start;
   .form_validity{margin-bottom:5px;}
-  .tbl_workinfo{@include flex_between;margin:3px 0 5px;}
+  .tbl_workinfo{margin:3px 0 5px;
+    .budget{font-size:15px;font-weight:bold;}
+  }
   &>*{padding:0 5px;}
   &>*:first-child{flex:1 1 60%;min-width:815px;
     &>.form_wrap{border:1px solid silver;border-width:2px 0 2px;}

@@ -221,7 +221,7 @@ $(function () {
     var addpeople = $('<span> (0)</span>')
     addLi.append(addDiv, addUl)
     addDiv.append(addInput, addpeople)
-    $('.tree').prepend(addLi)
+    $('.tree').eq(0).prepend(addLi)
     sortable()
     $(addLi).find('input').focus()
     $(addLi).find('input').focusout($.editOgtName)
@@ -301,20 +301,35 @@ function toggleInit() {
 toggleInit()
 
 // editor
-ClassicEditor.create(document.querySelector('#editor'), {
-  licenseKey: '',
-  fontFamily: {
-    options: ['나눔고딕','맑은고딕','굴림','돋움','바탕','궁서',],
-  },
-  fontSize: {
-    options: [9, 11, 13, 'default', 17, 19, 21],
-  },
-})
-  .then(editor => {
-    window.editor = editor
+function setEditor() {
+  ClassicEditor.create(document.querySelector('#editor'), {
+    licenseKey: '',
+    fontFamily: {
+      options: ['나눔고딕', '맑은고딕', '굴림', '돋움', '바탕', '궁서'],
+    },
+    fontSize: {
+      options: [9, 11, 13, 'default', 17, 19, 21],
+    },
+    htmlSupport: {
+      allow: [
+        {
+          name: /.*/,
+          attributes: true,
+          classes: true,
+          styles: true,
+        },
+      ],
+      disallow: [
+        /* HTML features to disallow */
+      ],
+    },
   })
-  .catch(error => {
-    console.error('Oops, something went wrong!')
-    console.warn('Build id: qwsqnzvk7hw9-unxl3nmu7n15')
-    console.error(error)
-  })
+    .then(editor => {
+      window.editor = editor
+    })
+    .catch(error => {
+      console.error('Oops, something went wrong!')
+      console.warn('Build id: qwsqnzvk7hw9-unxl3nmu7n15')
+      console.error(error)
+    })
+}
