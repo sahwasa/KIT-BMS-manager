@@ -205,7 +205,7 @@ height:0;overflow:hidden;background-color:$black;
   .profile_pic_wrap{@include flex_between;
     input[type="file"]{position:absolute;width:0;height:0;padding:0;overflow:hidden;border:0;}
     &>table{flex:1;}
-    &>div{position:relative;overflow: hidden;margin:0 10px;border-radius:5px;border: 1px solid #bdbdbd;
+    &>div{position:relative;overflow:hidden;margin:0 10px;border-radius:5px;border:1px solid #bdbdbd;
       &>label{display:flex;overflow:hidden;align-items:center;justify-content:center;overflow:hidden;background-color:#ebebeb;}
       &:hover{
         .btn_del_photo{display:block;}
@@ -243,7 +243,7 @@ height:0;overflow:hidden;background-color:$black;
 }
 .mngFormDetail{@include flex_between;flex-wrap:wrap;justify-content:center;align-items:start;
   .form_validity{margin-bottom:5px;}
-  .tbl_workinfo{margin:3px 0 5px;
+  .tbl_workinfo{display:flex;margin:3px 0 5px;justify-content:space-between;align-items:center;gap:2px;
     .budget{font-size:15px;font-weight:bold;}
   }
   &>*{padding:0 5px;}
@@ -265,7 +265,9 @@ height:0;overflow:hidden;background-color:$black;
       h2{font-size:17px;color:#000;font-weight:bold;text-align:center;align-self:center;white-space:pre;margin-right:20px;}
       table{
         th{padding:0;font-weight:normal;font-size:13px;text-align:center;}
-        td{height:35px;text-align:center;}
+        td{height:60px;text-align:center;
+          img{max-height:100%;vertical-align:middle;}
+        }
       }
     }
     &+.btn_wrap{margin:10px 0;justify-content:flex-end;}

@@ -29,20 +29,15 @@
               </colgroup>
               <tbody>
                 <tr>
-                  <th scope="col" rowspan="3">결<br>재</th>
-                  <th scope="col">멋쟁이</th>
-                  <th scope="col">귀요미</th>
-                  <th scope="col">귀요미</th>
+                  <th scope="col" rowspan="2">결<br>재</th>
+                  <th scope="col">기안</th>
+                  <th scope="col">결재</th>
+                  <th scope="col">승인</th>
                 </tr>
                 <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>2023-04-17 12:00:00</td>
-                  <td>2023-04-17 12:00:00</td>
-                  <td>2023-04-17 12:00:00</td>
+                  <td><img src="../images/img_sign1.gif" alt="사인 임시 이미지"></td>
+                  <td><img src="../images/img_sign2.gif" alt="사인 임시 이미지"></td>
+                  <td><img src="../images/img_sign3.gif" alt="사인 임시 이미지"></td>
                 </tr>
               </tbody>
             </table>
@@ -130,27 +125,23 @@
               <tr>
                 <th scope="row" class="required">일별 업무계획</th>
                 <td>
-                  <div class="tbl_workinfo">
-                    <div class="tbl_workinfo alignR">
-                      <button type="button" class="btn_form">일정추가</button>
-                      <button type="button" class="btn_form">삭제</button>
-                    </div>
+                  <div class="tbl_workinfo floatR">
+                    <button type="button" class="btn_form">일정추가</button>
+                    <button type="button" class="btn_form">삭제</button>
                   </div>
                   <table class="tbl_default tbl_use_select tbl_hover">
                     <caption>일별 업무계획 테이블</caption>
                     <colgroup>
                       <col style="width:auto;">
                       <col style="width:120px;">
-                      <col style="width:80px;">
                       <col style="width:150px;">
-                      <col style="width:300px;">
+                      <col style="width:400px;">
                       <col style="width:150px;">
                     </colgroup>
                     <tbody>
                       <tr>
                         <th scope="col">선택</th>
                         <th scope="col">일자</th>
-                        <th scope="col">요일</th>
                         <th scope="col">출장장소</th>
                         <th scope="col">업무내용</th>
                         <th scope="col">교통수단</th>
@@ -158,18 +149,6 @@
                       <tr>
                         <td><input type="checkbox" class="row_check" title="글선택"></td>
                         <td><input type="date" title="일자 선택"></td>
-                        <td>
-                          <select name="day_select" class="w_week" title="요일 선택">
-                            <option value="선택">선택</option>
-                            <option value="월">월</option>
-                            <option value="화">화</option>
-                            <option value="수">수</option>
-                            <option value="목">목</option>
-                            <option value="금">금</option>
-                            <option value="토">토</option>
-                            <option value="일">일</option>
-                          </select>
-                        </td>
                         <td><input type="text" title="출장장소 입력"></td>
                         <td><input type="text" title="업무내용 입력"></td>
                         <td><input type="text" title="교통수단 입력"></td>
@@ -177,7 +156,6 @@
                       <tr>
                         <td><input type="checkbox" class="row_check" title="글선택" checked></td>
                         <td>2023-04-14</td>
-                        <td>월</td>
                         <td>ㅇㅇㅇ 기관</td>
                         <td></td>
                         <td>자차</td>
@@ -393,14 +371,16 @@
                 </div>
               </div>
             </dd>
-            <dt><label for="form_approver" class="required">결재자 지정</label></dt>
+            <dt class="required">결재자 지정</dt>
             <dd>
-              <select name="form_approver" id="form_approver">
-                <option value="선택">선택</option>
-                <option value="조직도">조직도</option>
-                <option value="부서내">부서내</option>
-                <option value="임의지정">임의지정</option>
-              </select>
+              <div class="btn_switch">
+                <input type="radio" id="chart" name="approver">
+                <label for="chart">조직도</label>
+                <input type="radio" id="department" name="approver" checked>
+                <label for="department" class="disabled">부서내</label>
+                <input type="radio" id="appointed" name="approver">
+                <label for="appointed">임의지정</label>
+              </div>
             </dd>
             <dt><label for="form_importance" class="required">중요도</label></dt>
             <dd>

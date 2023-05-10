@@ -96,14 +96,12 @@
                       <col style="width:auto;">
                       <col style="width:auto;">
                       <col style="width:auto;">
-                      <col style="width:auto;">
                       <col style="width:200px;">
                     </colgroup>
                     <tbody>
                       <tr>
                         <th scope="col">선택</th>
                         <th scope="col">일자</th>
-                        <th scope="col">요일</th>
                         <th scope="col">시작시간</th>
                         <th scope="col">종료시간</th>
                         <th scope="col">시간</th>
@@ -113,18 +111,6 @@
                       <tr>
                         <td><input type="checkbox" class="row_check" title="글선택"></td>
                         <td><input type="date" title="일자 선택"></td>
-                        <td>
-                          <select name="day_select" title="요일 선택">
-                            <option value="선택">선택</option>
-                            <option value="월">월</option>
-                            <option value="화">화</option>
-                            <option value="수">수</option>
-                            <option value="목">목</option>
-                            <option value="금">금</option>
-                            <option value="토">토</option>
-                            <option value="일">일</option>
-                          </select>
-                        </td>
                         <td><input type="time" title="시작시간 입력"></td>
                         <td><input type="time" title="종료시간 입력"></td>
                         <td><input type="number" class="alignC w_day" title="휴일근무시간 입력"></td>
@@ -218,14 +204,16 @@
                 </div>
               </div>
             </dd>
-            <dt><label for="form_approver" class="required">결재자 지정</label></dt>
+            <dt class="required">결재자 지정</dt>
             <dd>
-              <select name="form_approver" id="form_approver">
-                <option value="선택">선택</option>
-                <option value="조직도">조직도</option>
-                <option value="부서내">부서내</option>
-                <option value="임의지정" selected>임의지정</option>
-              </select>
+              <div class="btn_switch">
+                <input type="radio" id="chart" name="approver">
+                <label for="chart">조직도</label>
+                <input type="radio" id="department" name="approver" checked>
+                <label for="department" class="disabled">부서내</label>
+                <input type="radio" id="appointed" name="approver">
+                <label for="appointed">임의지정</label>
+              </div>
             </dd>
             <dt><label for="form_importance" class="required">중요도</label></dt>
             <dd>

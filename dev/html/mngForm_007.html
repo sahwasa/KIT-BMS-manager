@@ -158,14 +158,16 @@
                 </div>
               </div>
             </dd>
-            <dt><label for="form_approver" class="required">결재자 지정</label></dt>
+            <dt class="required">결재자 지정</dt>
             <dd>
-              <select name="form_approver" id="form_approver">
-                <option value="선택">선택</option>
-                <option value="조직도" selected>조직도</option>
-                <option value="부서내">부서내</option>
-                <option value="임의지정">임의지정</option>
-              </select>
+              <div class="btn_switch">
+                <input type="radio" id="chart" name="approver">
+                <label for="chart">조직도</label>
+                <input type="radio" id="department" name="approver" checked>
+                <label for="department" class="disabled">부서내</label>
+                <input type="radio" id="appointed" name="approver">
+                <label for="appointed">임의지정</label>
+              </div>
             </dd>
             <dt><label for="form_importance" class="required">중요도</label></dt>
             <dd>
