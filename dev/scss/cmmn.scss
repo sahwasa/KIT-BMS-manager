@@ -217,12 +217,15 @@ $btn_gray:#979797;
   &:hover{background-color:$btn_red;}
 }
 
-.btn_switch{display:flex;flex-wrap:wrap;padding:2px;gap:5px;
-  input{position:absolute;opacity:0;
-    &+label{min-width:70px;padding:3px 10px 4px;cursor:pointer;border:1px solid #e5e5e5;font-size:13px;font-weight:bold;color:#e5e5e5;text-align:center;}
-    &:hover+label{border-color:#868686;color:#868686;}
-    &:checked+label{border-color:#000;color:#000;transition:0.5s;}
+.btn_switch{display:inline-flex;flex-flow:row wrap;gap:5px;
+  $unselectedColor:#e5e5e5;$hoverColor:#868686;
+  input{position:absolute;opacity:0;width:0;height:0;
+    &+label{display:flex;align-items:center;justify-content:center;gap:5px;position:relative;min-width:70px;padding:3px 10px 4px;cursor:pointer;border:1px solid $unselectedColor;font-size:13px;font-weight:bold;color:$unselectedColor;z-index:100;}
+    &:hover+label{border-color:$hoverColor;color:$hoverColor;}
+    &:checked+label{border-color:#000;color:#000;transition:0.5s;}   
+    :not(&:checked)+label::before{color:$unselectedColor;border-color:$unselectedColor;}   
   }
+  label::before{line-height:17px;}
 }
 
 // search
