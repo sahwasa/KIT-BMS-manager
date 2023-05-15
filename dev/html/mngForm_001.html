@@ -334,8 +334,23 @@
             <dt><label for="form_referrer">참조자</label></dt>
             <dd>
               <span class="file_input">
-                <input type="text" id="form_referrer">
-                <button type="button" class="btn_ogt btnMngTree">조직도</button>
+                <input type="text" id="biz traveler" list="nameList">
+                <datalist id="nameList">
+                  <optgroup label="개발본부">
+                    <option value="대장발핑">개발본부</option>
+                    <option value="개발핑">개발 1팀</option>
+                    <option value="새발핑">개발 1팀</option>
+                    <option value="말발핑">개발 2팀</option>
+                    <option value="소발핑">개발 2팀</option>
+                    <option value="곰발핑">개발 2팀</option>
+                  </optgroup>
+                  <optgroup label="경영관리">
+                    <option value="경영핑">경영관리</option>
+                    <option value="관리핑">경영관리</option>
+                  </optgroup>                  
+                </datalist>
+                <button type="button" class="btn_default">추가</button>
+                <button type="button" class="btn_ogt">조직도</button>
               </span>
               <div class="btn_slideclose">
                 <div>
@@ -391,11 +406,11 @@
             <dd>
               <div class="btn_switch">
                 <input type="radio" id="high" name="importance">
-                <label for="high">높음</label>
-                <input type="radio" id="common" name="importance" checked>
-                <label for="common" class="disabled">보통</label>
+                <label for="high" class="high_prio">높음</label>
+                <input type="radio" id="common" name="importance" checked="">
+                <label for="common" class="normal_prio">보통</label>
                 <input type="radio" id="row" name="importance">
-                <label for="row">낮음</label>
+                <label for="row" class="low_prio">낮음</label>
               </div>
             </dd>
           </dl>
