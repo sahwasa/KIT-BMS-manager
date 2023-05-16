@@ -195,10 +195,13 @@ height:0;overflow:hidden;background-color:$black;
     dl{flex:1;padding:0;border:none;}
   }
   dl{
-    &>dd{width:calc(50% - 130px);}
-    &.emp_group_wrap>dd{width:calc(100% - 130px);}
+    display:grid;grid-template:auto / 130px 1fr 130px 1fr;align-items:start;
+    & > dd{width:100%;}
+    .span3{grid-column:2 / span 3;}
   }
-  .profile_address{&>*{margin-bottom:3px;}}
+  .profile_address{&>*{margin-bottom:3px;}
+    .file_input{max-width:calc(50% - 130px);}
+  }
   .profile_password_reset{@include flex_between;justify-content:flex-start;align-items:center;
     &>button{margin-left:10px;border-radius:5px;font-weight:normal;line-height:21px;}
   }
