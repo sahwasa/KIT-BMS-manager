@@ -30,6 +30,7 @@
     <!-- <ul class="gnb_lst">
       <li><a href=""></a></li>
     </ul> -->
+    <span class="login_timer">05:00</span>
     <div class="util">
       <div class="profile">
         <button type="button" class="account">
@@ -301,54 +302,32 @@
                 </td>
               </tr>
               <tr>
-                <th scope="row"><label for="form_file">파일 첨부</label></th>
+                <th scope="row">기타신청</th>
                 <td colspan="3">
-                  <span class="file_input">
-                    <input type="file" id="form_file" class="multi">
-                  </span>
+                  <ul>
+                    <li>
+                      <input type="checkbox" id="car" checked="">
+                      <label for="car">법인차량(제주출장시)</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="card1">
+                      <label for="card1">출장카드 <input class="w_day alignC h_min" type="number">장</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="card2">
+                      <label for="card2">하이패스 <input class="w_day alignC h_min" type="number">장</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="card3">
+                      <label for="card3">교통카드 <input class="w_day alignC h_min" type="number">장</label>
+                    </li>
+                  </ul>
                 </td>
               </tr>
             </tbody>
           </table>
           <div class="editor_wrap">
             <textarea id="editor" name="editor">
-              <figure class="table" style="width:100%;">
-                <table class="ck-table-resized">
-                  <colgroup>
-                    <col style="width:14.11%;">
-                    <col style="width:85.89%;">
-                  </colgroup>
-                  <tbody>
-                    <tr>
-                      <th><p style="text-align:center;">기타신청</p></th>
-                      <td style="padding:10px;">
-                        <ul class="todo-list">
-                          <li>
-                            <label class="todo-list__label">
-                            <input type="checkbox" disabled="disabled">
-                            <span class="todo-list__label__description">법인차량(제주출장시)</span></label>
-                          </li>
-                          <li>
-                            <label class="todo-list__label">
-                            <input type="checkbox" disabled="disabled">
-                            <span class="todo-list__label__description">출장카드(0장)</span></label>
-                          </li>
-                          <li>
-                            <label class="todo-list__label">
-                            <input type="checkbox" disabled="disabled">
-                            <span class="todo-list__label__description">하이패스(0장)</span></label>
-                          </li>
-                          <li>
-                            <label class="todo-list__label">
-                            <input type="checkbox" disabled="disabled">
-                            <span class="todo-list__label__description">교통카드(0장)</span></label>
-                          </li>
-                        </ul>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-            </figure>
             <p>&nbsp;</p>
             </textarea>
           </div>

@@ -62,6 +62,7 @@
       .tree_result{width:325px;height:345px;padding:10px 0;}
     }
   }
+  
   // p_mngOrg
   .warning_wrap{float:left;margin-right:15px;
     img{display:block;width:40px;height:34px;}
@@ -84,5 +85,16 @@
         label{vertical-align: text-top;}
       }
     }
+  }
+}
+// auto logout
+.p_body.p_info_wrap{display:flex;padding:45px 45px 35px;border-top:3px solid $red;gap:25px;font-size:14px;
+  &>div:last-child{
+    &>*:nth-child(1){color:$red;font-size:18px;font-weight:bold;}
+    &>*:nth-child(2){margin:3px 0 10px;
+      span{font-size:15px;font-weight:bold;}
+    }
+    &>*:nth-child(3){font-size:13px;color:#7e7e7e;}
+    div{margin-top:15px;}
   }
 }

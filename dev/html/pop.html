@@ -11,9 +11,10 @@
       -webkit-background-clip:text;color:transparent;margin-bottom:20px;font-size:20px;font-weight:bold;">esc 누르시면 팝업이
         닫힙니다요</span>
       <ul>
+        <li><button class="btn_default btnInfo">자동 로그아웃</button>
         <li><button class="btn_default btnMngDel">조직관리 > 부서삭제</button>
         <li><button class="btn_default btnMngSearch">조직관리 > 부서검색</button>
-          <li><button class="btn_default btnMngTree">조직도</button>
+        <li><button class="btn_default btnMngTree">조직도</button>
         <li><button class="btn_default btnMngCode">공통코드관리 > 그룹코드 입력</button>
         <li><button class="btn_default btnMngCode2">공통코드관리 > 권한그룹 상세코드 입력</button>
         <li><button class="btn_default btnMngMenu">메뉴관리 > 수정 및 추가</button>
@@ -22,42 +23,43 @@
       <div id="editor">
         <ul class="todo-list">
           <li>
-              <label class="todo-list__label">
+            <label class="todo-list__label">
               <input type="checkbox" disabled="disabled">
               <span class="todo-list__label__description">안녕하세요</span></label>
           </li>
           <li>
-              <label class="todo-list__label">
+            <label class="todo-list__label">
               <input type="checkbox" disabled="disabled">
               <span class="todo-list__label__description"><span style="font-family:맑은고딕;">안녕하세요</span></span></label>
           </li>
           <li>
-              <label class="todo-list__label">
+            <label class="todo-list__label">
               <input type="checkbox" disabled="disabled">
               <span class="todo-list__label__description"><span style="font-family:굴림;">안녕하세요</span></span></label>
           </li>
           <li>
-              <label class="todo-list__label">
+            <label class="todo-list__label">
               <input type="checkbox" disabled="disabled">
               <span class="todo-list__label__description"><span style="font-family:돋움;">안녕하세요</span></span></label>
           </li>
           <li>
-              <label class="todo-list__label">
+            <label class="todo-list__label">
               <input type="checkbox" disabled="disabled">
               <span class="todo-list__label__description"><span style="font-family:바탕;">안녕하세요</span></span></label>
           </li>
           <li>
-              <label class="todo-list__label">
+            <label class="todo-list__label">
               <input type="checkbox" disabled="disabled">
               <span class="todo-list__label__description"><span style="font-family:궁서;">안녕하세요</span></span></label>
           </li>
-      </ul>
+        </ul>
       </div>
     </div>
     @@include('../inc/paginate.html')
   </main>
   @@include('../inc/footer.html')
 </div>
+@@include('../inc/pop/p_info.html') <!--// 자동 로그아웃 -->
 @@include('../inc/pop/p_mngOrg.html') <!--// 부서삭제 -->
 @@include('../inc/pop/p_mngOrg2.html') <!--// 부서검색 -->
 @@include('../inc/pop/p_mngTree.html') <!--// 조직도 -->
@@ -69,6 +71,9 @@
 <script>
   setEditor();// editor common
   toggleInit();// toggle common
+  document.querySelector('.btnInfo').addEventListener('click', function () {
+    document.querySelector('.p_info').showModal();
+  }) // 자동 로그아웃
   document.querySelector('.btnMngDel').addEventListener('click', function () {
     document.querySelector('.p_mngDel').showModal();
   }) // 부서삭제

@@ -169,13 +169,13 @@ input[type="date"]{
 }
 input[type="date"]::after{@include fontello('\f133');top:1px;font-size:15px;}
 input[type="time"]::after{@include fontello('\eb02');font-size:18px;}
-.ico_leader{display:inline-block;min-width:19px;border-radius:10px;font-size:0;margin-left:5px;color:#fff;background-color:$red;vertical-align:middle;
+.ico_leader{display:inline-block;min-width:19px;border-radius:10px;font-size:0;margin-right:5px;color:#fff;background-color:$red;vertical-align:middle;
   &.txt{padding-right:6px;font-size:11px;
     &::before{padding:0 2px 0 5px;}
   }
-  &::before{@include fontello('\e806');height:19px;line-height:19px;font-size:10px;margin-left:-1px;}
-
+  &::before{@include fontello('\e806');height:19px;line-height:19px;font-size:10px;}
 }
+.depart_abbr{margin-left:2px;font-size:12px;color:#999;}
 
 //btn
 .btn_wrap{display:flex;gap:4px;justify-content:flex-end;}
@@ -242,7 +242,7 @@ $btn_gray:#979797;
   }
   .ico_select{position:relative;top:-2px;@include shape(20px, 20px);display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;margin-right:5px;}  
 }
-.btn_switch{display:flex;padding:2px;
+.btn_switch{display:flex;gap:2px;
   $unselectedColor:#e5e5e5;$hoverColor:#868686;
   input{position:absolute;opacity:0;width:0;height:0;
     &+label{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:5px;position:relative;min-width:70px;padding:3px 10px 4px;cursor:pointer;border:1px solid $unselectedColor;font-size:13px;font-weight:bold;color:$unselectedColor;z-index:100;}
@@ -330,6 +330,7 @@ td{white-space:nowrap;text-overflow:ellipsis;}
     .file_input>button{flex:none;}
     &>*{padding:6px 5px;}
     &>dt{padding-left:30px;font-size:13px;font-weight:bold;color:#111;}   
+    &.emp_group_wrap{grid-template:auto/130px 1fr;}
     }
   dt.required{position:relative;
     &::before{left:19px;}
@@ -378,6 +379,7 @@ table{width:100%; // form내 너비 수정
       &+span{vertical-align:middle;}
     }
     &.w_auto{width:auto;}
+    &.h_min{min-height:10px;line-height:10px;vertical-align:top;}
   }
 }
 
@@ -413,7 +415,7 @@ table{width:100%; // form내 너비 수정
 
 /* tree(부서 검색 등 공통 영역이 존재하여 따로 분리) */
 .tree_wrap{
-  .etc_ogt{padding:8px 5px;padding-left:15px;border:1px solid #dddddd;border-top:none;font-size:12px;font-weight:bold;color:#000;letter-spacing:-0.12px;}
+  .etc_ogt{padding:8px 5px;padding-left:15px;border:1px solid #dddddd;border-top:none;font-size:12px;font-weight:bold;color:#000;letter-spacing:-0.12px;cursor:pointer;}
   &>.sortable{width:290px;height:353px;padding:8px 0;border:1px solid #dddddd;overflow-x:hidden;overflow-y:auto;}
   .sortable{
     &::-webkit-scrollbar{width:17px;}
@@ -433,7 +435,7 @@ table{width:100%; // form내 너비 수정
       &.parent_li>span {cursor:pointer}
     }
     li{position:relative;list-style-type:none;margin:0;position:relative;padding-left:8px;
-      &::before, &::after {content:'';position:absolute;left:8px;top:10px;right:auto;}
+      &::before, &::after {content:'';position:absolute;left:0;top:10px;right:auto;}
       &::before{border-left:1px dotted #dddddd;height:calc(100% - 1px);top:-10px;width:1px}
       &::after {border-top:1px dotted #dddddd;width:10px;height:20px;}
       &:last-child::before{height:20px}
@@ -446,7 +448,7 @@ table{width:100%; // form내 너비 수정
         ::before{margin-bottom:10px;}
       }
     }
-    .sortable{min-height:10px;padding-left:0;
+    .sortable{min-height:10px;padding-left:10px;
       &>li{min-height:15px;box-sizing:border-box;cursor:pointer;padding-left:10px;}
     }
     .sortable_style{border:1px dashed rgb(156, 160, 165) !important;width:inherited;}
