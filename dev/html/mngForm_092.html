@@ -18,7 +18,7 @@
         <p class="form_validity required validity">표시는 필수 입력 항목입니다.</p>
         <div class="form_wrap">
           <div class="tit_form">
-            <h2>지출결의서</h2>
+            <h2>경위서</h2>
             <table class="tbl_row">
               <caption>결재 상황 테이블</caption>
               <colgroup>
@@ -48,27 +48,25 @@
             </table>
           </div>
           <table class="tbl_row">
-            <caption>지출결의서 양식 테이블</caption>
+            <caption>경위서 양식 테이블</caption>
             <colgroup>
               <col style="width:150px">
-              <col style="width:150px">
-              <col style="width:150px">
-              <col style="width:150px">
+              <col style="width:auto">
             </colgroup>
             <tbody>
               <tr>
                 <th scope="row">
                   <label for="form_num" class="required">문서번호</label>
                 </th>
-                <td colspan="3">
-                  <input type="text" id="form_num" value="KIT-">
+                <td>
+                  <input type="text" id="form_num" value="KIT-보고-">
                 </td>
               </tr>
               <tr>
                 <th scope="row">
                   <label for="form_project" class="required">프로젝트</label>
                 </th>
-                <td colspan="3">
+                <td>
                   <span class="file_input">
                     <select id="form_project" name="form_project">
                       <option value="사업자 분류">사업자 분류</option>
@@ -82,28 +80,13 @@
                   </span>
                 </td>
               </tr>
-              <tr>
-                <th scope="row">
-                  <label for="form_businesstrip_amount" class="required">지출금액</label>
-                </th>
-                <td>
-                  <span class="file_input">
-                    <input type="text" id="form_businesstrip_amount" value="100,000">
-                  <span>원</span>
-                  </span>
-                </td>
-                <th scope="row">
-                  <label for="form_businesstrip_date" class="required">지출요청일</label>
-                </th>
-                <td><input type="date" id="form_businesstrip_date" style="width:100%;"></td>
-              </tr>
             </tbody>
           </table>
           <div class="editor_wrap">
-            <textarea name="editor" id="editor" title="에디터 영역"></textarea>
+            <textarea id="editor" name="editor" title="에디터 영역"></textarea>
           </div>
           <div class="sign_wrap">
-            <p>위 금액을 청구(영수)합니다.<br>
+            <p>상기와 같이 발급신청서를 제출합니다.<br>
               <span>2023년 4월 24일</span>
             </p>
             <p>신청인 : <span>멋쟁이</span> (인)</p>
@@ -114,15 +97,15 @@
         <div class="infolist_wrap">
           <dl>
             <dt class="required">템플릿 유형</dt>
-            <dd><span>TMPL-003</span></dd>
+            <dd><span>TMPL-092</span></dd>
             <dt><label for="category" class="required">카테고리</label></dt>
             <dd>
               <select name="category" id="category">
                 <option value="카테고리 선택">카테고리 선택</option>
                 <option value="근태관리">근태관리</option>
-                <option value="기안문서" selected>기안문서</option>
+                <option value="기안문서">기안문서</option>
                 <option value="대외문서">대외문서</option>
-                <option value="보고문서">보고문서</option>
+                <option value="보고문서" selected>보고문서</option>
               </select>
             </dd>
             <dt><label for="use" class="required">사용여부</label></dt>
@@ -135,7 +118,7 @@
               </div>
             </dd>
             <dt><label for="form_name" class="required">양식명</label></dt>
-            <dd><input type="text" id="form_name" value="지출결의서"></dd>
+            <dd><input type="text" id="form_name" value="경위서"></dd>
             <dt><label for="form_referrer">참조자</label></dt>
             <dd>
               <span class="file_input">

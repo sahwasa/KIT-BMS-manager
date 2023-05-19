@@ -18,7 +18,7 @@
         <p class="form_validity required validity">표시는 필수 입력 항목입니다.</p>
         <div class="form_wrap">
           <div class="tit_form">
-            <h2>퇴직신청서</h2>
+            <h2>휴직신청서</h2>
             <table class="tbl_row">
               <caption>결재 상황 테이블</caption>
               <colgroup>
@@ -29,10 +29,15 @@
               </colgroup>
               <tbody>
                 <tr>
-                  <th scope="col" rowspan="2">결<br>재</th>
+                  <th scope="col" rowspan="3">결<br>재</th>
                   <th scope="col">기안</th>
                   <th scope="col">결재</th>
                   <th scope="col">승인</th>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td></td>
@@ -43,7 +48,7 @@
             </table>
           </div>
           <table class="tbl_row">
-            <caption>퇴직신청서 양식 테이블</caption>
+            <caption>휴직신청서 양식 테이블</caption>
             <colgroup>
               <col style="width:150px">
               <col style="width:auto">
@@ -57,14 +62,32 @@
                   <input type="text" id="form_num" value="KIT-">
                 </td>
               </tr>
+              <tr>
+                <th scope="row">
+                  <label for="form_project" class="required">프로젝트</label>
+                </th>
+                <td>
+                  <span class="file_input">
+                    <select id="form_project" name="form_project">
+                      <option value="사업자 분류">사업자 분류</option>
+                    </select>
+                    <select title="기관선택">
+                      <option value="기관 선택">기관 선택</option>
+                    </select>
+                    <select title="프로젝트 선택">
+                      <option value="프로젝트 선택">프로젝트 선택</option>
+                    </select>
+                  </span>
+                </td>
+              </tr>
             </tbody>
           </table>
           <div class="editor_wrap">
-            <textarea id="editor" name="editor"></textarea>
+            <textarea id="editor" name="editor" title="에디터 영역"></textarea>
           </div>
           <div class="sign_wrap">
-            <p>상기와 같이 퇴직신청서를 제출합니다.<br>
-              <span>2023년 4월 17일</span>
+            <p>상기와 같이 발급신청서를 제출합니다.<br>
+              <span>2023년 4월 24일</span>
             </p>
             <p>신청인 : <span>멋쟁이</span> (인)</p>
           </div>
@@ -74,14 +97,15 @@
         <div class="infolist_wrap">
           <dl>
             <dt class="required">템플릿 유형</dt>
-            <dd><span>TMPL-090</span></dd>
+            <dd><span>TMPL-091</span></dd>
             <dt><label for="category" class="required">카테고리</label></dt>
             <dd>
               <select name="category" id="category">
-                <option value="카테고리 선택">카테고리 선택</option>
+                <option value="카테고리 선택" selected>카테고리 선택</option>
                 <option value="근태관리">근태관리</option>
                 <option value="기안문서">기안문서</option>
                 <option value="대외문서">대외문서</option>
+                <option value="보고문서">보고문서</option>
               </select>
             </dd>
             <dt><label for="use" class="required">사용여부</label></dt>
@@ -94,51 +118,20 @@
               </div>
             </dd>
             <dt><label for="form_name" class="required">양식명</label></dt>
-            <dd><input type="text" id="form_name" value="퇴직신청서"></dd>
+            <dd><input type="text" id="form_name" value="휴직신청서"></dd>
             <dt><label for="form_referrer">참조자</label></dt>
             <dd>
               <span class="file_input">
-                <input type="text" id="form_referrer">
-                <button type="button" class="btn_ogt btnMngTree">조직도</button>
+                <input type="text" id="form_referrer" list="nameList">
+                @@include('../inc/data_emp_name.html')
+                <button type="button" class="btn_default">추가</button>
+                <button type="button" class="btn_ogt">조직도</button>
               </span>
-              <div class="btn_slideclose">
-                <div>
-                  <p>박상건</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>유한아름</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>임선</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>박상건</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>박상건</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>박상건</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>박상건</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>박상건</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>박상건</p>
-                  <div>삭제</div>
-                </div>
-              </div>
+              <ul class="btn_slideclose">
+                <li><span>신짱구</span><button type="button">삭제</button></li>
+                <li><span>맹구</span><button type="button">삭제</button></li>
+                <li><span>신흰둥이</span><button type="button">삭제</button></li>
+              </ul>
             </dd>
             <dt class="required">결재자 지정</dt>
             <dd>
@@ -151,15 +144,15 @@
                 <label for="appointed">임의지정</label>
               </div>
             </dd>
-            <dt><label for="form_importance" class="required">중요도</label></dt>
+            <dt class="required">중요도</dt>
             <dd>
               <div class="btn_switch">
                 <input type="radio" id="high" name="importance">
-                <label for="high">높음</label>
-                <input type="radio" id="common" name="importance" checked>
-                <label for="common" class="disabled">보통</label>
+                <label for="high" class="high_prio">높음</label>
+                <input type="radio" id="common" name="importance" checked="">
+                <label for="common" class="normal_prio">보통</label>
                 <input type="radio" id="row" name="importance">
-                <label for="row">낮음</label>
+                <label for="row" class="low_prio">낮음</label>
               </div>
             </dd>
           </dl>
@@ -174,3 +167,6 @@
   @@include('../inc/footer.html')
 </div>
 @@include('../inc/script.html')
+<script>
+  setEditor();//
+</script>

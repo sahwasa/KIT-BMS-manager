@@ -29,10 +29,15 @@
               </colgroup>
               <tbody>
                 <tr>
-                  <th scope="col" rowspan="2">결<br>재</th>
+                  <th scope="col" rowspan="3">결<br>재</th>
                   <th scope="col">기안</th>
                   <th scope="col">결재</th>
                   <th scope="col">승인</th>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td></td>
@@ -54,7 +59,7 @@
                   <label for="form_num" class="required">문서번호</label>
                 </th>
                 <td>
-                  <input type="text" id="form_num" value="KIT-">
+                  <input type="text" id="form_num" value="KIT-근태-">
                 </td>
               </tr>
               <tr>
@@ -82,7 +87,7 @@
                 <td>
                   <ul>
                     <li>
-                      <input type="radio" id="form_businesstrip" name="form_businesstrip">
+                      <input type="radio" id="form_businesstrip" name="form_businesstrip" checked>
                       <label for="form_businesstrip">국내출장</label>
                     </li>
                     <li>
@@ -113,11 +118,13 @@
               </tr>
               <tr>
                 <th scope="row">
-                  <label for="form_businesstrip_people" class="required">출장인원</label>
+                  <label for="biz_traveler" class="required">출장인원</label>
                 </th>
                 <td>
                   <span class="file_input">
-                    <input type="text" id="form_businesstrip_people">
+                    <input type="text" id="biz_traveler" list="nameList">
+                    @@include('../inc/data_emp_name.html')
+                    <button type="button" class="btn_default">추가</button>
                     <button type="button" class="btn_ogt">조직도</button>
                   </span>
                 </td>
@@ -175,11 +182,11 @@
                 <th scope="row">출장여비</th>
                 <td>
                   <div class="tbl_workinfo">
-                    <p class="validity">총 소요예산 :
+                    <p class="validity">&#8251; 총 소요예산 :
                       <span class="t_skyblue budget">1,000</span> 원
                     </p>
                   </div>
-                  <table class="tbl_default tbl_hover">
+                  <table class="tbl_default">
                     <caption>출장여비 테이블</caption>
                     <colgroup>
                       <col style="width:150px;">
@@ -247,37 +254,37 @@
                 </td>
               </tr>
               <tr>
-                <th scope="row">
-                  <label for="form_car">법인차량 신청</label>
+                <th scope="row" rowspan="2">
+                  <label for="form_car">기타 신청내역</label>
                 </th>
-                <td colspan="3">
+                <td>
                   <ul>
                     <li>
                       <input type="checkbox" id="form_car" checked="">
                       <label for="form_car">법인차량(제주출장시)</label>
                     </li>
+                    <li>
+                      <label for="form_application_period">신청기간 : </label>
+                      <input type="date" id="form_application_period">&nbsp;-&nbsp;
+                      <input type="date" title="출장기간">
+                    </li>
                   </ul>
-                  <span class="file_input">
-                    <span class="t_skyblue">신청기간 : </span>
-                    <input type="text" id="form_businesstrip_people" title="법인차량 신청기간">
-                  </span>
                 </td>
               </tr>
               <tr>
-                <th scope="row">기타신청</th>
-                <td colspan="3">
+                <td>
                   <ul>
                     <li>
                       <input type="checkbox" id="card1" checked="">
-                      <label for="card1">출장카드 <input class="w_day alignC h_min" type="number" value="1">장</label>
+                      <label for="card1">출장카드</label> ( <input type="number" title="요청 카드 수량" class="w_day alignC h_min" value="1"> 장)
                     </li>
                     <li>
                       <input type="checkbox" id="card2">
-                      <label for="card2">하이패스 <input class="w_day alignC h_min" type="number">장</label>
+                      <label for="card2">하이패스</label> ( <input type="number" title="요청 카드 수량" class="w_day alignC h_min"> 장)
                     </li>
                     <li>
                       <input type="checkbox" id="card3">
-                      <label for="card3">교통카드 <input class="w_day alignC h_min" type="number">장</label>
+                      <label for="card3">교통카드</label> ( <input type="number" title="요청 카드 수량" class="w_day alignC h_min"> 장)
                     </li>
                   </ul>
                 </td>
@@ -285,7 +292,7 @@
             </tbody>
           </table>
           <div class="editor_wrap">
-            <textarea name="editor" id="editor">
+            <textarea name="editor" id="editor" title="에디터 영역">
             </textarea>
           </div>
           <div class="sign_wrap">
@@ -308,6 +315,7 @@
                 <option value="근태관리" selected>근태관리</option>
                 <option value="기안문서">기안문서</option>
                 <option value="대외문서">대외문서</option>
+                <option value="보고문서">보고문서</option>
               </select>
             </dd>
             <dt><label for="use" class="required">사용여부</label></dt>
@@ -320,66 +328,20 @@
               </div>
             </dd>
             <dt><label for="form_name" class="required">양식명</label></dt>
-            <dd><input type="text" id="form_name"></dd>
+            <dd><input type="text" id="form_name" value="출장신청서"></dd>
             <dt><label for="form_referrer">참조자</label></dt>
             <dd>
               <span class="file_input">
-                <input type="text" id="biz traveler" list="nameList">
-                <datalist id="nameList">
-                  <optgroup label="개발본부">
-                    <option value="대장발핑">개발본부</option>
-                    <option value="개발핑">개발 1팀</option>
-                    <option value="새발핑">개발 1팀</option>
-                    <option value="말발핑">개발 2팀</option>
-                    <option value="소발핑">개발 2팀</option>
-                    <option value="곰발핑">개발 2팀</option>
-                  </optgroup>
-                  <optgroup label="경영관리">
-                    <option value="경영핑">경영관리</option>
-                    <option value="관리핑">경영관리</option>
-                  </optgroup>                  
-                </datalist>
+                <input type="text" id="form_referrer" list="nameList">
+                @@include('../inc/data_emp_name.html')
                 <button type="button" class="btn_default">추가</button>
                 <button type="button" class="btn_ogt">조직도</button>
               </span>
-              <div class="btn_slideclose">
-                <div>
-                  <p>신짱구</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>신흰둥이</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>맹구</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>신짱구</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>신짱구</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>신짱구</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>신짱구</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>신짱구</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>신짱구</p>
-                  <div>삭제</div>
-                </div>
-              </div>
+              <ul class="btn_slideclose">
+                <li><span>신짱구</span><button type="button">삭제</button></li>
+                <li><span>맹구</span><button type="button">삭제</button></li>
+                <li><span>신흰둥이</span><button type="button">삭제</button></li>
+              </ul>
             </dd>
             <dt class="required">결재자 지정</dt>
             <dd>

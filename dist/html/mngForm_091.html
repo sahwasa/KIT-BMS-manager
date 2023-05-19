@@ -78,7 +78,7 @@
         <p class="form_validity required validity">표시는 필수 입력 항목입니다.</p>
         <div class="form_wrap">
           <div class="tit_form">
-            <h2>휴가신청서</h2>
+            <h2>휴직신청서</h2>
             <table class="tbl_row">
               <caption>결재 상황 테이블</caption>
               <colgroup>
@@ -108,7 +108,7 @@
             </table>
           </div>
           <table class="tbl_row">
-            <caption>휴가신청서 양식 테이블</caption>
+            <caption>휴직신청서 양식 테이블</caption>
             <colgroup>
               <col style="width:150px">
               <col style="width:auto">
@@ -119,93 +119,35 @@
                   <label for="form_num" class="required">문서번호</label>
                 </th>
                 <td>
-                  <input type="text" id="form_num" value="KIT-근태-">
+                  <input type="text" id="form_num" value="KIT-">
                 </td>
               </tr>
               <tr>
                 <th scope="row">
-                  <label for="form_leave" class="required">휴가구분</label>
+                  <label for="form_project" class="required">프로젝트</label>
                 </th>
                 <td>
-                  <ul>
-                    <li>
-                      <input type="radio" id="form_leave" name="form_leave">
-                      <label for="form_leave">연차</label>
-                    </li>
-                    <li>
-                      <input type="radio" id="sick" name="form_leave">
-                      <label for="sick">병가</label>
-                    </li>
-                    <li>
-                      <input type="radio" id="public" name="form_leave" checked>
-                      <label for="public">공가</label>
-                    </li>
-                    <li>
-                      <input type="radio" id="condolences" name="form_leave">
-                      <label for="condolences">경조사</label>
-                    </li>
-                    <li>
-                      <input type="radio" id="substitute" name="form_leave">
-                      <label for="substitute">대체휴무</label>
-                    </li>
-                    <li>
-                      <input type="radio" id="other" name="form_leave">
-                      <label for="other">기타</label>
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  <label for="form_leave_period" class="required">휴가기간</label>
-                </th>
-                <td>
-                  <input type="date" id="form_leave_period">&nbsp;-&nbsp;
-                  <input type="date" title="출장기간">
-                  <input type="text" title="총 출장기간" class="w_day alignC">
-                  <span>일간</span>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  <label for="form_leave_period" class="required">잔여연차</label>
-                </th>
-                <td>
-                  <input type="text" title="잔여 연차" class="w_day alignC">
-                  <span>&sol;</span>
-                  <input type="text" title="총 연차" class="w_day alignC">
-                  <span class="validity">(잔여 건수 &sol; 전체 건수)</span>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  <label for="form_leave_reason" class="required">신청 사유</label>
-                </th>
-                <td>
-                  <textarea id="form_leave_reason" title="신청 사유 입력">ㅇㅇ에서 실시하는 예비군훈련으로 인한 공가신청
-
-[휴가중 업무대행] 사업1팀 홍길동 대리
-1. ㅇㅇ 거래처 ㅇㅇ관련업무
-2. ㅇㅇ 관련 문서 작성
-3. 개발 관련 ㅇㅇ 업무회의 참석</textarea>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  <label for="form_leave_other">기타</label>
-                </th>
-                <td>
-                  <textarea id="form_leave_other" title="기타란 입력">
-[비상연락망]
-자택 : 02-1234-5678
-휴대폰 : 010-1234-5678</textarea>
+                  <span class="file_input">
+                    <select id="form_project" name="form_project">
+                      <option value="사업자 분류">사업자 분류</option>
+                    </select>
+                    <select title="기관선택">
+                      <option value="기관 선택">기관 선택</option>
+                    </select>
+                    <select title="프로젝트 선택">
+                      <option value="프로젝트 선택">프로젝트 선택</option>
+                    </select>
+                  </span>
                 </td>
               </tr>
             </tbody>
           </table>
+          <div class="editor_wrap">
+            <textarea id="editor" name="editor" title="에디터 영역"></textarea>
+          </div>
           <div class="sign_wrap">
-            <p>상기와 같이 휴가를 신청합니다.<br>
-              <span>2023년 4월 17일</span>
+            <p>상기와 같이 발급신청서를 제출합니다.<br>
+              <span>2023년 4월 24일</span>
             </p>
             <p>신청인 : <span>멋쟁이</span> (인)</p>
           </div>
@@ -215,12 +157,12 @@
         <div class="infolist_wrap">
           <dl>
             <dt class="required">템플릿 유형</dt>
-            <dd><span>TMPL-005</span></dd>
+            <dd><span>TMPL-091</span></dd>
             <dt><label for="category" class="required">카테고리</label></dt>
             <dd>
               <select name="category" id="category">
-                <option value="카테고리 선택">카테고리 선택</option>
-                <option value="근태관리" selected>근태관리</option>
+                <option value="카테고리 선택" selected>카테고리 선택</option>
+                <option value="근태관리">근태관리</option>
                 <option value="기안문서">기안문서</option>
                 <option value="대외문서">대외문서</option>
                 <option value="보고문서">보고문서</option>
@@ -236,7 +178,7 @@
               </div>
             </dd>
             <dt><label for="form_name" class="required">양식명</label></dt>
-            <dd><input type="text" id="form_name" value="휴가신청서"></dd>
+            <dd><input type="text" id="form_name" value="휴직신청서"></dd>
             <dt><label for="form_referrer">참조자</label></dt>
             <dd>
               <span class="file_input">
@@ -306,3 +248,6 @@
 <script src="../js/ui_cmmn.js"></script>
 </body>
 </html>
+<script>
+  setEditor();//
+</script>

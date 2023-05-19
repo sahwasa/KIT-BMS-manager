@@ -29,10 +29,15 @@
               </colgroup>
               <tbody>
                 <tr>
-                  <th scope="col" rowspan="2">결<br>재</th>
+                  <th scope="col" rowspan="3">결<br>재</th>
                   <th scope="col">기안</th>
                   <th scope="col">결재</th>
                   <th scope="col">승인</th>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td></td>
@@ -54,7 +59,7 @@
                   <label for="form_num" class="required">문서번호</label>
                 </th>
                 <td>
-                  <input type="text" id="form_num" value="KIT-">
+                  <input type="text" id="form_num" value="KIT-근태-">
                 </td>
               </tr>
               <tr>
@@ -117,7 +122,7 @@
                   <label for="form_leave_reason" class="required">신청 사유</label>
                 </th>
                 <td>
-                  <textarea id="form_leave_reason" title"신청 사유 입력">ㅇㅇ에서 실시하는 예비군훈련으로 인한 공가신청
+                  <textarea id="form_leave_reason" title="신청 사유 입력">ㅇㅇ에서 실시하는 예비군훈련으로 인한 공가신청
 
 [휴가중 업무대행] 사업1팀 홍길동 대리
 1. ㅇㅇ 거래처 ㅇㅇ관련업무
@@ -158,6 +163,7 @@
                 <option value="근태관리" selected>근태관리</option>
                 <option value="기안문서">기안문서</option>
                 <option value="대외문서">대외문서</option>
+                <option value="보고문서">보고문서</option>
               </select>
             </dd>
             <dt><label for="use" class="required">사용여부</label></dt>
@@ -174,47 +180,16 @@
             <dt><label for="form_referrer">참조자</label></dt>
             <dd>
               <span class="file_input">
-                <input type="text" id="form_referrer">
-                <button type="button" class="btn_ogt btnMngTree">조직도</button>
+                <input type="text" id="form_referrer" list="nameList">
+                @@include('../inc/data_emp_name.html')
+                <button type="button" class="btn_default">추가</button>
+                <button type="button" class="btn_ogt">조직도</button>
               </span>
-              <div class="btn_slideclose">
-                <div>
-                  <p>박상건</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>유한아름</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>임선</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>박상건</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>박상건</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>박상건</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>박상건</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>박상건</p>
-                  <div>삭제</div>
-                </div>
-                <div>
-                  <p>박상건</p>
-                  <div>삭제</div>
-                </div>
-              </div>
+              <ul class="btn_slideclose">
+                <li><span>신짱구</span><button type="button">삭제</button></li>
+                <li><span>맹구</span><button type="button">삭제</button></li>
+                <li><span>신흰둥이</span><button type="button">삭제</button></li>
+              </ul>
             </dd>
             <dt class="required">결재자 지정</dt>
             <dd>
@@ -227,15 +202,15 @@
                 <label for="appointed">임의지정</label>
               </div>
             </dd>
-            <dt><label for="form_importance" class="required">중요도</label></dt>
+            <dt class="required">중요도</dt>
             <dd>
               <div class="btn_switch">
                 <input type="radio" id="high" name="importance">
-                <label for="high">높음</label>
-                <input type="radio" id="common" name="importance" checked>
-                <label for="common" class="disabled">보통</label>
+                <label for="high" class="high_prio">높음</label>
+                <input type="radio" id="common" name="importance" checked="">
+                <label for="common" class="normal_prio">보통</label>
                 <input type="radio" id="row" name="importance">
-                <label for="row">낮음</label>
+                <label for="row" class="low_prio">낮음</label>
               </div>
             </dd>
           </dl>

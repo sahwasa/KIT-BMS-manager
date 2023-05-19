@@ -304,11 +304,18 @@ toggleInit()
 function setEditor() {
   ClassicEditor.create(document.querySelector('#editor'), {
     licenseKey: '',
+    list: {
+      properties: {
+        styles: true,
+        startIndex: true,
+        reversed: true,
+      },
+    },
     fontFamily: {
       options: ['나눔고딕', '맑은고딕', '굴림', '돋움', '바탕', '궁서'],
     },
     fontSize: {
-      options: [9, 11, 13, 'default', 17, 19, 21],
+      options: [9, 11, 13, 15, 'default', 17, 19, 21],
     },
     htmlSupport: {
       allow: [

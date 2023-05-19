@@ -75,6 +75,8 @@ Editor.defaultConfig = {
 			'insertTable',
 			'horizontalLine',
 			'todoList',
+			'bulletedList',
+			'numberedList',
 			'|',
 			'sourceEditing'
 		]

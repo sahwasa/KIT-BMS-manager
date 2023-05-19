@@ -264,7 +264,9 @@ height:0;overflow:hidden;background-color:$black;
   &>*:last-child{flex:1 1 25%;min-width:319px;margin-top:23px;}
   .form_wrap{display:grid;padding:15px;border-bottom:2px solid #c0c0c0;
     input[type='date']{width:auto;
-      &+input[type='time']{display:block;margin-top:2px;}
+      &+span{align-items:center;margin-top:2px;
+        select{text-align: center;margin-right:3px;}
+      }
     }
     table{border:none;
       &.tbl_use_select{
@@ -277,9 +279,12 @@ height:0;overflow:hidden;background-color:$black;
     .tit_form{display:grid;grid-template-columns:1fr auto;min-height:90px;margin-bottom:15px;
       h2{font-size:17px;color:#000;font-weight:bold;text-align:center;align-self:center;white-space:pre;margin-right:20px;}
       table{
-        th{padding:0;font-weight:normal;font-size:13px;text-align:center;}
-        td{height:60px;text-align:center;
-          img{max-height:100%;vertical-align:middle;}
+        tr{
+          &:last-child>td{height:30px;}
+          &>th{padding:0;font-weight:normal;font-size:13px;text-align:center;}
+          &>td{height:40px;text-align:center;
+            img{max-height:100%;vertical-align:middle;}
+          }
         }
       }
     }
