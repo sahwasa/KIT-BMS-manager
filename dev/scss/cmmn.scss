@@ -496,16 +496,31 @@ table{width:100%; // form내 너비 수정
   .MultiFile-label{line-height:25px;}
 }
 
-/* ckeditor (height and checkbox design)*/
-.ck-editor{
-  .ck-source-editing-area,
-  .ck-editor__editable_inline {min-height:100px;height:auto;max-height:300px;}
-  .ck-source-editing-area textarea{overflow:auto;}
-  .ck-content .todo-list{
-    li{margin-bottom:0 !important;margin-left:25px;}
-    .todo-list__label>input::before{background:transparent;border-color:#606060;}
-    .todo-list__label>input[checked]::before{background:transparent;border-color:transparent;}
-    .todo-list__label>input[checked]::after{border-color:transparent;}
+/* ckeditor */
+.editor_wrap{
+  *{margin:initial;padding:initial;font-size:inherit;color:inherit;}
+  i{font-style:italic;}
+  @mixin h_tag($f_size){font-size:$f_size;font-weight:bold;}
+  .ck-editor{
+    .ck-source-editing-area,
+    .ck-editor__editable_inline {min-height:100px;height:auto;max-height:300px;}
+    .ck-source-editing-area textarea{overflow:auto;}
+    .ck-content .todo-list{
+      li{margin-bottom:0 !important;margin-left:25px;}
+      .todo-list__label>input::before{background:transparent;border-color:#606060;}
+      .todo-list__label>input[checked]::before{background:transparent;border-color:transparent;}
+      .todo-list__label>input[checked]::after{border-color:transparent;}
+    }
+    .ck-content ol,
+    .ck-content ul{margin-left:25px;}
+    .ck-content li{list-style:inherit;}
+    .ck-horizontal-line{margin:5px 0;border-bottom: 1px solid #c4c4c4;}
+    h1{@include h_tag(2em)}
+    h2{@include h_tag(1.5em)}
+    h3{@include h_tag(1.17em)}
+    h4{@include h_tag(1em)}
+    h5{@include h_tag(.83em)}
+    h6{@include h_tag(.67em)}
   }
 }
 

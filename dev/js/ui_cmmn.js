@@ -316,8 +316,12 @@ function setEditor() {
     },
     heading: {
       options: [
-          { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
-          { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
+          { model: 'heading1', view: 'h1'},
+          { model: 'heading2', view: 'h2'},
+          { model: 'heading3', view: 'h3'},
+          { model: 'heading4', view: 'h4'},
+          { model: 'heading5', view: 'h5'},
+          { model: 'heading6', view: 'h6'},
       ]
   },
     fontSize: {
