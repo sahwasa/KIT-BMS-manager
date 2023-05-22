@@ -314,6 +314,12 @@ function setEditor() {
     fontFamily: {
       options: ['나눔고딕', '맑은고딕', '굴림', '돋움', '바탕', '궁서'],
     },
+    heading: {
+      options: [
+          { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+          { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
+      ]
+  },
     fontSize: {
       options: [9, 11, 13, 15, 'default', 17, 19, 21],
     },
