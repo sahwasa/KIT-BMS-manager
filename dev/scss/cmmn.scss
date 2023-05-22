@@ -252,12 +252,23 @@ $btn_gray:#979797;
   }
   label::before{line-height:17px;}
 }
-
 .select_custom.prio{width:90px;}
 $prio_fontSize:20px;
 .high_prio::before{@include fontello('\f102');color:$red;font-size:$prio_fontSize;}
 .normal_prio::before{@include shape(14px, 7px);border:2px solid $yellow;border-width:2px 0;margin-top:1px;}
 .low_prio::before{@include fontello('\f107');color:$blue;font-size:$prio_fontSize;}
+ul.btn_slideclose{display:flex;flex-wrap:wrap;justify-content:flex-start;
+  &>li:has(button){display:inline-block;position:relative;overflow:hidden;margin:5px 5px 0 0;border-radius:3px;background:#ececec;cursor:pointer;transition:.2s;text-align:center;line-height:23px;
+    &:hover{background-color:#dbdbdb;
+      span{padding-left:5px;padding-right:15px;}
+      button{right:0;}
+    }
+    button{position:absolute;top:0;right:-13px;width:13px;height:100%;background:#8e8e8e;color:#fff;line-height:23px;font-size:0;transition:.3s;
+      &::after{@include fontello('\eb2e');font-size:12px;}
+    }
+    span{padding:2px 10px;color:#717889;transition:.3s;}
+  }
+}
 
 // search
 .search_box{
