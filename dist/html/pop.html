@@ -57,7 +57,6 @@
     <li><a href="/html/mngCode.html">공통코드관리</a></li>
     <li><a href="/html/mngMenu.html">메뉴관리</a></li>
     <li><a href="/html/mngForm.html">결재 양식관리</a></li>
-    <li><a href="/html/mngSetting.html">환경설정</a></li>
     <li><a href="/html/mngNotice.html">게시판</a></li>
     <li><a href="/html/pop.html">팝업(퍼블리싱 확인용)</a></li>
   </ul>
@@ -75,8 +74,7 @@
         <li><button class="btn_default btnMngDel">조직관리 > 부서삭제</button>
         <li><button class="btn_default btnMngSearch">조직관리 > 부서검색</button>
         <li><button class="btn_default btnMngTree">조직도</button>
-        <li><button class="btn_default btnMngEmp">임직원 관리 > 사유 입력</button>
-          <li><button class="btn_default btnMngEmp2">임직원 관리 > 삭제 경고</button>
+          <li><button class="btn_default btnMngEmp">임직원 관리 > 삭제 경고</button>
         <li><button class="btn_default btnMngCode">공통코드관리 > 그룹코드 입력</button>
         <li><button class="btn_default btnMngCode2">공통코드관리 > 권한그룹 상세코드 입력</button>
         <li><button class="btn_default btnMngMenu">메뉴관리 > 수정 및 추가</button>
@@ -846,24 +844,6 @@
     </div>
     <div class="p_body">
       <div class="warning_wrap"><img src="../images/ic_warning.png" alt="경고 이미지"></div>
-      <div>해당 사원의 상태를<br>중지 하시겠습니까?
-        <input class="mt_10" type="text" placeholder="사유를 입력하세요" title="관리 사유 입력란">
-      </div>
-      <div class="btn_wrap">
-        <button class="btn_save" type="button">확인</button>
-        <button class="btn_cancel">취소</button>
-      </div>
-    </div>
-  </form>
-</dialog> <!--// 사원관리 사유 -->
-<dialog class="p_mngEmp2">
-  <form method="dialog">
-    <div class="p_header">
-      <strong>임직원관리</strong>
-      <button class="btnClose ico_org cancel" aria-label="close">닫기</button>
-    </div>
-    <div class="p_body">
-      <div class="warning_wrap"><img src="../images/ic_warning.png" alt="경고 이미지"></div>
       <div>해당 사원의 상태를<br>승인&sol;복구 하시겠습니까?</div>
       <div class="btn_wrap">
         <button class="btn_save" type="button">확인</button>
@@ -1077,9 +1057,6 @@
   }) // 조직도
   document.querySelector('.btnMngEmp').addEventListener('click', function () {
     document.querySelector('.p_mngEmp').showModal();
-  }) // 임직원관리
-  document.querySelector('.btnMngEmp2').addEventListener('click', function () {
-    document.querySelector('.p_mngEmp2').showModal();
   }) // 임직원관리
   document.querySelector('.btnMngCode').addEventListener('click', function () {
     document.querySelector('.p_mngCode').showModal();

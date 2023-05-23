@@ -314,18 +314,8 @@ function setEditor() {
     fontFamily: {
       options: ['나눔고딕', '맑은고딕', '굴림', '돋움', '바탕', '궁서'],
     },
-    heading: {
-      options: [
-          { model: 'heading1', view: 'h1'},
-          { model: 'heading2', view: 'h2'},
-          { model: 'heading3', view: 'h3'},
-          { model: 'heading4', view: 'h4'},
-          { model: 'heading5', view: 'h5'},
-          { model: 'heading6', view: 'h6'},
-      ]
-  },
     fontSize: {
-      options: [9, 11, 13, 15, 'default', 17, 19, 21],
+      options: [13, 15, 17, 19, 21],
     },
     htmlSupport: {
       allow: [

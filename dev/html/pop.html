@@ -15,8 +15,7 @@
         <li><button class="btn_default btnMngDel">조직관리 > 부서삭제</button>
         <li><button class="btn_default btnMngSearch">조직관리 > 부서검색</button>
         <li><button class="btn_default btnMngTree">조직도</button>
-        <li><button class="btn_default btnMngEmp">임직원 관리 > 사유 입력</button>
-          <li><button class="btn_default btnMngEmp2">임직원 관리 > 삭제 경고</button>
+          <li><button class="btn_default btnMngEmp">임직원 관리 > 삭제 경고</button>
         <li><button class="btn_default btnMngCode">공통코드관리 > 그룹코드 입력</button>
         <li><button class="btn_default btnMngCode2">공통코드관리 > 권한그룹 상세코드 입력</button>
         <li><button class="btn_default btnMngMenu">메뉴관리 > 수정 및 추가</button>
@@ -34,8 +33,7 @@
 @@include('../inc/pop/p_mngOrg.html') <!--// 부서삭제 -->
 @@include('../inc/pop/p_mngOrg2.html') <!--// 부서검색 -->
 @@include('../inc/pop/p_mngTree.html') <!--// 조직도 -->
-@@include('../inc/pop/p_mngEmp.html') <!--// 사원관리 사유 -->
-@@include('../inc/pop/p_mngEmp2.html') <!--// 사원관리 -->
+@@include('../inc/pop/p_mngEmp.html') <!--// 사원관리 -->
 @@include('../inc/pop/p_mngCode.html') <!--// 그룹코드 입력 -->
 @@include('../inc/pop/p_mngCode2.html') <!--// 권한그룹 상세코드 입력 -->
 @@include('../inc/pop/p_mngMenu.html') <!--// 메뉴 수정 및 추가 -->
@@ -58,9 +56,6 @@
   }) // 조직도
   document.querySelector('.btnMngEmp').addEventListener('click', function () {
     document.querySelector('.p_mngEmp').showModal();
-  }) // 임직원관리
-  document.querySelector('.btnMngEmp2').addEventListener('click', function () {
-    document.querySelector('.p_mngEmp2').showModal();
   }) // 임직원관리
   document.querySelector('.btnMngCode').addEventListener('click', function () {
     document.querySelector('.p_mngCode').showModal();
