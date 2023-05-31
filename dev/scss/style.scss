@@ -276,6 +276,12 @@ height:0;overflow:hidden;background-color:$black;
         }
       }
     }
+    .approval_status{      
+      strong{margin-right:5px;font-size:11px;}
+      th:first-child{width:30px;}
+      td{font-size:11px;width:110px;padding:3px;}
+      tr:last-child td{height:25px;}
+    }
     .tit_form{display:grid;grid-template-columns:1fr auto;min-height:90px;margin-bottom:15px;
       h2{font-size:17px;color:#000;font-weight:bold;text-align:center;align-self:center;white-space:pre;margin-right:20px;}
       table{
