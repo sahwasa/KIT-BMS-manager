@@ -2,9 +2,6 @@ $(function () {
   // nav
   var $deps1 = $('.lnb>li'),
     $deps2 = $('.sub li'),
-    //$locate=$('.locate_list>li'),
-    //$loca1=$('.loca1 > li'),
-    //$loca2=$('.loca2 > li'),
     preLocate,
     deps1Locate,
     deps2Locate,
@@ -41,19 +38,6 @@ $(function () {
 
     $deps1.eq(deps1Locate).addClass('on')
     $deps1.eq(deps1Locate).find($deps2).eq(deps2Locate).addClass('on')
-    //$loca1.eq(deps1Locate).addClass('on');
-    //$loca2.eq(deps2Locate).addClass('on');
-    // $loca1.each(function(index,item){
-    // 	getAttr=$(this).children('a').attr('href');
-    // 	index+=1;
-    // 	indexDeps1=$(this).children('a').attr('href', getAttr + "?index="+ index +',1');
-    // });
-    var locaDeps1 = deps1Locate + 1
-    // $loca2.each(function(index,item){
-    // 	getAttr=$(this).children('a').attr('href');
-    // 	index+=1;
-    // 	$loca2=$(this).children('a').attr('href', getAttr + "?index="+locaDeps1 +',' + index);
-    // });
   }
 
   function menu1Open(onItem) {
@@ -77,12 +61,6 @@ $(function () {
   $deps2.on('click', function () {
     menu2Open($(this))
   })
-
-  // $locate.on('click', function(e){
-  // 	e.stopPropagation();
-  // 	$(this).toggleClass('on');
-  // 	$(this).children('.sub_loca').slideToggle();
-  // });
 
   //gnb
   $('.profile').on({
@@ -121,9 +99,9 @@ $(function () {
           $(this).parents('table').find('tr').removeClass(checkName)
         cur ? thisRow.addClass(checkName) : thisRow.removeClass(checkName)
       }
-    },
+    }
   })
-
+  
   //layer_tool
   $('.layer_tool').on({
     click: function () {

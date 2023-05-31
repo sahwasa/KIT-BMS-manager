@@ -78,17 +78,11 @@
         <div class="form_wrap">
           <div class="tit_form">
             <h2>출장복명서</h2>
-            <table class="tbl_row">
+            <table class="tbl_row approval_status">
               <caption>결재 상황 테이블</caption>
-              <colgroup>
-                <col style="width:70px;">
-                <col style="width:150px;">
-                <col style="width:150px;">
-                <col style="width:150px;">
-              </colgroup>
               <tbody>
                 <tr>
-                  <th scope="col" rowspan="2">결<br>재</th>
+                  <th scope="col" rowspan="3">결 재</th>
                   <th scope="col">기안</th>
                   <th scope="col">결재</th>
                   <th scope="col">승인</th>
@@ -150,7 +144,7 @@
               </tr>
               <tr>
                 <td>
-                  <ul>
+                  <ul class="check_group">
                     <li>
                       <input type="radio" id="form_businesstrip" name="form_businesstrip">
                       <label for="form_businesstrip">국내출장</label>
@@ -206,10 +200,29 @@
                     <button type="button" class="btn_ogt">조직도</button>
                   </span>
                   <ul class="btn_slideclose">
-                    <li><span>신짱구</span><button type="button">삭제</button></li>
-                    <li><span>맹구</span><button type="button">삭제</button></li>
-                    <li><span>신흰둥이</span><button type="button">삭제</button></li>
-                  </ul>
+  <li>
+    <div>
+      <p>유한아름</p><button type="button">삭제</button>
+    </div>
+    <div class="tooltip">
+      <div class="user_module">
+  <figure class="user_photo"><img src="../images/ic_user.png" alt="" loading="lazy"></figure> 
+  <em>홍OO 연구원</em><b>(재난예경보MA팀)</b>
+</div>
+    </div>
+  </li>
+  <li>
+    <div>
+      <p>임선</p><button type="button">삭제</button>
+    </div>
+    <div class="tooltip">
+      <div class="user_module">
+  <figure class="user_photo"><img src="../images/ic_user.png" alt="" loading="lazy"></figure> 
+  <em>홍OO 연구원</em><b>(재난예경보MA팀)</b>
+</div>
+    </div>
+  </li>
+</ul>
                 </td>
               </tr>
               <tr>
@@ -237,14 +250,14 @@
                         <th scope="col">교통수단</th>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" class="row_check" title="글선택" checked></td>
+                        <td><input type="checkbox" class="row_check" title="글선택" ></td>
                         <td>2023-04-13</td>
                         <td>ㅇㅇㅇ 기관</td>
                         <td>000 회의 및 프로그램 개발</td>
                         <td>자차</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" class="row_check" title="글선택" checked></td>
+                        <td><input type="checkbox" class="row_check" title="글선택" ></td>
                         <td>2023-04-14</td>
                         <td>ㅇㅇㅇ 기관</td>
                         <td>000 업무 협의</td>
@@ -336,9 +349,9 @@
                   <label for="form_car">기타 신청내역</label>
                 </th>
                 <td>
-                  <ul>
+                  <ul class="check_group">
                     <li>
-                      <input type="checkbox" id="form_car" checked="">
+                      <input type="checkbox" id="form_car">
                       <label for="form_car">법인차량(제주출장시)</label>
                     </li>
                     <li>
@@ -351,9 +364,9 @@
               </tr>
               <tr>
                 <td>
-                  <ul>
+                  <ul class="check_group">
                     <li>
-                      <input type="checkbox" id="card1" checked="">
+                      <input type="checkbox" id="card1">
                       <label for="card1">출장카드</label> ( <input type="number" title="요청 카드 수량" class="w_day alignC h_min" value="1"> 장)
                     </li>
                     <li>
@@ -440,10 +453,29 @@
                 <button type="button" class="btn_ogt">조직도</button>
               </span>
               <ul class="btn_slideclose">
-                <li><span>신짱구</span><button type="button">삭제</button></li>
-                <li><span>맹구</span><button type="button">삭제</button></li>
-                <li><span>신흰둥이</span><button type="button">삭제</button></li>
-              </ul>
+  <li>
+    <div>
+      <p>유한아름</p><button type="button">삭제</button>
+    </div>
+    <div class="tooltip">
+      <div class="user_module">
+  <figure class="user_photo"><img src="../images/ic_user.png" alt="" loading="lazy"></figure> 
+  <em>홍OO 연구원</em><b>(재난예경보MA팀)</b>
+</div>
+    </div>
+  </li>
+  <li>
+    <div>
+      <p>임선</p><button type="button">삭제</button>
+    </div>
+    <div class="tooltip">
+      <div class="user_module">
+  <figure class="user_photo"><img src="../images/ic_user.png" alt="" loading="lazy"></figure> 
+  <em>홍OO 연구원</em><b>(재난예경보MA팀)</b>
+</div>
+    </div>
+  </li>
+</ul>
             </dd>
             <dt class="required">결재자 지정</dt>
             <dd>

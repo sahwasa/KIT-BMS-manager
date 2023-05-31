@@ -19,17 +19,11 @@
         <div class="form_wrap">
           <div class="tit_form">
             <h2>휴가신청서</h2>
-            <table class="tbl_row">
+            <table class="tbl_row approval_status">
               <caption>결재 상황 테이블</caption>
-              <colgroup>
-                <col style="width:70px;">
-                <col style="width:150px;">
-                <col style="width:150px;">
-                <col style="width:150px;">
-              </colgroup>
               <tbody>
                 <tr>
-                  <th scope="col" rowspan="3">결<br>재</th>
+                  <th scope="col" rowspan="3">결 재</th>
                   <th scope="col">기안</th>
                   <th scope="col">결재</th>
                   <th scope="col">승인</th>
@@ -67,10 +61,18 @@
                   <label for="form_leave" class="required">휴가구분</label>
                 </th>
                 <td>
-                  <ul>
+                  <ul class="check_group">
                     <li>
                       <input type="radio" id="form_leave" name="form_leave">
                       <label for="form_leave">연차</label>
+                    </li>
+                    <li>
+                      <input type="radio" id="form_am_leave" name="form_leave">
+                      <label for="form_am_leave">오전 반차</label>
+                    </li>
+                    <li>
+                      <input type="radio" id="form_pm_leave" name="form_leave">
+                      <label for="form_pm_leave">오후 반차</label>
                     </li>
                     <li>
                       <input type="radio" id="sick" name="form_leave">
@@ -185,11 +187,7 @@
                 <button type="button" class="btn_default">추가</button>
                 <button type="button" class="btn_ogt">조직도</button>
               </span>
-              <ul class="btn_slideclose">
-                <li><span>신짱구</span><button type="button">삭제</button></li>
-                <li><span>맹구</span><button type="button">삭제</button></li>
-                <li><span>신흰둥이</span><button type="button">삭제</button></li>
-              </ul>
+              @@include('../inc/module_slide_user.html')
             </dd>
             <dt class="required">결재자 지정</dt>
             <dd>
