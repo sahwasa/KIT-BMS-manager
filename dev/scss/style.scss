@@ -258,10 +258,10 @@ height:0;overflow:hidden;background-color:$black;
     .budget{font-size:15px;font-weight:bold;}
   }
   &>*{padding:0 5px;}
-  &>*:first-child{flex:1 1 60%;min-width:815px;
+  &>*:first-child{flex:1 1 60%;min-width:700px;
     &>.form_wrap{border:1px solid silver;border-width:2px 0 2px;}
   }
-  &>*:last-child{flex:1 1 25%;min-width:319px;margin-top:23px;}
+  &>*:last-child{flex:1 1 25%;min-width:434px;margin-top:23px;}
   .form_wrap{display:grid;padding:15px;border-bottom:2px solid #c0c0c0;
     input[type='date']{width:auto;
       &+span{align-items:center;margin-top:2px;
