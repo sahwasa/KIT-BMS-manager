@@ -170,8 +170,14 @@
               </tr>
               <tr>
                 <th scope="row"><label for="emp_entering" class="required">시행일자</label></th>
-                <td colspan="3">
+                <td>
                   <input type="date" id="emp_entering">
+                </td>
+                <th scope="row">
+                  <label for="send_day">발송요청일자</label>
+                </th>
+                <td>
+                  <input type="date" id="send_day">
                 </td>
               </tr>
               <tr>
@@ -190,25 +196,52 @@
               </tr>
               <tr>
                 <th scope="row">
-                  <label for="send_docu24" class="required">문서24 발송</label>
+                  <label for="send_docu24" class="required">발송형태</label>
                 </th>
-                <td>
+                <td colspan="3">
                   <ul class="check_group">
                     <li>
-                      <input type="radio" id="send_docu24" name="send_docu24" checked>
-                      <label for="send_docu24">사용</label>
+                      <input type="checkbox" id="send_docu24" name="send_type">
+                      <label for="send_docu24">문서24 발송</label>
                     </li>
                     <li>
-                      <input type="radio" id="send_docu24_notused" name="send_docu24">
-                      <label for="send_docu24_notused">사용안함</label>
+                      <input type="checkbox" id="send_email" name="send_type">
+                      <label for="send_email">이메일 발송</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="send_fax" name="send_type">
+                      <label for="send_fax">FAX 발송</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="send_direct" name="send_type">
+                      <label for="send_direct">서면제출</label>
                     </li>
                   </ul>
                 </td>
+              </tr>
+              <tr>
                 <th scope="row">
-                  <label for="send_day">발송요청일</label>
+                  <label for="stamp_corp">신청인감종류</label>
                 </th>
-                <td>
-                  <input type="date" id="send_day">
+                <td colspan="3">
+                  <ul class="check_group">
+                    <li>
+                      <input type="checkbox" id="stamp_corp" name="stamp_type">
+                      <label for="stamp_corp">법인인감</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="stamp_use" name="stamp_type">
+                      <label for="stamp_use">사용인감</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="stamp_seal" name="stamp_type">
+                      <label for="stamp_seal">직인</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="stamp_cm" name="stamp_type">
+                      <label for="stamp_cm">대표날인</label>
+                    </li>
+                  </ul>
                 </td>
               </tr>
             </tbody>

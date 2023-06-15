@@ -122,23 +122,19 @@
                 <td>
                   <ul class="check_group">
                     <li>
-                      <input type="radio" id="form_leave" name="form_leave" checked>
+                      <input type="radio" id="form_leave" name="form_leave">
                       <label for="form_leave">연차</label>
                     </li>
                     <li>
-                      <input type="radio" id="form_leave" name="form_am_leave">
-                      <label for="form_am_leave">오전 반차</label>
-                    </li>
-                    <li>
-                      <input type="radio" id="form_leave" name="form_pm_leave">
-                      <label for="form_pm_leave">오후 반차</label>
+                      <input type="radio" id="form_half_leave" name="form_leave">
+                      <label for="form_half_leave">반차</label>
                     </li>
                     <li>
                       <input type="radio" id="sick" name="form_leave">
                       <label for="sick">병가</label>
                     </li>
                     <li>
-                      <input type="radio" id="public" name="form_leave">
+                      <input type="radio" id="public" name="form_leave" checked>
                       <label for="public">공가</label>
                     </li>
                     <li>
@@ -148,6 +144,10 @@
                     <li>
                       <input type="radio" id="substitute" name="form_leave">
                       <label for="substitute">대체휴무</label>
+                    </li>
+                    <li>
+                      <input type="radio" id="maternity_leave" name="form_leave">
+                      <label for="maternity_leave">출산휴가</label>
                     </li>
                     <li>
                       <input type="radio" id="other" name="form_leave">
@@ -173,7 +173,7 @@
                 </th>
                 <td>
                   <input type="checkbox" id="form_replace">
-                  <label for="form_replace">반납 (&#8251;  기존 신청 내역 취소시)</label>
+                  <label for="form_replace">취소 (&#8251;  기존 신청 내역 취소시)</label>
                 </td>
               </tr>
               <tr>
