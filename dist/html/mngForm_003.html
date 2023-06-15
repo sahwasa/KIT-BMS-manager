@@ -211,35 +211,35 @@
       </section>
       <section>
         <div class="infolist_wrap">
-          <dl>
-            <dt class="required">템플릿 유형</dt>
-            <dd><span>TMPL-003</span></dd>
-            <dt><label for="category" class="required">카테고리</label></dt>
-            <dd>
-              <select name="category" id="category">
-                <option value="카테고리 선택">카테고리 선택</option>
-                <option value="근태관리">근태관리</option>
-                <option value="기안문서" selected>기안문서</option>
-                <option value="대외문서">대외문서</option>
-                <option value="보고문서">보고문서</option>
-              </select>
-            </dd>
-            <dt><label for="use" class="required">사용여부</label></dt>
-            <dd>
-              <div class="btn_switch">
-                <input type="radio" id="use" name="use" checked>
-                <label for="use">사용</label>
-                <input type="radio" id="notused" name="use">
-                <label for="notused">사용안함</label>
-              </div>
-            </dd>
-            <dt><label for="form_name" class="required">양식명</label></dt>
-            <dd><input type="text" id="form_name" value="지출결의서"></dd>
-            <dt><label for="form_referrer">참조자</label></dt>
-            <dd>
-              <span class="file_input">
-                <input type="text" id="form_referrer" list="nameList">
-                <datalist id="nameList">
+  <dl>
+    <dt class="required">템플릿 유형</dt>
+    <dd><span>TMPL-NUM</span></dd>
+    <dt><label for="category" class="required">카테고리</label></dt>
+    <dd>
+      <select name="category" id="category">
+        <option value="카테고리 선택" selected>카테고리 선택</option>
+        <option value="근태관리">근태관리</option>
+        <option value="기안문서">기안문서</option>
+        <option value="대외문서">대외문서</option>
+        <option value="보고문서">보고문서</option>
+      </select>
+    </dd>
+    <dt><label for="use" class="required">사용여부</label></dt>
+    <dd>
+      <div class="btn_switch">
+        <input type="radio" id="use" name="use" checked>
+        <label for="use">사용</label>
+        <input type="radio" id="notused" name="use">
+        <label for="notused">사용안함</label>
+      </div>
+    </dd>
+    <dt><label for="form_name" class="required">양식명</label></dt>
+    <dd><input type="text" id="form_name" value="양식명"></dd>
+    <dt><label for="form_referrer">참조자</label></dt>
+    <dd>
+      <span class="file_input">
+        <input type="text" id="form_referrer" list="nameList">
+        <datalist id="nameList">
   <optgroup label="개발본부">
     <option value="대장발핑">개발본부</option>
     <option value="개발핑">개발 1팀</option>
@@ -253,10 +253,10 @@
     <option value="관리핑">경영관리</option>
   </optgroup>
 </datalist>
-                <button type="button" class="btn_default">추가</button>
-                <button type="button" class="btn_ogt">조직도</button>
-              </span>
-              <ul class="btn_slideclose">
+        <button type="button" class="btn_default">추가</button>
+        <button type="button" class="btn_ogt">조직도</button>
+      </span>
+      <ul class="btn_slideclose">
   <li>
     <div>
       <p>유한아름</p><button type="button">삭제</button>
@@ -280,35 +280,35 @@
     </div>
   </li>
 </ul>
-            </dd>
-            <dt class="required">결재자 지정</dt>
-            <dd>
-              <div class="btn_switch">
-                <input type="radio" id="chart" name="approver">
-                <label for="chart">조직도</label>
-                <input type="radio" id="department" name="approver" checked>
-                <label for="department" class="disabled">부서내</label>
-                <input type="radio" id="appointed" name="approver">
-                <label for="appointed">임의지정</label>
-              </div>
-            </dd>
-            <dt class="required">중요도</dt>
-            <dd>
-              <div class="btn_switch">
-                <input type="radio" id="high" name="importance">
-                <label for="high" class="high_prio">높음</label>
-                <input type="radio" id="common" name="importance" checked="">
-                <label for="common" class="normal_prio">보통</label>
-                <input type="radio" id="row" name="importance">
-                <label for="row" class="low_prio">낮음</label>
-              </div>
-            </dd>
-          </dl>
-        </div>
-        <div class="btn_wrap">
-          <button class="postive btn_save" type="button">저장</button>
-          <button class="negative btn_cancel">닫기</button>
-        </div>
+    </dd>
+    <dt class="required">결재자 지정</dt>
+    <dd>
+      <div class="btn_switch">
+        <input type="radio" id="chart" name="approver">
+        <label for="chart">조직도</label>
+        <input type="radio" id="department" name="approver" checked>
+        <label for="department" class="disabled">부서내</label>
+        <input type="radio" id="appointed" name="approver">
+        <label for="appointed">임의지정</label>
+      </div>
+    </dd>
+    <dt class="required">중요도</dt>
+    <dd>
+      <div class="btn_switch">
+        <input type="radio" id="high" name="importance">
+        <label for="high" class="high_prio">높음</label>
+        <input type="radio" id="common" name="importance" checked="">
+        <label for="common" class="normal_prio">보통</label>
+        <input type="radio" id="row" name="importance">
+        <label for="row" class="low_prio">낮음</label>
+      </div>
+    </dd>
+  </dl>
+</div>
+<div class="btn_wrap">
+  <button class="postive btn_save" type="button">저장</button>
+  <button class="negative btn_cancel">닫기</button>
+</div>
       </section>
     </div>
   </main>
