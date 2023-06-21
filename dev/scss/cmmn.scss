@@ -277,7 +277,7 @@ $prio_fontSize:20px;
 }
 .user_module{display:flex;gap:5px;align-items:center;position:relative;
   .user_photo{display:inline-block;width:18px;height:18px;overflow:hidden;border-radius:50%;border:1px solid #ccc;
-    img{width:100%;height:auto;vertical-align:top;}
+    img{width:100%;height:auto;vertical-align:top;object-fit:cover}
   }
   b{font-size:11px;color:#717889;align-self:flex-end;}
 }  
