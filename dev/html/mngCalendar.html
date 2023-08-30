@@ -1,0 +1,143 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')
+  @@include('../inc/nav.html')
+  <main id="contents" class="contents" role="main">
+    <header class="cont_tit">
+      <h1>캘린더 관리</h1>
+      <section class="bredcrumb">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>캘린더 관리</li>
+        </ul>
+      </section>
+    </header>
+    <div class="cont_body mngCalendar">
+      <section>
+        <header class="section_tit tit_icon">
+          <h1><select name="" id="" title="연도"><option value="">2023년</option></select> 일정 목록</h1>
+          <div class="btn_wrap">
+            <button type="button" class="btn_add">추가</button>
+            <button type="button" class="btn_modify">삭제</button>
+          </div>
+        </header>
+        <div class="section_body">
+          <div class="tbl_wrap">
+            <table class="tbl_default">
+              <caption>일정 테이블</caption>
+              <colgroup>
+                <col style="width:60px;">
+                <col style="width:150px;" span="2">
+                <col style="width:80px;" span="2">
+                <col style="width:17px;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">선택</th>
+                  <th scope="col" class="sort">기간
+                    <span class="sorting">
+                      <span class="ico_asc" title="오름차순">오름차순</span>
+                      <span class="ico_desc" title="내림차순">내림차순</span>
+                    </span>
+                  </th>
+                  <th scope="col">일정</th>
+                  <th scope="col">구분</th>
+                  <th scope="col">사용여부</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+            </table>
+            <div class="tbl_scroll" style="height:640px;">
+              <table class="tbl_default tbl_use_select no_thead tbl_hover">
+                <colgroup>
+                <col style="width:60px;">
+                <col style="width:150px;" span="2">
+                <col style="width:80px;" span="2">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input type="checkbox" name="" class="row_check" title="줄선택">
+                    </td>
+                    <td>9월 28일 ~ 9월 30일</td>
+                    <td>추석</td>
+                    <td>공휴일</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" name="" class="row_check" title="줄선택">
+                    </td>
+                    <td>10월 10일</td>
+                    <td>창립기념일</td>
+                    <td>행사</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="groupCodeArrow">
+        <img src="../images/ic_arrow.png" alt="화살표 이미지">
+      </section>
+      <section class="schedule_dtl">
+        <header class="section_tit tit_icon">
+          <h1>상세내역</h1>
+          <div class="btn_wrap">
+            <button type="button" class="btn_add">저장</button>
+            <button type="button" class="btn_modify">수정</button>
+            <button type="button" class="btn_modify">삭제</button>
+          </div>
+        </header>
+        <div class="section_body">
+          <table class="tbl_list">
+          <caption>그룹 코드 입력</caption>
+          <colgroup>
+            <col style="width:130px">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th scope="row"><label for="schedule_name">일정</label></th>
+              <td>
+                <input type="text" id="schedule_name" value="품의/지출관리">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="">기간</label></th>
+              <td>
+				        <input type="date" min="0000-01-01" max="9999-12-31" id="sdt" title="시작일" onchange="setPeriod()"> - 
+                <input type="date" min="0000-01-01" max="9999-12-31" id="edt" title="종료일" onchange="setPeriod()">                
+              </td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="s_type">구분</label></th>
+              <td>
+                <select name="" id=""><option value="">행사</option></select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">사용여부</th>
+              <td>
+                <span class="btn_tgl" datavalue="on"></span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">최종 갱신일시</th>
+              <td>
+                귀요미(2023-01-20 15:00:00)
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
+    </div>
+  </main>
+  @@include('../inc/footer.html')
+</div>
+@@include('../inc/script.html')
+<script>
+  toggleInit(); // toggle common
+</script>

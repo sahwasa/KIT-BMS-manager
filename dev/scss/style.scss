@@ -90,7 +90,7 @@ $columnGap:25px;
 }
 
 //footer
-.footer{display:flex;align-items:center;grid-row:3;grid-column:2;border-top:1px solid #e1e1e1;padding:0 $columnGap;justify-content:flex-end;
+.footer{display:flex;align-items:center;grid-row:3;grid-column:2;border-top:1px solid #e1e1e1;padding:0 $columnGap;justify-content:center;
   .copy{font-size:14px;color:#818181;}
 }
 
@@ -304,6 +304,17 @@ height:0;overflow:hidden;background-color:$black;
     }
   }
   .btn_wrap{margin-top:10px;}
+}
+// mngCalendar
+.mngCalendar{
+  display:grid;grid-template-columns:600px 50px 1fr;grid-column-gap:25px;
+  .section_tit select{width:auto;color:#000;border-width:0 0 1px;margin-top:-3px;border-radius:0;}  
+  .groupCodeArrow{align-self:center;justify-self:center;}
+  .schedule_dtl{min-width:400px;
+    .section_body{height:calc(100% - 38px);border:1px solid #ddd;padding:5px 25px;}
+    input,select{width:auto;}
+    .tbl_list td{padding:20px 5px;}
+  }
 }
 
 @include mobile_lowpc{
