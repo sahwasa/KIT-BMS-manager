@@ -311,7 +311,7 @@ height:0;overflow:hidden;background-color:$black;
   .section_tit select{width:auto;color:#000;border-width:0 0 1px;margin-top:-3px;border-radius:0;}  
   .groupCodeArrow{align-self:center;justify-self:center;}
   .schedule_dtl{min-width:400px;
-    .section_body{height:calc(100% - 38px);border:1px solid #ddd;padding:5px 25px;}
+    .section_body{height:calc(100% - 38px);border:1px solid #ddd;padding:5px 25px;overflow-y:auto;}
     input,select{width:auto;}
     .tbl_list td{padding:20px 5px;}
   }
