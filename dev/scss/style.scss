@@ -251,6 +251,7 @@ height:0;overflow:hidden;background-color:$black;
   &>*{width:auto;flex:1;margin-right:4px;align-self:center;vertical-align:middle;
     &:last-child{margin-right:0;}
   }
+  button{flex:1 0 auto;}
 }
 .mngFormDetail{@include flex_between;flex-wrap:wrap;justify-content:center;align-items:start;
   .form_validity{margin-bottom:5px;}
@@ -316,8 +317,24 @@ height:0;overflow:hidden;background-color:$black;
     .tbl_list td{padding:20px 5px;}
   }
 }
-
 @include mobile_lowpc{
   // mngForm_001.html
   .mngFormDetail>*:last-child{order:-1;}
+}
+
+
+// mngProj
+.mngProj{
+  .tbl_wrap{height:calc(100vh - 300px);overflow-y:auto;border-top:2px solid $th_border_color;
+    .tbl_default{border-top-width:0;}
+    thead{position:sticky;left:0;top:0;background-color:#fff;outline:1px solid $th_border_color;z-index:30;}
+  }
+  .layer_tool .btn_layer{right:0;left:auto;transform: translateX(0);}
+}
+.proj_modify{display:flex;gap:25px;
+  fieldset{flex:1 0 auto;padding:13px 15px 13px 0;border:1px solid #ddd;border-radius:5px;}
+  legend{font-size:16px;color:#000;font-weight:600;margin-left:15px;padding:0 15px;}
+  dl{display:grid;grid-template:auto/130px 1fr;column-gap:30px;row-gap:5px;}
+  dt,dd{padding:5px;}
+  dt{padding-left:30px;font-size:13px;font-weight:600;color:#111;}  
 }

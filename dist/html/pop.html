@@ -80,6 +80,7 @@
         <li><button class="btn_default btnMngCode">공통코드관리 > 그룹코드 입력</button>
         <li><button class="btn_default btnMngCode2">공통코드관리 > 권한그룹 상세코드 입력</button>
         <li><button class="btn_default btnMngMenu">메뉴관리 > 수정 및 추가</button>
+        <li><button class="btn_default btnMngProj">프로젝트관리 > 프로젝트 삭제</button>
         </li>
       </ul>
       <div class="editor_wrap">
@@ -1034,6 +1035,22 @@
     </div>
   </form>
 </dialog> <!--// 메뉴 수정 및 추가 -->
+<dialog class="p_mngProj">
+  <form method="dialog">
+    <div class="p_header">
+      <strong>프로젝트 삭제</strong>
+      <button class="btnClose ico_org cancel" aria-label="close">닫기</button>
+    </div>
+    <div class="p_body">
+      <div class="warning_wrap"><img src="../images/ic_warning.png" alt="경고 이미지"></div>
+      <div>선택하신 프로젝트를 정말<br/>삭제 하시겠습니까?</div>
+      <div class="btn_wrap">
+        <button class="btn_save" type="button">확인</button>
+        <button class="btn_cancel">취소</button>
+      </div>
+    </div>
+  </form>
+</dialog> 
 <script src="../plugins/jquery.min.js"></script>
 <script src="../plugins/jquery-ui.min.js"></script>
 <script src="../plugins/jquery.MultiFile.js"></script>
@@ -1072,4 +1089,7 @@
   document.querySelector('.btnClose').addEventListener('click', function () {
     document.querySelector('dialog').close();
   })
+  document.querySelector('.btnMngProj').addEventListener('click', function () {
+    document.querySelector('.p_mngProj').showModal();
+  }) // 프로젝트관리
 </script>

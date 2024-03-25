@@ -19,6 +19,7 @@
         <li><button class="btn_default btnMngCode">공통코드관리 > 그룹코드 입력</button>
         <li><button class="btn_default btnMngCode2">공통코드관리 > 권한그룹 상세코드 입력</button>
         <li><button class="btn_default btnMngMenu">메뉴관리 > 수정 및 추가</button>
+        <li><button class="btn_default btnMngProj">프로젝트관리 > 프로젝트 삭제</button>
         </li>
       </ul>
       <div class="editor_wrap">
@@ -37,6 +38,7 @@
 @@include('../inc/pop/p_mngCode.html') <!--// 그룹코드 입력 -->
 @@include('../inc/pop/p_mngCode2.html') <!--// 권한그룹 상세코드 입력 -->
 @@include('../inc/pop/p_mngMenu.html') <!--// 메뉴 수정 및 추가 -->
+@@include('../inc/pop/p_mngProj.html') 
 @@include('../inc/script.html')
 
 <script>
@@ -69,4 +71,7 @@
   document.querySelector('.btnClose').addEventListener('click', function () {
     document.querySelector('dialog').close();
   })
+  document.querySelector('.btnMngProj').addEventListener('click', function () {
+    document.querySelector('.p_mngProj').showModal();
+  }) // 프로젝트관리
 </script>
