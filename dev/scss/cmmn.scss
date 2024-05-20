@@ -413,7 +413,7 @@ table{width:100%; // form내 너비 수정
     &.w_week{width:60px;
       &+span{vertical-align:middle;}
     }
-    &.w_money{width:200px;text-align:right;
+    &.w_money{width:90px;text-align:right;
       &+span{vertical-align:middle;}
     }
     &.w_auto{width:auto;}
