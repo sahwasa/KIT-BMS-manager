@@ -543,6 +543,8 @@ table{width:100%; // form내 너비 수정
   }
 }
 
+[contenteditable]{@include ipt_common;max-height:var(--h);overflow-y:auto;white-space:pre-wrap;}
+
 /* ico_fileName Extention */
 @mixin ico_ext($x,$y) {display:inline-block;width:17px;height:17px;background:url(../images/ico_fileExt.png) #{$x} #{$y} no-repeat;margin:-4px 7px 0 0px;vertical-align:middle;font-size:0;overflow:hidden;text-indent:-9999px;}
 .ext_bmp{@include ico_ext(-3px, -2px);}
