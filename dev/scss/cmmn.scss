@@ -376,6 +376,7 @@ td{white-space:nowrap;text-overflow:ellipsis;}
   dt:has(.required)label{position:relative;}
   [required]::before,
   .required::before{position:absolute;left:-10px;}
+  .full{grid-column:1/3;padding-left:30px;}
 }
 .layer_tool{position:relative;
   .btn_ellipsis{@include ico_only;
@@ -543,7 +544,7 @@ table{width:100%; // form내 너비 수정
   }
 }
 
-[contenteditable]{@include ipt_common;max-height:var(--h);overflow-y:auto;white-space:pre-wrap;}
+[contenteditable]{@include ipt_common;min-height:var(--mh);max-height:var(--h);overflow-y:auto;white-space:pre-wrap;}
 
 /* ico_fileName Extention */
 @mixin ico_ext($x,$y) {display:inline-block;width:17px;height:17px;background:url(../images/ico_fileExt.png) #{$x} #{$y} no-repeat;margin:-4px 7px 0 0px;vertical-align:middle;font-size:0;overflow:hidden;text-indent:-9999px;}
