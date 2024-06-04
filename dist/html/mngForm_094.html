@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=0.5, maximum-scale=5">
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  <title>KIT 업무관리시스템_관리자</title>
+  <link rel="stylesheet" href="../font/fontello/css/fontello.css">
+  <link rel="stylesheet" href="../css/merge.css">
+</head>
+<body>
+
+<div id="wrap" class="wrap">
+  <!-- 바로가기 메뉴 -->
+<div id="accessibility">
+  <a href="#contents">본문 바로가기</a>
+  <a href="#nav">주메뉴 바로가기</a>
+</div>
+<hr />
+<!--// 바로가기 메뉴 -->
+<header class="header">
+  <h1>
+    <a href="">
+      <span class="logo">KITVALLEY</span>
+      업무관리시스템 <b class="t_red">관리자</b>
+    </a>
+  </h1>    
+  <section class="gnb">
+    <!-- <ul class="gnb_lst">
+      <li><a href=""></a></li>
+    </ul> -->
+    <span class="login_timer">05:00</span>
+    <div class="util">
+      <div class="profile">
+        <button type="button" class="account">
+          <img src="../images/ic_user.png" width="32px" height="32px" alt="프로필사진">
+          <b>관리자님</b>
+        </button>
+        <div class="my_layer">
+          <ul class="my_svc">
+            <li><a href="#">내정보</a></li>
+            <li><a href="#">웹메일</a></li>
+            <li><a href="http://192.168.5.10/" target="_blank">웹클라우드</a></li>
+            <li><a href="#">로그아웃</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+  <nav id="nav" class="nav">
+  <h1 class="blind">관리자 페이지</h1>
+  <ul class="lnb">
+    <li><a href="/html/mngOrg.html">조직관리</a></li>
+    <li><a href="/html/mngEmp.html">임직원관리</a></li>
+    <li><a href="/html/mngCode.html">공통코드관리</a></li>
+    <li><a href="/html/mngMenu.html">메뉴관리</a></li>
+    <li><a href="/html/mngForm.html">결재 양식관리</a></li>
+    <li><a href="/html/mngCalendar.html">캘린더 관리</a></li>
+    <li><a href="/html/mngNotice.html">게시판 관리</a></li>
+    <li><a href="/html/mngProj.html">프로젝트 관리</a></li>
+    <li><a href="/html/pop.html">팝업(퍼블리싱 확인용)</a></li>
+  </ul>
+</nav>
+  <main id="contents" class="contents" role="main">
+    <header class="cont_tit">
+      <h1>결재 양식수정</h1>
+      <section class="bredcrumb">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">결재 양식관리</a></li>
+          <li>결재 양식수정</li>
+        </ul>
+      </section>
+    </header>
+    <div class="cont_body mngFormDetail">
+      <section>
+        <p class="form_validity required validity">표시는 필수 입력 항목입니다.</p>
+        <div class="form_wrap">
+          <div class="tit_form">
+            <h2>교육신청(결과)보고서</h2>
+            <table class="tbl_row approval_status">
+              <caption>결재 상황 테이블</caption>
+              <tbody>
+                <tr>
+                  <th scope="col" rowspan="3">결 재</th>
+                  <th scope="col">기안</th>
+                  <th scope="col">결재</th>
+                  <th scope="col">승인</th>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <table class="tbl_row">
+            <caption>휴일근무신청서 양식 테이블</caption>
+            <colgroup>
+              <col style="width:150px">
+              <col style="width:auto">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <label for="form_num" class="required">문서번호</label>
+                </th>
+                <td colspan="3">
+                  <input type="text" id="form_num" value="KIT-근태-">
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <label for="form_project" class="required">프로젝트</label>
+                </th>
+                <td colspan="3">
+                  <span class="file_input">
+                    <select id="form_project" name="form_project">
+                      <option value="사업자 분류">사업자 분류</option>
+                    </select>
+                    <select title="기관선택">
+                      <option value="기관 선택">기관 선택</option>
+                    </select>
+                    <select title="프로젝트 선택">
+                      <option value="프로젝트 선택">프로젝트 선택</option>
+                    </select>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <label for="form_businesstrip_period" class="required">교육기간</label>
+                </th>
+                <td>
+                  <input type="date" id="form_businesstrip_period" title="시작 교육일자" value="2023-04-14">&nbsp;-&nbsp;
+                  <input type="date" title="종료 교육일자" value="2023-04-17">
+                  <input type="text" title="총 교육일 수" class="w_day alignC">
+                  <span>일간</span>
+                </td>
+                <th scope="row">
+                  <label for="form_cost" class="required">교육비 (부가세별도)</label>
+                </th>
+                <td><input type="text" id="form_cost" value=""></td>
+              </tr>              
+              <tr>
+                <th scope="row">
+                  <label for="biz_traveler" class="required">교육인원</label>
+                </th>
+                <td colspan="3">
+                  <span class="file_input">
+                    <input type="text" id="biz_traveler" list="nameList">
+                    <datalist id="nameList">
+  <optgroup label="개발본부">
+    <option value="대장발핑">개발본부</option>
+    <option value="개발핑">개발 1팀</option>
+    <option value="새발핑">개발 1팀</option>
+    <option value="말발핑">개발 2팀</option>
+    <option value="소발핑">개발 2팀</option>
+    <option value="곰발핑">개발 2팀</option>
+  </optgroup>
+  <optgroup label="경영관리">
+    <option value="경영핑">경영관리</option>
+    <option value="관리핑">경영관리</option>
+  </optgroup>
+</datalist>
+                    <button type="button" class="btn_default">추가</button>
+                    <button type="button" class="btn_ogt">조직도</button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="required">일별 교육계획</th>
+                <td colspan="3">
+                  <div class="tbl_workinfo">
+                    <p class="validity">근태기록을 위해 상세히써주세요.</p>
+                    <div>
+                      <button type="button" class="btn_form">일정추가</button>
+                      <button type="button" class="btn_form">삭제</button>
+                    </div>
+                  </div>
+                  <table class="tbl_default tbl_use_select tbl_hover">
+                    <caption>일별 교육계획 테이블</caption>
+                    <colgroup>
+                      <col style="width:60px;">
+                      <col style="width:90px;">
+                      <col style="width:90px;">
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="col">선택</th>
+                        <th scope="col">일자</th>
+                        <th scope="col">시간</th>
+                        <th scope="col">비고</th>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox" class="row_check" title="글선택"></td>
+                        <td><input type="date" title="일자 선택"></td>
+                        <td>
+                          <select class="w_week"><option value="00">00</option></select> ~
+                          <select class="w_week"><option value="00">00</option></select>
+                        </td>
+                        <td>
+                          <input type="text" title="비고">
+                        </td>
+                      </tr>                     
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <label for="form_tit" class="required">교육과정명</label>
+                </th>
+                <td colspan="3">
+                  <input type="text" id="form_tit" value="">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="editor_wrap">
+            <textarea id="editor" name="editor" title="에디터 영역"></textarea>
+          </div>
+          <div class="sign_wrap">
+            <p>상기와 같이 휴일 근무를 신청합니다.<br>
+              <span>2023년 4월 24일</span>
+            </p>
+            <p>신청인 : <span>멋쟁이</span> (인)</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="infolist_wrap">
+  <dl>
+    <dt class="required">템플릿 유형</dt>
+    <dd><span>TMPL-NUM</span></dd>
+    <dt><label for="category" class="required">카테고리</label></dt>
+    <dd>
+      <select name="category" id="category">
+        <option value="카테고리 선택" selected>카테고리 선택</option>
+        <option value="근태관리">근태관리</option>
+        <option value="기안문서">기안문서</option>
+        <option value="대외문서">대외문서</option>
+        <option value="보고문서">보고문서</option>
+      </select>
+    </dd>
+    <dt><label for="use" class="required">사용여부</label></dt>
+    <dd>
+      <div class="btn_switch">
+        <input type="radio" id="use" name="use" checked>
+        <label for="use">사용</label>
+        <input type="radio" id="notused" name="use">
+        <label for="notused">사용안함</label>
+      </div>
+    </dd>
+    <dt><label for="form_name" class="required">양식명</label></dt>
+    <dd><input type="text" id="form_name" value="양식명"></dd>
+    <dt><label for="form_referrer">참조자</label></dt>
+    <dd>
+      <span class="file_input">
+        <input type="text" id="form_referrer" list="nameList">
+        <datalist id="nameList">
+  <optgroup label="개발본부">
+    <option value="대장발핑">개발본부</option>
+    <option value="개발핑">개발 1팀</option>
+    <option value="새발핑">개발 1팀</option>
+    <option value="말발핑">개발 2팀</option>
+    <option value="소발핑">개발 2팀</option>
+    <option value="곰발핑">개발 2팀</option>
+  </optgroup>
+  <optgroup label="경영관리">
+    <option value="경영핑">경영관리</option>
+    <option value="관리핑">경영관리</option>
+  </optgroup>
+</datalist>
+        <button type="button" class="btn_default">추가</button>
+        <button type="button" class="btn_ogt">조직도</button>
+      </span>
+      <ul class="btn_slideclose">
+  <li>
+    <div>
+      <p>유한아름</p><button type="button">삭제</button>
+    </div>
+    <div class="tooltip">
+      <div class="user_module">
+  <figure class="user_photo"><img src="../images/ic_user.png" alt="" loading="lazy"></figure> 
+  <em>홍OO 연구원</em><b>(재난예경보MA팀)</b>
+</div>
+    </div>
+  </li>
+  <li>
+    <div>
+      <p>임선</p><button type="button">삭제</button>
+    </div>
+    <div class="tooltip">
+      <div class="user_module">
+  <figure class="user_photo"><img src="../images/ic_user.png" alt="" loading="lazy"></figure> 
+  <em>홍OO 연구원</em><b>(재난예경보MA팀)</b>
+</div>
+    </div>
+  </li>
+</ul>
+    </dd>
+    <dt class="required">결재자 지정</dt>
+    <dd>
+      <div class="btn_switch">
+        <input type="radio" id="chart" name="approver">
+        <label for="chart">조직도</label>
+        <input type="radio" id="department" name="approver" checked>
+        <label for="department" class="disabled">부서내</label>
+        <input type="radio" id="appointed" name="approver">
+        <label for="appointed">임의지정</label>
+      </div>
+    </dd>
+    <dt class="required">중요도</dt>
+    <dd>
+      <div class="btn_switch">
+        <input type="radio" id="high" name="importance">
+        <label for="high" class="high_prio">높음</label>
+        <input type="radio" id="common" name="importance" checked="">
+        <label for="common" class="normal_prio">보통</label>
+        <input type="radio" id="row" name="importance">
+        <label for="row" class="low_prio">낮음</label>
+      </div>
+    </dd>
+    <dt>유의사항</dt>
+    <dd class="full">
+      <div contenteditable style="--mh:100px"></div>
+    </dd>
+  </dl>
+</div>
+<div class="btn_wrap">
+  <button class="postive btn_save" type="button">저장</button>
+  <button class="negative btn_cancel">닫기</button>
+</div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+  <p class="copy">Copyright ⓒ2023 KITValley Co.,Ltd. All right reserved.</p>
+</footer>
+</div>
+<script src="../plugins/jquery.min.js"></script>
+<script src="../plugins/jquery-ui.min.js"></script>
+<script src="../plugins/jquery.MultiFile.js"></script>
+<script src="../plugins/ckeditor/build/ckeditor.js"></script>
+<script src="../js/ui_cmmn.js"></script>
+</body>
+</html>
+<script>
+  setEditor();//
+</script>

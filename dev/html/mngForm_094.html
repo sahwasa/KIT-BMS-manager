@@ -1,0 +1,175 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')
+  @@include('../inc/nav.html')
+  <main id="contents" class="contents" role="main">
+    <header class="cont_tit">
+      <h1>결재 양식수정</h1>
+      <section class="bredcrumb">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">결재 양식관리</a></li>
+          <li>결재 양식수정</li>
+        </ul>
+      </section>
+    </header>
+    <div class="cont_body mngFormDetail">
+      <section>
+        <p class="form_validity required validity">표시는 필수 입력 항목입니다.</p>
+        <div class="form_wrap">
+          <div class="tit_form">
+            <h2>교육신청(결과)보고서</h2>
+            <table class="tbl_row approval_status">
+              <caption>결재 상황 테이블</caption>
+              <tbody>
+                <tr>
+                  <th scope="col" rowspan="3">결 재</th>
+                  <th scope="col">기안</th>
+                  <th scope="col">결재</th>
+                  <th scope="col">승인</th>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <table class="tbl_row">
+            <caption>휴일근무신청서 양식 테이블</caption>
+            <colgroup>
+              <col style="width:150px">
+              <col style="width:auto">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <label for="form_num" class="required">문서번호</label>
+                </th>
+                <td colspan="3">
+                  <input type="text" id="form_num" value="KIT-근태-">
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <label for="form_project" class="required">프로젝트</label>
+                </th>
+                <td colspan="3">
+                  <span class="file_input">
+                    <select id="form_project" name="form_project">
+                      <option value="사업자 분류">사업자 분류</option>
+                    </select>
+                    <select title="기관선택">
+                      <option value="기관 선택">기관 선택</option>
+                    </select>
+                    <select title="프로젝트 선택">
+                      <option value="프로젝트 선택">프로젝트 선택</option>
+                    </select>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <label for="form_businesstrip_period" class="required">교육기간</label>
+                </th>
+                <td>
+                  <input type="date" id="form_businesstrip_period" title="시작 교육일자" value="2023-04-14">&nbsp;-&nbsp;
+                  <input type="date" title="종료 교육일자" value="2023-04-17">
+                  <input type="text" title="총 교육일 수" class="w_day alignC">
+                  <span>일간</span>
+                </td>
+                <th scope="row">
+                  <label for="form_cost" class="required">교육비 (부가세별도)</label>
+                </th>
+                <td><input type="text" id="form_cost" value=""></td>
+              </tr>              
+              <tr>
+                <th scope="row">
+                  <label for="biz_traveler" class="required">교육인원</label>
+                </th>
+                <td colspan="3">
+                  <span class="file_input">
+                    <input type="text" id="biz_traveler" list="nameList">
+                    @@include('../inc/data_emp_name.html')
+                    <button type="button" class="btn_default">추가</button>
+                    <button type="button" class="btn_ogt">조직도</button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="required">일별 교육계획</th>
+                <td colspan="3">
+                  <div class="tbl_workinfo">
+                    <p class="validity">근태기록을 위해 상세히써주세요.</p>
+                    <div>
+                      <button type="button" class="btn_form">일정추가</button>
+                      <button type="button" class="btn_form">삭제</button>
+                    </div>
+                  </div>
+                  <table class="tbl_default tbl_use_select tbl_hover">
+                    <caption>일별 교육계획 테이블</caption>
+                    <colgroup>
+                      <col style="width:60px;">
+                      <col style="width:90px;">
+                      <col style="width:90px;">
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="col">선택</th>
+                        <th scope="col">일자</th>
+                        <th scope="col">시간</th>
+                        <th scope="col">비고</th>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox" class="row_check" title="글선택"></td>
+                        <td><input type="date" title="일자 선택"></td>
+                        <td>
+                          <select class="w_week"><option value="00">00</option></select> ~
+                          <select class="w_week"><option value="00">00</option></select>
+                        </td>
+                        <td>
+                          <input type="text" title="비고">
+                        </td>
+                      </tr>                     
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <label for="form_tit" class="required">교육과정명</label>
+                </th>
+                <td colspan="3">
+                  <input type="text" id="form_tit" value="">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="editor_wrap">
+            <textarea id="editor" name="editor" title="에디터 영역"></textarea>
+          </div>
+          <div class="sign_wrap">
+            <p>상기와 같이 휴일 근무를 신청합니다.<br>
+              <span>2023년 4월 24일</span>
+            </p>
+            <p>신청인 : <span>멋쟁이</span> (인)</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        @@include('../inc/module_form_title.html')
+      </section>
+    </div>
+  </main>
+  @@include('../inc/footer.html')
+</div>
+@@include('../inc/script.html')
+<script>
+  setEditor();//
+</script>
