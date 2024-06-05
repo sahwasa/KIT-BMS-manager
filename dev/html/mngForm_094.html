@@ -85,9 +85,13 @@
                   <span>일간</span>
                 </td>
                 <th scope="row">
-                  <label for="form_cost" class="required">교육비 (부가세별도)</label>
+                  <label for="form_cost" class="required">교육비</label>
                 </th>
-                <td><input type="text" id="form_cost" value=""></td>
+                <td>
+                  <span class="file_input">
+                    <input type="text" id="form_cost" value=""><span>원 (＊부가세 별도)</span>
+                  </span>
+                </td>
               </tr>              
               <tr>
                 <th scope="row">
@@ -106,7 +110,7 @@
                 <th scope="row" class="required">일별 교육계획</th>
                 <td colspan="3">
                   <div class="tbl_workinfo">
-                    <p class="validity">근태기록을 위해 상세히써주세요.</p>
+                    <p class="validity">일별 교육 계획을 상세히 기재해 주세요.</p>
                     <div>
                       <button type="button" class="btn_form">일정추가</button>
                       <button type="button" class="btn_form">삭제</button>
@@ -155,7 +159,7 @@
             <textarea id="editor" name="editor" title="에디터 영역"></textarea>
           </div>
           <div class="sign_wrap">
-            <p>상기와 같이 휴일 근무를 신청합니다.<br>
+            <p>상기와 같이 신청합니다.<br>
               <span>2023년 4월 24일</span>
             </p>
             <p>신청인 : <span>멋쟁이</span> (인)</p>
