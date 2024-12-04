@@ -306,6 +306,9 @@ height:0;overflow:hidden;background-color:$black;
   }
   .btn_wrap{margin-top:10px;}
 }
+.add_opt_target{display:none;}
+.add_opt:has(:checked)+.add_opt_target{display:table-row;}
+
 // mngCalendar
 .mngCalendar{
   display:grid;grid-template-columns:600px 50px 1fr;grid-column-gap:25px;

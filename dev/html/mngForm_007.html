@@ -52,7 +52,7 @@
                 <th scope="row">
                   <label for="form_num" class="required">문서번호</label>
                 </th>
-                <td>
+                <td colspan="3">
                   <input type="text" id="form_num" value="KIT-기안-">
                 </td>
               </tr>
@@ -60,7 +60,7 @@
                 <th scope="row">
                   <label for="form_project" class="required">프로젝트</label>
                 </th>
-                <td>
+                <td colspan="3">
                   <span class="file_input">
                     <select id="form_project" name="form_project">
                       <option value="사업자 분류">사업자 분류</option>
@@ -73,6 +73,28 @@
                     </select>
                   </span>
                 </td>
+              </tr>
+              <tr class="add_opt">
+                <th scope="row">구분</th>
+                <td colspan="3">
+                  <input type="checkbox" id="replc_yn">
+                  <label for="replc_yn">지출결의서 대체</label>
+                </td>
+              </tr>
+              <tr class="add_opt_target">
+                <th scope="row">
+                  <label for="expndtr_amt" class="required">지출금액(부가세별도)</label>
+                </th>
+                <td>
+                  <span class="file_input">
+                    <input type="text" id="expndtr_amt" class="alignR w_money">
+                    <span>원</span>
+                  </span>
+                </td>
+                <th scope="row">
+                  <label for="expndtr_rqestde" class="required">지출요청일</label>
+                </th>
+                <td><input type="date" id="expndtr_rqestde" min="0000-01-01" max="9999-12-31" style="width:100%;"></td>
               </tr>
             </tbody>
           </table>
