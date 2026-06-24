@@ -151,19 +151,6 @@
                   <option value="기타">기타</option>
                 </select>
               </dd>
-              <dt><label for="emp_workplace" class="required">근무지</label></dt>
-              <dd>
-                <select name="workplace" id="emp_workplace">
-                  <option value="선택">선택</option>
-                  <option value="본사(서울)" selected>본사(서울)</option>
-                  <option value="연구소(별가람)">연구소(별가람)</option>
-                  <option value="행안부(세종)">행안부(세종)</option>
-                  <option value="기상청(김천)">기상청(김천)</option>
-                  <option value="태풍센터(제주)">태풍센터(제주)</option>
-                  <option value="우주전파(제주)">우주전파(제주)</option>
-                  <option value="기타">기타</option>
-                </select>
-              </dd>
               <dt><label for="emp_worktype" class="required">근무형태</label></dt>
               <dd>
                 <select name="workplace" id="emp_worktype">
@@ -173,8 +160,8 @@
                   <option value="교대근무">교대근무</option>
                   <option value="파견">파견</option>
                   <option value="기타">기타</option>
-                </select>
-              </dd>
+                </select>				                       
+              </dd>           
               <dt><label for="emp_date" class="required">입사일자</label></dt>
               <dd><input type="date" id="emp_date" value="2021-03-08"></dd>
               <dt><label for="emp_rank" class="required">직위</label></dt>
@@ -187,6 +174,25 @@
                   <option value="수석보">수석보</option>
                   <option value="수석">수석</option>
                 </select>
+              </dd>              
+              <dt class="start1"><label for="emp_workplace" class="required">근무지</label></dt>
+              <dd>
+                <select name="workplace" id="emp_workplace">
+                  <option value="선택">선택</option>
+                  <option value="본사(서울)" selected>본사(서울)</option>
+                  <option value="연구소(별가람)">연구소(별가람)</option>
+                  <option value="행안부(세종)">행안부(세종)</option>
+                  <option value="기상청(김천)">기상청(김천)</option>
+                  <option value="태풍센터(제주)">태풍센터(제주)</option>
+                  <option value="우주전파(제주)">우주전파(제주)</option>
+                  <option value="기타">기타</option>
+                </select>
+              </dd>
+              <dd class="span2">              
+                <span class="period_custom">
+                  <input type="date" min="0000-01-01" max="9999-12-31" id="sdt" title="시작일" onchange="setPeriod()">
+                  <input type="date" min="0000-01-01" max="9999-12-31" id="edt" title="종료일" onchange="setPeriod()">                
+                </span>
               </dd>
               <dt><label for="emp_department" class="required">부서</label></dt>
               <dd><select name="department" id="emp_department">

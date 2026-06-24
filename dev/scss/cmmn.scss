@@ -175,10 +175,10 @@ input[type="time"]::after{@include fontello('\eb02');font-size:18px;}
   }
   &::before{@include fontello('\e806');height:19px;line-height:19px;font-size:10px;}
 }
-.period_custom{display:inline-flex;justify-content:space-between;gap:20px;position:relative;vertical-align:middle;
-  input{width:auto;padding-right:4px;border:1px solid #c5c5c5;}
-  &>*:first-child{position:relative;overflow:visible;
-    &::before{content:"~";position:absolute;right:-19px;top:50%;transform:translate(-50%,-50%);}
+.period_custom{display:inline-flex;align-items:center;gap:5px;position:relative;vertical-align:middle;
+  &::before{content:"~";}
+  input{width:auto;padding-right:4px;border:1px solid #c5c5c5;
+    &:first-of-type{order:-1;}
   }
   &>span{display:inline-flex;gap:3px;}
 }
